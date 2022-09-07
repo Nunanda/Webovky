@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {  PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: 'home',
   loadChildren: () => import('./pages/home/home.component').then( m => m.HomeComponent)
+},
+{
+  path: '',
+  redirectTo: 'home',
+  pathMatch: 'full'
 },
 /*{
   path: 'vyukovymod',

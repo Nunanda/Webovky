@@ -300,22 +300,22 @@ svg#clouds {
 
 
 
-
-
-
-.Výukový-mód-Tobi{
-    position: relative;
-    width: 1920px;
-    height: 1080px;
+.page {
+    
     background: #FFFFFF;
+    position: absolute;
+    left: 285px;
+    right: 285px;
+    width: 1350px;
+    top: 0px;
+    bottom: 0px;
 }
 
 .hledat{
     position: absolute;
     width: 1350px;
     height: 90px;
-    left: 281px;
-    top: 89px;
+    
     background: #C8E7F4;
 }
 
@@ -328,7 +328,7 @@ svg#clouds {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
+    font-size: x-large;
     line-height: 26px;
     display: flex;
     align-items: center;
@@ -345,7 +345,7 @@ svg#clouds {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
+    font-size: x-large;
     line-height: 26px;
     display: flex;
     align-items: center;
@@ -383,7 +383,7 @@ svg#clouds {
     font-family: 'ABeeZee';
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
+    font-size: x-large;
     line-height: 26px;
     display: flex;
     align-items: center;
@@ -398,13 +398,9 @@ svg#clouds {
     top: 7px;
 }
 
-.Vector{
+.lupa{
     position: absolute;
-    left: 11.15%;
-    right: 11.15%;
-    top: 11.35%;
-    bottom: 10.94%;
-    background: #404040;
+    
 }
 
 .rectangle15{
@@ -424,22 +420,14 @@ svg#clouds {
     background: rgba(0, 0, 0, 0.35);
 }
 
-.image29{
-    position: absolute;
-    left: 50%;
-    right: 0%;
-    top: 0.09%;
-    bottom: -0.09%;
-    background: url(/src/images-main/pozadi.png);
-}
-
-.image28{
-    position: absolute;
+.background{
+    width: 1920px;
+    height: 1080px;
     left: 0%;
     right: 50.21%;
     top: 0.09%;
     bottom: -0.09%;
-    background: url(/src/images-main/pozadi.png);
+    
 }
 
 .Menu-P{
@@ -453,17 +441,19 @@ svg#clouds {
     width: 1350px;
     height: 70px;
     left: 0px;
-    top: 200px;
+    top: 100px;
     background: #FFFFFF;
 }
 
-.Menu-block0{
+.Menu-block{
     width: 230px;
     height: 70px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     flex: none;
     order: 0;
     flex-grow: 0;
+    background: #F4B9CD;
+    border-radius: 15px;
 }
 
 .pct-menu{

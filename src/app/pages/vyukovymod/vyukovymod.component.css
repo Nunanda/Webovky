@@ -1,0 +1,98 @@
+.Výukový-mód{
+    position: absolute;
+    width: 687px;
+    height: 57px;
+    left: 331px;
+    top: 286px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Group10{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    left: 890px;
+    top: 853px;
+}
+
+.image6{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 905px;
+    top: 893px;
+    background: url(./pictures/pink-blue.png);
+    border-radius: 10px;
+}
+
+.VV-záložka{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    left: 890px;
+    top: 853px;
+    background: #FCEAF0;
+    border-radius: 20px;
+}
+
+.Frame20{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 185px;
+    top: 40px;
+}
+
+.Čas60min{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Frame19{
+    position: absolute;
+    width: 350px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+    background: #EA749B;
+}
+
+.Chobotnička{
+    position: absolute;
+    width: 350px;
+    height: 29px;
+    left: 0px;
+    top: 1px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+}

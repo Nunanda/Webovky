@@ -492,3 +492,11 @@ svg#clouds {
     background: #FFFFFF;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.image6{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+}

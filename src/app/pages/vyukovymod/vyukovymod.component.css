@@ -1,9 +1,7 @@
 .Výukový-mód{
+    left: 590px;
+    top: 225px;
     position: absolute;
-    width: 687px;
-    height: 57px;
-    left: 331px;
-    top: 286px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -16,26 +14,24 @@
     color: #000000;
 }
 
-.Group10{
+.bunka{
     position: absolute;
     width: 350px;
     height: 200px;
-    left: 890px;
-    top: 853px;
+    left: -800px;
+    top: -550px;
 }
 
-.image6{
+.obrázek{
     position: absolute;
     width: 150px;
     height: 150px;
-    left: 905px;
-    top: 893px;
-   
-    
     border-radius: 10px;
+    left: 10px;
+    top: 40px;
 }
 
-.VV-záložka{
+.záložka{
     position: absolute;
     width: 350px;
     height: 200px;
@@ -45,46 +41,18 @@
     border-radius: 20px;
 }
 
-.Frame20{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    left: 185px;
-    top: 40px;
-}
-
-.Čas60min{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    left: 0px;
-    top: 0px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.333333px;
-    color: #000000;
-}
-
-.Frame19{
+.záložkavzáložce0{
     position: absolute;
     width: 350px;
     height: 30px;
-    left: 0px;
-    top: 0px;
     background: #EA749B;
+    border-radius: 20px 20px 0% 0% / 20px 20px 0% 0%;
 }
 
 .Chobotnička{
     position: absolute;
-    width: 350px;
     height: 29px;
-    left: 0px;
-    top: 1px;
+    left: 135px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -95,5 +63,29 @@
     text-align: center;
     letter-spacing: -0.333333px;
     color: #FFFFFF;
-    border: 1px solid #000000;
+}
+
+.záložkavzáložce1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 185px;
+    top: 40px;
+}
+
+.Text{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 0;
+    top: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
 }

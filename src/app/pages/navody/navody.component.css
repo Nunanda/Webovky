@@ -1,0 +1,166 @@
+.Vše{
+    position: absolute;
+    width: 687px;
+    height: 57px;
+    left: 650px;
+    top: 210px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Line{
+    position: absolute;
+    width: 1130px;
+    height: 0px;
+    left: 110px;
+    top: 260px;
+    border: 1px solid #000000;
+}
+
+.Lehké{
+    position: absolute;
+    width: 77px;
+    height: 43px;
+    left: 246px;
+    top: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Střední{
+    position: absolute;
+    width: 77px;
+    height: 43px;
+    left: 635px;
+    top: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Střední{
+    position: absolute;
+    width: 77px;
+    height: 43px;
+    left: 635px;
+    top: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.Těžké{
+    position: absolute;
+    width: 77px;
+    height: 43px;
+    left: 1000px;
+    top: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.záložka{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    left: 100px;
+    top: 375px;
+    background: #E2FAE3;
+    border-radius: 20px;
+}
+
+.záložkavzáložce0{
+    position: absolute;
+    width: 350px;
+    height: 30px;
+    background: #3EDE44;
+    border-radius: 20px 20px 0% 0% / 20px 20px 0% 0%;
+}
+
+.Chobotnička{
+    position: absolute;
+    height: 29px;
+    left: 135px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #FFFFFF;
+}
+
+.záložkavzáložce1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 185px;
+    top: 40px;
+}
+
+.Text{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 0;
+    top: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+.obrázek{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    left: 10px;
+    top: 40px;
+}

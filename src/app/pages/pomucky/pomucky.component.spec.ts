@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BleComponent } from './ble.component';
+import { PomuckyComponent } from './pomucky.component';
 
-describe('BleComponent', () => {
-  let component: BleComponent;
-  let fixture: ComponentFixture<BleComponent>;
+describe('PomuckyComponent', () => {
+  let component: PomuckyComponent;
+  let fixture: ComponentFixture<PomuckyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BleComponent ]
+      declarations: [ PomuckyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BleComponent);
+    fixture = TestBed.createComponent(PomuckyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

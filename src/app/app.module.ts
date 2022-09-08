@@ -7,6 +7,8 @@ import { BleComponent } from './pages/ble/ble.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VyukovymodComponent } from './pages/vyukovymod/vyukovymod.component';
 import { SlovnikComponent } from './pages/slovnik/slovnik.component';
+import { PomuckyComponent } from './pomucky/pomucky.component';
+import { NavodyComponent } from './navody/navody.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SlovnikComponent } from './pages/slovnik/slovnik.component';
     BleComponent,
     HomeComponent,
     VyukovymodComponent,
-    SlovnikComponent
+    SlovnikComponent,
+    PomuckyComponent,
+    NavodyComponent
   ],
   imports: [
     BrowserModule,

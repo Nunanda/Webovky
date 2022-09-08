@@ -1,148 +1,62 @@
 <img class="background" src="/assets/icon/pozadi.png">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <div class="page">
-  <header>
-    <div class="hledat">
-      <img class="image6" src="./assets/icon/logo.png">
-      <title class="SELECRO">
-        SELECRO
+  <div class="hledat">
+    <img class="logo" src="./assets/icon/logo.png">
+    <title class="SELECRO">
+      SELECRO
+    </title>
+    <div class="Bunkahledat">
+      <title class="Hledat">
+        Hledat...
       </title>
-      <div class="Selecro1">
-      </div>
-      <div class="Frame66">
-        <title class="Hledat">
-          Hledat...
-        </title>
-        <div class="Search_FILL">
-          <div class="lupa">
-            <img src="/assets/icon/search.png">
-          </div>
-        </div>
-      </div>
-      <title class="Tvořit-může-každý">
-        Tvořit může každý!
-      </title>
-
-      <div class="Menu-P">
-        <button class="Menu-block"><img src="/assets/icon/info.png">Selecro</button> 
-        <button class="Menu-block"><img src="/assets/icon/style.png">Pomůcky</button>
-        <button class="Menu-block"><img src="/assets/icon/book.png">Slovník</button>
-        <button class="Menu-block"><img src="/assets/icon/school.png">Výukový mód</button>
-        <button class="Menu-block"><img src="/assets/icon/view.png">Návody</button>
-      </div>
-      
-
+      <img class="Lupa" src="/assets/icon/search.png">
     </div>
-  </header>
-  
-  
-
-
-
-<!--
-  <div>
-    <div>
-      <div>
-        <div routerLink="/home">
-          <div name="sel" slot="primary">
-          </div>
-          <label>
-            Selecro
-          </label>
-      </div>
-    </div>
-    <div>
-      <div routerLink="/pomucky">
-        <div name="pom" slot="primary"></div>
-        <label>Pomůcky</label>
-      </div>
-    </div>
-    <div value="colors">
-    <div value="colors">
-    <div>
-      <div slot="header">
-        <label>Slovník</label>
-      </div>
-    </div>
-
-    <div slot="div">
-      <div>
-      <div routerLink="/retizkove-oko">
-        <div name="ro"></div>
-        <label>Řetízkové oko</label>
-      </div>
-      </div>
-
-      <div>
-      <div routerLink="/pevne-oko">
-        <div name="po"></div>
-        <label>Pevné oko</label>
-      </div>
-      </div>
-      
-      <div>
-      <div routerLink="/kratky-sloupek">
-        <div name="ks"></div>
-        <label>Krátký sloupek</label>
-      </div> 
-      </div>
-      <div>
-      <div routerLink="/dlouhy-sloupek">
-        <div name="ds"></div>
-        <label>Dlouhý sloupek</label>
-      </div>
-      </div>
-
-      <div>
-      <div routerLink="/polodlouhy-sloupek">
-        <div name="pds"></div>
-        <label>Polodlouhý sloupek</label>
-      </div>
-      </div>
-
-      <div>
-      <div routerLink="/rozhackovani">
-        <div name="v"></div>
-        <label>Rozháčkování</label>
-      </div>
-      </div>
-
-      <div>
-      <div routerLink="/shackovani">
-        <div name="a"></div>
-        <label>Sháčkování</label>
-      </div>
-      </div>
-
-      <div>
-      <div routerLink="/magicky-krouzek">
-        <div name="mk"></div>
-        <label>Magický kroužek</label>
-      </div>
-      </div>
-    </div>
+    <title class="Tvořit-může-každý">
+      Tvořit může každý!
+    </title>
   </div>
-    </div>
-
-    <div>
-      <div routerLink="/vyukovy-mod">
-        <div name="vm" slot="primary"></div>
-        <label>Výukový mód</label>
-      </div>
-    </div>
-
-    <div>
-      <div routerLink="/navody">
-        <div name="vm" slot="primary"></div>
-        <label>Návody</label>
-      </div>
-    </div>
-    </div>
-  </div>-->
+  <div class="Menu">
+    <a routerLink="/home">
+      <button routerlink="/home" class="Menu-block">
+        <img class="googleicons" src="/assets/icon/info.png">
+        <title class="Menu-text">
+          Selecro
+        </title>
+      </button>
+    </a>
+    <a routerLink="/pomucky">
+      <button class="Menu-block">
+        <img class="googleicons" src="/assets/icon/style.png">
+        <title class="Menu-text">
+          Pomůcky
+        </title>
+      </button>
+    </a>
+    <a routerLink="/slovnik">
+      <button class="Menu-block">
+        <img class="googleicons" src="/assets/icon/book.png">
+        <title class="Menu-text">
+          Slovník
+        </title>
+      </button>
+    </a>
+    <a routerLink="/vyukovymod">
+      <button class="Menu-block">
+        <img class="googleicons" src="/assets/icon/school.png">
+        <title class="Menu-text">
+          Výukový mód
+        </title>
+     </button>
+    </a>
+    <a routerLink="/navody">
+      <button class="Menu-block">
+       <img class="googleicons" src="/assets/icon/view.png">
+       <title class="Menu-text">
+          Návody
+       </title>
+     </button>
+    </a>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-  <router-outlet id="main">
-
-  </router-outlet>
-
-
-<router-outlet></router-outlet>

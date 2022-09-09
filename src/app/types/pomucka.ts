@@ -1,4 +1,5 @@
 export type Pomucka =  {
+    [x: string]: any;
     nazev: string,
     popis: string,
     popis1: string,

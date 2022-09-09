@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pomucka } from '../types'
+import { Pomucka } from '../types/pomucka'
 
  const polePomucek = [{ nazev: "Háček", popis: "Existuje široká škála velikostí.", popis1: "Háčky se dělají z různých materiálů a mohou být zdobeny rukojeťmi, ergonomickými úchyty a podobně.", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
     { nazev: "Příze", popis: "Dnes můžeme najít obrovské množství značek a materiálů (akrylové, bavlněné, směsové).", popis1: "Na přebalu klubíčka bývá napsáno, kolik metrů obsahuje a na jak velký háček (popř. jehlice) je dělaná. Samozřejmě můžete využít více velikostí na jeden typ příze (např.: Dolphin Baby se dá háčkovat s háčkem velikosti 4, 4.5 nebo 5 mm), ovlivňuje se tím však velikost oček.", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" }, 
@@ -23,10 +23,6 @@ import { Pomucka } from '../types'
       
         constructor() {
           this.initMap();
-        }
-      
-        public getPomuckaByName(name: string): Pomucka{
-          return this.pomucky.get(name);
         }
       
         private initMap(){

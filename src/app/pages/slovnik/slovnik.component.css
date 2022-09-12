@@ -1,0 +1,417 @@
+.background{
+    width: 1900px;
+    min-height: 969px;
+}
+
+.page{
+    background: #FFFFFF;
+    position: absolute;
+    left: 285px;
+    right: 285px;
+    width: 1350px;
+    height: 110%;
+    top: 0;
+    bottom: 0;
+}
+
+.hledat{
+    position: absolute;
+    width: 1350px;
+    height: 90px;
+    background: #C8E7F4;
+}
+
+.logo{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.SELECRO{
+    position: absolute;
+    width: 117px;
+    height: 29px;
+    left: 119px;
+    top: 30px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: x-large;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.Bunkahledat{
+    box-sizing: border-box;
+    position: absolute;
+    width: 850px;
+    height: 60px;
+    left: 250px;
+    top: 15px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+}
+
+.Hledat{
+    position: absolute;
+    width: 192px;
+    height: 38px;
+    left: 37px;
+    top: 11px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: x-large;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Lupa{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 790px;
+    top: 7px;
+}
+
+.ikona {
+    width: 40px;
+    height: 40px;
+}
+
+.Tvořit-může-každý{
+    position: absolute;
+    width: 219px;
+    height: 68px;
+    left: 1115px;
+    top: 11px;
+    font-family: 'ABeeZee';
+    font-style: normal;
+    font-weight: 400;
+    font-size: x-large;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    gap: 30px;
+    position: absolute;
+    width: 1350px;
+    height: 70px;
+    left: 0;
+    top: 115px;
+    background: #FFFFFF;
+}
+
+.Menu-block{
+    width: 230px;
+    height: 70px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background: #F4B9CD;
+    border-radius: 15px;
+}
+
+.googleicons{
+    position: relative;
+    left: -65px;
+}
+
+.Menu-text{
+    position: absolute;
+    width: 117px;
+    height: 0;
+    left: 88px;
+    top: 50%;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+.Slovnikpopis{
+    margin-top: 15%;
+    margin-left: 1%;
+    align-self: flex-start; 
+    width: 675px;
+    height: 675px;
+    border-radius: 5%;
+    background: #C8E7F4;
+    display: flex;
+    float: left;
+}
+
+.Text{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 250px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Textzkratka{
+    z-index: 2;
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 95px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Zkratka{
+    z-index: 2;
+    position: absolute;
+    margin-top: 14%;
+    margin-left: 100px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 26px;
+    display: flex;
+    color: #404040;
+}
+
+.Polickozkratka{
+    z-index: 1;
+    position: absolute;
+    display: flex;    
+    margin-top: 9%;
+    margin-left: 5%;
+    height: 150px;
+    width: 150px;
+    border-radius: 10%;
+    background: #FFFFFF;
+}
+
+.Textznacka{
+    z-index: 3;
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 480px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Znacka{
+    z-index: 2;
+    position: absolute;
+    margin-top: 9%;
+    margin-left: 33.5%;
+    display: flex;
+    height: 150px;
+    width: 150px;
+}
+
+.Polickoznacka{
+    z-index: 1;
+    position: absolute;
+    display: flex;    
+    margin-top: 9%;
+    margin-left: 33.5%;
+    height: 150px;
+    width: 150px;
+    border-radius: 10%;
+    background: #FFFFFF;
+}
+
+.Popis{
+    z-index: 2;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 95px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040; 
+}
+
+.Textpopis{
+    z-index: 2;
+    position: absolute;
+    margin-top: 28%;
+    margin-left: 95px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 26px;
+    display: block;
+    align-items: center;
+    display: flex;
+    color: #404040; 
+}
+
+span.Spanpopis{
+    z-index: 2;
+    display: block;
+    width: 500px;
+    height: 300px;
+    line-height: 36px;
+    display: flex;
+}
+
+.Ani_realpravo{
+    margin-top: 15%;
+    margin-left: 3%;
+    width: 600px;
+    height: 675px;
+    display: flex;
+    float: left;
+}
+
+.Textanimace{
+    z-index: 3;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 250px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Textreal{
+    z-index: 3;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 200px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.Ani_okraj{
+    z-index: 2;
+    margin-top: 4.5%;
+    margin-left: 6%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 445.71px;
+    height: 260px;
+    border: 4px solid #EA749B;
+    border-radius: 20px;
+}
+
+.Real_okraj{
+    z-index: 2;
+    margin-top: 27.5%;
+    margin-left: 6%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 445.71px;
+    height: 260px;
+    border: 4px solid #EA749B;
+    border-radius: 20px;
+}
+
+.Animace{
+    z-index: 1;
+    position: absolute;
+    width: 30%;
+    height: auto;
+    margin-top: 5.75%;
+    margin-left: 7.5%;
+    border-radius: 20px;
+}
+
+.Real{
+    z-index: 1;
+    position: absolute;
+    width: 30%;
+    height: auto;
+    margin-top: 28.75%;
+    margin-left: 7.5%;
+    border-radius: 20px;
+}
+
+.Strana{
+    position: absolute;
+    margin-top: 67%;
+    margin-left: 52%;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 30px;
+    line-height: 26px;
+    color: #404040;
+}
+
+.Btvlevo{
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 66%;
+    width: 100px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+}
+
+.Btvpravo{
+    box-sizing: border-box;
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 66%;
+    width: 100px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+}

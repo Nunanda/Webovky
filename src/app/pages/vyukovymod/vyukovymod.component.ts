@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vyukovymod.component.css']
 })
 export class VyukovymodComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {

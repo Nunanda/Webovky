@@ -10,29 +10,26 @@ import { Styl } from '../types'
   {nazev: "shackovani", titulek: "Sháčkování", zkratka: "A", popis: "Jde to dvěma různými způsoby.</p> <p>1) Protáhnu přízi dvěma po sobě následujícími oky. Držím tedy na háčku 3 provázky příze. Jednou nahodím a přitáhnu všemitřemi najednou.</p><p>2) Zasunu háček za přední nic a hned jdu to toho dalšího, kde taky vezmu jen přední nit. Nahodím a protahuju po dvojicích.</p> <p>U druhého způsobu se docílí toho, že nevznikají mezery mezi oky, což je ne vždy vidět a jde i o to, jak moc člověk utahuje. Každopádně nevýhodou je menší stahování, které se dožene šitím." },
   {nazev: "magicky-krouzek", titulek: "Magický kroužek", zkratka: "Mk", popis: "Dostatečný kus příze si položím mezi prostředníček a ukazováček levé ruky (pokud jsem pravák). Omotám kolem vnější strany ukazováčku, celého palce a vracím se zpět tam, kde začíná příze. Mezi prostředníček a ukazováček. Vytvořím tak „znak nekonečna“.</p><p>Vezmu si háček a podeberu vnitřní u palce, vnější přízi za křížem a vnější před křížem. Pravým ukazováčkem si pak tyto tři přehozené části podržím a naberu si přízi na levou ruku, jako bych chtěla začít háčkovat. Pak naberu na háček a protáhnu všemi třemi oky, při tom levým palcem a prostředníčkem držím vznikající kruh.</p><p>V tomto okamžiku se dostáváme do pevného bodu. Máme kruh a máme volný „špagátek“. Háčkujeme směrem doleva, tedy v protisměru hodinových ručiček. Háčkem nabereme kruh tím, že půjdeme zevnitř ven. Společně s kruhem budeme nabírat i svěšený provázek, díky kterému nakonec kruh utáhneme, aby byl opravdu kruhem." }, ]
 
-@Injectable({
-  providedIn: 'root'
-})
-export class SlovnikService {
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class SlovnikService {
 
-  mapaStylu: any;
+      mapaStylu: any;
 
-  constructor() {
-    this.initMap();
-  }
+      constructor() {
+        this.initMap();
+      }
 
-  private initMap(){
-    this.mapaStylu = new Map();
-    poleStylu.forEach(styl=>{
-      this.mapaStylu.set(styl.nazev, styl);
-    });
-  }
+      private initMap(){
+        this.mapaStylu = new Map();
+        poleStylu.forEach(styl=>{
+          this.mapaStylu.set(styl.nazev, styl);
+        });
+      }
 
-  public getStylByName(name: string) {
-    return this.mapaStylu.get(name);
-  }
+      public getStylByName(name: string) {
+        return this.mapaStylu.get(name);
+      }
 
-  public getVsechnyPomucky(): Array<Styl>{
-    return poleStylu;
-  }
-}
+    }

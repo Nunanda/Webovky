@@ -15,7 +15,7 @@ export class PomuckyComponent implements OnInit {
 
   ngOnInit() {
     const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
+    this.pomucka = this.pomuckyService.getpomuckaByName(nazev);
   }
 
 }

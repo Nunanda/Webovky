@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SlovnikService } from '../../service/slovnik.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-slovnik',
   templateUrl: './slovnik.component.html',

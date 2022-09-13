@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pomucka } from '../types'
 
-const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis: "Existuje široká škála velikostí.", popis1: "Háčky se dělají z různých materiálů a mohou být zdobeny rukojeťmi, ergonomickými úchyty a podobně.", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
+const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis: "Existuje široká škála velikostí.", popis1: "Háčky se dělají z různých materiálů a mohou být zdobeny rukojeťmi, ergonomickými úchyty a podobně.", popis2: "Mohou být zdobeny rukojeťmi, ergonomickými úchyty a podobně.", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
     { nazev: "prize", titulek: "Příze", popis: "Dnes můžeme najít obrovské množství značek a materiálů (akrylové, bavlněné, směsové).", popis1: "Na přebalu klubíčka bývá napsáno, kolik metrů obsahuje a na jak velký háček (popř. jehlice) je dělaná. Samozřejmě můžete využít více velikostí na jeden typ příze (např.: Dolphin Baby se dá háčkovat s háčkem velikosti 4, 4.5 nebo 5 mm), ovlivňuje se tím však velikost oček.", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" }, 
     { nazev: "znackovac", titulek: "Značkovač", popis: "Slouží nám k označení počátku řady.", popis1: "Dá se použít i jiný kousek příze.", popis2: "ale značkovač je příjemná pomůcka, která se na trhu objevuje ve více variantách.", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
     { nazev: "jehla", titulek: "Jehla", popis: "Na přišívání jednotlivých dílů, zapošívání nitě. Upřednostňované plastové jehly se více hodí, pokud děláte se silnějším typem příze.", popis1: "", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
@@ -13,28 +13,25 @@ const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis:
     { nazev: "vypln", titulek: "Výplň", popis: "Pokud vytváříte něco prostorového (zvířátka, hračky, atd...), tak se vám bude hodit nějaká výplň. Tu může tvořit vata, nebo duté vlákno. Po delší době háčkování můžete použít i zbytky přízí z minulého tvoření. Je to taková recyklace, kterou já uplatňuji třeba u jehelníčků.", popis1: "", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },]
 
     @Injectable({
-      providedIn: 'root',
+      providedIn: 'root'
     })
     export class PomuckyService {
-
-      mapaPomucky: any;
-
+    
+      mapaPomucek: any;
+    
       constructor() {
         this.initMap();
       }
     
       private initMap(){
-        this.mapaPomucky = new Map();
+        this.mapaPomucek = new Map();
         polePomucek.forEach(pomucka=>{
-          this.mapaPomucky.set(pomucka.nazev, pomucka);
+          this.mapaPomucek.set(pomucka.nazev, pomucka);
         });
       }
     
-      public getPomuckaByName(name: string) {
-        return this.mapaPomucky.get(name);
+      public getpomuckaByName(name: string) {
+        return this.mapaPomucek.get(name);
       }
     
-      public getVsechnyPomucky(): Array<Pomucka>{
-        return polePomucek;
-      }
     }

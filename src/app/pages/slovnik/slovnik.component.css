@@ -1,6 +1,6 @@
 .Slovnikpopis{
     margin-top: 15%;
-    margin-left: 1%;
+    margin-left: 2%;
     align-self: flex-start; 
     width: 675px;
     height: 675px;
@@ -12,7 +12,7 @@
 
 .Text{
     position: absolute;
-    margin-top: 2%;
+    margin-top: 40%;
     margin-left: 250px;
     font-family: Helvetica;
     font-style: normal;
@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     color: #404040;
+    z-index: 2;
 }
 
 .Textzkratka{
@@ -227,8 +228,8 @@ span.Spanpopis{
 
 .Strana{
     position: absolute;
-    margin-top: 67%;
-    margin-left: 52%;
+    margin-top: 69%;
+    margin-left: 50%;
     font-family: Helvetica;
     font-style: normal;
     font-weight: bolder;
@@ -240,8 +241,8 @@ span.Spanpopis{
 .Btvlevo{
     box-sizing: border-box;
     position: absolute;
-    margin-left: 40%;
-    margin-top: 66%;
+    margin-left: 38%;
+    margin-top: 53%;
     width: 100px;
     height: 50px;
     background: #FFFFFF;
@@ -252,8 +253,8 @@ span.Spanpopis{
 .Btvpravo{
     box-sizing: border-box;
     position: absolute;
-    margin-left: 60%;
-    margin-top: 66%;
+    margin-left: 1%;
+    margin-top: 53%;
     width: 100px;
     height: 50px;
     background: #FFFFFF;

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SlovnikService } from '../../service/slovnik.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-slovnik',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlovnikComponent implements OnInit {
 
-  constructor() { }
+  slovnik: any;
 
-  ngOnInit(): void {
+  constructor(private SlovnikService: SlovnikService, private router: Router) { }
+
+  ngOnInit() {
+    const nazev = (this.router.url.split('/'))[2];
+    this.slovnik = this.SlovnikService.getSlovnikByName(nazev);
   }
-
+  
 }

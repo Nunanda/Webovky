@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class SlovnikComponent implements OnInit {
 
-  slovnik: any;
+  styl: any;
 
   constructor(private SlovnikService: SlovnikService, private router: Router) { }
 
   ngOnInit() {
     const nazev = (this.router.url.split('/'))[2];
-    this.slovnik = this.SlovnikService.getSlovnikByName(nazev);
+    this.styl = this.SlovnikService.getStylByName(nazev);
   }
   
 }

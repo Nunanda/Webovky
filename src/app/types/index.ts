@@ -1,2 +1,2 @@
 export * from './pomucka';
-export * from './slovniky';
+export * from './styl';

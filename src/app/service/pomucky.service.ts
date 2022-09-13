@@ -12,8 +12,6 @@ const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis:
     { nazev: "navijec-prize", titulek: "Navíječ příze", popis: "Když se vám klubíčko zasukuje tak, že ho musíte celé rozplést, nebo se vám rozkutálí, tak je navíječ pomocník pro vás. Jedná se o nástroj, který dělá z kusu provázku opět klubíčko. Jednoduše upevníte jeden konec na horní otáčecí válec, přízi napnete a pak už jen točíte kličkou. Navíječ vytvoří klubíčko.", popis1: "", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },
     { nazev: "vypln", titulek: "Výplň", popis: "Pokud vytváříte něco prostorového (zvířátka, hračky, atd...), tak se vám bude hodit nějaká výplň. Tu může tvořit vata, nebo duté vlákno. Po delší době háčkování můžete použít i zbytky přízí z minulého tvoření. Je to taková recyklace, kterou já uplatňuji třeba u jehelníčků.", popis1: "", popis2: "", fotka: "", fotka1: "", fotka2: "", videoURL: "" },]
 
-
-
     @Injectable({
       providedIn: 'root',
     })
@@ -39,5 +37,4 @@ const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis:
       public getVsechnyPomucky(): Array<Pomucka>{
         return polePomucek;
       }
-    
     }

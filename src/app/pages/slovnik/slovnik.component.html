@@ -1,57 +1,119 @@
-  <div>
-    <div class="Slovnikpopis">
+<div class="rozdeleni">
+        <div class="sloupec">
+        <div class="slovnikpopis">
+            <div class="text">
+                {{styl.titulek}}
+            </div>
+            <div class="rozdeleni">
+                <div class="sloupec">
+                    <div class="textzkratka">
+                        Zkratka
+                    </div>
+                    <div class="polickozkratka">
+                        <div class="zkratka">
+                            {{styl.zkratka}}
+                        </div>
+                    </div>
+                </div>
+                <div class="sloupec">
+                    <div class="textznacka">
+                        Značka
+                    </div>
+                    <div>
+                        <img  class="znacka" src="/assets/icon/{{styl.zkratka}}.png">
+                    </div>
+                </div>
+            </div>
+            <div class="popis">
+                Popis
+            </div>
+            <div class="textpopis">
+                <div innerHTML="{{styl.popis}}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sloupec">
+        <div class="Ani_realpravo">
+            <div class="Textanimace">
+                Animace
+            </div>
+            <div class="Ani_okraj">
+                <img class="Animace" src="assets/icon/{{styl.zkratka}}.gif">
+            </div>
+            <div class="Textreal">
+                Ve skutečnosti
+            </div>
+            <div class="Real_okraj">
+                <img class="Real" src="assets/icon/{{styl.zkratka}}real.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!--<div class="Slovnikpopis">
         <div class="Text">
-            {{ slovnik.titulek }}
+            {{styl.titulek}}
         </div>
-        <div class="Textzkratka">
-            Zkratka
-        </div>
-        <div class="Polickozkratka">
-        </div>
-        <div class="Zkratka">
-            {{ slovnik.zkratka }}
-        </div>
-        <div class="Textznacka">
-            Značka
-        </div>
-        <div class="Polickoznacka">
-        </div>
-        <div class="Znacka">
-            <img src="/assets/icon/RO.png">
-        </div>
+        <div class="rozdeleni">
+            <div class="sloupec">
+            <div class="Textzkratka">
+                Zkratka
+            </div>
+            <div class="Polickozkratka"> 
+               
+            </div> 
+            <div class="Zkratka">
+                {{styl.zkratka}}
+            </div>
+           
+            <div class="Textznacka">
+                Značka
+            </div>
+
+            <div class="Polickoznacka">
+            </div>
+
+            <div class="Znacka">
+                <img src="/assets/icon/{{styl.zkratka}}.png">
+            </div>
+        
+
         <div class="Popis">
             Popis
         </div>
         <div class="Textpopis">
-            <span class="Spanpopis"> {{ slovnik.popis }}</span>
+            <div innerHTML="{{styl.popis}}"></div>
         </div>
-        <button class="Btvlevo">
-            <img class="Vlevo" src="assets/icon/Vlevo.png">
-        </button>
     </div>
 
+    
+        
+    </div>
+    <div class="sloupec">
     <div class="Ani_realpravo">
         <div class="Textanimace">
             Animace
         </div>
-        <div class="Ani_okraj">
-        </div>
-        <div>
-            <img class="Animace" src="assets/icon/Řo.gif">
+        <div class="bublina">
+            <img class="Animace" src="assets/icon/{{styl.zkratka}}.gif">
         </div>
         <div class="Textreal">
             Ve skutečnosti
         </div>
-        <div class="Real_okraj">
+        <div class="bublina">
+            <img class="Real" src="assets/icon/{{styl.zkratka}}real.jpg">
         </div>
-        <div>
-            <img class="Real" src="assets/icon/Řoreal.jpg">
-        </div>
-        <button class="Btvpravo">
-            <img class="Vpravo" src="assets/icon/Vpravo.png">
-        </button>
     </div>
-    <div class="Strana">
-        1/8
-    </div>
+</div> 
+        
+     
 </div>
+<div class="Strana"></div>
+    <button class="Btvlevo">
+        <img class="Vlevo" src="assets/icon/Vlevo.png">
+    </button>    
+        1/8
+    <button class="Btvpravo">
+        <img class="Vpravo" src="assets/icon/Vpravo.png">
+    </button> -->

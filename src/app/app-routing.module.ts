@@ -9,7 +9,7 @@ import { NavodyComponent } from './pages/navody/navody.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'slovnik', component: SlovnikComponent },
+  { path: 'slovnik/:nazevStylu', component: SlovnikComponent },
   { path: 'pomucky/:nazevPomucky', component: PomuckyComponent },
   { path: 'navody', component: NavodyComponent },
   { path: 'vyukovymod', component: VyukovymodComponent }

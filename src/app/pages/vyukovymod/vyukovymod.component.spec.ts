@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { VyukaComponent } from './vyukovymod.component';
 
-import { VyukovymodComponent } from './vyukovymod.component';
-
-describe('VyukovymodComponent', () => {
-  let component: VyukovymodComponent;
-  let fixture: ComponentFixture<VyukovymodComponent>;
+describe('VyukaComponent', () => {
+  let component: VyukaComponent;
+  let fixture: ComponentFixture<VyukaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VyukovymodComponent ]
+      declarations: [ VyukaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VyukovymodComponent);
+    fixture = TestBed.createComponent(VyukaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

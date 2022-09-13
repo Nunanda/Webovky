@@ -30,7 +30,7 @@ const polePomucek: Array<Pomucka>= [{ nazev: "hacek", titulek: "Háček", popis:
         });
       }
     
-      public getpomuckaByName(name: string) {
+      public getPomuckaByName(name: string) {
         return this.mapaPomucek.get(name);
       }
     

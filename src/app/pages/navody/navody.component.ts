@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavodyService } from '../../service/navody.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navody',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavodyComponent implements OnInit {
 
-  constructor() { }
+  navod: any;
 
-  ngOnInit(): void {
+  constructor(private navodyService: NavodyService, private router: Router) { }
+
+  ngOnInit() {
+    const nazev = (this.router.url.split('/'))[2];
+    this.navod = this.navodyService.getNavodByName(nazev);
   }
 
 }

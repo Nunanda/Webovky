@@ -1,180 +1,107 @@
 .background{
-    width: 1900px;
-    min-height: 969px;
+    width: 100%;
+    min-width: 1080px;
+    max-height: 1080px;
 }
 
 .page{
-    background: #FFFFFF;
-    position: absolute;
-    left: 285px;
-    right: 285px;
-    width: 1350px;
-    height: 110%;
+    left: 15%;
+    right: 15%;
     top: 0;
     bottom: 0;
+    background: #FFFFFF;
+    position: absolute;
 }
 
 .hledat{
-    position: absolute;
-    width: 1350px;
-    height: 90px;
+    width: 100%;
+    height: 10%;
     background: #C8E7F4;
 }
 
 .logo{
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    margin-left: 10px;
-    border-radius: 10px;
+    width: 7%;
+    min-width: 75px;
+    margin-left: 1%;
 }
 
 .SELECRO{
-    position: absolute;
-    width: 117px;
-    height: 29px;
     left: 119px;
     top: 30px;
-    font-family: 'ABeeZee';
-    font-style: normal;
-    font-weight: 400;
-    font-size: x-large;
-    line-height: 26px;
+    position: absolute;
     display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
+    font-family: 'ABeeZee';
+    font-size: 1.3vw;
 }
 
 .Bunkahledat{
-    box-sizing: border-box;
-    position: absolute;
-    width: 850px;
-    height: 60px;
+    width: 64%;
+    height: 7%;
     left: 250px;
     top: 15px;
     background: #FFFFFF;
+    position: absolute;
     border: 1px solid #000000;
     border-radius: 50px;
 }
 
 .Hledat{
-    position: absolute;
-    width: 192px;
-    height: 38px;
+    height: 65%;
     left: 37px;
     top: 11px;
-    font-family: 'ABeeZee';
-    font-style: normal;
-    font-weight: 400;
-    font-size: x-large;
-    line-height: 26px;
+    position: absolute;
     display: flex;
     align-items: center;
-    color: #404040;
+    font-family: 'ABeeZee';
+    font-size: 1vw;
 }
 
 .Lupa{
-    position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 6%;
     left: 790px;
     top: 7px;
-}
-
-.ikona {
-    width: 40px;
-    height: 40px;
+    position: absolute;
 }
 
 .Tvořit-může-každý{
-    position: absolute;
-    width: 219px;
-    height: 68px;
+    width: 100%;
+    height: 8%;
     left: 1115px;
     top: 11px;
-    font-family: 'ABeeZee';
-    font-style: normal;
-    font-weight: 400;
-    font-size: x-large;
-    line-height: 26px;
+    position: absolute;
     display: flex;
     align-items: center;
-    text-align: center;
-    color: #000000;
+    font-family: 'ABeeZee';
+    font-size: 1.3vw;
 }
 
 .Menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0 30px;
-    gap: 30px;
-    position: absolute;
-    width: 1350px;
-    height: 70px;
-    left: 0;
+    width: 100%;
     top: 115px;
-    background: #FFFFFF;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 .Menu-block{
-    width: 230px;
-    height: 70px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    min-width: 230px;
+    min-height: 70px;
     background: #F4B9CD;
     border-radius: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .googleicons{
-    position: relative;
     left: -65px;
+    position: relative;
 }
 
 .Menu-text{
+    left: 42%;
+    top: 32%;
     position: absolute;
-    width: 117px;
-    height: 0;
-    left: 88px;
-    top: 50%;
-    line-height: 26px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
     font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
+    font-size: 1vw;
 }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 4;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}

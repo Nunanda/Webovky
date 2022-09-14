@@ -3,8 +3,6 @@
 }
 
 .sloupec{
-    padding-right: 30px;
-    padding-left: 30px;
     margin-top: 75px;
 }
 
@@ -20,7 +18,7 @@
 
 .text{
     margin-top: 20px;
-    margin-left: 18%;
+    margin-left: 13%;
     position: absolute;
     display: flex;
     font-family: Helvetica;
@@ -29,7 +27,8 @@
 }
 
 .textzkratka{
-    margin-left: 95px;
+    z-index: 2;
+    margin-left: 90px;
     position: absolute;
     display: flex;
     line-height: 26px;
@@ -40,25 +39,38 @@
 .polickozkratka{
     height: 150px;
     width: 150px;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-top: 2.9%;
+    margin-left: 3.6%;
     position: absolute;
     border-radius: 10%;
     background: #FFFFFF;
 }
 
 .zkratka{
-    margin-top: 60px;
-    margin-left: 15%;
+    z-index: 3;
+    margin-top: 42%;
+    margin-left: 17%;
     display: flex;
+    position: absolute;
     line-height: 26px;
     font-family: Helvetica;
     font-weight: 600;
     font-size: 72px;
 }
 
+.polickoznacka{
+    z-index: 1;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    margin-left: 30%;
+    position: absolute;
+    border-radius: 10%;
+    background: #FFFFFF;
+}
+
 .textznacka{
-    margin-left: 365px;
+    margin-left: 26.5%;
     position: absolute;
     display: flex;
     line-height: 26px;
@@ -75,7 +87,7 @@
 }
 
 .popis{
-    margin-top: 25%;
+    margin-top: 20%;
     margin-left: 95px;
     position: absolute;
     display: flex;
@@ -86,9 +98,9 @@
 }
 
 .textpopis{
-    margin-top: 28%;
+    margin-top: 23%;
     margin-left: 95px;
-    margin-right: 746px;
+    margin-right: 0px;
     position: absolute;
     display: flex;
     line-height: 35px;

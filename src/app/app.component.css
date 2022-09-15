@@ -1,7 +1,7 @@
 .background{
     width: 100%;
-    min-width: 1080px;
-    max-height: 1080px;
+    min-width: 100%;
+    max-height: 100%;
 }
 
 .page{
@@ -15,20 +15,19 @@
 
 .hledat{
     width: 100%;
-    height: 100px;
+    height: 10%;
     background: #C8E7F4;
 }
 
 .logo{
-    width: 90px;
-    height: 90px;
-    min-width: 75px;
+    width: 8%;
+    height: 100%;
     margin-left: 1%;
 }
 
 .SELECRO{
-    left: 119px;
-    top: 30px;
+    left: 9%;
+    top: 3%;
     position: absolute;
     display: flex;
     font-family: 'ABeeZee';
@@ -38,18 +37,17 @@
 .Bunkahledat{
     width: 64%;
     height: 7%;
-    left: 250px;
-    top: 15px;
+    left: 18%;
+    top: 1.5%;
     background: #FFFFFF;
     position: absolute;
     border: 1px solid #000000;
-    border-radius: 50px;
+    border-radius: 10em;
 }
 
 .Hledat{
-    height: 65%;
-    left: 37px;
-    top: 11px;
+    height: 100%;
+    left: 5%;
     position: absolute;
     display: flex;
     align-items: center;
@@ -59,15 +57,16 @@
 
 .Lupa{
     width: 6%;
-    left: 790px;
-    top: 7px;
+    height: 75%;
+    left: 90%;
+    top: 15%;
     position: absolute;
 }
 
 .Tvořit-může-každý{
     height: 8%;
-    left: 1115px;
-    top: 11px;
+    left: 83%;
+    top: 1%;
     position: absolute;
     display: flex;
     align-items: center;
@@ -77,7 +76,7 @@
 
 .Menu{
     width: 100%;
-    top: 75px;
+    top: 10%;
     position: absolute;
     display: flex;
     justify-content: center;

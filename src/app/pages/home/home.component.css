@@ -1,0 +1,80 @@
+.novinky {
+    position: absolute;
+    width: 1180px;
+    height: 190px;
+    left: 85px;
+    top: 291px;
+    background: #C8E7F4;
+    border-radius: 20px;
+}
+
+.nadpis {
+    position: absolute;
+width: 1140px;
+height: 190px;
+left: 20px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 40px;
+/* or 125% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+.text {
+    position: absolute;
+width: 1140px;
+height: 190px;
+left: 20px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 40px;
+/* or 125% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+.text2 {
+    position: absolute;
+width: 1140px;
+height: 190px;
+left: 20px;
+top: 0px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 40px;
+/* or 125% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+.sloupec {
+    margin-top: 75px;
+    display: flex;
+}

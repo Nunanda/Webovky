@@ -1,113 +1,101 @@
-.background{
-    width: 100%;
-    min-width: 100%;
-    max-height: 100%;
+/*CSS*/
+
+body{
+    margin: 0;
+    background-color: #fff;
+    
+    font-family: sans-serif;
+    min-height: 100vh;
+    background-image: url("../assets/icon/pozadi.png");
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    
 }
 
-.page{
-    left: 15%;
-    right: 15%;
+#page{
+    background-color: #fff;
+    width: 1350px;
+    min-height: 100vh;
+    margin: auto;
+    
+}
+
+#hledaci_lista {
+    position: sticky;
     top: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    position: absolute;
-}
-
-.hledat{
-    width: 100%;
-    height: 10%;
+    height: 90px;
     background: #C8E7F4;
-}
-
-.logo{
-    width: 8%;
-    height: 100%;
-    margin-left: 1%;
-}
-
-.SELECRO{
-    left: 9%;
-    top: 3%;
-    position: absolute;
-    display: flex;
-    font-family: 'ABeeZee';
-    font-size: 1.3vw;
-}
-
-.Bunkahledat{
-    width: 64%;
-    height: 7%;
-    left: 18%;
-    top: 1.5%;
-    background: #FFFFFF;
-    position: absolute;
-    border: 1px solid #000000;
-    border-radius: 10em;
-}
-
-.Hledat{
-    height: 100%;
-    left: 5%;
-    position: absolute;
     display: flex;
     align-items: center;
-    font-family: 'ABeeZee';
-    font-size: 1vw;
+    justify-content: space-around;
+    
 }
 
-.Lupa{
-    width: 6%;
-    height: 75%;
-    left: 90%;
-    top: 15%;
-    position: absolute;
-}
-
-.Tvořit-může-každý{
-    height: 8%;
-    left: 83%;
-    top: 1%;
-    position: absolute;
+#hledaci_bunka {
     display: flex;
+    background-color: #fff;
+    width: 800px;
+    height: 60px;
+    border-radius: 50px;
     align-items: center;
-    font-family: 'ABeeZee';
-    font-size: 1.3vw;
+    
+    
 }
 
-.Menu{
+#logo{
+    background-image: url("../assets/icon/logo.png");
+    background-size: cover;
+    background-position: center;
+    height: 90px;
+    width: 90px;
+}
+
+#selecro {
+    text-transform: uppercase;
+}
+
+#Lupa{
+    
+    
+}
+
+.Slogan{
+   
+    
+}
+
+#Menu{
     width: 100%;
-    top: 10%;
-    position: absolute;
+    height: 70px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
+    
 }
 
 .Menu-block{
-    min-width: 230px;
-    min-height: 70px;
+    width: 230px;
+    height: 70px;
     background: #F4B9CD;
     border-radius: 15px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
+    margin-top: 30px;
+    
 }
 
 .googleicons{
-    left: -65px;
-    position: relative;
+    
 }
 
 .Menu-text{
-    left: 42%;
-    top: 32%;
-    position: absolute;
-    display: flex;
-    font-family: 'Inter';
-    font-size: 1vw;
+    
 }
 
 .dropdown{
-    position: relative;
-    display: inline-block;
+  
 }
   
 .dropdown-content{
@@ -120,7 +108,7 @@
 }
   
 .dropdown-content a{
-    color: black;
+    color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;

@@ -1,107 +1,119 @@
-.Vše{
-    height: 57px;
-    left: 48%;
-    top: 230px;
-    position: absolute;
-    line-height: 36px;
+/*CSS*/
+#container {
+    margin-top: 15px;
+}
+
+#sloupce {
     display: flex;
+    
+}
+
+
+#sloupec_1 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 30px;
 }
 
-.Line{
-    max-width: 1130px;
-    left: 8%;
-    right: 8%;
-    top: 270px;
-    position: absolute;
-    border: 1px solid #000000;
-}
-
-.Lehké{
-    height: 43px;
-    left: 220px;
-    top: 300px;
-    position: absolute;
+#sloupec_2 {
+    width: 450px;
     display: flex;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Střední{
-    height: 43px;
-    left: 620px;
-    top: 300px;
-    position: absolute;
+#sloupec_3 {
+    width: 450px;
     display: flex;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Těžké{
-    height: 43px;
-    left: 1020px;
-    top: 300px;
-    position: absolute;
-    display: flex;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 25px;
-}
-
-.záložka{
+#bunka_lehke{
+    border-radius: 20px;
     width: 350px;
     height: 200px;
-    left: 80px;
-    top: 350px;
-    position: absolute;
-    background: #cde2ce;
-    border-radius: 20px;
+    background-color: #E2FAE3;
 }
 
-.záložkavzáložce0{
+#bunka_stredni{
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
+    background-color: #F9FAE1;
+}
+
+#bunka_tezke{
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
+    background-color: #FDE6E6;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+#zeleny_okraj{
     height: 30px;
     background: #3EDE44;
-    border-radius: 20px 20px 0% 0% / 20px 20px 0% 0%;
-}
-
-.Chobotnička{
-    height: 29px;
-    left: 135px;
-    position: absolute;
+    border-radius: 20px 20px 0px 0px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 14px;
+    justify-content: center;
+    color: #fff;
 }
 
-.obrázek{
+#zluty_okraj{
+    height: 30px;
+    background: #D6DA34;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+#cerveny_okraj{
+    height: 30px;
+    background: #f73636;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+#obsah {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#obrázek_návodu{
     height: 150px;
-    left: 10px;
-    top: 40px;
-    position: absolute;
     border-radius: 10px;
+    margin: 10px;
 }
 
-.záložkavzáložce1{
-    left: 185px;
-    top: 40px;
-    position: absolute;
+.popis{
+    
+   
 }
 
-.Text{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    line-height: 15px;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 12px;
+h2 {
+     text-align: center;
+     
+}
+
+#line {
+    width: 1250px;
+    background-color: #000;
+    height: 2px;
+    margin: auto;
+    opacity: 40%;
+
 }

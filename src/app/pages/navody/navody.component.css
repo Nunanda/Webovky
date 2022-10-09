@@ -1,13 +1,12 @@
 /*CSS*/
+
 #container {
     margin-top: 15px;
 }
 
 #sloupce {
     display: flex;
-    
 }
-
 
 #sloupec_1 {
     width: 450px;
@@ -99,14 +98,8 @@
     margin: 10px;
 }
 
-.popis{
-    
-   
-}
-
 h2 {
      text-align: center;
-     
 }
 
 #line {
@@ -115,5 +108,4 @@ h2 {
     height: 2px;
     margin: auto;
     opacity: 40%;
-
 }

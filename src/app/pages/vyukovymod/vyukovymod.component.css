@@ -6,9 +6,7 @@
 
 #sloupce {
     display: flex;
-    
 }
-
 
 #sloupec_1 {
     width: 450px;
@@ -60,20 +58,12 @@
     justify-content: center;
 }
 
-
-
 #obrázek_návodu{
     height: 150px;
     border-radius: 10px;
     margin: 10px;
 }
 
-.popis{
-    
-   
-}
-
 h2 {
      text-align: center;
-     
 }

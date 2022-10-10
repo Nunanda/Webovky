@@ -1,13 +1,12 @@
 /*CSS*/
+
 #container {
     margin-top: 15px;
 }
 
 #sloupce {
     display: flex;
-    
 }
-
 
 #sloupec_1 {
     width: 450px;
@@ -30,21 +29,21 @@
     align-items: center;
 }
 
-#bunka_lehke{
+#bunka_lehke {
     border-radius: 20px;
     width: 350px;
     height: 200px;
     background-color: #E2FAE3;
 }
 
-#bunka_stredni{
+#bunka_stredni {
     border-radius: 20px;
     width: 350px;
     height: 200px;
     background-color: #F9FAE1;
 }
 
-#bunka_tezke{
+#bunka_tezke {
     border-radius: 20px;
     width: 350px;
     height: 200px;
@@ -55,7 +54,7 @@
     font-weight: bold;
 }
 
-#zeleny_okraj{
+#zeleny_okraj {
     height: 30px;
     background: #3EDE44;
     border-radius: 20px 20px 0px 0px;
@@ -65,7 +64,7 @@
     color: #fff;
 }
 
-#zluty_okraj{
+#zluty_okraj {
     height: 30px;
     background: #D6DA34;
     border-radius: 20px 20px 0px 0px;
@@ -75,7 +74,7 @@
     color: #fff;
 }
 
-#cerveny_okraj{
+#cerveny_okraj {
     height: 30px;
     background: #f73636;
     border-radius: 20px 20px 0px 0px;
@@ -91,22 +90,14 @@
     justify-content: center;
 }
 
-
-
-#obrázek_návodu{
+#obrázek_návodu {
     height: 150px;
     border-radius: 10px;
     margin: 10px;
 }
 
-.popis{
-    
-   
-}
-
 h2 {
      text-align: center;
-     
 }
 
 #line {
@@ -115,5 +106,4 @@ h2 {
     height: 2px;
     margin: auto;
     opacity: 40%;
-
 }

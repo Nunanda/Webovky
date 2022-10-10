@@ -1,12 +1,14 @@
-.rozdeleni{
+/*CSS*/
+
+.rozdeleni {
     display: flex;
 }
 
-.sloupec{
+.sloupec {
     margin-top: 75px;
 }
 
-.slovnikpopis{
+.slovnikpopis {
     width: 675px;
     min-height: 675px;
     margin-top: 100px;
@@ -16,7 +18,7 @@
     display: flex;
 }
 
-.text{
+.text {
     margin-top: 20px;
     margin-left: 13%;
     position: absolute;
@@ -26,7 +28,7 @@
     font-size: 30px;
 }
 
-.textzkratka{
+.textzkratka {
     z-index: 2;
     margin-left: 90px;
     position: absolute;
@@ -36,7 +38,7 @@
     font-size: 30px;
 }
 
-.polickozkratka{
+.polickozkratka {
     height: 150px;
     width: 150px;
     margin-top: 2.9%;
@@ -46,7 +48,7 @@
     background: #FFFFFF;
 }
 
-.zkratka{
+.zkratka {
     z-index: 3;
     margin-top: 42%;
     margin-left: 17%;
@@ -58,7 +60,7 @@
     font-size: 72px;
 }
 
-.polickoznacka{
+.polickoznacka {
     z-index: 1;
     height: 150px;
     width: 150px;
@@ -69,7 +71,7 @@
     background: #FFFFFF;
 }
 
-.textznacka{
+.textznacka {
     margin-left: 26.5%;
     position: absolute;
     display: flex;
@@ -78,7 +80,7 @@
     font-size: 30px;
 }
 
-.znacka{
+.znacka {
     width: 150px;
     margin-top: 3%;
     margin-left: 25%;
@@ -86,7 +88,7 @@
     border-radius: 20px;
 }
 
-.popis{
+.popis {
     margin-top: 20%;
     margin-left: 95px;
     position: absolute;
@@ -97,7 +99,7 @@
     font-size: 30px;
 }
 
-.textpopis{
+.textpopis {
     margin-top: 23%;
     margin-left: 95px;
     margin-right: 0px;
@@ -108,13 +110,13 @@
     font-size: 30px;
 }
 
-.Ani_realpravo{
+.Ani_realpravo {
     width: 600px;
     margin-top: 15%;
     margin-left: 3%;
 }
 
-.Textanimace{
+.Textanimace {
     margin-left: 175px;
     position: absolute;
     display: flex;
@@ -124,7 +126,7 @@
     font-size: 30px;
 }
 
-.Textreal{
+.Textreal {
     margin-top: 25%;
     margin-left: 125px;
     position: absolute;
@@ -135,7 +137,7 @@
     font-size: 30px;
 }
 
-.Ani_okraj{
+.Ani_okraj {
     width: 445.71px;
     height: 254px;
     margin-top: 4%;
@@ -144,12 +146,12 @@
     border-radius: 20px;
 }
 
-.Animace{
+.Animace {
     width: 100%;
     border-radius: 15px;
 }
 
-.Real_okraj{
+.Real_okraj {
     width: 445.71px;
     height: 254px;
     margin-top: 27.5%;
@@ -158,7 +160,7 @@
     border-radius: 20px;
 }
 
-.Real{
+.Real {
     width: 100%;
     border-radius: 15px;
 }

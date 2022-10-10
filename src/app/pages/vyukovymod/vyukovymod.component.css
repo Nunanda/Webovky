@@ -6,9 +6,7 @@
 
 #sloupce {
     display: flex;
-    
 }
-
 
 #sloupec_1 {
     width: 450px;
@@ -31,7 +29,7 @@
     align-items: center;
 }
 
-#bunka{
+#bunka {
     border-radius: 20px;
     width: 350px;
     height: 200px;
@@ -44,7 +42,7 @@
     font-weight: bold;
 }
 
-#ruzovy_okraj{
+#ruzovy_okraj {
     height: 30px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
@@ -60,20 +58,12 @@
     justify-content: center;
 }
 
-
-
-#obrázek_návodu{
+#obrázek_návodu {
     height: 150px;
     border-radius: 10px;
     margin: 10px;
 }
 
-.popis{
-    
-   
-}
-
 h2 {
      text-align: center;
-     
 }

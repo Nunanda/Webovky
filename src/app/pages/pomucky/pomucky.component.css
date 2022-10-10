@@ -1,20 +1,9 @@
 /*CSS*/
 
-#nadpis{
-    text-align: center;
-}
-
-#Line{
-    width: 1250px;
-    background-color: #000;
-    height: 2px;
-    margin: auto;
-    opacity: 40%;
-    
-}
-
-#sloupec_1 {
-    width: 675px;
+.nadpis{
+    left: 43%;
+    top: 230px;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,21 +11,27 @@
     
 }
 
-#sloupec_2 {
-    width: 675px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+.Line{
+    max-width: 1130px;
+    left: 8%;
+    right: 8%;
+    top: 270px;
+    position: absolute;
+    border: 1px solid #000000;
 }
 
-#sloupce {
+.rozdeleni{
     display: flex;
-    margin-top: 50px;
-    
+}
+
+.sloupec{
+    padding-right: 30px;
+    padding-left: 30px;
+    flex: 2;
 }
 
 .bublina{
+    margin-top: 260px;
     border-radius: 10px;
     border: 4px solid #EA749B;
     text-align: center;
@@ -48,6 +43,7 @@
 }
 
 .bublina-spodni{
+    margin-top: 30px;
     border-radius: 10px;
     border: 4px solid #EA749B;
     text-align: center;
@@ -55,7 +51,6 @@
     width: 450px;
     
 }
-
 
 .pomucka{
     width: 200px;

@@ -7,19 +7,23 @@
     <div class="bublina">
       {{pomucka.popis}}
       <br/>
-      <img src="assets/icon/sada.png">
+      <img class="pomucka" src="assets/icon/{{pomucka.nazev}}.png">
     </div>
-    <div class="bublina-spodni">
+    <div *ngIf="pomucka.okno" class="bublina-spodni">
       {{pomucka.popis1}}
       <br/>
-      <img class="pomucka" src="assets/icon/hacek.png">
+      <img class="pomucka" src="assets/icon/{{pomucka.nazev}}1.png">
     </div>
   </div>
   <div class="sloupec">
     <div class="bublina">
-      {{pomucka.popis2}} ble
-      <br/>
-      <img class="pomucka" src="/src/assets/icon/favicon.png">
+      <img height=290 width=300 src="assets/icon/youtube.png">
+
     </div>
+    <div *ngIf="pomucka.okno2" class="bublina-spodni">
+        {{pomucka.popis2}}
+        <br/>
+        <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}2.png">
+    </div>    
   </div>
 </div>

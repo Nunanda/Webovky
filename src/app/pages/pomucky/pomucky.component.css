@@ -1,6 +1,6 @@
 /*CSS*/
 
-.nadpis{
+.nadpis {
     left: 43%;
     top: 230px;
     position: absolute;
@@ -10,7 +10,7 @@
     font-size: 30px;
 }
 
-.Line{
+.Line {
     max-width: 1130px;
     left: 8%;
     right: 8%;
@@ -19,17 +19,17 @@
     border: 1px solid #000000;
 }
 
-.rozdeleni{
+.rozdeleni {
     display: flex;
 }
 
-.sloupec{
+.sloupec {
     padding-right: 30px;
     padding-left: 30px;
     flex: 2;
 }
 
-.bublina{
+.bublina {
     margin-top: 260px;
     border-radius: 10px;
     border: 4px solid #EA749B;
@@ -38,7 +38,7 @@
     font-size: 30px;
 }
 
-.bublina-spodni{
+.bublina-spodni {
     margin-top: 30px;
     border-radius: 10px;
     border: 4px solid #EA749B;
@@ -47,7 +47,7 @@
     font-size: 30px;
 }
 
-.pomucka{
+.pomucka {
     width: 200px;
     height: 200px;
 }

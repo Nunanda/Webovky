@@ -9,6 +9,10 @@ import { VyukaComponent } from './pages/vyukovymod/vyukovymod.component';
 import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { NavodyComponent } from './pages/navody/navody.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

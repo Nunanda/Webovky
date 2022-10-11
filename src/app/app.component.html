@@ -1,5 +1,6 @@
 <img class="background" src="/assets/icon/pozadi.png">
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport"
+  content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <div class="page">
   <div class="hledat">
     <img class="logo" src="/assets/icon/logo.png">
@@ -16,103 +17,45 @@
       Tvořit může každý!
     </title>
   </div>
-  <div class="Menu">
-    <div class="Menu">
-      <div routerLink="/home">
-        <button routerlink="/home" class="Menu-block">
-          <img class="googleicons" src="/assets/icon/info.png">
-          <title class="Menu-text">
-            Selecro
-          </title>
-        </button>
-      </div>
-      <div class="dropdown">
-        <button class="Menu-block">
-          <img class="googleicons" src="/assets/icon/style.png">
-          <title class="Menu-text">
-            Pomůcky
-          </title>
-        </button>
-        <div class="dropdown-content">
-          <a href="/pomucky/hacek">
-            Háček
-          </a>
-          <a href="/pomucky/prize">
-            Příze
-          </a>
-          <a href="/pomucky/znackovac">
-            Značkovač
-          </a>
-          <a href="/pomucky/jehla">
-            Jehla
-          </a>
-          <a href="/pomucky/nuzky">
-            Nůžky
-          </a>
-          <a href="/pomucky/bezpecnostni-oci-a-nos">
-            Bezpečnostní oči a nos
-          </a>
-          <a href="/pomucky/chrastitko">
-            Chrastítko
-          </a>
-          <a href="/pomucky/pocitadlo">
-            Počítadlo
-          </a>
-          <a href="/pomucky/navijec-prize">
-            Navíječ příze
-          </a>
-          <a href="/pomucky/vypln">
-            Výplň
-          </a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="Menu-block">
-          <img class="googleicons" src="/assets/icon/book.png">
-          <title class="Menu-text">
-            Slovník
-          </title>
-        </button>
-        <div class="dropdown-content">
-          <a href="/slovnik/retizkove-oko">
-            Řetízkové oko
-          </a>
-          <a href="/slovnik/pevne-oko">
-            Pevné oko
-          </a>
-          <a href="/slovnik/kratky-sloupek">
-            Krátký sloupek
-          </a>
-          <a href="/slovnik/polodlouhy-sloupek">
-            Polodlouhý sloupek
-          </a>
-          <a href="/slovnik/dlouhy-sloupek">
-            Dlouhý sloupek
-          </a>
-          <a href="/slovnik/rozhackovani">
-            Rozháčkování
-          </a>
-          <a href="/slovnik/shackovani">
-            Sháčkování
-          </a>
-          <a href="/slovnik/magicky-krouzek">
-            Magický kroužek
-          </a>
-        </div>
-      </div>
-      <button routerLink="/vyukovymod" class="Menu-block">
-        <img class="googleicons" src="/assets/icon/school.png">
-        <title class="Menu-text">
-          Výukový mód
-        </title>
-      </button>
-      <button routerLink="/navody" class="Menu-block">
-        <img class="googleicons" src="/assets/icon/view.png">
-        <title class="Menu-text">
-          Návody
-        </title>
-      </button>
-    </div>
+  <div class="MenuBar">
+    <button mat-button routerLink="/home">
+      <mat-icon fontIcon="home"></mat-icon>
+        Selecro
+    </button>
+    <button mat-button [matMenuTriggerFor]="pomucky">
+      <mat-icon fontIcon="home"></mat-icon>
+      Pomůcky
+    </button>
+    <mat-menu #pomucky="matMenu">
+      <button mat-menu-item routerLink="/pomucky/hacek">Háček</button>
+      <button mat-menu-item routerLink="/pomucky/prize">Příze</button>
+      <button mat-menu-item routerLink="/pomucky/znackovac">Značkovač</button>
+      <button mat-menu-item routerLink="/pomucky/jehla">Jehla</button>
+      <button mat-menu-item routerLink="/pomucky/nuzky">Nůžky</button>
+      <button mat-menu-item routerLink="/pomucky/bezpecnostni-oci-a-nos">Bezpečnostní oči a nos</button>
+      <button mat-menu-item routerLink="/pomucky/chrastitko">Chrastítko</button>
+      <button mat-menu-item routerLink="/pomucky/pocitadlo">Počítadlo</button>
+      <button mat-menu-item routerLink="/pomucky/navijec-prize">Navíječ příze</button>
+      <button mat-menu-item routerLink="/pomucky/vypln">Výplň</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="slovnik">
+      Slovník
+    </button>
+    <mat-menu #slovnik="matMenu">
+      <button mat-menu-item routerLink="/slovnik/pevne-oko">Řetízkové oko</button>
+      <button mat-menu-item routerLink="/slovnik/kratky-sloupek">Krátký sloupek</button>
+      <button mat-menu-item routerLink="/slovnik/polodlouhy-sloupek">Polodlouhý sloupek</button>
+      <button mat-menu-item routerLink="/slovnik/dlouhy-sloupek">Dlouhý sloupek</button>
+      <button mat-menu-item routerLink="/slovnik/rozhackovani">Rozháčkování</button>
+      <button mat-menu-item routerLink="/slovnik/shackovani">Sháčkování</button>
+      <button mat-menu-item routerLink="/slovnik/magicky-krouzek">Magický kroužek</button>
+    </mat-menu>
+    <button mat-button routerLink="/vyukovymod">
+        Výukový mód
+    </button>
+    <button mat-button routerLink="/navody">
+        Návody
+    </button>
   </div>
   <router-outlet></router-outlet>
 </div>

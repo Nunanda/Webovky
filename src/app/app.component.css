@@ -18,6 +18,12 @@ body {
     margin: auto;
 }
 
+#footer {
+    width: 1350px;
+    min-height: 100vh;
+    padding: 35px;
+}
+
 #hledaci_lista {
     position: sticky;
     top: 0;
@@ -26,6 +32,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+  
 }
 
 #hledaci_bunka {
@@ -35,6 +43,8 @@ body {
     height: 60px;
     border-radius: 50px;
     align-items: center;
+    justify-content: center;
+    gap: 80%;
 }
 
 #logo {
@@ -46,6 +56,13 @@ body {
 
 #selecro {
     text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+#Slogan {
+    font-weight: 100;
+    font-size: 1.7rem;
 }
 
 #Menu {
@@ -55,6 +72,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px; 
+    margin-top: 2%;
 }
 
 .Menu-block {
@@ -62,11 +80,15 @@ body {
     height: 70px;
     background: #F4B9CD;
     border-radius: 15px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: none;
-    margin-top: 30px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
-  
+
+#Hledat {
+    opacity: 80%;
+    font-size: larger;
+}
+
 .dropdown-content {
     min-width: 160px;
     background-color: #f1f1f1;
@@ -93,4 +115,8 @@ body {
   
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.dropdown {
+    position: unset;
 }

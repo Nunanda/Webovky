@@ -7,16 +7,16 @@
     <div id="page">
       <div id="hledaci_lista">
         <img id="logo" src="/assets/icon/logo.png">
-        <h3 id="selecro">
+        <div id="selecro">
           selecro
-        </h3>      
+        </div>      
         <div id="hledaci_bunka">
-          Hledat...
-          <div id="Lupa"><img src="/assets/icon/search.png"></div>
+          <div id="Hledat">Hledat...</div>
+          <img src="/assets/icon/search1.svg">
         </div>
-        <h4 class="Slogan">
+        <div id="Slogan">
           Tvořit může každý!
-        </h4>
+        </div>
       </div>
       <div id="Menu">
         <div routerLink="/home">
@@ -104,7 +104,9 @@
             Návody
         </button>
       </div>
-      <router-outlet></router-outlet>
+      <div id="footer">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </body>
 </html>

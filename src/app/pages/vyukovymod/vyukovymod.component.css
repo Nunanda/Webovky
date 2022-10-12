@@ -1,11 +1,12 @@
 /*CSS*/
 
 #container {
-    margin-top: 15px;
+    margin-top: 2%;
 }
 
 #sloupce {
     display: flex;
+    margin-top: 2%;
 }
 
 #sloupec_1 {
@@ -50,10 +51,18 @@
     color: #fff;
 }
 
+.Název_návodu {
+   
+}
+
 #obsah {
     display: flex;
     align-items: center;
-    justify-content: center;
+    
+}
+
+table {
+    margin: 10px;
 }
 
 #obrázek_návodu {

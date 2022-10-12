@@ -1,7 +1,7 @@
 /*CSS*/
 
 #container {
-    margin-top: 15px;
+    
 }
 
 .novinky {
@@ -15,7 +15,7 @@
 }
 
 #privitaci_modry_blok {
-    padding: 20px;
+    margin-top: 2%;
 }
 
 p {

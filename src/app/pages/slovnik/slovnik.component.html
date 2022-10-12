@@ -1,51 +1,50 @@
-<div class="rozdeleni">
-    <div class="sloupec">
-        <div class="slovnikpopis">
-            <title class="text">
+<div id="sloupce">
+    <div id="sloupec1">
+        <div id="slovnik_popis">
+            <div id="nazev_stylu">
                 {{styl.titulek}}
-            </title>
-            <div class="rozdeleni">
-                <div class="sloupec">
-                    <title class="textzkratka">
-                        Zkratka
-                    </title>
-                    <div class="polickozkratka">
-                        <title class="zkratka">
+            </div>
+            <div id="pole">
+                <div id="pole1">
+                    <div class="text_zkratka">
+                        Zkratka:
+                    </div>
+                    <div class="pole_zkratka">
+                        <div id="zkratka">
                             {{styl.zkratka}}
-                        </title>
+                        </div>
                     </div>
                 </div>
-                <div class="sloupec">
-                    <title class="textznacka">
-                        Značka
-                    </title>
-                    <div class="polickozkratka">
+                <div id="pole2">
+                    <div class="text_znacka">
+                        Značka:
                     </div>
                     <img class="znacka" src="/assets/icon/{{styl.zkratka}}.png">
                 </div>
             </div>
-            <title class="popis">
-                Popis
-            </title>
-            <title class="textpopis">
-                {{styl.popis}}
-            </title>
+            <div id="popis_obsah">
+                <h2>Popis</h2>
+                <div class="popis">
+                    {{styl.popis}}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="sloupec">
-        <div class="Ani_realpravo">
-            <title class="Textanimace">
-                Animace
-            </title>
-            <div class="Ani_okraj">
-                <img class="Animace" src="assets/icon/{{styl.zkratka}}.gif">
-            </div>
-            <title class="Textreal">
-                Ve skutečnosti
-            </title>
-            <div class="Real_okraj">
-                <img class="Real" src="assets/icon/{{styl.zkratka}}real.png">
-            </div>
+
+    <div id="sloupec2">
+        <div class="Text_animace">
+            Animace
+        </div>
+        <div class="Gif_okraj">
+            <img class="Animace" src="assets/icon/{{styl.zkratka}}.gif">
+        </div>
+        <div class="Text_real">
+            Ve skutečnosti
+        </div>
+        <div class="Video_okraj">
+            <img class="Real" src="assets/icon/{{styl.zkratka}}real.png">
         </div>
     </div>
 </div>
+
+

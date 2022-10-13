@@ -5,17 +5,18 @@
 }
 
 .novinky {
-    width: 1180px;
-    height: 190px;
     background: #C8E7F4;
     border-radius: 20px;
     text-align: center;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     margin: auto;
-    padding: 10px;
+    height: 190px;
+    width: 1100px;
 }
 
 #privitaci_modry_blok {
-    margin-top: 2%;
+    
 }
 
 p {
@@ -28,39 +29,44 @@ h2 {
     font-weight: bold;
 }
 
-.obrazek_hackovani {
+#obrazek_hackovani {
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 10px;
+   margin: 20px;
 }
 
-#slon {
+.obrazek {
     padding: 10px;
+    max-width: 100%;
 }
 
-#jednicka {
-    padding: 10px;
-}
-
-#medved {
-    padding: 10px;
-}
-
-.soc_site {
+#soc_site {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#mail {
-    padding: 20px;
+.card {
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
 }
 
-#ig {
-    padding: 20px;
+.socials_logo {
+    height: 80px;
+    width: 80px;
 }
 
-#pin {
-    padding: 20px;
+#insta_logo {
+    height: 65px;
+    width: 65px;
 }
+

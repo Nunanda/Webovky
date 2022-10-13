@@ -11,15 +11,19 @@ body {
     box-sizing: border-box;
 }
 
+#container {
+    
+}
+
 #page {
     background-color: #fff;
-    width: 1350px;
+    width: 85vw;
     min-height: 100vh;
     margin: auto;
 }
 
-#footer {
-    width: 1350px;
+#page_padding {
+    width: 85vw;
     min-height: 100vh;
     padding: 35px;
 }
@@ -39,7 +43,7 @@ body {
 #hledaci_bunka {
     display: flex;
     background-color: #fff;
-    width: 800px;
+    width: 700px;
     height: 60px;
     border-radius: 50px;
     align-items: center;
@@ -62,7 +66,7 @@ body {
 
 #Slogan {
     font-weight: 100;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 #Menu {
@@ -76,10 +80,10 @@ body {
 }
 
 .Menu-block {
-    width: 230px;
+    width: 200px;
     height: 70px;
     background: #F4B9CD;
-    border-radius: 15px;
+    border-radius: 20px;
     border: none;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
@@ -87,6 +91,10 @@ body {
 #Hledat {
     opacity: 80%;
     font-size: larger;
+}
+
+#Lupa {
+
 }
 
 .dropdown-content {

@@ -3,6 +3,8 @@
 #sloupce {
     display: flex;
     margin-top: 2%;
+    width: 85vw;
+    margin: auto;
 }
 
 #sloupec1 {
@@ -27,6 +29,7 @@
     background: #C8E7F4;
     padding-top: 20px;
     padding-bottom: 30px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 #nazev_stylu {
@@ -67,11 +70,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 #zkratka {
-
-    
     font-weight: 600;
     font-size: 72px;
 }
@@ -90,6 +92,7 @@
 .znacka {
     width: 150px;
     border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 .text_popis {
@@ -121,8 +124,8 @@
 
 .Gif_okraj {
     width: 445.71px;
-    height: 254px;
-    border: 4px solid #EA749B;
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     border-radius: 20px;
 }
 
@@ -133,8 +136,8 @@
 
 .Video_okraj {
     width: 445.71px;
-    height: 254px;
-    border: 4px solid #EA749B;
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     border-radius: 20px;
 }
 

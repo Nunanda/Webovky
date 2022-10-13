@@ -1,7 +1,7 @@
 /*CSS*/
 
 #container {
-    margin-top: 2%;
+    
 }
 
 #sloupce {
@@ -39,6 +39,7 @@
     width: 350px;
     height: 200px;
     background-color: #E2FAE3;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 #bunka_stredni {
@@ -46,6 +47,7 @@
     width: 350px;
     height: 200px;
     background-color: #F9FAE1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 #bunka_tezke {
@@ -53,6 +55,7 @@
     width: 350px;
     height: 200px;
     background-color: #FDE6E6;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 
@@ -105,9 +108,9 @@ h2 {
 }
 
 #line {
-    width: 1250px;
+    width: 98%;
     background-color: #000;
     height: 1.5px;
     margin: auto;
-    opacity: 50%;
+    opacity: 35%;
 }

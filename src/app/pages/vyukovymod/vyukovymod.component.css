@@ -1,7 +1,7 @@
 /*CSS*/
 
 #container {
-    margin-top: 2%;
+  
 }
 
 #sloupce {
@@ -30,18 +30,19 @@
     align-items: center;
 }
 
-#bunka {
+.bunka {
     border-radius: 20px;
     width: 350px;
     height: 200px;
     background-color: #f7e4ea;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 .strong {
     font-weight: bold;
 }
 
-#ruzovy_okraj {
+.ruzovy_okraj {
     height: 30px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
@@ -49,6 +50,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+  
 }
 
 .Název_návodu {

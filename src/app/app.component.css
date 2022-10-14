@@ -1,117 +1,103 @@
-.background{
-    width: 100%;
-    min-width: 1080px;
-    max-height: 1080px;
+/*CSS*/
+
+body {
+    margin: 0;
+    background-color: #fff;
+    font-family: sans-serif;
+    min-height: 100vh;
+    background-image: url("../assets/icon/pozadi.png");
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
 }
 
-.page{
-    left: 15%;
-    right: 15%;
+#container {
+    
+}
+
+#page {
+    background-color: #fff;
+    width: 85vw;
+    min-height: 100vh;
+    margin: auto;
+}
+
+#page_padding {
+    width: 85vw;
+    min-height: 100vh;
+    padding: 35px;
+}
+
+#hledaci_lista {
+    position: sticky;
     top: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    position: absolute;
-}
-
-.hledat{
-    width: 100%;
-    height: 100px;
-    background: #C8E7F4;
-}
-
-.logo{
-    width: 90px;
     height: 90px;
-    min-width: 75px;
-    margin-left: 1%;
-}
-
-.SELECRO{
-    left: 119px;
-    top: 30px;
-    position: absolute;
+    background: #C8E7F4;
     display: flex;
-    font-family: 'ABeeZee';
-    font-size: 1.3vw;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+  
 }
 
-.Bunkahledat{
-    width: 64%;
-    height: 7%;
-    left: 250px;
-    top: 15px;
-    background: #FFFFFF;
-    position: absolute;
-    border: 1px solid #000000;
+#hledaci_bunka {
+    display: flex;
+    background-color: #fff;
+    width: 700px;
+    height: 60px;
     border-radius: 50px;
-}
-
-.Hledat{
-    height: 65%;
-    left: 37px;
-    top: 11px;
-    position: absolute;
-    display: flex;
     align-items: center;
-    font-family: 'ABeeZee';
-    font-size: 1vw;
+    justify-content: center;
+    gap: 80%;
 }
 
-.Lupa{
-    width: 6%;
-    left: 790px;
-    top: 7px;
-    position: absolute;
+#logo {
+    background-size: cover;
+    background-position: center;
+    height: 90px;
+    width: 90px;
 }
 
-.Tvořit-může-každý{
-    height: 8%;
-    left: 1115px;
-    top: 11px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    font-family: 'ABeeZee';
-    font-size: 1.3vw;
+#selecro {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
 }
 
-.Menu{
+#Slogan {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+#Menu {
     width: 100%;
-    top: 75px;
-    position: absolute;
+    height: 70px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 30px; 
+    margin-top: 2%;
 }
 
-.Menu-block{
-    min-width: 230px;
-    min-height: 70px;
+.Menu-block {
+    width: 200px;
+    height: 70px;
     background: #F4B9CD;
-    border-radius: 15px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.googleicons{
-    left: -65px;
-    position: relative;
+#Hledat {
+    opacity: 80%;
+    font-size: larger;
 }
 
-.Menu-text{
-    left: 42%;
-    top: 32%;
-    position: absolute;
-    display: flex;
-    font-family: 'Inter';
-    font-size: 1vw;
+#Lupa {
+
 }
 
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-  
-.dropdown-content{
+.dropdown-content {
     min-width: 160px;
     background-color: #f1f1f1;
     display: none;
@@ -120,8 +106,8 @@
     z-index: 4;
 }
   
-.dropdown-content a{
-    color: black;
+.dropdown-content a {
+    color: #000;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -131,10 +117,14 @@
     background-color: #ddd;
 }
   
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
     display: block;
 }
   
-.dropdown:hover .dropbtn{
+.dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.dropdown {
+    position: unset;
 }

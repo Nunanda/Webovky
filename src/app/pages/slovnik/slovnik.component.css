@@ -1,164 +1,151 @@
-.rozdeleni{
+/*CSS*/
+
+#sloupce {
     display: flex;
+    margin-top: 2%;
+    width: 85vw;
+    margin: auto;
 }
 
-.sloupec{
-    margin-top: 75px;
+#sloupec1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
-.slovnikpopis{
-    width: 675px;
-    min-height: 675px;
-    margin-top: 100px;
-    margin-left: 5%;
+#sloupec2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#slovnik_popis {
+    width: 600px;
+    min-height: 600px;
     border-radius: 15px;
     background: #C8E7F4;
-    display: flex;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.text{
-    margin-top: 20px;
-    margin-left: 13%;
-    position: absolute;
-    display: flex;
-    font-family: Helvetica;
+#nazev_stylu {
+    text-align: center;
     font-weight: bold;
     font-size: 30px;
+    padding: 10px;
 }
 
-.textzkratka{
-    z-index: 2;
-    margin-left: 90px;
-    position: absolute;
+#pole1 {
+    width: 337.5px;
     display: flex;
-    line-height: 26px;
-    font-family: Helvetica;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pole2{
+    width: 337.5px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+
+#pole {
+    display: flex;
+}
+
+.text_zkratka {
     font-size: 30px;
 }
 
-.polickozkratka{
+.pole_zkratka {
     height: 150px;
     width: 150px;
-    margin-top: 2.9%;
-    margin-left: 3.6%;
-    position: absolute;
     border-radius: 10%;
     background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.zkratka{
-    z-index: 3;
-    margin-top: 42%;
-    margin-left: 17%;
-    display: flex;
-    position: absolute;
-    line-height: 26px;
-    font-family: Helvetica;
+#zkratka {
     font-weight: 600;
     font-size: 72px;
 }
 
-.polickoznacka{
-    z-index: 1;
+.polickoznacka {
     height: 150px;
     width: 150px;
-    display: flex;
-    margin-left: 30%;
-    position: absolute;
     border-radius: 10%;
     background: #FFFFFF;
 }
 
-.textznacka{
-    margin-left: 26.5%;
-    position: absolute;
-    display: flex;
-    line-height: 26px;
-    font-family: Helvetica;
+.text_znacka {
     font-size: 30px;
 }
 
-.znacka{
+.znacka {
     width: 150px;
-    margin-top: 3%;
-    margin-left: 25%;
-    position: absolute;
     border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.popis{
-    margin-top: 20%;
-    margin-left: 95px;
-    position: absolute;
-    display: flex;
-    line-height: 26px;
-    font-family: Helvetica;
+.text_popis {
     font-weight: bold;
     font-size: 30px;
 }
 
-.textpopis{
-    margin-top: 23%;
-    margin-left: 95px;
-    margin-right: 0px;
-    position: absolute;
-    display: flex;
-    line-height: 35px;
-    font-family: Helvetica;
+.popis {
     font-size: 30px;
 }
 
-.Ani_realpravo{
-    width: 600px;
-    margin-top: 15%;
-    margin-left: 3%;
+#popis_obsah {
+    width: 80%;
+    margin: auto;
+    margin-top: 35px;
+
 }
 
-.Textanimace{
-    margin-left: 175px;
-    position: absolute;
-    display: flex;
-    line-height: 26px;
-    font-family: Helvetica;
+.Text_animace {
     font-weight: bold;
     font-size: 30px;
 }
 
-.Textreal{
-    margin-top: 25%;
-    margin-left: 125px;
-    position: absolute;
-    display: flex;
-    line-height: 15px;
-    font-family: Helvetica;
+.Text_real {
     font-weight: bold;
     font-size: 30px;
+    margin-top: 30px;
 }
 
-.Ani_okraj{
+.Gif_okraj {
     width: 445.71px;
-    height: 254px;
-    margin-top: 4%;
-    position: absolute;
-    border: 4px solid #EA749B;
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     border-radius: 20px;
 }
 
-.Animace{
+.Animace {
     width: 100%;
     border-radius: 15px;
 }
 
-.Real_okraj{
+.Video_okraj {
     width: 445.71px;
-    height: 254px;
-    margin-top: 27.5%;
-    position: absolute;
-    border: 4px solid #EA749B;
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     border-radius: 20px;
 }
 
-.Real{
+.Real {
     width: 100%;
     border-radius: 15px;
+}
+
+h2 {
+    font-weight: bold;
 }

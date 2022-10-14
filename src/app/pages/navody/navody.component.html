@@ -1,35 +1,133 @@
-<title class="Vše">
-    Vše
-</title>
-<hr class="Line">
-<title class="Lehké">
-    Lehké
-</title>
-<title class="Střední">
-    Střední
-</title>
-<title class="Těžké">
-    Těžké
-</title>
-<div class="záložka">
-    <div class="záložkavzáložce0">
-        <title class="Chobotnička">
-            {{navod.nazev}}
-        </title>
-    </div>
-    <img class="obrázek" src="../assets/icon/Harold.jpg">
-    <div class="záložkavzáložce1">
-        <title class="Text">
-            Název:
-            {{navod.nazev}}
-            <br/>
-            <br/>
-            Zkratky:
-            {{navod.zkratky}}
-            <br/>
-            <br/>
-            Pomůcky:
-            {{navod.pomucky}}
-        </title>
+<div id="container">
+    <h2>
+        Návody
+    </h2>
+    <div id="line"></div>
+    <div id="sloupce">
+        <div id="sloupec_1">
+            <h3>
+                Lehké
+            </h3>
+            <div class="bunky">
+                <div id="bunka_lehke">
+                    <div id="zeleny_okraj">
+                        <div class="Název_návodu">
+                            {{navod.nazev}}
+                        </div>
+                    </div>
+                    <div id="obsah">
+                        <img id="obrázek_návodu" src="../assets/icon/{{navod.nazev}}.jpg">
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Název:
+                                    </strong>
+                                    {{navod.nazev}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Zkratky:
+                                    </strong>
+                                    {{navod.zkratky}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Pomůcky:
+                                    </strong>
+                                    {{navod.pomucky}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div id="sloupec_2">
+            <h3>
+                Střední
+            </h3>
+            <div class="bunky">
+                <div id="bunka_stredni">
+                    <div id="zluty_okraj"> 
+                        Vodní želva
+                    </div>
+                    <div id="obsah">
+                        <img id="obrázek_návodu" src="../assets/icon/Vodní želva.jpg">
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Název:
+                                    </strong>
+                                    Harold
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Zkratky:
+                                    </strong>
+                                    Mk, Ks, A, Po, Řo, V
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Pomůcky:
+                                    </strong>
+                                    Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sloupec_3">
+            <h3>
+                Těžké
+            </h3>
+            <div class="bunky">
+                <div id="bunka_tezke">
+                    <div id="cerveny_okraj">
+                        Malý slon
+                    </div>
+                    <div id="obsah">
+                        <img id="obrázek_návodu" src="../assets/icon/slon.png">
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Název:
+                                    </strong>
+                                    Harold
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Zkratky:
+                                    </strong>
+                                    Mk, Ks, A, Po, Řo, V
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Pomůcky:
+                                    </strong>
+                                    Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

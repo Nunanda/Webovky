@@ -2,5 +2,18 @@ export type Navod =  {
   nazev: string,
   zkratky: string,
   pomucky: string,
-  popisy: any
+  popisy: Array<Popis>,
+  obtiznost: Obtiznost
+}
+
+export type Popis = {
+  obrazek: boolean,
+  nazevCasti: string,
+  popis: string
+}
+
+export enum Obtiznost {
+  tezky='tezky',
+  stredni='stredni',
+  lehky='lehky'
 }

@@ -27,5 +27,4 @@ const poleNavody: Array<Navod>= [{obtiznost: Obtiznost.lehky,  nazev: "Dinosauru
         return this.mapaNavody.get(name);
       }
 
-
     }

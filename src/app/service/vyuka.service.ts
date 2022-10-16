@@ -23,8 +23,8 @@ const poleVyrobku: Array<Vyrobek>= [{ nazev: "Chobotnicka", popis: "vyrobek na v
         });
       }
 
-      public getvyrobekByName(name: string) {
-        return this.mapaVyrobku.get(name);
+      public getvyrobek() {
+        return this.mapaVyrobku;
       }
 
     }

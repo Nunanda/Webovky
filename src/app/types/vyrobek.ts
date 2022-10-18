@@ -2,13 +2,13 @@ export type Vyrobek = {
     nazev: string,
     popis: string,
     pocet: string,
-    kroky: Array<Popis>
+    kroky: Array<Info>
 }
 
-export type Popis = {
+export type Info = {
     cislo: string,
     styl: string,
-    pouzijeme: string
-    popis: string
+    pouzijeme: string,
+    popis: string,
     videoUrl: string
   }

@@ -1,78 +1,68 @@
 /*CSS*/
 
 #container {
-  
+    
 }
 
 #sloupce {
     display: flex;
     margin-top: 2%;
-}
-
-#sloupec_1 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_2 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_3 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bunka {
     border-radius: 20px;
-    width: 350px;
-    height: 200px;
     background-color: #f7e4ea;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.strong {
-    font-weight: bold;
-}
-
 .ruzovy_okraj {
-    height: 30px;
+    padding: 5px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     color: #fff;
   
 }
+
+.obsah {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .Název_návodu {
    
 }
 
-#obsah {
+.text {
+    padding-left: 10%;
     display: flex;
     align-items: center;
-    
 }
 
-table {
-    margin: 10px;
-}
+
 
 #obrázek_návodu {
-    height: 150px;
-    border-radius: 10px;
-    margin: 10px;
+    width: 120px;
+    border-radius: 20px;
+    
 }
 
 h2 {
      text-align: center;
+}
+
+.wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 377) {
+   
 }

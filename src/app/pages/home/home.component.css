@@ -11,8 +11,6 @@
     padding: 15px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     margin: auto;
-    height: 190px;
-    width: 1100px;
 }
 
 #privitaci_modry_blok {
@@ -29,16 +27,15 @@ h2 {
     font-weight: bold;
 }
 
-#obrazek_hackovani {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 20px;
-}
-
 .obrazek {
-    padding: 10px;
-    max-width: 100%;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    
+}
+#obrazky {
+   text-align: center;
 }
 
 #soc_site {
@@ -48,25 +45,22 @@ h2 {
 }
 
 .card {
-    margin: 20px;
-    height: 100px;
-    width: 100px;
-    border-radius: 20px;
+    margin-left: 20px;
+    padding: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
+    flex: 1;
 }
 
 .socials_logo {
-    height: 80px;
-    width: 80px;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    
 }
 
-#insta_logo {
-    height: 65px;
-    width: 65px;
-}
+
 

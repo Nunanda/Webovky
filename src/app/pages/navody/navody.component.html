@@ -2,131 +2,113 @@
     <h2>
         Návody
     </h2>
-    <div id="line"></div>
-    <div id="sloupce">
-        <div id="sloupec_1">
-            <h3>
-                Lehké
-            </h3>
-            <div class="bunky">
-                <div id="bunka_lehke">
-                    <div id="zeleny_okraj">
-                        <div class="Název_návodu">
-                            {{navod.nazev}}
-                        </div>
-                    </div>
-                    <div id="obsah">
-                        <img id="obrázek_návodu" src="../assets/icon/{{navod.nazev}}.jpg">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Název:
-                                    </strong>
-                                    {{navod.nazev}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Zkratky:
-                                    </strong>
-                                    {{navod.zkratky}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    {{navod.pomucky}}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> 
-            </div>
-        </div>
-        <div id="sloupec_2">
-            <h3>
-                Střední
-            </h3>
-            <div class="bunky">
-                <div id="bunka_stredni">
-                    <div id="zluty_okraj"> 
-                        Vodní želva
-                    </div>
-                    <div id="obsah">
-                        <img id="obrázek_návodu" src="../assets/icon/Vodní želva.jpg">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Název:
-                                    </strong>
-                                    Harold
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Zkratky:
-                                    </strong>
-                                    Mk, Ks, A, Po, Řo, V
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+    <div id="bunky">
+        <div class="bunka green">
+            <div class="name green_name">
+                <div class="Název_návodu">
+                    <!--{{navod.nazev}}-->
+                    Harold 
                 </div>
             </div>
+            <div id="obsah">
+                <img id="obrázek_návodu" src="../assets/icon/Harold.jpg">
+                <table>
+                    <tr>
+                        <td>
+                            <strong>
+                                Název:
+                            </strong>
+                            <!--{{navod.nazev}}-->
+                            Harold
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Zkratky:
+                            </strong>
+                            <!--{{navod.zkratky}}-->
+                            Mk, Ks, A, Po, Řo, V
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Pomůcky:
+                            </strong>
+                            <!--{{navod.pomucky}}-->
+                            Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div> 
+        <div class="bunka yellow">
+            <div class="name yellow_name"> 
+                Vodní želva
+            </div>
+            <div id="obsah">
+                <img id="obrázek_návodu" src="../assets/icon/Vodní želva.jpg">
+                <table>
+                    <tr>
+                        <td>
+                            <strong>
+                                Název:
+                            </strong>
+                            Harold
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Zkratky:
+                            </strong>
+                            Mk, Ks, A, Po, Řo, V
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Pomůcky:
+                            </strong>
+                            Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div id="sloupec_3">
-            <h3>
-                Těžké
-            </h3>
-            <div class="bunky">
-                <div id="bunka_tezke">
-                    <div id="cerveny_okraj">
-                        Malý slon
-                    </div>
-                    <div id="obsah">
-                        <img id="obrázek_návodu" src="../assets/icon/slon.png">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Název:
-                                    </strong>
-                                    Harold
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Zkratky:
-                                    </strong>
-                                    Mk, Ks, A, Po, Řo, V
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+        <div class="bunka red">
+            <div class="name red_name">
+                Malý slon
+            </div>
+            <div id="obsah">
+                <img id="obrázek_návodu" src="../assets/icon/slon.png">
+                <table>
+                    <tr>
+                        <td>
+                            <strong>
+                                Název:
+                            </strong>
+                            Harold
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Zkratky:
+                            </strong>
+                            Mk, Ks, A, Po, Řo, V
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Pomůcky:
+                            </strong>
+                            Háček (velikost 2 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka, výplň
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

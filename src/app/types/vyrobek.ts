@@ -1,4 +1,5 @@
 export type Vyrobek = {
+    title: string;
     nazev: string,
     popis: string,
     pocet: string,

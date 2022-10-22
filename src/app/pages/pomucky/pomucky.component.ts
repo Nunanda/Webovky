@@ -10,16 +10,24 @@ import { Pomucka, PopisPomucek } from 'src/app/types';
 })
 export class PomuckyComponent implements OnInit {
 
-  pomucka: null;
-  kroky = Array<PopisPomucek>;
-  
+  pomucka: Pomucka | null = null;
+  kroky: Array<PopisPomucek> | undefined = [];
 
-  constructor(private pomuckyService: PomuckyService, private router: Router) { }
+  constructor(private pomuckyService: PomuckyService, private router: Router) {
+   }
 
   ngOnInit() {
+    this.reload();
+  }
+
+  ngOnChanges(){
+    this.reload();
+  }
+
+  private reload(){
     const nazev = (this.router.url.split('/'))[2];
     this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomuckyService.getVsechnyPomucky();
+    this.kroky = this.pomucka?.kroky;
   }
 
 }

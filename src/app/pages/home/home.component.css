@@ -1,80 +1,66 @@
+/*CSS*/
+
+#container {
+    
+}
+
 .novinky {
-    position: absolute;
-    width: 1180px;
-    height: 190px;
-    left: 85px;
-    top: 291px;
     background: #C8E7F4;
     border-radius: 20px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    margin: auto;
 }
 
-.nadpis {
-    position: absolute;
-width: 1140px;
-height: 190px;
-left: 20px;
-top: 0px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 40px;
-/* or 125% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
+#privitaci_modry_blok {
+    
 }
 
-.text {
-    position: absolute;
-width: 1140px;
-height: 190px;
-left: 20px;
-top: 0px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 40px;
-/* or 125% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
+p {
+    font-weight: 400;
+    font-size: large;
 }
 
-.text2 {
-    position: absolute;
-width: 1140px;
-height: 190px;
-left: 20px;
-top: 0px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 40px;
-/* or 125% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
+h2 {
+    text-align: center;
+    font-weight: bold;
 }
 
-.sloupec {
-    margin-top: 75px;
+.obrazek {
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    
+}
+#obrazky {
+   text-align: center;
+}
+
+#soc_site {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.card {
+    margin-left: 20px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    flex: 1;
+}
+
+.socials_logo {
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    
+}
+
+
+

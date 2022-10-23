@@ -1,68 +1,70 @@
-.Výukový-mód{
-    left: 43%;
-    top: 230px;
-    position: absolute;
+/*CSS*/
+
+#container {
+    
+}
+
+#sloupce {
     display: flex;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 30px;
+    margin-top: 2%;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.bunka{
-    left: -800px;
-    top: -550px;
-    position: absolute;
-}
-
-.záložka{
-    width: 350px;
-    height: 200px;
-    left: 890px;
-    top: 853px;
-    position: absolute;
-    background: #ddced3;
+.bunka {
     border-radius: 20px;
+    background-color: #f7e4ea;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    min-width: 364px;
+    width: 30%;
 }
 
-.záložkavzáložce0{
-    height: 30px;
+.ruzovy_okraj {
+    padding: 5px;
     background: #EA749B;
-    border-radius: 20px 20px 0% 0% / 20px 20px 0% 0%;
+    border-radius: 20px 20px 0px 0px;
+    text-align: center;
+    color: #fff;
+  
 }
 
-.Chobotnička{
-    height: 29px;
-    left: 135px;
-    position: absolute;
+.obsah {
+    display: flex;
+    padding: 15px;
+    justify-content: center;    
+}
+
+
+.Nazev_navodu {
+   
+}
+
+.text {
+    padding-left: 15px;
     display: flex;
     align-items: center;
-    color: #FFFFFF;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 14px;
+   
 }
 
-.obrázek{
+
+
+#obrazek_navodu {
     height: 150px;
-    left: 10px;
-    top: 40px;
-    position: absolute;
     border-radius: 10px;
+    
 }
 
-.záložkavzáložce1{
-    left: 185px;
-    top: 40px;
-    position: absolute;
+h2 {
+     text-align: center;
 }
 
-.Text{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    line-height: 15px;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 12px;
+.wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 377) {
+   
 }

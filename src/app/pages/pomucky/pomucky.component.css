@@ -1,11 +1,13 @@
+/*CSS*/
+
 .nadpis{
     left: 43%;
     top: 230px;
     position: absolute;
     display: flex;
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .Line{
@@ -22,30 +24,46 @@
 }
 
 .sloupec{
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 5%;
+    padding-left: 5%;
+   
+    flex: 2;
+}
+
+.sloupec1{
+    padding-right: 5%;
+    padding-left: 5%;
+    
     flex: 2;
 }
 
 .bublina{
     margin-top: 260px;
+    margin-right: 5%;
+    margin-left: 5%;
     border-radius: 10px;
     border: 4px solid #EA749B;
     text-align: center;
-    font-family: 'Inter';
     font-size: 30px;
+    width: 450px;
 }
 
 .bublina-spodni{
     margin-top: 30px;
+    margin-right: 5%;
+    margin-left: 5%;
     border-radius: 10px;
     border: 4px solid #EA749B;
     text-align: center;
-    font-family: 'Inter';
     font-size: 30px;
+    width: 450px;
 }
 
 .pomucka{
     width: 200px;
     height: 200px;
+}
+
+#container {
+    margin-top: 15px;
 }

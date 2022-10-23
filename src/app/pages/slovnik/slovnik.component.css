@@ -3,62 +3,26 @@
 #sloupce {
     display: flex;
     margin-top: 2%;
-    width: 85vw;
-    margin: auto;
-}
-
-#sloupec1 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-#sloupec2 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
 }
 
 #slovnik_popis {
-    width: 600px;
-    min-height: 600px;
     border-radius: 15px;
     background: #C8E7F4;
-    padding-top: 20px;
-    padding-bottom: 30px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    padding: 25px;
+    max-width: 600px;
 }
 
 #nazev_stylu {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    padding: 10px;
 }
 
-#pole1 {
-    width: 337.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#pole2{
-    width: 337.5px;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
-
-
-#pole {
-    display: flex;
-}
-
-.text_zkratka {
+.znacka_zkratka {
     font-size: 30px;
 }
 
@@ -78,74 +42,51 @@
     font-size: 72px;
 }
 
-.polickoznacka {
-    height: 150px;
-    width: 150px;
-    border-radius: 10%;
-    background: #FFFFFF;
-}
-
-.text_znacka {
-    font-size: 30px;
-}
-
 .znacka {
     width: 150px;
+    height: 150px;
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.text_popis {
+.nadpisky {
     font-weight: bold;
     font-size: 30px;
+    margin-top: 50px;
 }
 
+#nadpisek_popis {
+    font-size: 30px;
+    font-weight: bold;
+}
 .popis {
     font-size: 30px;
 }
 
+.size {
+    max-width: 445.71px;
+    height: 250px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    margin-top: 8px;
+}
+
+#direction_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#direction_row {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    margin-top: 10px;
+}
+
 #popis_obsah {
-    width: 80%;
-    margin: auto;
-    margin-top: 35px;
-
+    margin-top: 50px;
 }
 
-.Text_animace {
-    font-weight: bold;
-    font-size: 30px;
-}
 
-.Text_real {
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 30px;
-}
 
-.Gif_okraj {
-    width: 445.71px;
-    height: 250px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    border-radius: 20px;
-}
-
-.Animace {
-    width: 100%;
-    border-radius: 15px;
-}
-
-.Video_okraj {
-    width: 445.71px;
-    height: 250px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    border-radius: 20px;
-}
-
-.Real {
-    width: 100%;
-    border-radius: 15px;
-}
-
-h2 {
-    font-weight: bold;
-}

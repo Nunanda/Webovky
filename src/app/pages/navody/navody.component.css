@@ -55,16 +55,20 @@
 
 #obsah {
     display: flex;
-    align-items: center;
     justify-content: center;
+    padding: 15px;
 }
 
 #obrázek_návodu {
     height: 150px;
     border-radius: 10px;
-    margin: 10px;
+    
 }
 
 h2 {
      text-align: center;
+}
+
+.text {
+    padding-left: 15px;
 }

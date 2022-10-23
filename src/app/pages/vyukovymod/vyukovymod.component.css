@@ -32,7 +32,6 @@
 .obsah {
     display: flex;
     padding: 15px;
-    align-items: center;
     justify-content: center;    
 }
 

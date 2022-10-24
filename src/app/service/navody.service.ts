@@ -10,9 +10,10 @@ const poleNavody: Array<Navod>= [{obtiznost: Obtiznost.lehky, nazev: "dinosaurus
     })
     export class NavodyService {
 
-      mapaNavody = new Map();
+      mapaNavody: Map<string, Navod>;
 
       constructor() {
+        this.mapaNavody = new Map();
         this.initMap();
       }
 

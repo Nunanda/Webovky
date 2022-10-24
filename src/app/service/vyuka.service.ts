@@ -10,9 +10,10 @@ const poleVyrobku: Array<Vyrobek>= [{nazev: "chobotnicka", title: "Chobotnicka",
     })
     export class VyukaService {
 
-     mapaVyrobku = new Map();
+     mapaVyrobku: Map<string, Vyrobek>;
 
       constructor() {
+        this.mapaVyrobku = new Map();
         this.initMap();
       }
 

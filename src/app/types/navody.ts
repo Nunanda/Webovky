@@ -1,6 +1,7 @@
 export type Navod =  {
   title: String,
   nazev: string,
+  title: string,
   zkratky: string,
   pomucky: string,
   popisy: Array<Popis>,

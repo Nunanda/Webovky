@@ -22,7 +22,7 @@ const poleVyrobku: Array<Vyrobek>= [{nazev: "chobotnicka", title: "Chobotnicka",
         });
       }
 
-      public getVyrobek(): Array<Vyrobek>{
+      public getVyrobky(): Array<Vyrobek>{
         return poleVyrobku;
       }
 

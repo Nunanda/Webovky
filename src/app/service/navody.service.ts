@@ -22,7 +22,7 @@ const poleNavody: Array<Navod>= [{obtiznost: Obtiznost.lehky, nazev: "dinosaurus
         });
       }
 
-      public getNavod(): Array<Navod>{
+      public getNavody(): Array<Navod>{
         return poleNavody;
       }
 

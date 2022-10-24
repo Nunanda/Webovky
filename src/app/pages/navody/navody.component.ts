@@ -15,7 +15,7 @@ export class NavodyComponent implements OnInit {
   constructor(private navodyService: NavodyService, private router: Router) { }
 
   ngOnInit() {
-    this.navod = this.navodyService.getNavod();
+    this.navod = this.navodyService.getNavody();
   }
 
 }

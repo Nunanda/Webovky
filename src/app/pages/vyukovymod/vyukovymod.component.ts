@@ -15,7 +15,7 @@ export class VyukaComponent implements OnInit {
   constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit() {
-    this.vyrobek = this.vyukaService.getVyrobek();
+    this.vyrobek = this.vyukaService.getVyrobky();
   }
 
 }

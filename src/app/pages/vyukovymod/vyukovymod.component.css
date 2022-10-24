@@ -1,7 +1,7 @@
 /*CSS*/
 
 #container {
-  
+
 }
 
 #sloupce {
@@ -50,17 +50,17 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-  
+
 }
 
 .Název_návodu {
-   
+
 }
 
 #obsah {
     display: flex;
     align-items: center;
-    
+
 }
 
 table {

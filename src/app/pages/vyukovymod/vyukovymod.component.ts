@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VyukaService } from '../../service/vyuka.service';
 import { Router } from '@angular/router';
+import { Vyrobek } from 'src/app/types';
 
 @Component({
   selector: 'app-vyukovymod',
@@ -9,13 +10,12 @@ import { Router } from '@angular/router';
 })
 export class VyukaComponent implements OnInit {
 
-  vyrobek: any;
+  vyrobek!: Array<Vyrobek>;
 
   constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit() {
-    const nazev = (this.router.url.split('/'))[2];
-    this.vyrobek = this.vyukaService.getvyrobekByName(nazev);
+    this.vyrobek = this.vyukaService.getVyrobky();
   }
 
 }

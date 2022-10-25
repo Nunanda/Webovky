@@ -2,35 +2,15 @@
   {{pomucka.titulek}}
 </title>
 <hr class="Line">
-<div class="bublina">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{pomucka.popis}}
-    </div>
-    <div *ngIf="pomucka.obrazek" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}.png">
-    </div>
-  </div>
-</div>
 
-<div *ngIf="pomucka.okno1" class="bublina-spodni">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{pomucka.popis1}}
-    </div>
-    <div *ngIf="pomucka.obrazek1" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}1.png">
-    </div>
-  </div>
-</div>
 
-<div *ngIf="pomucka.okno2" class="bublina-spodni">
+<div *ngFor="let krok of kroky" class="bublina">
   <div class="rozdeleni">
     <div class="sloupec">
-      {{pomucka.popis2}}
+      {{krok.popis}}
     </div>
-    <div *ngIf="pomucka.obrazek2" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}2.png">
+    <div class="sloupec1">
+      <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
     </div>
   </div>
 </div>

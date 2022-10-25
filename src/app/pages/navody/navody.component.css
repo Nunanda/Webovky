@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-    
-}
-
 #sloupce {
     display: flex;
     margin-top: 2%;
@@ -58,8 +54,6 @@
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-
-
 #zeleny_okraj {
     height: 30px;
     background: #3EDE44;
@@ -97,7 +91,7 @@
     font-size: smaller ;
 }
 
-#obrázek_návodu {
+#obrazek_navodu {
     height: 150px;
     border-radius: 10px;
     margin: 10px;

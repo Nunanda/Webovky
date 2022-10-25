@@ -10,12 +10,14 @@ import { Navod } from 'src/app/types';
 })
 export class NavodyComponent implements OnInit {
 
-  navod!: Array<Navod>;
+  navod: Array<Navod>;
 
-  constructor(private navodyService: NavodyService, private router: Router) { }
+  constructor(private navodyService: NavodyService, private router: Router) {
+    this.navod = new Array<Navod>;
+  }
 
   ngOnInit() {
-    this.navod = this.navodyService.getNavody();
+    this.navod = this.navodyService.getVsechnyNavody();
   }
 
 }

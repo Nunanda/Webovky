@@ -6,18 +6,14 @@
         <div id="sloupec_1">
             <div class="bunka" *ngFor="let item of vyrobek">
                 <div class="ruzovy_okraj">
-                    <div class="Název_návodu">
-                        {{item.title}}
-                    </div>
+                    {{item.title}}
                 </div>
                 <div id="obsah">
-                    <img id="obrázek_návodu" src="../assets/icon/{{item.nazev}}.jpg">
-
+                    <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
                     <table>
                         <tr>
                             <td>
                                 <strong>
-
                                     Počet kroků:
                                 </strong>
                                 {{item.pocet}}

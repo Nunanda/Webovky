@@ -10,7 +10,7 @@ const poleVyrobku: Array<Vyrobek>= [{nazev: "chobotnicka", title: "Chobotnicka",
     })
     export class VyukaService {
 
-     mapaVyrobku: Map<string, Vyrobek>;
+      mapaVyrobku: Map<String, Vyrobek>;
 
       constructor() {
         this.mapaVyrobku = new Map();
@@ -23,7 +23,11 @@ const poleVyrobku: Array<Vyrobek>= [{nazev: "chobotnicka", title: "Chobotnicka",
         });
       }
 
-      public getVyrobky(): Array<Vyrobek>{
+      public getVyrobekByName(name: string) {
+        return this.mapaVyrobku.get(name);
+      }
+
+      public getVsechnyPomucky(): Array<Vyrobek> {
         return poleVyrobku;
       }
 

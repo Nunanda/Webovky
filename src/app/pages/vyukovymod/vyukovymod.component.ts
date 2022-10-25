@@ -10,12 +10,14 @@ import { Vyrobek } from 'src/app/types';
 })
 export class VyukaComponent implements OnInit {
 
-  vyrobek!: Array<Vyrobek>;
+  vyrobek: Array<Vyrobek>;
 
-  constructor(private vyukaService: VyukaService, private router: Router) { }
+  constructor(private vyukaService: VyukaService, private router: Router) {
+    this.vyrobek = new Array<Vyrobek>;
+  }
 
   ngOnInit() {
-    this.vyrobek = this.vyukaService.getVyrobky();
+    this.vyrobek = this.vyukaService.getVsechnyPomucky();
   }
 
 }

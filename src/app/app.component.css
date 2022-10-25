@@ -76,9 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2%;
-
-
+    gap: 2%; 
 }
 
 .Menu-block {
@@ -87,8 +85,6 @@ body {
     border-radius: 20px;
     border: none;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-
-
 }
 
 #Hledat {
@@ -126,7 +122,6 @@ body {
 
 .dropdown {
     position: unset;
-
 }
 
 /*MEDIA QUERY*/
@@ -180,6 +175,3 @@ body {
     }
 
 }
-
-
-

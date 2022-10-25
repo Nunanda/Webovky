@@ -23,7 +23,11 @@ const poleNavody: Array<Navod>= [{obtiznost: Obtiznost.lehky, nazev: "dinosaurus
         });
       }
 
-      public getNavody(): Array<Navod>{
+      public getNavodyByName(name: string) {
+        return this.mapaNavody.get(name);
+      }
+
+      public getVsechnyNavody(): Array<Navod> {
         return poleNavody;
       }
 

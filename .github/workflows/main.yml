@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: |
           npm ci
-          ng build --prod="true"
+          ng build --configuration production
 
       - name: List Files in Distribution Directory
         run: ls -R ./dist

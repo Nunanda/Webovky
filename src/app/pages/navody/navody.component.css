@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-    
-}
-
 #sloupce {
     display: flex;
     margin-top: 2%;
@@ -97,7 +93,7 @@
     font-size: smaller ;
 }
 
-#obrázek_návodu {
+#obrazek_navodu {
     height: 150px;
     border-radius: 10px;
     margin: 10px;

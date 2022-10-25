@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-  
-}
-
 #sloupce {
     display: flex;
     margin-top: 2%;
@@ -53,10 +49,6 @@
   
 }
 
-.Název_návodu {
-   
-}
-
 #obsah {
     display: flex;
     align-items: center;
@@ -67,7 +59,7 @@ table {
     margin: 10px;
 }
 
-#obrázek_návodu {
+#obrazek_navodu {
     height: 150px;
     border-radius: 10px;
     margin: 10px;

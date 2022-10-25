@@ -16,14 +16,20 @@ jobs:
 
       - name: Install
         run: |
-          mkdir ${{ github.workspace }}/src_cache/ -p
           export CURRENT_DIR=`pwd`
           cd $CURRENT_DIR
           echo "CURRENT_DIR=$CURRENT_DIR" >> $GITHUB_ENV
-          cd ${{ github.workspace }}/src_cache/
-          sudo curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
           sudo apt install -y nodejs npm  && sudo pip install yq
           sudo npm install -g @angular/cli
+
+      - name: Build
+        run: |
+          npm ci
+          ng build
+
+      - name: List Files in Distribution Directory
+        run: ls -R ./dist
+
 
       #- name: List Files in Distribution Directory
       #  run: ls -R ./dist

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavodyService } from '../../service/navody.service';
 import { Router } from '@angular/router';
+import { Navod } from 'src/app/types';
 
 @Component({
   selector: 'app-navody',
@@ -9,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class NavodyComponent implements OnInit {
 
-  navod: any;
+  navod: Array<Navod>;
 
-  constructor(private navodyService: NavodyService, private router: Router) { }
+  constructor(private navodyService: NavodyService, private router: Router) {
+    this.navod = new Array<Navod>;
+  }
 
   ngOnInit() {
-    const nazev = (this.router.url.split('/'))[2];
-    this.navod = this.navodyService.getNavodByName(nazev);
+    this.navod = this.navodyService.getVsechnyNavody();
   }
 
 }

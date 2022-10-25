@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-    
-}
-
 .novinky {
     background: #C8E7F4;
     border-radius: 20px;
@@ -11,10 +7,6 @@
     padding: 15px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     margin: auto;
-}
-
-#privitaci_modry_blok {
-    
 }
 
 p {
@@ -32,8 +24,8 @@ h2 {
     width: 100%;
     max-width: 300px;
     height: auto;
-    
 }
+
 #obrazky {
    text-align: center;
 }
@@ -59,8 +51,4 @@ h2 {
     width: 100%;
     max-width: 50px;
     height: auto;
-    
 }
-
-
-

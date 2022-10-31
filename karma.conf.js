@@ -3,7 +3,12 @@
 
 module.exports = function (config) {
   config.set({
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
+    browsers: ['ChromeHeadless', 'Firefox'], // IMPORTANT! You can list & use multiple browsers
+    plugins: [
+        require('karma-jasmine'),
+        require('karma-chrome-launcher'), // IMPORTANT!
+        require('karma-firefox-launcher'),
+    ],
     customLaunchers: {
       ChromeHeadlessCI: {
         base: 'ChromeHeadless',

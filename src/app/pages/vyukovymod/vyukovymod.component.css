@@ -46,13 +46,11 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-  
 }
 
 #obsah {
     display: flex;
     align-items: center;
-    
 }
 
 table {
@@ -66,5 +64,5 @@ table {
 }
 
 h2 {
-     text-align: center;
+    text-align: center;
 }

@@ -127,14 +127,14 @@ const polePomucek: Array<Pomucka>= [
     })
     export class PomuckyService {
     
-      mapaPomucek: any;
+      mapaPomucek: Map<String, Pomucka>;
     
       constructor() {
+        this.mapaPomucek = new Map();
         this.initMap();
       }
     
       private initMap(){
-        this.mapaPomucek = new Map();
         polePomucek.forEach(pomucka=>{
           this.mapaPomucek.set(pomucka.nazev, pomucka);
         });

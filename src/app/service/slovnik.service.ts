@@ -15,14 +15,14 @@ import { Styl } from '../types'
     })
     export class SlovnikService {
 
-      mapaStylu: any;
+      mapaStylu: Map<String, Styl>;
 
       constructor() {
+        this.mapaStylu = new Map();
         this.initMap();
       }
 
       private initMap(){
-        this.mapaStylu = new Map();
         poleStylu.forEach(styl=>{
           this.mapaStylu.set(styl.nazev, styl);
         });
@@ -30,6 +30,10 @@ import { Styl } from '../types'
 
       public getStylByName(name: string) {
         return this.mapaStylu.get(name);
+      }
+
+      public getVsechnyPomucky(): Array<Styl> {
+        return poleStylu;
       }
 
     }

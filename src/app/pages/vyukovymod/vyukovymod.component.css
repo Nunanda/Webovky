@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-    
-}
-
 #sloupce {
     display: flex;
     margin-top: 2%;
@@ -26,7 +22,6 @@
     border-radius: 20px 20px 0px 0px;
     text-align: center;
     color: #fff;
-  
 }
 
 .obsah {
@@ -36,28 +31,19 @@
     justify-content: center;    
 }
 
-
-.Název_návodu {
-   
-}
-
 .text {
     padding-left: 15px;
     display: flex;
     align-items: center;
-   
 }
-
-
 
 #obrázek_návodu {
     width: 120px;
     border-radius: 20px;
-    
 }
 
 h2 {
-     text-align: center;
+    text-align: center;
 }
 
 .wrap {

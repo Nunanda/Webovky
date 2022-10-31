@@ -1,9 +1,5 @@
 /*CSS*/
 
-#container {
-    
-}
-
 #bunky {
     margin-top: 2%;
     display: flex;
@@ -33,6 +29,7 @@
 }
 
 .name {
+
     border-radius: 20px 20px 0px 0px;
     display: flex;
     align-items: center;
@@ -62,7 +59,6 @@
 #obrazek_navodu {
     height: 150px;
     border-radius: 10px;
-    
 }
 
 h2 {

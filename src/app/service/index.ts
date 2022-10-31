@@ -1,2 +1,4 @@
-export * from './pomucky.service';
-export * from './slovnik.service';
+export * from './pomucka';
+export * from './styl';
+export * from './navody';
+export * from './vyrobek';

@@ -5,7 +5,7 @@
     margin-top: 2%;
 }
 
-#sloupec_1 
+#sloupec_1 {
     width: 450px;
     display: flex;
     flex-direction: column;

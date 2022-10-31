@@ -3,36 +3,52 @@
 #sloupce {
     display: flex;
     margin-top: 2%;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
+}
+
+#sloupec_1 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sloupec_2 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sloupec_3 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bunka {
     border-radius: 20px;
+    width: 350px;
+    height: 200px;
     background-color: #f7e4ea;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    min-width: 364px;
-    width: 30%;
+}
+
+.strong {
+    font-weight: bold;
 }
 
 .ruzovy_okraj {
-    padding: 5px;
+    height: 30px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
 }
 
-.obsah {
-    display: flex;
-    padding: 15px;
-    align-items: center;
-    justify-content: center;    
-}
-
-.text {
-    padding-left: 15px;
+#obsah {
     display: flex;
     align-items: center;
 }
@@ -42,16 +58,7 @@
     border-radius: 20px;
 }
 
+
 h2 {
     text-align: center;
-}
-
-.wrap {
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-
-@media screen and (max-width: 377) {
-   
 }

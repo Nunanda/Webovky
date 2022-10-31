@@ -1,70 +1,110 @@
 /*CSS*/
 
-#bunky {
-    margin-top: 2%;
+#sloupce {
     display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin-top: 2%;
 }
 
-.bunka {
-    min-width: 364px;
-    width: 30%;
+#sloupec_1 
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sloupec_2 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sloupec_3 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bunky {
+    margin-top: 2%;
+}
+
+#bunka_lehke {
     border-radius: 20px;
+    width: 350px;
+    height: 200px;
+    background-color: #E2FAE3;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.green {
-    background-color: #E2FAE3;
-}
-
-.yellow{
+#bunka_stredni {
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
     background-color: #F9FAE1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.red {
+#bunka_tezke {
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
     background-color: #FDE6E6;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.name {
-
+#zeleny_okraj {
+    height: 30px;
+    background: #3EDE44;
     border-radius: 20px 20px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    padding: 5px;
 }
 
-.green_name {
-    background: #3EDE44;
-}
-
-.yellow_name {
+#zluty_okraj {
+    height: 30px;
     background: #D6DA34;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
-.red_name {
+#cerveny_okraj {
+    height: 30px;
     background: #f73636;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
 #obsah {
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 15px;
+    font-size: smaller ;
 }
 
 #obrazek_navodu {
     height: 150px;
     border-radius: 10px;
+    margin: 10px;
 }
 
 h2 {
      text-align: center;
 }
 
-.text {
-    padding-left: 15px;
+#line {
+    width: 98%;
+    background-color: #000;
+    height: 1.5px;
+    margin: auto;
+    opacity: 35%;
 }

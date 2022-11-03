@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlovnikService } from '../../service/slovnik.service';
 import { Router } from '@angular/router';
-import { Pomucka, Styl } from 'src/app/types';
-import { PomuckyComponent } from '../pomucky/pomucky.component';
 
 @Component({
   selector: 'app-slovnik',

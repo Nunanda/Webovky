@@ -3,43 +3,21 @@
 #sloupce {
     display: flex;
     margin-top: 2%;
-}
-
-#sloupec_1 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_2 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_3 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bunka {
     border-radius: 20px;
-    width: 350px;
-    height: 200px;
     background-color: #f7e4ea;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
-
-.strong {
-    font-weight: bold;
+    width: 30%;
+    min-width: 364px;
 }
 
 .ruzovy_okraj {
-    height: 30px;
+    padding: 5px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
     display: flex;
@@ -50,15 +28,20 @@
 
 #obsah {
     display: flex;
-    align-items: center;
+    padding: 15px;
+    justify-content: center;
 }
 
 #obrazek_navodu {
     width: 120px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 
 h2 {
     text-align: center;
+}
+
+.text {
+    padding-left: 15px;
 }

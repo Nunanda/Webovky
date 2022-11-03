@@ -53,15 +53,11 @@
     align-items: center;
 }
 
-table {
-    margin: 10px;
+#obrazek_navodu {
+    width: 120px;
+    border-radius: 20px;
 }
 
-#obrazek_navodu {
-    height: 150px;
-    border-radius: 10px;
-    margin: 10px;
-}
 
 h2 {
     text-align: center;

@@ -3,32 +3,30 @@
         Výukový mód
     </h2>
     <div id="sloupce">
-        <div id="sloupec_1">
-            <div class="bunka" *ngFor="let item of vyrobek">
-                <div class="ruzovy_okraj">
-                    {{item.title}}
-                </div>
-                <div id="obsah">
-                    <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
-                    <table>
-                        <tr>
-                            <td>
-                                <strong>
-                                    Počet kroků:
-                                </strong>
-                                {{item.pocet}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>
-                                    Popis:
-                                </strong>
-                                {{item.popis}}
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+        <div class="bunka" *ngFor="let item of vyrobek">
+            <div class="ruzovy_okraj">
+                {{item.title}}
+            </div>
+            <div id="obsah">
+                <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
+                <table>
+                    <tr>
+                        <td>
+                            <strong>
+                                Počet kroků:
+                            </strong>
+                            {{item.pocet}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Popis:
+                            </strong>
+                            {{item.popis}}
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

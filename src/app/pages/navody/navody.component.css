@@ -3,108 +3,67 @@
 #sloupce {
     display: flex;
     margin-top: 2%;
-}
-
-#sloupec_1 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
+    gap: 25px;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-#sloupec_2 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_3 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.bunky {
-    margin-top: 2%;
-}
-
-#bunka_lehke {
+.bunka {
     border-radius: 20px;
-    width: 350px;
-    height: 200px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    width: 30%;
+    min-width: 364px;
+}
+
+.Nazev_navodu {
+    padding: 5px;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.green {
     background-color: #E2FAE3;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-#bunka_stredni {
-    border-radius: 20px;
-    width: 350px;
-    height: 200px;
+.yellow {
     background-color: #F9FAE1;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-#bunka_tezke {
-    border-radius: 20px;
-    width: 350px;
-    height: 200px;
+.red {
     background-color: #FDE6E6;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-#zeleny_okraj {
-    height: 30px;
+.green_name {
     background: #3EDE44;
-    border-radius: 20px 20px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
 }
 
-#zluty_okraj {
-    height: 30px;
+.yellow_name {
     background: #D6DA34;
-    border-radius: 20px 20px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
 }
 
-#cerveny_okraj {
-    height: 30px;
+.red_name {
     background: #f73636;
-    border-radius: 20px 20px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
 }
 
-#obsah {
+.obsah {
     display: flex;
-    align-items: center;
+    padding: 15px;
     justify-content: center;
-    font-size: smaller ;
 }
 
 #obrazek_navodu {
     height: 150px;
     border-radius: 10px;
-    margin: 10px;
 }
 
 h2 {
      text-align: center;
 }
 
-#line {
-    width: 98%;
-    background-color: #000;
-    height: 1.5px;
-    margin: auto;
-    opacity: 35%;
+.text {
+    padding-left: 15px;
 }

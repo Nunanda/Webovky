@@ -25,7 +25,7 @@ export class KrokyComponent implements OnInit {
   }
 
   public nextIndex() {
-    if (this.index++ > this.krok.length) {
+    if (this.index+1 > this.krok.length) {
       this.index = 0;
     }
     else {
@@ -34,7 +34,7 @@ export class KrokyComponent implements OnInit {
   }
 
   public previousIndex() {
-    if (this.index-- < 0) {
+    if (this.index-1 < 0) {
       this.index = 0;
     }
     else {

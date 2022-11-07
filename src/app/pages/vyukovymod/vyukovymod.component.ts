@@ -14,7 +14,6 @@ export class VyukaComponent implements OnInit {
 
   constructor(private vyukaService: VyukaService, private router: Router) {
     this.vyrobek = new Array<Vyrobek>;
-
   }
 
   ngOnInit() {
@@ -22,8 +21,8 @@ export class VyukaComponent implements OnInit {
   }
 
   public getKroky(title: string) {
-    const state = { title };
-    this.router.navigate(["kroky"], { state });
+    localStorage.setItem("title", title);
+    this.router.navigate(["kroky"]);
   }
 
 }

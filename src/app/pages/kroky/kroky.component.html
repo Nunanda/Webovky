@@ -5,26 +5,28 @@
 Krok:
 </div>
 <div>
-{{krok[0].cislo}}
+{{krok[index].cislo}}
 </div>
 <div>
 Styl:
 </div>
 <div>
-{{krok[0].styl}}
+{{krok[index].styl}}
 </div>
 <div>
 Pomucky:
 </div>
 <div>
-{{krok[0].pouzijeme}}
+{{krok[index].pouzijeme}}
 </div>
 <div>
 Popis:
 </div>
 <div>
-{{krok[0].popis}}
+{{krok[index].popis}}
 </div>
 <div>
-{{krok[0].videoUrl}}
+{{krok[index].videoUrl}}
 </div>
+<button class="btn btn-default button-next" (click)="nextIndex()" type="button">Next</button>
+<button class="btn btn-default button-prev" (click)="previousIndex()" type="button">Previous</button>

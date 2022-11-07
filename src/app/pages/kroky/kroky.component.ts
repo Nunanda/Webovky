@@ -12,21 +12,24 @@ export class KrokyComponent implements OnInit {
 
   title: any;
   krok: Array<Info>;
+  index: number;
 
   constructor(private vyukaService: VyukaService, private router: Router) {
-    if (localStorage.getItem("title") === undefined) {
-      const state = history.state;
-      localStorage.setItem("title", state['title']);
-    }
-    else {
-      this.title = localStorage.getItem("title");
-    }
+    this.title = localStorage.getItem("title");
     this.krok = new Array<Info>;
+    this.index = 0;
   }
 
   ngOnInit() {
-    console.log(this.title);
     this.krok = this.vyukaService.getKroky(this.title);
+  }
+
+  public nextIndex() {
+    this.index++;
+  }
+
+  public previousIndex() {
+    this.index--;
   }
 
 }

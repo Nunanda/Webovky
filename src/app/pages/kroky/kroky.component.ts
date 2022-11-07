@@ -25,11 +25,21 @@ export class KrokyComponent implements OnInit {
   }
 
   public nextIndex() {
-    this.index++;
+    if (this.index++ > this.krok.length) {
+      this.index = 0;
+    }
+    else {
+      this.index++;
+    }
   }
 
   public previousIndex() {
-    this.index--;
+    if (this.index-- < 0) {
+      this.index = 0;
+    }
+    else {
+      this.index--;
+    }
   }
 
 }

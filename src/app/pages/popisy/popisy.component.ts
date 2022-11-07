@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavodyService } from '../service/navody.service';
-import { Popis } from '../types';
+import { NavodyService } from '../../service/navody.service';
+import { Popis } from '../../types';
 
 @Component({
   selector: 'app-popisy',
@@ -25,7 +25,7 @@ export class PopisyComponent implements OnInit {
   }
 
   public nextIndex() {
-    if (this.index++ > this.popis.length) {
+    if (this.index+1 > this.popis.length) {
       this.index = 0;
     }
     else {
@@ -34,7 +34,7 @@ export class PopisyComponent implements OnInit {
   }
 
   public previousIndex() {
-    if (this.index-- < 0) {
+    if (this.index-1 < 0) {
       this.index = 0;
     }
     else {

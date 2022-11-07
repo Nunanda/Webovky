@@ -9,7 +9,7 @@ import { VyukaComponent } from './pages/vyukovymod/vyukovymod.component';
 import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
-import { PopisyComponent } from './popisy/popisy.component';
+import { PopisyComponent } from './pages/popisy/popisy.component';
 
 @NgModule({
   declarations: [

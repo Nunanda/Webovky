@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'pomucky/:nazevPomucky', component: PomuckyComponent },
   { path: 'navody', component: NavodyComponent },
   { path: 'vyukovymod', component: VyukaComponent },
-  { path: 'kroky', component: KrokyComponent }
+  { path: 'kroky', component: KrokyComponent },
   { path: 'popisy', component: PopisyComponent }
 ];
 

@@ -20,7 +20,7 @@ import { PopisyComponent } from './pages/popisy/popisy.component';
     SlovnikComponent,
     PomuckyComponent,
     NavodyComponent,
-    KrokyComponent
+    KrokyComponent,
     PopisyComponent
   ],
   imports: [

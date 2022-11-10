@@ -10,6 +10,7 @@ import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { KrokyComponent } from './pages/kroky/kroky.component';
+import { PopisyComponent } from './pages/popisy/popisy.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { KrokyComponent } from './pages/kroky/kroky.component';
     PomuckyComponent,
     NavodyComponent,
     KrokyComponent
+    PopisyComponent
   ],
   imports: [
     BrowserModule,

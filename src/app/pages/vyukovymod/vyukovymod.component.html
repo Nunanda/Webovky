@@ -2,8 +2,9 @@
     <h2>
         Výukový mód
     </h2>
+    <router-outlet></router-outlet>
     <div id="sloupce">
-        <span class="bunka" *ngFor="let item of vyrobek">
+        <span class="bunka" *ngFor="let item of vyrobek" (click)="getKroky(item.title)">
             <div class="ruzovy_okraj">
                 {{item.title}}
             </div>

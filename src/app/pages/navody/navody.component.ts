@@ -20,4 +20,9 @@ export class NavodyComponent implements OnInit {
     this.navod = this.navodyService.getVsechnyNavody();
   }
 
+  public getPopisy(title: string) {
+    localStorage.setItem("title", title);
+    this.router.navigate(["popisy"]);
+  }
+
 }

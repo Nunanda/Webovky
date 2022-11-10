@@ -4,7 +4,7 @@
     </h2>
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
-            <div class="bunka green" *ngIf="item.obtiznost == 'lehky';">
+            <div class="bunka green" *ngIf="item.obtiznost == 'lehky';" (click)="getPopisy(item.title)">
                 <div class="Nazev_navodu green_name">
                     {{item.title}}
                 </div>
@@ -42,7 +42,7 @@
             </div> 
         </ng-container>
         <ng-container *ngFor="let item of navod">
-            <div class="bunka yellow" *ngIf="item.obtiznost == 'stredni';">
+            <div class="bunka yellow" *ngIf="item.obtiznost == 'stredni';" (click)="getPopisy(item.title)">
                 <div id="zluty_okraj">
                     <div class="Nazev_navodu yellow_name">
                         {{item.title}}
@@ -82,7 +82,7 @@
             </div> 
         </ng-container>
         <ng-container *ngFor="let item of navod">
-            <div class="bunka red" *ngIf="item.obtiznost == 'tezky';">
+            <div class="bunka red" *ngIf="item.obtiznost == 'tezky';" (click)="getPopisy(item.title)">
                 <div id="cerveny_okraj">
                     <div class="Nazev_navodu red_name">
                         {{item.title}}

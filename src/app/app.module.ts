@@ -8,6 +8,7 @@ import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     VyukaComponent,
     SlovnikComponent,
     PomuckyComponent,
-    NavodyComponent
+    NavodyComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

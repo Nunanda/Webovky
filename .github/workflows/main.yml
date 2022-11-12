@@ -4,7 +4,8 @@
 on:
   push:
     branches:
-      - "CI-autoupload-to-domain"
+      - "main"
+      - "dev"
 jobs:
   build:
     runs-on: ubuntu-latest

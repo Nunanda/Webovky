@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { VyukaService } from '../../service/vyuka.service';
+import { VyukaService } from '../../../service/vyuka.service';
 import {  Router } from '@angular/router';
-import {  Info } from '../../types'
+import {  Info } from '../../../types'
 
 @Component({
-  selector: 'app-kroky',
-  templateUrl: './kroky.component.html',
-  styleUrls: ['./kroky.component.css']
+  selector: 'app-vyukovymod-detail',
+  templateUrl: './vyukovymod-detail.component.html',
+  styleUrls: ['./vyukovymod-detail.component.css']
 })
-export class KrokyComponent implements OnInit {
+export class VyukovymodDetailComponent implements OnInit {
 
   title: any;
   krok: Array<Info>;

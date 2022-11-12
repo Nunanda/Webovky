@@ -9,8 +9,8 @@ import { VyukaComponent } from './pages/vyukovymod/vyukovymod.component';
 import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
-import { KrokyComponent } from './pages/kroky/kroky.component';
-import { PopisyComponent } from './pages/popisy/popisy.component';
+import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
+import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { PopisyComponent } from './pages/popisy/popisy.component';
     SlovnikComponent,
     PomuckyComponent,
     NavodyComponent,
-    KrokyComponent,
-    PopisyComponent
+    VyukovymodDetailComponent,
+    NavodyDetailComponent
   ],
   imports: [
     BrowserModule,

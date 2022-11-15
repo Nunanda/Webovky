@@ -22,7 +22,7 @@ export class VyukaComponent implements OnInit {
 
   public getKroky(title: string) {
     localStorage.setItem("title", title);
-    this.router.navigate(["kroky"]);
+    this.router.navigate(["vyukovymod/vyukovymod-detail"]);
   }
 
 }

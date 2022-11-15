@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavodyService } from '../../service/navody.service';
-import { Popis } from '../../types';
+import { NavodyService } from '../../../service/navody.service';
+import { Popis } from '../../../types';
 
 @Component({
-  selector: 'app-popisy',
-  templateUrl: './popisy.component.html',
-  styleUrls: ['./popisy.component.css']
+  selector: 'app-navody-detail',
+  templateUrl: './navody-detail.component.html',
+  styleUrls: ['./navody-detail.component.css']
 })
-export class PopisyComponent implements OnInit {
+export class NavodyDetailComponent implements OnInit {
 
   title: any;
   popis: Array<Popis>;

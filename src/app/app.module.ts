@@ -7,10 +7,10 @@ import { VyukaComponent } from './pages/vyukovymod/vyukovymod.component';
 import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
+import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
+import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
-import { KrokyComponent } from './pages/kroky/kroky.component';
-import { PopisyComponent } from './pages/popisy/popisy.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,9 @@ import { PopisyComponent } from './pages/popisy/popisy.component';
     SlovnikComponent,
     PomuckyComponent,
     NavodyComponent,
+    VyukovymodDetailComponent,
+    NavodyDetailComponent,
     SafePipe,
-    KrokyComponent,
-    PopisyComponent
   ],
   imports: [
     BrowserModule,

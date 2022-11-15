@@ -22,7 +22,7 @@ export class NavodyComponent implements OnInit {
 
   public getPopisy(title: string) {
     localStorage.setItem("title", title);
-    this.router.navigate(["popisy"]);
+    this.router.navigate(["navody/navody-detail"]);
   }
 
 }

@@ -1,5 +1,5 @@
 export type Navod =  {
-  title: String,
+  title: string,
   nazev: string,
   zkratky: string,
   pomucky: string,

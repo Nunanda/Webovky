@@ -9,6 +9,8 @@ import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
+import { KrokyComponent } from './pages/kroky/kroky.component';
+import { PopisyComponent } from './pages/popisy/popisy.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SafePipe } from './safe.pipe';
     SlovnikComponent,
     PomuckyComponent,
     NavodyComponent,
-    SafePipe
+    SafePipe,
+    KrokyComponent,
+    PopisyComponent
   ],
   imports: [
     BrowserModule,

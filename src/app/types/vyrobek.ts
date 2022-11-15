@@ -12,4 +12,4 @@ export type Info = {
     pouzijeme: string,
     popis: string,
     videoUrl: string
-  }
+}

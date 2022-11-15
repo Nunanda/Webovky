@@ -4,7 +4,7 @@ import { Pomucka, PopisPomucek } from '../types'
 const polePomucek =  [ 
     { nazev: "hacek", 
     titulek: "Háček", 
-    videoURL: "",
+    videoURL: "XL4ze9vLC3s",
     kroky: [
       {
         popis: "Existuje široká škála velikostí.",

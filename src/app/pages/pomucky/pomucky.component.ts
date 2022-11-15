@@ -31,4 +31,3 @@ export class PomuckyComponent implements OnInit {
     this.kroky = this.pomucka.kroky;
   }
 }
-

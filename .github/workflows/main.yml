@@ -8,11 +8,13 @@ on:
       - "dev"
       - "úprava-workflow-pro-main-a-dev"
 
-parameters:
- - name: env
-  env: ""
-  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
-  env: "dev"
+env:
+  branch: ""
+
+ - pwsh: |
+    If (github.master_branch == "úprava-workflow-pro-main-a-dev") {
+      env.branch = dev
+    }
 
 jobs:
   build:

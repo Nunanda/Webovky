@@ -5,7 +5,7 @@ on:
       - "dev"
       - "úprava-workflow-pro-main-a-dev"
 env:
-  branch: github.master_branch
+  branch: ${GITHUB_REF##*/}
 jobs:
   build:
     runs-on: ubuntu-latest

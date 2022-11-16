@@ -7,6 +7,13 @@ on:
       - "main"
       - "dev"
       - "úprava-workflow-pro-main-a-dev"
+variables:
+- group: branch
+- name: env
+  value:
+- name: env
+  ${{ if eq(variables['Build.SourceBranchName'], 'úprava-workflow-pro-main-a-dev') }}:
+  value: dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,8 +46,5 @@ jobs:
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
           local_dir: "./dist/webovky"
-          ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
-            remote_dir: "./www"
-          ${{ if eq(variables['Build.SourceBranchName'], 'úprava-workflow-pro-main-a-dev ') }}:
-            remote_dir: "./www/dev"
+          remote_dir: "./www/$(env)"
           delete: "false"

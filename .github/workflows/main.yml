@@ -5,11 +5,7 @@ on:
       - "dev"
       - "úprava-workflow-pro-main-a-dev"
 env:
-  branch: main
- - pwsh: |
-    If (github.master_branch == "úprava-workflow-pro-main-a-dev") {
-      env.branch = dev
-    }
+  branch: github.master_branch
 jobs:
   build:
     runs-on: ubuntu-latest

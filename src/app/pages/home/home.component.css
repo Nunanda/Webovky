@@ -1,5 +1,9 @@
 /*CSS*/
 
+#container {
+    padding: 40px;
+}
+
 .novinky {
     background: #C8E7F4;
     border-radius: 20px;

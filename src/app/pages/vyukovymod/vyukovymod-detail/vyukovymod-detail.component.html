@@ -1,15 +1,17 @@
-<h2>{{title}}</h2>
-<div id="columns">
-    <div class="bublina">
-        <div><strong>Krok:</strong> {{krok[index].cislo}}</div>
-        <div><strong>Styl:</strong> {{krok[index].styl}}</div>
-        <div><strong>Pomucky:</strong> {{krok[index].pouzijeme}}</div>
-        <div id="popis"><strong>Popis:</strong> {{krok[index].popis}}</div>
+<div id="container">
+    <h2>{{title}}</h2>
+    <div id="columns">
+        <div class="bublina">
+            <div><strong>Krok:</strong> {{krok[index].cislo}}</div>
+            <div><strong>Styl:</strong> {{krok[index].styl}}</div>
+            <div><strong>Pomucky:</strong> {{krok[index].pouzijeme}}</div>
+            <div id="popis"><strong>Popis:</strong> {{krok[index].popis}}</div>
+        </div>
+        <div style="width: 500px; height: 250px; background-color: black; color: #fff; margin-top: 30px;">{{krok[index].videoUrl}}</div> <!--VYMAZAT CSS-->
     </div>
-    <div style="width: 500px; height: 250px; background-color: black; color: #fff; margin-top: 30px;">{{krok[index].videoUrl}}</div> <!--VYMAZAT CSS-->
-</div>
-<div id="buttons">
-    <button (click)="previousIndex()" type="button">Previous</button>
-    <button (click)="nextIndex()" type="button">Next</button>
+    <div id="buttons">
+        <button (click)="previousIndex()" type="button">Previous</button>
+        <button (click)="nextIndex()" type="button">Next</button>
+    </div>
 </div>
 

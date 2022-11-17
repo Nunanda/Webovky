@@ -1,4 +1,8 @@
 
+#container {
+  padding: 40px;
+}
+
 h2 {
     text-align: center;
     padding-bottom: 20px;

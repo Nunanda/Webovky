@@ -1,14 +1,16 @@
-<title class="nadpis">
+<h2>
   {{pomucka.titulek}}
-</title>
-<hr class="Line">
-<div *ngFor="let krok of kroky" class="bublina">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{krok.popis}}
-    </div>
-    <div class="sloupec1">
-      <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
+</h2>
+<div class="Line1"></div>
+<div class="bubliny">
+  <div *ngFor="let krok of kroky" class="bublina">
+    <div class="rozdeleni">
+      <div class="sloupec">
+        {{krok.popis}}
+      </div>
+      <div class="sloupec1">
+        <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
+      </div>
     </div>
   </div>
 </div>

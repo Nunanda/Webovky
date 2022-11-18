@@ -11,12 +11,13 @@
 
 p {
     font-weight: 400;
-    font-size: large;
+    font-size: calc(.6rem + .5vw);
 }
 
 h2 {
     text-align: center;
     font-weight: bold;
+    font-size: calc(1rem + 1vw);
 }
 
 .obrazek {
@@ -27,13 +28,15 @@ h2 {
 }
 
 #obrazky {
-   text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #soc_site {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .card {
@@ -51,4 +54,8 @@ h2 {
     width: 100%;
     max-width: 50px;
     height: auto;
+}
+
+#soc {
+    margin-top: 20px;
 }

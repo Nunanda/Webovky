@@ -1,41 +1,43 @@
-<div id="sloupce">
-    <div id="slovnik_popis">
-        <div id="nazev_stylu">
-            {{styl.titulek}}
-        </div>
-        <div id="direction_row">
-            <div class="direction_column">
-                <div class="znacka_zkratka">
-                    Zkratka:
-                </div>
-                <div class="pole_zkratka">
-                    <div id="zkratka">
-                        {{styl.zkratka}}
+<div id="container">
+    <div id="sloupce">
+        <div id="slovnik_popis">
+            <div id="nazev_stylu">
+                {{styl.titulek}}
+            </div>
+            <div id="direction_row">
+                <div class="direction_column">
+                    <div class="znacka_zkratka">
+                        Zkratka:
+                    </div>
+                    <div class="pole_zkratka">
+                        <div id="zkratka">
+                            {{styl.zkratka}}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="direction_column">
-                <div class="znacka_zkratka">
-                    Značka:
+                <div id="direction_column">
+                    <div class="znacka_zkratka">
+                        Značka:
+                    </div>
+                    <img class="znacka" src="/assets/icon/{{styl.nazev}}.png">
                 </div>
-                <img class="znacka" src="/assets/icon/{{styl.nazev}}.png">
+            </div>
+            <div id="popis_obsah">
+                <div id="nadpisek_popis">Popis</div>
+                <div class="popis">
+                    {{styl.popis}}
+                </div>
             </div>
         </div>
-        <div id="popis_obsah">
-            <div id="nadpisek_popis">Popis</div>
-            <div class="popis">
-                {{styl.popis}}
+        <div id="direction_column">
+            <div class="nadpisky">
+                Animace
             </div>
+            <img class="size" src="assets/icon/{{styl.nazev}}.gif">
+            <div class="nadpisky">
+                Ve skutečnosti
+            </div>
+            <img class="size" src="assets/icon/{{styl.nazev}}-real.png">
         </div>
-    </div>
-    <div id="direction_column">
-        <div class="nadpisky">
-            Animace
-        </div>
-        <img class="size" src="assets/icon/{{styl.nazev}}.gif">
-        <div class="nadpisky">
-            Ve skutečnosti
-        </div>
-        <img class="size" src="assets/icon/{{styl.nazev}}-real.png">
     </div>
 </div>

@@ -2,26 +2,30 @@
 
 body {
     margin: 0;
+    padding: 0;
     background-color: #fff;
     font-family: sans-serif;
     min-height: 100vh;
     background-image: url("../assets/icon/pozadi.png");
     background-size: cover;
     background-position: center;
-    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 #page {
     background-color: #fff;
     width: 85vw;
-    min-height: 100vh;
+    height: 100vh;
     margin: auto;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 #page_padding {
-    width: 85vw;
-    min-height: 100vh;
-    padding: 40px;
+    /*width: 85vw;
+    height: 100vh;
+    padding: 40px;*/
 }
 
 #hledaci_lista {
@@ -71,8 +75,7 @@ body {
 
 #Menu {
     width: 100%;
-    height: 5%;
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,13 +140,10 @@ body {
 
 }
 
-@media screen and (max-width: 1233px) {
+@media screen and (max-width: 1249px) {
     #page {
-      width: 100vw;
-    }
-
-    #page_padding {
         width: 100vw;
+        height: 100vh;
     }
 
 }

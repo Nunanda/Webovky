@@ -22,18 +22,12 @@ body {
     box-sizing: border-box;
 }
 
-#page_padding {
-    /*width: 85vw;
-    height: 100vh;
-    padding: 40px;*/
-}
-
 #hledaci_lista {
     position: sticky;
     top: 0;
     height: 90px;
     width: 100%;
-    background: #C8E7F4;
+    background-color: #C8E7F4;
     display: flex;
     align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
@@ -48,8 +42,7 @@ body {
     height: 60px;
     border-radius: 50px;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-between;
 }
 
 #logo {
@@ -93,6 +86,11 @@ body {
 #Hledat {
     opacity: 80%;
     font-size: larger;
+    margin-left: 20px;
+}
+
+#Lupa {
+    margin-right: 20px;
 }
 
 .dropdown-content {

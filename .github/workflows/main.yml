@@ -4,7 +4,8 @@
 on:
   push:
     branches:
-      - "CI-autoupload-to-domain"
+      - "test-CI"
+      - "main"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +28,14 @@ jobs:
           npm ci
           ng build --configuration production
 
+      - name: Set develop dir
+        run: DEPLOY_DIR="./www/domains/develop.selecro.cz"
+        if: github.ref == 'refs/heads/test-CI'
+
+      - name: Set prod dir
+        run: DEPLOY_DIR="./www/domains/selecro.cz"
+        if: github.ref == 'refs/heads/main'
+
       - name: List Files in Distribution Directory
         run: ls -R ./dist
 
@@ -37,5 +46,5 @@ jobs:
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
           local_dir: "./dist/webovky"
-          remote_dir: "./www"
+          remote_dir: "$DEPLOY_DIR"
           delete: "false"

@@ -29,11 +29,13 @@ jobs:
           ng build --configuration production
 
       - name: Set develop dir
-        run: DEPLOY_DIR="./www/domains/develop.selecro.cz"
+        run: |
+          echo "DEPLOY_DIR=./www/domains/develop.selecro.cz" >> $GITHUB_ENV"
         if: github.ref == 'refs/heads/test-CI'
 
       - name: Set prod dir
-        run: DEPLOY_DIR="./www/domains/selecro.cz"
+        run: |
+          echo "DEPLOY_DIR=./www/domains/selecro.cz" >> $GITHUB_ENV"
         if: github.ref == 'refs/heads/main'
 
       - name: List Files in Distribution Directory
@@ -46,5 +48,5 @@ jobs:
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
           local_dir: "./dist/webovky"
-          remote_dir: ${DEPLOY_DIR}
+          remote_dir: ${{ env.DEPLOY_DIR }}
           delete: "false"

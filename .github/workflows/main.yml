@@ -4,7 +4,7 @@
 on:
   push:
     branches:
-      - "test-CI"
+      - "dev"
       - "main"
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
       - name: Set develop dir
         run: |
           echo "DEPLOY_DIR=./www/domains/develop.selecro.cz" >> $GITHUB_ENV
-        if: github.ref == 'refs/heads/test-CI'
+        if: github.ref == 'refs/heads/dev'
 
       - name: Set prod dir
         run: |

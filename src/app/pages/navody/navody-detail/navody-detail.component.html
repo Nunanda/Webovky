@@ -2,7 +2,7 @@
     <div id="bunka">
         <div>{{title}}</div>
         <div>Název části: {{popis[index].nazevCasti}}</div>
-        <div>Popis: {{popis[index].popis}}</div>
+        <div innerHTML="{{popis[index].popis}}">Popis: </div>
         <div id="buttons">
             <button (click)="previousIndex()" type="button">Previous</button>
             <button (click)="nextIndex()" type="button">Next</button>

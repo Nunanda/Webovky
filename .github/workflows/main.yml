@@ -30,12 +30,12 @@ jobs:
 
       - name: Set develop dir
         run: |
-          echo "DEPLOY_DIR=./www/domains/develop.selecro.cz" >> $GITHUB_ENV"
+          echo "DEPLOY_DIR=./www/domains/develop.selecro.cz" >> $GITHUB_ENV
         if: github.ref == 'refs/heads/test-CI'
 
       - name: Set prod dir
         run: |
-          echo "DEPLOY_DIR=./www/domains/selecro.cz" >> $GITHUB_ENV"
+          echo "DEPLOY_DIR=./www/domains/selecro.cz" >> $GITHUB_ENV
         if: github.ref == 'refs/heads/main'
 
       - name: List Files in Distribution Directory

@@ -46,5 +46,5 @@ jobs:
           user: ${{ secrets.CD_FTP_USERNAME }}
           password: ${{ secrets.CD_FTP_PASSWORD }}
           local_dir: "./dist/webovky"
-          remote_dir: "$DEPLOY_DIR"
+          remote_dir: ${DEPLOY_DIR}
           delete: "false"

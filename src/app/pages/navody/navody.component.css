@@ -1,10 +1,13 @@
 /*CSS*/
 
+#container {
+    padding: 40px;
+}
+
 #sloupce {
     display: flex;
     margin-top: 2%;
     gap: 25px;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }

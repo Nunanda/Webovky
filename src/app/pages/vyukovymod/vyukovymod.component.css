@@ -1,5 +1,9 @@
 /*CSS*/
 
+#container {
+    padding: 40px;
+}
+
 #sloupce {
     display: flex;
     margin-top: 2%;

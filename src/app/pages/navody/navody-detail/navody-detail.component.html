@@ -1,17 +1,11 @@
-<div>
-{{title}}
+<div id="container">
+    <div id="bunka">
+        <div>{{title}}</div>
+        <div>Název části: {{popis[index].nazevCasti}}</div>
+        <div innerHTML="{{popis[index].popis}}">Popis: </div>
+        <div id="buttons">
+            <button (click)="previousIndex()" type="button">Previous</button>
+            <button (click)="nextIndex()" type="button">Next</button>
+        </div>
+    </div>
 </div>
-<div>
-Název části:
-</div>
-<div>
-{{popis[index].nazevCasti}}
-</div>
-<div>
-Popis:
-</div>
-<div>
-{{popis[index].popis}}
-</div>
-<button (click)="previousIndex()" type="button">Previous</button>
-<button (click)="nextIndex()" type="button">Next</button>

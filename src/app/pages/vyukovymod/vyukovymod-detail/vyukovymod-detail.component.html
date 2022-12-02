@@ -6,12 +6,24 @@
             <div><strong>Styl:</strong> {{krok[index].styl}}</div>
             <div><strong>Pomucky:</strong> {{krok[index].pouzijeme}}</div>
             <div id="popis" innerHTML="{{krok[index].popis}}"><strong>Popis:</strong> </div>
+        </div> 
+        <div style="width: 500px; height: 250px; color: #fff; margin-top: 30px;" class="bublina-spodni" class="video-center"><!--VYMAZAT CSS-->
+            <div class="video">
+              <iframe
+                width="100%"
+                height="100%"
+                [src]="krok[index].videoUrl | safe"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
         </div>
-        <div style="width: 500px; height: 250px; background-color: black; color: #fff; margin-top: 30px;">{{krok[index].videoUrl}}</div> <!--VYMAZAT CSS-->
     </div>
     <div id="buttons">
-        <button (click)="previousIndex()" type="button">Previous</button>
-        <button (click)="nextIndex()" type="button">Next</button>
+        <button (click)="previousIndex()" type="button">Předchozí</button>
+        <button (click)="nextIndex()" type="button">Další</button>
     </div>
 </div>
 

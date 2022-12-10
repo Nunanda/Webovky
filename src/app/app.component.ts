@@ -10,4 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent{
   constructor(private router: Router) { }
   title = 'Webovky';
+  ngOnInit() : void {
+    this.router.navigate(['home']);
+  }
 }

@@ -9,11 +9,9 @@
           <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
     </div>
   </div>
-  <div class="bublina-spodni" class="video-center">
+  <div class="bublina-spodni">
       <div class="video">
         <iframe
-          width="100%"
-          height="100%"
           [src]="pomucka.videoURL | safe"
           title="YouTube video player"
           frameborder="0"

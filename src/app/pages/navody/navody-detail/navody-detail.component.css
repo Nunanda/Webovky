@@ -42,3 +42,9 @@
       gap: 30px;
       margin-top: 20px;
   }
+
+  @media screen and (max-width: 808px) {
+    #container{
+      padding: 20px;
+    }
+  }

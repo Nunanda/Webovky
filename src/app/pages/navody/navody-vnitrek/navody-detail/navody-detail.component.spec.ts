@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopisyComponent } from './navody-detail.component';
+import { NavodyDetailComponent } from './navody-detail.component';
 
-describe('PopisyComponent', () => {
-  let component: PopisyComponent;
-  let fixture: ComponentFixture<PopisyComponent>;
+describe('NavodyDetailComponent', () => {
+  let component: NavodyDetailComponent;
+  let fixture: ComponentFixture<NavodyDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PopisyComponent ]
+      declarations: [ NavodyDetailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PopisyComponent);
+    fixture = TestBed.createComponent(NavodyDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

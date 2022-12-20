@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavodyService } from '../../../service/navody.service';
-import { Popis } from '../../../types';
+import { NavodyService } from '../../../../service/navody.service';
+import { Popis } from '../../../../types';
+import { NavodyComponent } from '../../navody.component';
 
 @Component({
   selector: 'app-navody-detail',

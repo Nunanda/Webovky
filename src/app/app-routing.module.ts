@@ -6,7 +6,7 @@ import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
-import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
+import { NavodyDetailComponent } from './pages/navody/navody-vnitrek/navody-detail/navody-detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

@@ -8,9 +8,10 @@ import { SlovnikComponent } from './pages/slovnik/slovnik.component';
 import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
-import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
+import { NavodyDetailComponent } from './pages/navody/navody-vnitrek/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
+import { NavodyVnitrekComponent } from './pages/navody/navody-vnitrek/navody-vnitrek.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SafePipe } from './safe.pipe';
     VyukovymodDetailComponent,
     NavodyDetailComponent,
     SafePipe,
+    NavodyVnitrekComponent,
   ],
   imports: [
     BrowserModule,

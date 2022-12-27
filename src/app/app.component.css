@@ -31,7 +31,6 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    justify-content: space-between;
     z-index: 1000;
 }
 
@@ -43,6 +42,7 @@ body {
     border-radius: 50px;
     align-items: center;
     justify-content: space-between;
+    margin-right: 10%;
 }
 
 #logo {
@@ -53,17 +53,21 @@ body {
     height: auto;
 }
 
+#account {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
 #selecro {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 300;
-    padding: 1%;
-}
-
-#Slogan {
-    font-weight: 100;
-    font-size: 1.5rem;
-    padding: 2%;
+    padding: 5%;
 }
 
 #Menu {
@@ -85,12 +89,15 @@ body {
 
 #Hledat {
     opacity: 80%;
-    font-size: larger;
+    font-size: 1.2rem;
     margin-left: 20px;
 }
 
 #Lupa {
     margin-right: 20px;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
 }
 
 .dropdown-content {
@@ -127,49 +134,111 @@ body {
 
 /*MEDIA QUERY*/
 
-@media screen and (max-width: 1210px) {
-    #Slogan {
-        font-size: 1.3rem;
-    }
-
-    #selecro {
-        font-size: 1.6rem;
-    }
-
-}
-
-@media screen and (max-width: 1249px) {
-    #page {
-        width: 100vw;
-        height: 100vh;
-    }
-
-}
-
-@media screen and (max-width: 840px) {
-    #Slogan {
-        display: none;
-    }
-
-    #hledaci_bunka {
-        width: 65%;
-        margin-right: 2%;
-    }
-
-}
-
-@media screen and (max-width: 440px) {
-    #selecro {
-        display: none;
+@media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+    .Menu-block {
+        padding: 10px;
     }
 
     #hledaci_lista {
-        justify-content: unset;
+        height: 75px;
+    }
 
+    #logo {
+        max-width: 75px;
     }
 
     #hledaci_bunka {
-        width: 80%;
+        height: 50px;
     }
 
+    #selecro {
+        font-size: 1.7rem;
+    }
+
+    #Lupa {
+        max-width: 40px;
+    }
+
+ 
+
 }
+
+@media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+    #selecro {
+        font-size: 1.5rem;
+    }
+
+    #hledaci_lista {
+        height: 65px;
+    }
+
+    #logo {
+        max-width: 65px;
+    }
+
+    #hledaci_bunka {
+        height: 45px;
+    }
+
+    #Lupa {
+        max-width: 35px;
+    }
+
+    #Hledat {
+        font-size: 1rem;
+    }
+
+    #account {
+        max-width: 40px;
+    }
+
+
+
+    
+}
+
+@media screen and (max-width: 479px) {
+    /* start of phone styles */
+    #selecro {
+        display: none;
+    }
+
+
+    #hledaci_lista {
+        height: 60px;
+    }
+
+    #logo {
+        max-width: 60px;
+    }
+
+    #hledaci_bunka {
+        height: 42px;
+        margin-left: 4%;
+        width: 55%;
+    }
+
+    #account {
+        max-width: 35px;
+    }
+    
+}
+
+@media screen and (max-width: 1153px) {
+    /*background img none*/
+    body {
+        background-image: none;
+    }
+
+    #page {
+        width: 100%;
+    }
+    
+}
+
+
+
+
+

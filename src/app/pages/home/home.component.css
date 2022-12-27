@@ -70,3 +70,60 @@ h2 {
       padding: 20px;
     }
   }
+
+@media screen and (max-width: 991px) {
+/* start of large tablet styles */
+
+    #container {
+        padding: 20px;
+    }
+
+    .obrazek {
+        max-width: 230px;
+    }
+
+    .socials_logo {
+        max-width: 30px;
+        min-width: 30px;
+    }
+
+    .novinky {
+        margin-top: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .novinky {
+        padding: 10px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+    .obrazek {
+        max-width: 200px;
+    }
+
+   
+}
+
+@media screen and (max-width: 479px) {
+    /* start of phone styles */
+
+    .obrazek {
+        max-width: 140px;
+        padding: 8px;
+    }
+
+    .socials_logo {
+        max-width: 25px;
+        min-width: 25px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}

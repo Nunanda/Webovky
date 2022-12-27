@@ -42,7 +42,7 @@ body {
     border-radius: 50px;
     align-items: center;
     justify-content: space-between;
-    margin-right: 10%;
+    margin-left: 8%;
 }
 
 #logo {
@@ -54,37 +54,17 @@ body {
 }
 
 #account {
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 15px;
+    color: #fff;
     width: 100%;
     max-width: 50px;
     height: auto;
-    margin-right: 20px;
 }
 
 #selecro {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 300;
-    padding: 5%;
-}
-
-#Menu {
-    width: 100%;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2%; 
-}
-
-.Menu-block {
-    padding: 15px;
-    background: #F4B9CD;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    margin-left: 4%;
 }
 
 #Hledat {
@@ -100,37 +80,81 @@ body {
     height: auto;
 }
 
-.dropdown-content {
-    min-width: 160px;
-    background-color: #f1f1f1;
-    display: none;
-    position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 4;
-}
+.topnav {
+    background-color: #ffd5e4;
+    display: inline-block;
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+  }
 
-.dropdown-content a {
+.topnav a {
+    float: left;
+    display: block;
     color: #000;
-    padding: 12px 16px;
+    text-align: center;
+    padding: 20px 22px;
     text-decoration: none;
-    display: block;
+    font-size: 17px;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+.active {
+    background-color: #F4B9CD;;
+    color: white;
+  }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.topnav .icon {
+    display: none;
 }
 
 .dropdown {
-    position: unset;
+    float: left;
 }
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: #000;
+    padding: 20px 22px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: #000;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
 
 /*MEDIA QUERY*/
 
@@ -193,11 +217,48 @@ body {
     #account {
         max-width: 40px;
     }
-
-
-
-    
 }
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+    .dropdown .dropbtn {
+        padding: 16px 18px;
+        font-size: 12px;    
+      }
+    
+      .topnav a {
+        padding: 16px 18px;
+        font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
 
 @media screen and (max-width: 479px) {
     /* start of phone styles */

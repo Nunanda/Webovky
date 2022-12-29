@@ -98,7 +98,7 @@ body {
 }
 
 .active {
-    background-color: #F4B9CD;;
+    background-color: #F4B9CD;
     color: white;
   }
 
@@ -140,7 +140,7 @@ body {
   }
 
   .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: #ddd;
+    background-color: #F4B9CD;
     color: #000;
   }
 

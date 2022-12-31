@@ -57,6 +57,7 @@ h2 {
 .socials_logo {
     width: 100%;
     max-width: 50px;
+    min-width: 50px;
     height: auto;
 }
 

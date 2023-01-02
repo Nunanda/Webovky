@@ -1,12 +1,23 @@
+{{title}}
 <div id="container">
     <div class="bunka">
-        <div>{{title}}</div>
-        <div>Název části: {{popis[index].nazevCasti}}</div>
-        <div innerHTML="{{popis[index].popis}}">Popis: </div>
+        <div>Použijeme tyto styly:</div>
+        <div>{{navod.zkratky}}</div>
+        <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
+        <div *ngFor="let item of popis">
+            <button>
+              {{item.titulekCasti}}
+            </button>
+        </div>
+    </div>
+    <div class="bunka">
+        <div>{{popis[index].nazevCasti}}</div>
+        <div>Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
+        Návod: 
+        <div innerHTML="{{popis[index].popis}}"></div>
         <div id="buttons">
             <button (click)="previousIndex()" type="button">Previous</button>
             <button (click)="nextIndex()" type="button">Next</button>
         </div>
     </div>
-    <div class="bunka"></div>
 </div>

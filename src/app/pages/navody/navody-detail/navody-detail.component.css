@@ -43,6 +43,11 @@
       margin-top: 20px;
   }
 
+  #obrazek_navodu {
+    height: 150px;
+    border-radius: 10px;
+}
+
   @media screen and (max-width: 808px) {
     #container{
       padding: 20px;

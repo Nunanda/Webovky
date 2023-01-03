@@ -55,7 +55,6 @@
 .obsah {
     display: flex;
     padding: 15px;
-    justify-content: center;
 }
 
 #obrazek_navodu {
@@ -76,3 +75,58 @@ h2 {
       padding: 20px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+        .bunka {
+            min-width: 330px;
+        }
+
+        #obrazek_navodu {
+            height: 95px;
+        }
+
+        .obsah {
+            padding: 10px;
+        }
+
+        .text {
+            font-size: .8rem;
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+        .bunka {
+            min-width: 320px;
+        }
+
+        #obrazek_navodu {
+            height: 80px;
+        }
+
+        .obsah {
+            padding: 8px;
+        }
+
+        .text {
+            font-size: .75rem;
+        }
+
+        .Nazev_navodu {
+            padding: 2px;
+            font-size: .9rem;
+        }
+        
+        
+        
+    }
+    
+    @media screen and (max-width: 479px) {
+    /* start of phone styles */
+        #obrazek_navodu {
+            height: 70px;
+        }
+
+    }
+    

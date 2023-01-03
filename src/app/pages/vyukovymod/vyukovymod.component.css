@@ -33,7 +33,6 @@
 #obsah {
     display: flex;
     padding: 15px;
-    justify-content: center;
 }
 
 #obrazek_navodu {
@@ -55,3 +54,62 @@ h2 {
       padding: 20px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+        .bunka {
+            min-width: 330px;
+            
+        }
+
+        #obsah {
+            padding: 10px;
+        }
+
+        #obrazek_navodu {
+            width: 90px;
+        }
+
+        .text {
+            font-size: .8rem;
+    
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+
+        .bunka {
+            min-width: 320px;
+            
+        }
+
+        #obsah {
+            padding: 8px;
+        }
+
+        #obrazek_navodu {
+            width: 80px;
+        }
+
+        .text {
+            font-size: .75rem;
+        }
+
+        .ruzovy_okraj {
+            padding: 2px;
+            font-size: .9rem;
+        }
+
+    }
+
+    
+    @media screen and (max-width: 479px) {
+    /* start of phone styles */
+
+      #obrazek_navodu {
+          width: 70px;
+      }
+    }
+    
+      

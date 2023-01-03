@@ -48,3 +48,28 @@
       padding: 20px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+      button {
+        
+      }
+    }
+    
+    @media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+      button {
+        font-size: 18px;
+        padding: 13px 23px;
+      }
+    
+    }
+    
+    @media screen and (max-width: 479px) {
+    /* start of phone styles */
+      button {
+        font-size: 15px;
+        padding: 10px 20px;
+      }
+    
+    }

@@ -23,8 +23,8 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.popis = this.navodyService.getPopisy(this.title);
     this.navod = this.navodyService.getNavodyByName(this.title);
+    this.popis = this.navodyService.getPopisy(this.title);
   }
 
   public nextIndex() {
@@ -43,6 +43,10 @@ export class NavodyDetailComponent implements OnInit {
     else {
       this.index--;
     }
+  }
+
+  public setindex(item: Popis) {
+    this.index = this.popis.indexOf(item);
   }
 
 }

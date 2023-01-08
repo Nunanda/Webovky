@@ -5,19 +5,20 @@
         <div>{{navod.zkratky}}</div>
         <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
         <div *ngFor="let item of popis">
-            <button>
+            <button (click)="setindex(item)">
               {{item.titulekCasti}}
             </button>
         </div>
     </div>
     <div class="bunka">
-        <div>{{popis[index].nazevCasti}}</div>
+        <div>{{popis[index].titulekCasti}}:</div>
+        <br>
         <div>Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
-        Návod: 
-        <div innerHTML="{{popis[index].popis}}"></div>
         <div id="buttons">
             <button (click)="previousIndex()" type="button">Previous</button>
             <button (click)="nextIndex()" type="button">Next</button>
         </div>
+        Návod: 
+        <div innerHTML="{{popis[index].popis}}"></div>
     </div>
 </div>

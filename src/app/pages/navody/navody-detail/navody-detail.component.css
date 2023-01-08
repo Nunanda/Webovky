@@ -53,13 +53,6 @@
       padding: 20px;
     }
   }
-
-  @media screen and (max-width: 991px) {
-    /* start of large tablet styles */
-      button {
-        
-      }
-    }
     
     @media screen and (max-width: 767px) {
     /* start of medium tablet styles */
@@ -78,3 +71,15 @@
       }
     
     }
+
+.unfinished {
+  background-color: #ea348a;
+}
+
+.finished {
+  background-color: #3EDE44;
+}
+
+.inprogress {
+  background-color: #3EDE44;
+}

@@ -14,6 +14,8 @@ export class NavodyDetailComponent implements OnInit {
   popis: Array<Popis>;
   navod: any;
   index: number;
+  intervalId: any;
+  timer: any = 300;
 
   constructor(private navodyService: NavodyService, private router: Router) {
     this.title = localStorage.getItem("title");
@@ -47,6 +49,28 @@ export class NavodyDetailComponent implements OnInit {
 
   public setindex(item: Popis) {
     this.index = this.popis.indexOf(item);
+  }
+
+  get minutes() {
+    return Math.floor(this.timer / 60) % 60;
+  }
+
+  get seconds() {
+    return this.timer % 60;
+  }
+
+  public time() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = 0;
+    }
+    else if (!this.intervalId) {
+      this.intervalId = setInterval(() => this.timer--, 1000);
+    }
+  }
+
+  public finished() {
+
   }
 
 }

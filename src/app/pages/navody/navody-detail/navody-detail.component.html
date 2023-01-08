@@ -5,7 +5,7 @@
         <div>{{navod.zkratky}}</div>
         <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
         <div *ngFor="let item of popis">
-            <button (click)="setindex(item)">
+            <button class="unfinished" id="button0" (click)="setindex(item)">
               {{item.titulekCasti}}
             </button>
         </div>
@@ -18,7 +18,9 @@
             <button (click)="previousIndex()" type="button">Previous</button>
             <button (click)="nextIndex()" type="button">Next</button>
         </div>
-        Návod: 
+        Návod:
         <div innerHTML="{{popis[index].popis}}"></div>
+        <button (click)="time()">{{ minutes }}:{{ seconds }}</button>
+        <button (click)="finished()">Hotovo</button>
     </div>
 </div>

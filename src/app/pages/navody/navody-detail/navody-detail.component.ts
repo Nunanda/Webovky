@@ -56,7 +56,7 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   get seconds() {
-    return this.timer % 60;
+    return ("00" + this.timer % 60).slice(-2);
   }
 
   public time() {
@@ -70,7 +70,7 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   public finished() {
-
+    this.index++;
   }
 
 }

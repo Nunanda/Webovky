@@ -8,9 +8,24 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent{
-  constructor(private router: Router) { }
+
+  element: HTMLElement | null;
+
+  constructor(private router: Router) {
+    this.element = document.getElementById("myTopnav");
+  }
   title = 'Webovky';
   ngOnInit() : void {
     this.router.navigate(['home']);
+    this.element = document.getElementById("myTopnav");
+  }
+
+  public myFunction() {
+    if (this.element?.className === "topnav") {
+      this.element.className += " responsive";
+    }
+    else if (this.element?.className === "topnav responsive") {
+      this.element.className = "topnav";
+    }
   }
 }

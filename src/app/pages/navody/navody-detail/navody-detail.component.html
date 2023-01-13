@@ -15,8 +15,12 @@
         <br>
         <div>Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
         <div id="buttons">
-            <button (click)="previousIndex()" type="button">Previous</button>
-            <button (click)="nextIndex()" type="button">Next</button>
+            <button (click)="previousIndex()" type="button">
+                <img src="../../../../assets/icon/Vlevo.png">
+            </button>
+            <button (click)="nextIndex()" type="button">
+                <img src="../../../../assets/icon/Vpravo.png">
+            </button>
         </div>
         Návod:
         <div innerHTML="{{popis[index].popis}}"></div>

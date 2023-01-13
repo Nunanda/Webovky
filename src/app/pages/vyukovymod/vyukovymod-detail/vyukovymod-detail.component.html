@@ -22,8 +22,13 @@
         </div>
     </div>
     <div id="buttons">
-        <button (click)="previousIndex()" type="button">Předchozí</button>
-        <button (click)="nextIndex()" type="button">Další</button>
+        <button (click)="previousIndex()" type="button">
+            <img src="../../../../assets/icon/Vlevo.png">
+        </button>
+        {{index+1}}/{{krok.length}}
+        <button (click)="nextIndex()" type="button">
+            <img src="../../../../assets/icon/Vpravo.png">
+        </button>
     </div>
 </div>
 

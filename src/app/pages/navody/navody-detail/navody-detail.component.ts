@@ -15,7 +15,7 @@ export class NavodyDetailComponent implements OnInit {
   navod: any;
   index: number;
   intervalId: any;
-  timer: any = 300;
+  timer: any = 0;
 
   constructor(private navodyService: NavodyService, private router: Router) {
     this.title = localStorage.getItem("title");
@@ -65,7 +65,7 @@ export class NavodyDetailComponent implements OnInit {
       this.intervalId = 0;
     }
     else if (!this.intervalId) {
-      this.intervalId = setInterval(() => this.timer--, 1000);
+      this.intervalId = setInterval(() => this.timer++, 1000);
     }
   }
 

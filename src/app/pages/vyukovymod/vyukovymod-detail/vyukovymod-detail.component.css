@@ -25,7 +25,6 @@ h2 {
     padding: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     font-size: calc(.7rem + .5vw);
-    max-width: 500px;
 }
 
 button {

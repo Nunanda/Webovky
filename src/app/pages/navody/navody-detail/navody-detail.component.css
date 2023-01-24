@@ -24,6 +24,7 @@
      border-radius: 15px;
      box-shadow: 0px 3px 8px rgba(0, 0, 0, .2);
      width: 45%;
+     min-width: 300px;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -121,6 +122,16 @@
       }
     
     }
+
+    @media screen and (max-width: 671px) {
+        .bunka {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+        
+    }
+
+    
 
 .unfinished {
   background-color: #FF7B7B;

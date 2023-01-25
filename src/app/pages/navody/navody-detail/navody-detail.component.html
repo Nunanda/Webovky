@@ -1,30 +1,40 @@
-{{title}}
 <div id="container">
-    <div class="bunka">
-        <div>Použijeme tyto styly:</div>
-        <div>{{navod.zkratky}}</div>
-        <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
-        <div *ngFor="let item of popis">
-            <button class="unfinished" id="button0" (click)="setindex(item)">
-              {{item.titulekCasti}}
-            </button>
+    <h2>{{title}}</h2>
+    <div id="bunky">
+        <div class="bunka">
+            <div id="blok">
+                <div class="bold">Použijeme tyto styly:</div>
+                <div>{{navod.zkratky}}</div>
+                <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
+            </div>
+            <div id="blok0">
+                <div *ngFor="let item of popis">
+                    <button class="unfinished" id="button0" (click)="setindex(item)">
+                    {{item.titulekCasti}}
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="bunka">
-        <div>{{popis[index].titulekCasti}}:</div>
-        <br>
-        <div>Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
-        <div id="buttons">
-            <button (click)="previousIndex()" type="button">
-                <img src="../../../../assets/icon/Vlevo.png">
-            </button>
-            <button (click)="nextIndex()" type="button">
-                <img src="../../../../assets/icon/Vpravo.png">
-            </button>
+        <div class="bunka">
+            <div class="content">
+                <div class="bold">{{popis[index].titulekCasti}}:</div>
+                <br>
+                <div class="padding-top">Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
+                <div class="buttons">
+                    <button (click)="previousIndex()" type="button">
+                        <img src="../../../../assets/icon/Vlevo.png">
+                    </button>
+                    <button (click)="nextIndex()" type="button">
+                        <img src="../../../../assets/icon/Vpravo.png">
+                    </button>
+                </div>
+                Návod:
+                <div innerHTML="{{popis[index].popis}}"></div>
+                <div class="buttons">
+                    <button (click)="time()">{{ minutes }}:{{ seconds }}</button>
+                    <button (click)="finished()">Hotovo</button>
+                </div>
+            </div>
         </div>
-        Návod:
-        <div innerHTML="{{popis[index].popis}}"></div>
-        <button (click)="time()">{{ minutes }}:{{ seconds }}</button>
-        <button (click)="finished()">Hotovo</button>
     </div>
 </div>

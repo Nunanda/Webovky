@@ -29,24 +29,6 @@ export class NavodyDetailComponent implements OnInit {
     this.popis = this.navodyService.getPopisy(this.title);
   }
 
-  public nextIndex() {
-    if (this.index+1 > this.popis.length) {
-      this.index = 0;
-    }
-    else {
-      this.index++;
-    }
-  }
-
-  public previousIndex() {
-    if (this.index-1 < 0) {
-      this.index = 0;
-    }
-    else {
-      this.index--;
-    }
-  }
-
   public setindex(item: Popis) {
     this.index = this.popis.indexOf(item);
   }
@@ -69,8 +51,5 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  public finished() {
-    this.index++;
-  }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VyukaService } from '../../../service/vyuka.service';
-import {  Router } from '@angular/router';
-import {  Info } from '../../../types'
+import { Router } from '@angular/router';
+import { Info } from '../../../types'
 
 @Component({
   selector: 'app-vyukovymod-detail',
@@ -25,7 +25,7 @@ export class VyukovymodDetailComponent implements OnInit {
   }
 
   public nextIndex() {
-    if (this.index+1 > this.krok.length) {
+    if (this.index + 1 >= this.krok.length) {
       this.index = 0;
     }
     else {
@@ -34,8 +34,8 @@ export class VyukovymodDetailComponent implements OnInit {
   }
 
   public previousIndex() {
-    if (this.index-1 < 0) {
-      this.index = 0;
+    if (this.index - 1 < 0) {
+      this.index = this.krok.length - 1;
     }
     else {
       this.index--;

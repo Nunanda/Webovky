@@ -20,19 +20,11 @@
                 <div class="bold">{{popis[index].titulekCasti}}:</div>
                 <br>
                 <div class="padding-top">Použijeme tyto styly: {{popis[index].zkratkyCasti}}</div>
-                <div class="buttons">
-                    <button (click)="previousIndex()" type="button">
-                        <img src="../../../../assets/icon/Vlevo.png">
-                    </button>
-                    <button (click)="nextIndex()" type="button">
-                        <img src="../../../../assets/icon/Vpravo.png">
-                    </button>
-                </div>
                 Návod:
                 <div innerHTML="{{popis[index].popis}}"></div>
                 <div class="buttons">
                     <button (click)="time()">{{ minutes }}:{{ seconds }}</button>
-                    <button (click)="finished()">Hotovo</button>
+                    <button>Hotovo</button>
                 </div>
             </div>
         </div>

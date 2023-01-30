@@ -1,22 +1,40 @@
 <div id="container">
-    <h2>{{title}}</h2>
+    <h2>
+        {{title}}
+    </h2>
     <div class="columns">
         <div class="column">
             <div class="bublina">
-                <div><strong>Krok:</strong> {{krok[index].cislo}}</div>
-                <div *ngIf="krok[index].styl != ' '"><strong>Styl:</strong> {{krok[index].styl}}</div>
-                <div><strong>Pomucky:</strong> {{krok[index].pouzijeme}}</div>
-                <div id="popis" innerHTML="{{krok[index].popis}}"><strong>Popis:</strong> </div>
+                <div>
+                    <strong>
+                        Krok:
+                    </strong>
+                    {{krok[index].cislo}}
+                </div>
+                <div *ngIf="krok[index].styl != null">
+                    <strong>
+                        Styl:
+                    </strong>
+                    {{krok[index].styl}}
+                </div>
+                <div>
+                    <strong>
+                        Pomucky:
+                    </strong>
+                    {{krok[index].pouzijeme}}
+                </div>
+                <div id="popis" innerHTML="{{krok[index].popis}}">
+                    <strong>
+                        Popis:
+                    </strong>
+                </div>
             </div>
         </div>
         <div class="column">
             <div class="video">
-                <iframe
-                [src]="krok[index].videoUrl | safe"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+                <iframe [src]="krok[index].videoUrl | safe" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -31,4 +49,3 @@
         </button>
     </div>
 </div>
-

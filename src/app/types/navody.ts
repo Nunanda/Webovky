@@ -1,4 +1,4 @@
-export type Navod =  {
+export type Navod = {
   title: string,
   nazev: string,
   zkratky: string,
@@ -9,14 +9,14 @@ export type Navod =  {
 
 export type Popis = {
   obrazek: boolean,
-  zkratkyCasti: string,
+  zkratkyCasti: string | null,
   nazevCasti: string,
   titulekCasti: string,
   popis: string
 }
 
 export enum Obtiznost {
-  tezky='tezky',
-  stredni='stredni',
-  lehky='lehky'
+  tezky = 'tezky',
+  stredni = 'stredni',
+  lehky = 'lehky'
 }

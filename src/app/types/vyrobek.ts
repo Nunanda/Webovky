@@ -8,7 +8,7 @@ export type Vyrobek = {
 
 export type Info = {
     cislo: string,
-    styl: string,
+    styl: string | null,
     pouzijeme: string,
     popis: string,
     videoUrl: string

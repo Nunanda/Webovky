@@ -1,5 +1,3 @@
-/*CSS*/
-
 #container {
     padding: 40px;
 }
@@ -63,7 +61,7 @@
 }
 
 h2 {
-     text-align: center;
+    text-align: center;
 }
 
 .text {
@@ -71,62 +69,58 @@ h2 {
 }
 
 @media screen and (max-width: 808px) {
-    #container{
-      padding: 20px;
+    #container {
+        padding: 20px;
     }
-  }
 
-  @media screen and (max-width: 991px) {
-    /* start of large tablet styles */
-        .bunka {
-            min-width: 330px;
-        }
+}
 
-        #obrazek_navodu {
-            height: 95px;
-        }
-
-        .obsah {
-            padding: 10px;
-        }
-
-        .text {
-            font-size: .8rem;
-        }
+@media screen and (max-width: 991px) {
+    .bunka {
+        min-width: 330px;
     }
-    
-    @media screen and (max-width: 767px) {
-    /* start of medium tablet styles */
-        .bunka {
-            min-width: 320px;
-        }
 
-        #obrazek_navodu {
-            height: 80px;
-        }
-
-        .obsah {
-            padding: 8px;
-        }
-
-        .text {
-            font-size: .75rem;
-        }
-
-        .Nazev_navodu {
-            padding: 2px;
-            font-size: .9rem;
-        }
-        
-        
-        
+    #obrazek_navodu {
+        height: 95px;
     }
-    
-    @media screen and (max-width: 479px) {
-    /* start of phone styles */
-        #obrazek_navodu {
-            height: 70px;
-        }
 
+    .obsah {
+        padding: 10px;
     }
-    
+
+    .text {
+        font-size: .8rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .bunka {
+        min-width: 320px;
+    }
+
+    #obrazek_navodu {
+        height: 80px;
+    }
+
+    .obsah {
+        padding: 8px;
+    }
+
+    .text {
+        font-size: .75rem;
+    }
+
+    .Nazev_navodu {
+        padding: 2px;
+        font-size: .9rem;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    #obrazek_navodu {
+        height: 70px;
+    }
+
+}

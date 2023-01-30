@@ -1,12 +1,12 @@
-export type Pomucka =  {
+export type Pomucka = {
   nazev: string,
   titulek: string,
   kroky: Array<PopisPomucek>,
-  videoURL: string,
+  videoURL: any,
 }
 
-export type PopisPomucek =  {
+export type PopisPomucek = {
   popis: string,
-  obrazek: string,
+  obrazek: string | null,
   exist: boolean,
 } 

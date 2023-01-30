@@ -8,9 +8,9 @@ describe('NavodyDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavodyDetailComponent ]
+      declarations: [NavodyDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NavodyDetailComponent);
     component = fixture.componentInstance;

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <meta charset="utf-8" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta charset="utf-8" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
   </head>
   <body>
     <div id="page">
-      <!--<div id="hledaci_lista">
+      <div id="hledaci_lista">
         <img id="logo" src="/assets/icon/logo.png">
         <div id="selecro">
           selecro
@@ -14,15 +14,22 @@
           <div id="Hledat">Hledat...</div>
           <img id="Lupa" src="/assets/icon/search1.svg">
         </div>
-      </div>-->
-      <div class="topnav" id="myTopnav">
-        <a href="/home" class="active">Selecro</a>
+        <img id="account" src="/assets/icon/account.svg">
+      </div>
+      <div id="Menu">
+        <div class="blok" routerLink="/home">
+          <button routerLink="/home" class="Menu-block">
+            <img class="googleicons" src="/assets/icon/info.svg">
+              Selecro
+          </button>
+        </div>
         <div class="dropdown">
-          <button class="dropbtn">Pomůcky
-            <svg class='fontawesomesvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+          <button class="Menu-block">
+            <img class="googleicons" src="/assets/icon/style.svg">
+              Pomůcky
           </button>
           <div class="dropdown-content">
-            <a routerLink="/pomucky/hacek">
+            <a routerLink="pomucky/hacek">
               Háček
             </a>
             <a routerLink="/pomucky/prize">
@@ -55,8 +62,9 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Slovník
-            <svg class='fontawesomesvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+          <button class="Menu-block">
+            <img class="googleicons" src="/assets/icon/book.svg">
+              Slovník
           </button>
           <div class="dropdown-content">
             <a routerLink="/slovnik/retizkove-oko">
@@ -85,9 +93,14 @@
             </a>
           </div>
         </div>
-        <a routerLink="/vyukovymod">Výukový mód</a>
-        <a routerLink="/navody">Návody</a>
-        <a class="icon" (click)="myFunction()">&#9776;</a>
+        <button routerLink="/vyukovymod" class="Menu-block">
+          <img class="googleicons" src="/assets/icon/school.svg">
+            Výukový mód
+        </button>
+        <button routerLink="/navody" class="Menu-block">
+          <img class="googleicons" src="/assets/icon/view.svg">
+            Návody
+        </button>
       </div>
       <router-outlet></router-outlet>
     </div>

@@ -7,9 +7,9 @@ describe('VyukaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VyukaComponent ]
+      declarations: [VyukaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(VyukaComponent);
     component = fixture.componentInstance;

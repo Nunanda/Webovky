@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent{
+export class AppComponent {
 
   element: HTMLElement | null;
 
@@ -15,7 +15,7 @@ export class AppComponent{
     this.element = document.getElementById("myTopnav");
   }
   title = 'Webovky';
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.router.navigate(['home']);
     this.element = document.getElementById("myTopnav");
   }

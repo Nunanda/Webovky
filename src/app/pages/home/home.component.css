@@ -1,5 +1,3 @@
-/*CSS*/
-
 #container {
     padding: 40px;
 }
@@ -66,14 +64,13 @@ h2 {
 }
 
 @media screen and (max-width: 808px) {
-    #container{
-      padding: 20px;
+    #container {
+        padding: 20px;
     }
-  }
+
+}
 
 @media screen and (max-width: 991px) {
-/* start of large tablet styles */
-
     #container {
         padding: 20px;
     }
@@ -102,17 +99,13 @@ h2 {
 }
 
 @media screen and (max-width: 767px) {
-    /* start of medium tablet styles */
     .obrazek {
         max-width: 200px;
     }
 
-   
 }
 
 @media screen and (max-width: 479px) {
-    /* start of phone styles */
-
     .obrazek {
         max-width: 140px;
         padding: 8px;
@@ -126,4 +119,5 @@ h2 {
     .card {
         padding: 10px;
     }
+
 }

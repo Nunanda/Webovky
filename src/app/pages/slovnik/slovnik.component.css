@@ -1,5 +1,3 @@
-/*CSS*/
-
 #container {
     padding: 40px;
 }
@@ -95,61 +93,59 @@
 }
 
 @media screen and (max-width: 808px) {
-    #container{
-      padding: 20px;
+    #container {
+        padding: 20px;
     }
-  }
 
-  @media screen and (max-width: 991px) {
-    /* start of large tablet styles */
-        .pole_zkratka {
-            height: 130px;
-            width: 130px;
-        }
+}
 
-        #zkratka {
-            font-size: 65px;
-        }
-
-        .znacka {
-            height: 130px;
-            width: 130px;
-        }
-    
+@media screen and (max-width: 991px) {
+    .pole_zkratka {
+        height: 130px;
+        width: 130px;
     }
-    
-    @media screen and (max-width: 767px) {
-    /* start of medium tablet styles */
-        .pole_zkratka {
-            height: 120px;
-            width: 120px;
-        }
 
-        #zkratka {
-            font-size: 58px;
-        }
-
-        .znacka {
-            height: 120px;
-            width: 120px;
-        }
-
+    #zkratka {
+        font-size: 65px;
     }
-    
-    @media screen and (max-width: 479px) {
-    /* start of phone styles */
-        .pole_zkratka {
-            height: 100px;
-            width: 100px;
-        }
 
-        #zkratka {
-            font-size: 50px;
-        }
-
-        .znacka {
-            height: 100px;
-            width: 100px;
-        }
-    
+    .znacka {
+        height: 130px;
+        width: 130px;
     }
+
+}
+
+@media screen and (max-width: 767px) {
+    .pole_zkratka {
+        height: 120px;
+        width: 120px;
+    }
+
+    #zkratka {
+        font-size: 58px;
+    }
+
+    .znacka {
+        height: 120px;
+        width: 120px;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    .pole_zkratka {
+        height: 100px;
+        width: 100px;
+    }
+
+    #zkratka {
+        font-size: 50px;
+    }
+
+    .znacka {
+        height: 100px;
+        width: 100px;
+    }
+
+}

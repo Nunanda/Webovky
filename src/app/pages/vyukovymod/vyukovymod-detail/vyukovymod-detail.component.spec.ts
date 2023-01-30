@@ -8,9 +8,9 @@ describe('VyukovymodDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VyukovymodDetailComponent ]
+      declarations: [VyukovymodDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(VyukovymodDetailComponent);
     component = fixture.componentInstance;

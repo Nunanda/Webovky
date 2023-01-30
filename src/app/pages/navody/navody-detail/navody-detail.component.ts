@@ -51,5 +51,4 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-
 }

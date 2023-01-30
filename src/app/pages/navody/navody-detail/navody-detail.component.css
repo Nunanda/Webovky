@@ -1,5 +1,5 @@
  #container {
-     padding: 40px;
+   padding: 40px;
  }
 
  #bunky {
@@ -17,130 +17,129 @@
  .bold {
    font-weight: bold;
  }
- 
+
  .bunka {
-     background-color: #C8E7F4;
-     padding: 20px;
-     border-radius: 15px;
-     box-shadow: 0px 3px 8px rgba(0, 0, 0, .2);
-     width: 45%;
-     min-width: 300px;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-    }
+   background-color: #C8E7F4;
+   padding: 20px;
+   border-radius: 15px;
+   box-shadow: 0px 3px 8px rgba(0, 0, 0, .2);
+   width: 45%;
+   min-width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
 
  button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 20px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #000;
-    background-color: #eaeaf4;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-  }
-  
-  button:hover {background-color: rgb(208, 208, 208);}
-  
-  button:active {
-    background-color: rgb(208, 208, 208);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    transform: translateY(4px);
-  }
+   display: inline-block;
+   padding: 15px 25px;
+   font-size: 20px;
+   cursor: pointer;
+   text-align: center;
+   text-decoration: none;
+   outline: none;
+   color: #000;
+   background-color: #eaeaf4;
+   border: none;
+   border-radius: 15px;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+ }
 
-  .buttons {
-      display: flex;
-      gap: 30px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-  }
+ button:hover {
+   background-color: rgb(208, 208, 208);
+ }
 
-  #blok {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+ button:active {
+   background-color: rgb(208, 208, 208);
+   box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+   transform: translateY(4px);
+ }
 
-  #blok0 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+ .buttons {
+   display: flex;
+   gap: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
 
-  #button0 {
-    min-width: 230px;
-    margin: 5px;
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+ #blok {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
 
-  #obrazek_navodu {
-    height: 150px;
-    border-radius: 10px;
-    margin: 20px;
-}
+ #blok0 {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+ }
 
+ #button0 {
+   min-width: 230px;
+   margin: 5px;
+ }
 
-.timeFinish {
-  display: flex;
-  gap: 10%;
-  justify-content: center;
-}
+ .content {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+ }
 
-  @media screen and (max-width: 808px) {
-    #container{
-      padding: 20px;
-    }
-  }
-    
-    @media screen and (max-width: 767px) {
-    /* start of medium tablet styles */
-      button {
-        font-size: 18px;
-        padding: 13px 23px;
-      }
-    
-    }
-    
-    @media screen and (max-width: 479px) {
-    /* start of phone styles */
-      button {
-        font-size: 15px;
-        padding: 10px 20px;
-      }
-    
-    }
+ #obrazek_navodu {
+   height: 150px;
+   border-radius: 10px;
+   margin: 20px;
+ }
 
-    @media screen and (max-width: 671px) {
-        .bunka {
-          width: 100%;
-          margin-bottom: 40px;
-        }
-        
-    }
+ .timeFinish {
+   display: flex;
+   gap: 10%;
+   justify-content: center;
+ }
 
-    
+ @media screen and (max-width: 808px) {
+   #container {
+     padding: 20px;
+   }
 
-.unfinished {
-  background-color: #FF7B7B;
-}
+ }
 
-.finished {
-  background-color: #3EDE44;
-}
+ @media screen and (max-width: 767px) {
+   button {
+     font-size: 18px;
+     padding: 13px 23px;
+   }
 
-.inprogress {
-  background-color: #3EDE44;
-}
+ }
+
+ @media screen and (max-width: 479px) {
+   button {
+     font-size: 15px;
+     padding: 10px 20px;
+   }
+
+ }
+
+ @media screen and (max-width: 671px) {
+   .bunka {
+     width: 100%;
+     margin-bottom: 40px;
+   }
+
+ }
+
+ .unfinished {
+   background-color: #FF7B7B;
+ }
+
+ .finished {
+   background-color: #3EDE44;
+ }
+
+ .inprogress {
+   background-color: #3EDE44;
+ }

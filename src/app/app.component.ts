@@ -11,22 +11,27 @@ export class AppComponent {
 
   element: HTMLElement | null;
   element1: HTMLElement | null;
+  element2: HTMLElement | null;
+  element3: HTMLElement | null;
 
   constructor(private router: Router) {
     this.element = document.getElementById("mySidenav");
     this.element1 = document.getElementById("main");
+    this.element2 = document.getElementById("dropdown-content0");
+    this.element3 = document.getElementById("dropdown-content1");
   }
   title = 'Webovky';
   ngOnInit(): void {
     this.router.navigate(['home']);
     this.element = document.getElementById("mySidenav");
     this.element1 = document.getElementById("main");
-    this.myFunction();
+    this.element2 = document.getElementById("dropdown-content0");
+    this.element3 = document.getElementById("dropdown-content1");
   }
 
   public openNav() {
-    this.element?.setAttribute("style", "width: 250px");
-    this.element1?.setAttribute("style", "marginLeft: 250px");
+    this.element?.setAttribute("style", "width: 300px");
+    this.element1?.setAttribute("style", "marginLeft: 300px");
   }
 
   public closeNav() {
@@ -34,18 +39,21 @@ export class AppComponent {
     this.element1?.setAttribute("style", "marginLeft: 0");
   }
 
-  public myFunction() {
-    /*var dropdown = document.getElementsByClassName("dropdown-btn");
-    for (let i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
-        }
-      });
-    }*/
+  public showHidePomucky() {
+    if (this.element2?.getAttribute("style") == "display: block") {
+      this.element2?.setAttribute("style", "display: none");
+    }
+    else {
+      this.element2?.setAttribute("style", "display: block");
+    }
+  }
+
+  public showHideSlovnik() {
+    if (this.element3?.getAttribute("style") == "display: block") {
+      this.element3?.setAttribute("style", "display: none");
+    }
+    else {
+      this.element3?.setAttribute("style", "display: block");
+    }
   }
 }

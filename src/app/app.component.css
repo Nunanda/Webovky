@@ -35,7 +35,7 @@ body {
 #hledaci_bunka {
     display: flex;
     background-color: #fff;
-    width: 55%;
+    width: 40%;
     height: 60px;
     border-radius: 50px;
     align-items: center;
@@ -58,8 +58,17 @@ body {
     width: 100%;
     max-width: 50px;
     height: auto;
-    margin-right: 10px;
-    margin-left: 8%;
+    margin-right: 20px;
+    margin-left: 4%;
+}
+
+#hamburger {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
 }
 
 #selecro {
@@ -131,6 +140,67 @@ body {
     gap: 2%;
 }
 
+button {
+    border: none;
+    background: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+}
+
+.active {
+    background-color: green;
+    color: white;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+    color: #fff;
+}
+
 @media screen and (max-width: 991px) {
     .Menu-block {
         padding: 10px;
@@ -155,7 +225,7 @@ body {
     #Lupa {
         max-width: 40px;
     }
-    
+
 }
 
 @media screen and (max-width: 767px) {
@@ -185,6 +255,12 @@ body {
 
     #account {
         max-width: 40px;
+        border-radius: 10px;
+    }
+
+    #hamburger {
+        max-width: 40px;
+        border-radius: 10px;
     }
 
 }
@@ -209,6 +285,10 @@ body {
     }
 
     #account {
+        max-width: 35px;
+    }
+
+    #hamburger {
         max-width: 35px;
     }
 

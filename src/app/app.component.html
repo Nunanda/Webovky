@@ -20,6 +20,41 @@
         <img id="Lupa" src="/assets/icon/search1.svg">
       </div>
       <img id="account" src="/assets/icon/account.svg">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">
+          &times;
+        </a>
+        <a routerLink="/home">
+          Selecro
+        </a>
+        <button class="dropdown-btn">
+          Pomůcky
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a routerLink="/pomucky/hacek">
+            Háček
+          </a>
+          <a routerLink="/pomucky/prize">
+            Příze
+          </a>
+          <a routerLink="/pomucky/znackovac">
+            Značkovač
+          </a>
+        </div>
+        <a routerLink="/slovnik">
+          Slovník
+        </a>
+        <a routerLink="/vyukovymod">
+          Výukový mod
+        </a>
+        <a routerLink="/navody">
+          Návody
+        </a>
+      </div>
+      <button (click)="openNav()" class="button">
+        <img id="hamburger" src="/assets/icon/hamburger-menu.svg">
+      </button>
     </div>
     <div id="Menu">
       <div class="blok" routerLink="/home">

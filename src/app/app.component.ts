@@ -10,22 +10,50 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   element: HTMLElement | null;
+  element1: HTMLElement | null;
+  element2: HTMLElement | null;
+  element3: HTMLElement | null;
 
   constructor(private router: Router) {
-    this.element = document.getElementById("myTopnav");
+    this.element = document.getElementById("mySidenav");
+    this.element1 = document.getElementById("main");
+    this.element2 = document.getElementById("dropdown-content0");
+    this.element3 = document.getElementById("dropdown-content1");
   }
   title = 'Webovky';
   ngOnInit(): void {
     this.router.navigate(['home']);
-    this.element = document.getElementById("myTopnav");
+    this.element = document.getElementById("mySidenav");
+    this.element1 = document.getElementById("main");
+    this.element2 = document.getElementById("dropdown-content0");
+    this.element3 = document.getElementById("dropdown-content1");
   }
 
-  public myFunction() {
-    if (this.element?.className === "topnav") {
-      this.element.className += " responsive";
+  public openNav() {
+    this.element?.setAttribute("style", "width: 300px");
+    this.element1?.setAttribute("style", "marginLeft: 300px");
+  }
+
+  public closeNav() {
+    this.element?.setAttribute("style", "width: 0");
+    this.element1?.setAttribute("style", "marginLeft: 0");
+  }
+
+  public showHidePomucky() {
+    if (this.element2?.getAttribute("style") == "display: block") {
+      this.element2?.setAttribute("style", "display: none");
     }
-    else if (this.element?.className === "topnav responsive") {
-      this.element.className = "topnav";
+    else {
+      this.element2?.setAttribute("style", "display: block");
+    }
+  }
+
+  public showHideSlovnik() {
+    if (this.element3?.getAttribute("style") == "display: block") {
+      this.element3?.setAttribute("style", "display: none");
+    }
+    else {
+      this.element3?.setAttribute("style", "display: block");
     }
   }
 }

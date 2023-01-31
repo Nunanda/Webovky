@@ -20,6 +20,100 @@
         <img id="Lupa" src="/assets/icon/search1.svg">
       </div>
       <img id="account" src="/assets/icon/account.svg">
+      <div id="mySidenav" class="sidenav">
+        <a class="closebtn" (click)="closeNav()">
+          &times;
+        </a>
+        <div id="Menu">
+          <div class="blok" routerLink="/home">
+            <button routerLink="/home" class="Menu-block">
+              <img class="googleicons" src="/assets/icon/info.svg">
+              Selecro
+            </button>
+          </div>
+          <div class="dropdown">
+            <button class="Menu-block" (click)="showHidePomucky()">
+              <img class="googleicons" src="/assets/icon/style.svg">
+              Pomůcky
+            </button>
+            <div class="dropdown-content0" id="dropdown-content0">
+              <a routerLink="pomucky/hacek">
+                Háček
+              </a>
+              <a routerLink="/pomucky/prize">
+                Příze
+              </a>
+              <a routerLink="/pomucky/znackovac">
+                Značkovač
+              </a>
+              <a routerLink="/pomucky/jehla">
+                Jehla
+              </a>
+              <a routerLink="/pomucky/nuzky">
+                Nůžky
+              </a>
+              <a routerLink="/pomucky/bezpecnostni-oci-a-nos">
+                Bezpečnostní oči a nos
+              </a>
+              <a routerLink="/pomucky/chrastitko">
+                Chrastítko
+              </a>
+              <a routerLink="/pomucky/pocitadlo">
+                Počítadlo
+              </a>
+              <a routerLink="/pomucky/navijec-prize">
+                Navíječ příze
+              </a>
+              <a routerLink="/pomucky/vypln">
+                Výplň
+              </a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="Menu-block" (click)="showHideSlovnik()">
+              <img class="googleicons" src="/assets/icon/book.svg">
+              Slovník
+            </button>
+            <div class="dropdown-content1">
+              <a routerLink="/slovnik/retizkove-oko">
+                Řetízkové oko
+              </a>
+              <a routerLink="/slovnik/pevne-oko">
+                Pevné oko
+              </a>
+              <a routerLink="/slovnik/kratky-sloupek">
+                Krátký sloupek
+              </a>
+              <a routerLink="/slovnik/polodlouhy-sloupek">
+                Polodlouhý sloupek
+              </a>
+              <a routerLink="/slovnik/dlouhy-sloupek">
+                Dlouhý sloupek
+              </a>
+              <a routerLink="/slovnik/rozhackovani">
+                Rozháčkování
+              </a>
+              <a routerLink="/slovnik/shackovani">
+                Sháčkování
+              </a>
+              <a routerLink="/slovnik/magicky-krouzek">
+                Magický kroužek
+              </a>
+            </div>
+          </div>
+          <button routerLink="/vyukovymod" class="Menu-block">
+            <img class="googleicons" src="/assets/icon/school.svg">
+            Výukový mód
+          </button>
+          <button routerLink="/navody" class="Menu-block">
+            <img class="googleicons" src="/assets/icon/view.svg">
+            Návody
+          </button>
+        </div>
+      </div>
+      <button (click)="openNav()" class="button">
+        <img id="hamburger" src="/assets/icon/hamburger-menu.svg">
+      </button>
     </div>
     <div id="Menu">
       <div class="blok" routerLink="/home">

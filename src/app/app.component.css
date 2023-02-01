@@ -203,6 +203,7 @@ body {
 
 .sidenav #Menu {
     display: block;
+    margin-top: 0;
 }
 
 .sidenav .Menu-block {
@@ -284,7 +285,6 @@ body {
 
     #Menu {
         display: none;
-        margin-top: 66px;
     }
 
 }

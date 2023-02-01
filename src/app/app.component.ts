@@ -9,34 +9,31 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-  element: HTMLElement | null;
   element1: HTMLElement | null;
   element2: HTMLElement | null;
   element3: HTMLElement | null;
 
   constructor(private router: Router) {
-    this.element = document.getElementById("mySidenav");
-    this.element1 = document.getElementById("main");
+    this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
   }
   title = 'Webovky';
   ngOnInit(): void {
     this.router.navigate(['home']);
-    this.element = document.getElementById("mySidenav");
-    this.element1 = document.getElementById("main");
+    this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
   }
 
-  public openNav() {
-    this.element?.setAttribute("style", "height: 100%");
-    
-  }
+  public opencloseNav() {
+    if (this.element1?.getAttribute("style") == "height: 0") {
+      this.element1?.setAttribute("style", "height: 100%");
+    }
+    else {
+      this.element1?.setAttribute("style", "height: 0");
+    }
 
-  public closeNav() {
-    this.element?.setAttribute("style", "height: 0%");
-    
   }
 
   public showHidePomucky() {

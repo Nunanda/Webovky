@@ -9,7 +9,7 @@
 <body>
   <div id="page">
     <div id="hledaci_lista">
-      <img id="logo" src="/assets/icon/logo.png">
+      <img routerLink="/home" id="logo" src="/assets/icon/logo.png">
       <div id="selecro">
         selecro
       </div>
@@ -21,12 +21,9 @@
       </div>
       <img id="account" src="/assets/icon/account.svg">
       <div id="mySidenav" class="sidenav">
-        <a class="closebtn" (click)="closeNav()">
-          &times;
-        </a>
         <div id="Menu">
           <div class="blok" routerLink="/home">
-            <button routerLink="/home" class="Menu-block">
+            <button (click)="opencloseNav()" routerLink="/home" class="Menu-block">
               <img class="googleicons" src="/assets/icon/info.svg">
               Selecro
             </button>
@@ -37,34 +34,34 @@
               Pomůcky
             </button>
             <div class="dropdown-content0" id="dropdown-content0">
-              <a routerLink="pomucky/hacek">
+              <a (click)="opencloseNav()" routerLink="pomucky/hacek">
                 Háček
               </a>
-              <a routerLink="/pomucky/prize">
+              <a (click)="opencloseNav()" routerLink="/pomucky/prize">
                 Příze
               </a>
-              <a routerLink="/pomucky/znackovac">
+              <a (click)="opencloseNav()" routerLink="/pomucky/znackovac">
                 Značkovač
               </a>
-              <a routerLink="/pomucky/jehla">
+              <a (click)="opencloseNav()" routerLink="/pomucky/jehla">
                 Jehla
               </a>
-              <a routerLink="/pomucky/nuzky">
+              <a (click)="opencloseNav()" routerLink="/pomucky/nuzky">
                 Nůžky
               </a>
-              <a routerLink="/pomucky/bezpecnostni-oci-a-nos">
+              <a (click)="opencloseNav()" routerLink="/pomucky/bezpecnostni-oci-a-nos">
                 Bezpečnostní oči a nos
               </a>
-              <a routerLink="/pomucky/chrastitko">
+              <a (click)="opencloseNav()" routerLink="/pomucky/chrastitko">
                 Chrastítko
               </a>
-              <a routerLink="/pomucky/pocitadlo">
+              <a (click)="opencloseNav()" routerLink="/pomucky/pocitadlo">
                 Počítadlo
               </a>
-              <a routerLink="/pomucky/navijec-prize">
+              <a (click)="opencloseNav()" routerLink="/pomucky/navijec-prize">
                 Navíječ příze
               </a>
-              <a routerLink="/pomucky/vypln">
+              <a (click)="opencloseNav()" routerLink="/pomucky/vypln">
                 Výplň
               </a>
             </div>
@@ -76,42 +73,43 @@
             </button>
             <div class="dropdown-content1" id="dropdown-content1">
               <a routerLink="/slovnik/retizkove-oko">
+
                 Řetízkové oko
               </a>
-              <a routerLink="/slovnik/pevne-oko">
+              <a (click)="opencloseNav()" routerLink="/slovnik/pevne-oko">
                 Pevné oko
               </a>
-              <a routerLink="/slovnik/kratky-sloupek">
+              <a (click)="opencloseNav()" routerLink="/slovnik/kratky-sloupek">
                 Krátký sloupek
               </a>
-              <a routerLink="/slovnik/polodlouhy-sloupek">
+              <a (click)="opencloseNav()" routerLink="/slovnik/polodlouhy-sloupek">
                 Polodlouhý sloupek
               </a>
-              <a routerLink="/slovnik/dlouhy-sloupek">
+              <a (click)="opencloseNav()" routerLink="/slovnik/dlouhy-sloupek">
                 Dlouhý sloupek
               </a>
-              <a routerLink="/slovnik/rozhackovani">
+              <a (click)="opencloseNav()" routerLink="/slovnik/rozhackovani">
                 Rozháčkování
               </a>
-              <a routerLink="/slovnik/shackovani">
+              <a (click)="opencloseNav()" routerLink="/slovnik/shackovani">
                 Sháčkování
               </a>
-              <a routerLink="/slovnik/magicky-krouzek">
+              <a (click)="opencloseNav()" routerLink="/slovnik/magicky-krouzek">
                 Magický kroužek
               </a>
             </div>
           </div>
-          <button routerLink="/vyukovymod" class="Menu-block">
+          <button (click)="opencloseNav()" routerLink="/vyukovymod" class="Menu-block">
             <img class="googleicons" src="/assets/icon/school.svg">
             Výukový mód
           </button>
-          <button routerLink="/navody" class="Menu-block">
+          <button (click)="opencloseNav()" routerLink="/navody" class="Menu-block">
             <img class="googleicons" src="/assets/icon/view.svg">
             Návody
           </button>
         </div>
       </div>
-      <button (click)="openNav()" class="button">
+      <button (click)="opencloseNav()" class="button">
         <img id="hamburger" src="/assets/icon/hamburger-menu.svg">
       </button>
     </div>

@@ -140,9 +140,10 @@ body {
     gap: 2%;
 }
 
-button {
+.button {
     border: none;
     background: none;
+    display: none;
 }
 
 .sidenav {
@@ -274,6 +275,14 @@ button {
     #hamburger {
         max-width: 40px;
         border-radius: 10px;
+    }
+
+    .button {
+        display: block;
+    }
+
+    #Menu {
+        display: none;
     }
 
 }

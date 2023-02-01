@@ -30,13 +30,13 @@ export class AppComponent {
   }
 
   public openNav() {
-    this.element?.setAttribute("style", "width: 300px");
-    this.element1?.setAttribute("style", "marginLeft: 300px");
+    this.element?.setAttribute("style", "height: 100%");
+    
   }
 
   public closeNav() {
-    this.element?.setAttribute("style", "width: 0");
-    this.element1?.setAttribute("style", "marginLeft: 0");
+    this.element?.setAttribute("style", "height: 0%");
+    
   }
 
   public showHidePomucky() {

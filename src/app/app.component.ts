@@ -40,7 +40,7 @@ export class AppComponent {
   }
 
   public showHidePomucky() {
-    if (this.element2?.getAttribute("style") == "display: block") {
+    if (this.element2?.getAttribute("style") === "display: block") {
       this.element2?.setAttribute("style", "display: none");
     }
     else {
@@ -49,7 +49,7 @@ export class AppComponent {
   }
 
   public showHideSlovnik() {
-    if (this.element3?.getAttribute("style") == "display: block") {
+    if (this.element3?.getAttribute("style") === "display: block") {
       this.element3?.setAttribute("style", "display: none");
     }
     else {

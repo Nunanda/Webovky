@@ -65,4 +65,12 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
+  public previousIndex() {
+
+  }
+
+  public nextIndex() {
+
+  }
+
 }

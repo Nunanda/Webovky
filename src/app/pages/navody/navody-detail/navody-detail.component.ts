@@ -16,17 +16,20 @@ export class NavodyDetailComponent implements OnInit {
   index: number;
   intervalId: any;
   timer: any = 0;
+  element: NodeListOf<HTMLElement> | null;
 
   constructor(private navodyService: NavodyService, private router: Router) {
     this.title = localStorage.getItem("title");
     this.popis = new Array<Popis>;
     this.navod = new Array<Navod>;
     this.index = 0;
+    this.element = document.getElementsByName("button0");
   }
 
   ngOnInit() {
     this.navod = this.navodyService.getNavodyByName(this.title);
     this.popis = this.navodyService.getPopisy(this.title);
+    this.element = document.getElementsByName("button0");
   }
 
   public setindex(item: Popis) {
@@ -49,6 +52,25 @@ export class NavodyDetailComponent implements OnInit {
     else if (!this.intervalId) {
       this.intervalId = setInterval(() => this.timer++, 1000);
     }
+  }
+
+  public finished() {
+    if (this.element?.item(this.index).className === "finished") {
+      this.element?.item(this.index).classList.remove("finished");
+      this.element?.item(this.index).classList.add("unfinished");
+    }
+    else {
+      this.element?.item(this.index).classList.remove("unfinished");
+      this.element?.item(this.index).classList.add("finished");
+    }
+  }
+
+  public previousIndex() {
+
+  }
+
+  public nextIndex() {
+
   }
 
 }

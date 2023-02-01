@@ -147,15 +147,15 @@ body {
 }
 
 .sidenav {
-    height: 100%;
-    width: 0;
+    height: 0;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
     right: 0;
     background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-    padding-top: 60px;
+    overflow-y: hidden;
+    top: 60px;
     transition: 0.5s;
 }
 
@@ -203,6 +203,7 @@ body {
 
 .sidenav #Menu {
     display: block;
+    margin-top: 0;
 }
 
 .sidenav .Menu-block {
@@ -213,6 +214,7 @@ body {
     background: #F4B9CD;
     border-radius: 0;
     width: 100%;
+    text-align: left;
 }
 
 @media screen and (max-width: 991px) {

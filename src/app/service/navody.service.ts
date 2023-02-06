@@ -175,7 +175,7 @@ const poleNavody: Array<Navod> = [
         popis: ["Mk (4)", "ks (2 řady)", "Po"]
       },
       {
-        obrazek: false, 
+        obrazek: false, //dodat fotku doplnky
         zkratkyCasti: "Mk, Ks, Po",
         nazevCasti: "doplnky-zelva",
         titulekCasti: "Doplňky",

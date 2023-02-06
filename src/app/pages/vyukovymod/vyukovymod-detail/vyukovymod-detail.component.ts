@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VyukaService } from '../../../service/vyuka.service';
 import { Router } from '@angular/router';
-import { Info } from '../../../types'
+import { InfoVyuky } from '../../../types'
 
 @Component({
   selector: 'app-vyukovymod-detail',
@@ -11,21 +11,21 @@ import { Info } from '../../../types'
 export class VyukovymodDetailComponent implements OnInit {
 
   title: any;
-  krok: Array<Info>;
+  InfoVyuky: Array<InfoVyuky>;
   index: number;
 
   constructor(private vyukaService: VyukaService, private router: Router) {
     this.title = localStorage.getItem("title");
-    this.krok = new Array<Info>;
+    this.InfoVyuky = new Array<InfoVyuky>;
     this.index = 0;
   }
 
   ngOnInit() {
-    this.krok = this.vyukaService.getKroky(this.title);
+    this.InfoVyuky = this.vyukaService.getKroky(this.title);
   }
 
   public nextIndex() {
-    if (this.index + 1 >= this.krok.length) {
+    if (this.index + 1 >= this.InfoVyuky.length) {
       this.index = 0;
     }
     else {
@@ -35,7 +35,7 @@ export class VyukovymodDetailComponent implements OnInit {
 
   public previousIndex() {
     if (this.index - 1 < 0) {
-      this.index = this.krok.length - 1;
+      this.index = this.InfoVyuky.length - 1;
     }
     else {
       this.index--;

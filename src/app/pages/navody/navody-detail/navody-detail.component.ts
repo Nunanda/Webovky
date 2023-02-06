@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavodyService } from '../../../service/navody.service';
-import { Navod, Popis } from '../../../types';
+import { Navod, PopisNavodu } from '../../../types';
 
 @Component({
   selector: 'app-navody-detail',
@@ -11,7 +11,7 @@ import { Navod, Popis } from '../../../types';
 export class NavodyDetailComponent implements OnInit {
 
   title: any;
-  popis: Array<Popis>;
+  popis: Array<PopisNavodu>;
   navod: any;
   index: number;
   intervalId: any;
@@ -20,7 +20,7 @@ export class NavodyDetailComponent implements OnInit {
 
   constructor(private navodyService: NavodyService, private router: Router) {
     this.title = localStorage.getItem("title");
-    this.popis = new Array<Popis>;
+    this.popis = new Array<PopisNavodu>;
     this.navod = new Array<Navod>;
     this.index = 0;
     this.element = document.getElementsByName("button0");
@@ -32,7 +32,7 @@ export class NavodyDetailComponent implements OnInit {
     this.element = document.getElementsByName("button0");
   }
 
-  public setindex(item: Popis) {
+  public setindex(item: PopisNavodu) {
     this.index = this.popis.indexOf(item);
   }
 

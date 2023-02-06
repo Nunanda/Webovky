@@ -4,7 +4,7 @@ import { Pomucka } from '../types'
 const polePomucek: Array<Pomucka> = [
   {
     nazev: "hacek",
-    titulek: "Háček",
+    title: "Háček",
     videoURL: "XL4ze9vLC3s",
     kroky: [
       {
@@ -27,7 +27,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "prize",
-    titulek: "Příze",
+    title: "Příze",
     videoURL: null,
     kroky: [
       {
@@ -50,7 +50,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "znackovac",
-    titulek: "Značkovač",
+    title: "Značkovač",
     videoURL: null,
     kroky: [
       {
@@ -73,7 +73,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "jehla",
-    titulek: "Jehla",
+    title: "Jehla",
     videoURL: null,
     kroky: [
       {
@@ -86,7 +86,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "nuzky",
-    titulek: "Nůžky",
+    title: "Nůžky",
     videoURL: null,
     kroky: [
       {
@@ -109,7 +109,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "bezpecnostni-oci-a-nos",
-    titulek: "Bezpečnostní oči a nos",
+    title: "Bezpečnostní oči a nos",
     videoURL: null,
     kroky: [
       {
@@ -132,7 +132,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "chrastitko",
-    titulek: "Chrastítko",
+    title: "Chrastítko",
     videoURL: null,
     kroky: [
       {
@@ -150,7 +150,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "pocitadlo",
-    titulek: "Počítadlo",
+    title: "Počítadlo",
     videoURL: null,
     kroky: [
       {
@@ -173,7 +173,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "navijec-prize",
-    titulek: "Navíječ příze",
+    title: "Navíječ příze",
     videoURL: null,
     kroky: [
       {
@@ -186,7 +186,7 @@ const polePomucek: Array<Pomucka> = [
 
   {
     nazev: "vypln",
-    titulek: "Výplň",
+    title: "Výplň",
     videoURL: null,
     kroky: [
       {
@@ -203,20 +203,11 @@ const polePomucek: Array<Pomucka> = [
 })
 export class PomuckyService {
 
-  mapaPomucek = new Map;
-
   constructor() {
-    this.initMap();
-  }
-
-  private initMap() {
-    polePomucek.forEach(pomucka => {
-      this.mapaPomucek.set(pomucka.nazev, pomucka);
-    });
   }
 
   public getPomuckaByName(name: string) {
-    return this.mapaPomucek.get(name);
+    return polePomucek.find(element => element.nazev == name);
   }
 
   public getVsechnyPomucky(): Array<Pomucka> {

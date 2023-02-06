@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Navod, Obtiznost, Popis } from '../types';
+import { Navod, ObtiznostNavodu, PopisNavodu } from '../types';
 
 const poleNavody: Array<Navod> = [
   {
-    obtiznost: Obtiznost.lehky,
+    obtiznost: ObtiznostNavodu.lehky,
     nazev: "dinosaurus",
     title: "Dinosaurus",
     zkratky: "Mk, V, Ks, A, Po, Řo",
@@ -61,7 +61,7 @@ const poleNavody: Array<Navod> = [
     ]
   },
   {
-    obtiznost: Obtiznost.stredni,
+    obtiznost: ObtiznostNavodu.stredni,
     nazev: "harold",
     title: "Harold",
     zkratky: "Mk, Ks, Řo, Po, V, A",
@@ -105,7 +105,7 @@ const poleNavody: Array<Navod> = [
     ]
   },
   {
-    obtiznost: Obtiznost.tezky,
+    obtiznost: ObtiznostNavodu.tezky,
     nazev: "vodni-zelva",
     title: "Vodní želva",
     zkratky: "Mk, Ks, Řo, Po, V, A",
@@ -154,24 +154,15 @@ const poleNavody: Array<Navod> = [
         popis: "Mk (4)<br> ks (2 řady)<br> Po"
       },
     ],
-  },];
+  },
+];
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavodyService {
 
-  mapaNavody: Map<string, Navod>;
-
   constructor() {
-    this.mapaNavody = new Map();
-    this.initMap();
-  }
-
-  private initMap() {
-    poleNavody.forEach(navod => {
-      this.mapaNavody.set(navod.nazev, navod);
-    });
   }
 
   public getNavodyByName(name: string) {
@@ -182,7 +173,7 @@ export class NavodyService {
     return poleNavody;
   }
 
-  public getPopisy(title: string): Array<Popis> {
+  public getPopisy(title: string): Array<PopisNavodu> {
     let index = poleNavody.findIndex(x => x.title == title);
     return poleNavody[index].popisy;
   }

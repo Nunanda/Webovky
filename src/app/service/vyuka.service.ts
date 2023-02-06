@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Info, Vyrobek } from '../types'
+import { InfoVyuky, Vyuka } from '../types'
 
-const poleVyrobku: Array<Vyrobek> = [
+const poleVyrobku: Array<Vyuka> = [
   {
     nazev: "chobotnicka",
     title: "Chobotnicka",
@@ -350,28 +350,18 @@ const poleVyrobku: Array<Vyrobek> = [
 })
 export class VyukaService {
 
-  mapaVyrobku: Map<String, Vyrobek>;
-
   constructor() {
-    this.mapaVyrobku = new Map();
-    this.initMap();
-  }
-
-  private initMap() {
-    poleVyrobku.forEach(vyrobek => {
-      this.mapaVyrobku.set(vyrobek.nazev, vyrobek);
-    });
   }
 
   public getVyrobekByName(name: string) {
-    return this.mapaVyrobku.get(name);
+    return poleVyrobku.find(element => element.title == name);
   }
 
-  public getVsechnyPomucky(): Array<Vyrobek> {
+  public getVsechnyPomucky(): Array<Vyuka> {
     return poleVyrobku;
   }
 
-  public getKroky(title: string): Array<Info> {
+  public getKroky(title: string): Array<InfoVyuky> {
     let index = poleVyrobku.findIndex(x => x.title === title);
     return poleVyrobku[index].kroky;
   }

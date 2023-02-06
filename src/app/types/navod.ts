@@ -12,7 +12,7 @@ export type PopisNavodu = {
   zkratkyCasti: string | null,
   nazevCasti: string,
   titulekCasti: string,
-  popis: string
+  popis: Array<string>
 }
 
 export enum ObtiznostNavodu {

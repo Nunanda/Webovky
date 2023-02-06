@@ -42,18 +42,16 @@
                 <div class="bold">
                     Návod:
                 </div>
-                <div name="element0" *ngFor="let item0 of popisy">
-                    {{item0}}
+                <div name="element0" *ngFor="let item of popisy">
+                    {{item}}
                     <br>
                 </div>
-                <div class="buttons">
-                    <button (click)="time()">
-                        {{ minutes }}:{{ seconds }}
-                    </button>
-                    <button (click)="finished()">
-                        Hotovo
-                    </button>
-                </div>
+                <button (click)="time()">
+                    {{ minutes }}:{{ seconds }}
+                </button>
+                <button (click)="finished()">
+                    Hotovo
+                </button>
             </div>
         </div>
     </div>

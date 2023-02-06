@@ -18,6 +18,18 @@
           Hledat...
         </div>
         <img id="Lupa" src="/assets/icon/search1.svg">
+        <div id="translation">
+          <select
+            class="form-control"
+            #selectedlang
+            (change)="switchLanguage(selectedlang.value)">
+            <option *ngFor="let language of translate.getLangs()"
+            [value]="language"
+            [selected]="language === translate.currentLang">
+            {{ language }}
+          </option>
+          </select>
+        </div>
       </div>
       <img id="account" src="/assets/icon/account.svg">
       <div id="mySidenav" class="sidenav">

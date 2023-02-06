@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
+  title = 'Webovky';
+
   element1: HTMLElement | null;
   element2: HTMLElement | null;
   element3: HTMLElement | null;
@@ -17,8 +20,15 @@ export class AppComponent {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
+    public translate: TranslateService;
   }
-  title = 'Webovky';
+  {
+    translate.addLangs(['en','cs']);
+    translate.setDefaultLang('cs');
+  }
+  switchLanguage(lang:string){
+    this.translate.use(lang);
+  }
   ngOnInit(): void {
     this.router.navigate(['home']);
     this.element1 = document.getElementById("mySidenav");

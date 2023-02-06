@@ -11,7 +11,7 @@
     "ci:clean": "rimraf ./dist",
     "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom --code-coverage",
     "ci:build": "ng build --prod"
-},
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
@@ -24,6 +24,8 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@angular/youtube-player": "^14.2.6",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "ci": "^2.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

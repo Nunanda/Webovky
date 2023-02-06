@@ -11,6 +11,9 @@ import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule, ɵHttpInterceptingHandler } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,20 @@ import { SafePipe } from './safe.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

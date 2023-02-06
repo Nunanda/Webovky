@@ -31,7 +31,6 @@ export class NavodyDetailComponent implements OnInit {
     this.popisy = new Array<string>;
     this.element = null;
     this.element0 = null;
-
   }
 
   ngOnInit() {

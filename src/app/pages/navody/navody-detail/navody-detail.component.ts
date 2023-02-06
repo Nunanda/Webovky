@@ -43,6 +43,7 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   public setindex(item: PopisNavodu) {
+    this.element0?.forEach(x => x.removeAttribute("style"));
     this.index = this.popis.indexOf(item);
     this.index0 = 0;
     if (this.element?.item(this.index).className === "finished") {

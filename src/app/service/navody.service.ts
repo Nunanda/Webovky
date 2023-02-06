@@ -11,10 +11,17 @@ const poleNavody: Array<Navod> = [
     popisy: [
       {
         obrazek: true,
+        zkratkyCasti: "Mk, V, Ks, A, Po, Řo",
+        nazevCasti: "dinosaurus",
+        titulekCasti: "Potřebujeme",
+        popis: ["Háček (velikost 4,5mm)", "Dolphin Baby 2 klubka na tělo", "Dolphin Baby 1 na ostny", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Nůžky", "Výplň", "Jehla"]
+      },
+      {
+        obrazek: true,
         zkratkyCasti: "Mk, V, Ks, A, Po",
         nazevCasti: "hlava-dinosaura",
         titulekCasti: "Hlava",
-        popis: ["Mk (6)", "V", "ks, V", "2ks, V", "3ks, V", "4ks, V", "ks, V", "s (6 řad)", "5ks, A", "4ks, A", "3ks, A", "2ks, A", "ks, A", "A", "Po"]
+        popis: ["Mk (6)", "V", "ks, V", "2ks, V", "3ks, V", "4ks, V", "ks, V", "ks (6 řad)", "5ks, A", "4ks, A", "3ks, A", "2ks, A", "ks, A", "A", "Po"]
       },
       {
         obrazek: true,

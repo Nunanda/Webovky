@@ -14,7 +14,7 @@ const poleNavody: Array<Navod> = [
         zkratkyCasti: "Mk, V, Ks, A, Po, Řo",
         nazevCasti: "dinosaurus",
         titulekCasti: "Potřebujeme",
-        popis: ["Háček (velikost 4,5mm)", "Dolphin Baby 2 klubka na tělo", "Dolphin Baby 1 na ostny", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Nůžky", "Výplň", "Jehla"]
+        popis: ["Háček (velikost 4,5 mm)", "Dolphin Baby 2 klubka na tělo", "Dolphin Baby 1 na ostny", "Kousek černé příze na nozdry", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Nůžky", "Výplň", "Jehla"]
       },
       {
         obrazek: true,
@@ -74,6 +74,13 @@ const poleNavody: Array<Navod> = [
     zkratky: "Mk, Ks, Řo, Po, V, A",
     pomucky: "Háček (velikost 3,5 mm), jehla, příze (Jeans), značkovač, bezpečnostní očka (10 mm), výplň",
     popisy: [
+      {
+        obrazek: true,
+        zkratkyCasti: "Mk, Ks, Řo, Po, V, A",
+        nazevCasti: "harold",
+        titulekCasti: "Nachystáme si",
+        popis: ["Háček (velikost 3 mm)", "Bezpečnostní očka (velikost 10 mm)", "YarnArt Jeans 1 klubko", "Kousek černé na doplňky", "Výplň", "Značkovač", "Nůžky", "Jehla"]
+      },
       {
         obrazek: true,
         zkratkyCasti: "Mk, V, Ks, A, Po",

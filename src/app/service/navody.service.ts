@@ -154,7 +154,8 @@ const poleNavody: Array<Navod> = [
         popis: ["Mk (4)", "ks (2 řady)", "Po"]
       },
     ],
-  },];
+  },
+];
 
 @Injectable({
   providedIn: 'root'

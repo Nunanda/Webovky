@@ -41,6 +41,7 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   public setindex(item: PopisNavodu) {
+    this.element0?.forEach(x => x.removeAttribute("style"));
     this.index = this.popis.indexOf(item);
     this.index0 = 0;
     if (this.element?.item(this.index).className === "finished") {
@@ -79,9 +80,7 @@ export class NavodyDetailComponent implements OnInit {
     else {
       this.element?.item(this.index).classList.remove("unfinished");
       this.element?.item(this.index).classList.add("finished");
-      for (let x in this.popisy) {
-        this.element0?.item(parseInt(x)).setAttribute("style", "text-decoration: line-through; color: gray");
-      }
+      this.element0?.forEach(x => x.setAttribute("style", "text-decoration: line-through; color: gray"));
       this.index0 = this.popisy.length;
     }
   }

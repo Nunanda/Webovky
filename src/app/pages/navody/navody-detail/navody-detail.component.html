@@ -39,8 +39,13 @@
                         <img src="../../../../assets/icon/Vpravo.png">
                     </button>
                 </div>
-                <div class="bold">Návod:</div>
-                <div innerHTML="{{popis[index].popis}}"></div>
+                <div class="bold">
+                    Návod:
+                </div>
+                <div name="element0" *ngFor="let item0 of popisy">
+                    {{item0}}
+                    <br>
+                </div>
                 <div class="buttons">
                     <button (click)="time()">
                         {{ minutes }}:{{ seconds }}

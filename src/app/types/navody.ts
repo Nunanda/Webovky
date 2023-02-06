@@ -1,22 +1,20 @@
-export type Navod = {
+export type Navod =  {
   title: string,
   nazev: string,
   zkratky: string,
   pomucky: string,
-  popisy: Array<PopisNavodu>,
-  obtiznost: ObtiznostNavodu
+  popisy: Array<Popis>,
+  obtiznost: Obtiznost
 }
 
-export type PopisNavodu = {
+export type Popis = {
   obrazek: boolean,
-  zkratkyCasti: string | null,
   nazevCasti: string,
-  titulekCasti: string,
   popis: string
 }
 
-export enum ObtiznostNavodu {
-  tezky = 'tezky',
-  stredni = 'stredni',
-  lehky = 'lehky'
+export enum Obtiznost {
+  tezky='tezky',
+  stredni='stredni',
+  lehky='lehky'
 }

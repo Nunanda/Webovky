@@ -11,6 +11,7 @@ import { Navod } from 'src/app/types';
 export class NavodyComponent implements OnInit {
 
   navod: Array<Navod>;
+  NavodyService: any;
 
   constructor(private navodyService: NavodyService, private router: Router) {
     this.navod = new Array<Navod>;
@@ -25,4 +26,7 @@ export class NavodyComponent implements OnInit {
     this.router.navigate(["navody/navody-detail"]);
   }
 
+  ngDoCheck() {
+ 
+  }
 }

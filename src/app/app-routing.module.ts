@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'navody', component: NavodyComponent },
   { path: 'vyukovymod', component: VyukaComponent },
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
-  { path: 'navody/navody-detail', component: NavodyDetailComponent }
+  { path: 'navody/:nazevNavodu', component: NavodyDetailComponent }
 ];
 
 @NgModule({

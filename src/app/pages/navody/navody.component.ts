@@ -26,7 +26,15 @@ export class NavodyComponent implements OnInit {
     this.router.navigate(["navody/navody-detail"]);
   }
 
-  ngDoCheck() {
- 
+  public lehkeNavody() {
   }
+
+  public stredniNavody() {
+  }
+
+  public tezkeNavody() {
+  }
+
+  
+
 }

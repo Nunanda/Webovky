@@ -1,14 +1,59 @@
 {
-    "Hledat": "Hledat...",
-    "Pomucky": "Pomůcky",
-    "Hacek": "Háček",
-    "Prize": "Příze",
-    "Znackovac": "Značkovač",
-    "Jehla": "Jehla",
-    "Nuzky": "Nůžky",
-    "BezpecnostniOciANos": "Bezpečnostní oči a nos",
-    "Chrastitko": "Chrastítko",
-    "Pocitadlo": "Počítadlo",
-    "NavijecPrize": "Navíječ příze",
-    "Vypln": "Výplň"
+    "HOME": {
+        "uvitani": "Vítejte!",
+        "webovaAplikace": "Zdraví Vás tým Selecro s touto webovou aplikací na naučení háčkování.",
+        "mobilniAplikace": "Připravujeme pro vás aplikaci na stažení do Vašeho zařízení. V aplikaci bude navíc možnost vytvoření vlastního účtu, kde bude možnost přidávat příspěvky, vytvářet vlastní návody, hodnotit a komentovat příspěvky ostatních a plno dalšího...",
+        "socialniSite": "Sociální sítě"
+    },
+
+    "NAVODY.DETAIL": {
+        "pouzitiStylu": "Použité styly:",
+        "navod": "Návod:",
+        "hotovo": "Hotovo"
+    },
+
+    "NAVODY": {
+        "nazev": "Název:",
+        "stylyZkratky": "Zkratky:",
+        "pomucky": "Pomůcky:"
+    },
+
+    "POMUCKY": {},
+
+    "SLOVNIK": {
+        "slovnikZkratka": "Zkratka:",
+        "image": "Značka:",
+        "popis": "Popis",
+        "animace": "Animace",
+        "veSkutecnosti": "Ve skutečnosti"
+    },
+
+    "VYUKOVYMOD.DETAIL": {
+        "krok": "Krok:",
+        "styl": "Styl:",
+        "pomucky": "Pomucky:",
+        "popis": "Popis:"
+    },
+
+    "VYUKOVYMOD": {
+        "vyukovyMod": "Výukový mód",
+        "pocetKroku": "Počet kroků:",
+        "popis": "Popis:"
+    },
+
+    "APP" : {
+        "hledat": "Hledat...",
+        "Pomucky": "Pomůcky",
+        "Hacek": "Háček",
+        "Prize": "Příze",
+        "Znackovac": "Značkovač",
+        "Jehla": "Jehla",
+        "Nuzky": "Nůžky",
+        "BezpecnostniOciANos": "Bezpečnostní oči a nos",
+        "Chrastitko": "Chrastítko",
+        "Pocitadlo": "Počítadlo",
+        "NavijecPrize": "Navíječ příze",
+        "Vypln": "Výplň"
+    }
 }
+

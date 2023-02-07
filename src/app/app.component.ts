@@ -16,14 +16,11 @@ export class AppComponent {
   element2: HTMLElement | null;
   element3: HTMLElement | null;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public translate: TranslateService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
-    public translate: TranslateService;
-  }
-  {
-    translate.addLangs(['en','cs']);
+    translate.addLangs(['cs','en']);
     translate.setDefaultLang('cs');
   }
   switchLanguage(lang:string){

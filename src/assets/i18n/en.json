@@ -1,14 +1,58 @@
 {
-    "Hledat": "Lookup...",
-    "Pomucky": "Tools",
-    "Hacek": "Hook",
-    "Prize": "Yarn",
-    "Znackovac": "Row marker",
-    "Jehla": "Needle",
-    "Nuzky": "Scissors",
-    "BezpecnostniOciANos": "Safety eyes and nose",
-    "Chrastitko": "Rattle",
-    "Pocitadlo": "Row counter",
-    "NavijecPrize": "Yarn winder",
-    "Vypln": "Filling"
+    "HOME": {
+        "uvitani": "Welcome!",
+        "webovaAplikace": "The Selecro team made a web app for you to learn to crochet.",
+        "mobilniAplikace": "We're working on an app for you to download on any device. You will be able to create an account, where you could make posts, create your own manuals, rate and comment on posts of other users and a lot more...",
+        "socialniSite": "Social Media"
+    },
+
+    "NAVODY.DETAIL": {
+        "pouzitiStylu": "Použité styly:",
+        "navod": "Manual:",
+        "hotovo": "Done"
+    },
+
+    "NAVODY": {
+        "nazev": "Name:",
+        "stylyZkratky": "Styles:",
+        "pomucky": "Tools:"
+    },
+
+    "POMUCKY": {},
+
+    "SLOVNIK": {
+        "slovnikZkratka": "Abbreviation:",
+        "image": "Label:",
+        "popis": "Description",
+        "animace": "Animation",
+        "veSkutecnosti": "In real life"
+    },
+
+    "VYUKOVYMOD.DETAIL": {
+        "krok": "Step:",
+        "styl": "Style:",
+        "pomucky": "Tools:",
+        "popis": "Description"
+    },
+
+    "VYUKOVYMOD": {
+        "vyukovyMod": "Educational mode",
+        "pocetKroku": "Amount of steps:",
+        "popis": "Popis:"
+    },
+
+    "APP" : {
+        "hledat": "Find...",
+        "Pomucky": "Tools",
+        "Hacek": "Hook",
+        "Prize": "Yarn",
+        "Znackovac": "Row marker",
+        "Jehla": "Needle",
+        "Nuzky": "Scissors",
+        "BezpecnostniOciANos": "Safety eyes and nose",
+        "Chrastitko": "Rattle",
+        "Pocitadlo": "Row counter",
+        "NavijecPrize": "Yarn winder",
+        "Vypln": "Filling"
+    }
 }

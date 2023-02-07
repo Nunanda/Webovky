@@ -12,7 +12,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: true,
         nazevCasti: "dinosaurus",
-        titulekCasti: "Potřebujeme",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 4,5 mm)", "Dolphin Baby 2 klubka na tělo", "Dolphin Baby 1 na ostny", "Kousek černé příze na nozdry", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Nůžky", "Výplň", "Jehla"]
       },
       {
@@ -69,7 +69,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: true,
         nazevCasti: "harold",
-        titulekCasti: "Nachystáme si",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 3 mm)", "Bezpečnostní očka (velikost 10 mm)", "YarnArt Jeans 1 klubko", "Kousek černé na doplňky", "Výplň", "Značkovač", "Nůžky", "Jehla"]
       },
       {
@@ -114,7 +114,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: true,
         nazevCasti: "vodni-zelva",
-        titulekCasti: "Nachystáme si",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 1 klubíčko na tělo", "YarnArt Jeans 1 klubíčko na krunýř", "Kousek černé a růžové na doplňky", "Bezpečnostní očka (10 mm)", "Značkovač", "Výplň", "Nůžky", "Jehla"]
       },
       {
@@ -171,7 +171,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: false,
         nazevCasti: "hlava-obraceci-chobotnicka",
-        titulekCasti: "Nachystáme si",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 2 klubíčka (každé jiné barvy)", "YarnArt Jeans černá na oči a doplňky", "Značkovač", "Nůžky", "Jehla"]
       },
       {
@@ -210,7 +210,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: false,
         nazevCasti: "pavouk",
-        titulekCasti: "Nachystáme si",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 1 klubíčko", "Jakákoliv tenká příze s chlupem", "Kousek černé na pusu", "Bezpečnostní očka (velikost 10 mm a 8 mm)", "Značkovač", "Výplň", "Nůžky", "Jehla"]
       },
       {
@@ -267,7 +267,7 @@ const poleNavody: Array<Navod> = [
       {
         obrazek: false,
         nazevCasti: "sova",
-        titulekCasti: "Nachystáme si",
+        titulekCasti: "Příprava",
         popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 2 klubíčka (každé jiné barvy)", "Kousek černé na doplňky", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Výplň", "Nůžky", "Jehla"]
       },
       {

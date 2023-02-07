@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Info, Vyrobek } from '../types'
+import { Info, Vyrobek } from '../types';
+import { TranslateService } from '@ngx-translate/core';
 
 const poleVyrobku: Array<Vyrobek> = [
   {
@@ -352,9 +353,14 @@ export class VyukaService {
 
   mapaVyrobku: Map<String, Vyrobek>;
 
-  constructor() {
+  constructor(public translate: TranslateService) {
     this.mapaVyrobku = new Map();
     this.initMap();
+    translate.addLangs(['CZ','EN']);
+    translate.setDefaultLang('CZ');
+  }
+  switchLanguage(lang:string){
+    this.translate.use(lang);
   }
 
   private initMap() {

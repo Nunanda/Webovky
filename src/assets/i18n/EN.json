@@ -19,8 +19,6 @@
         "pomucky": "Tools:"
     },
 
-    "POMUCKY": {},
-
     "SLOVNIK": {
         "slovnikZkratka": "Abbreviation:",
         "image": "Label:",
@@ -66,5 +64,13 @@
         "magickyKrouzek": "Magic ring",
         "vyukovyMod": "Educational mode",
         "navody": "Manuals"
+    },
+
+    "POLEVYROBKU": {
+        "nazvy": [
+            { "nazev": "chobotnicka" },
+            { "nazev": "ruze" },
+            { "nazev": "zalozka" }
+        ]
     }
 }

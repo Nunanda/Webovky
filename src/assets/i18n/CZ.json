@@ -19,8 +19,6 @@
         "pomucky": "Pomůcky:"
     },
 
-    "POMUCKY": {},
-
     "SLOVNIK": {
         "slovnikZkratka": "Zkratka:",
         "image": "Značka:",
@@ -42,7 +40,7 @@
         "popis": "Popis:"
     },
 
-    "APP" : {
+    "APP": {
         "hledat": "Hledat...",
         "pomucky": "Pomůcky",
         "hacek": "Háček",
@@ -66,6 +64,13 @@
         "magickyKrouzek": "Magický kroužek",
         "vyukovyMod": "Výukový mód",
         "navody": "Návody"
+    },
+
+    "POLEVYROBKU": {
+        "nazvy": [
+            { "nazev": "chobotnicka" },
+            { "nazev": "ruze" },
+            { "nazev": "zalozka" }
+        ]
     }
 }
-

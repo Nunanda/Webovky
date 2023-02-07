@@ -20,7 +20,7 @@ export class AppComponent {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
-    translate.addLangs(['CZ','en']);
+    translate.addLangs(['CZ','EN']);
     translate.setDefaultLang('CZ');
   }
   switchLanguage(lang:string){

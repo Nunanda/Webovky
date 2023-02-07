@@ -1,0 +1,58 @@
+<div id="container">
+    <h2>
+        {{title}}
+    </h2>
+    <div id="bunky">
+        <div class="bunka">
+            <div id="blok">
+                <div class="bold">
+                    Použijeme tyto styly:
+                </div>
+                <div>
+                    {{navod.zkratky}}
+                </div>
+                <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
+            </div>
+            <div id="blok0">
+                <div *ngFor="let item of popis">
+                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)" (click)="setindex(item)">
+                        {{item.titulekCasti}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bunka">
+            <div class="content">
+                <div class="bold">
+                    {{popis[index].titulekCasti}}:
+                </div>
+                <div class="padding-top" *ngIf="popis[index].zkratkyCasti != null">
+                    Použijeme tyto styly:
+                    {{popis[index].zkratkyCasti}}
+                </div>
+                <div id="buttons">
+                    <button (click)="previousIndex()" type="button">
+                        <img src="../../../../assets/icon/Vlevo.png">
+                    </button>
+                    &nbsp;
+                    <button (click)="nextIndex()" type="button">
+                        <img src="../../../../assets/icon/Vpravo.png">
+                    </button>
+                </div>
+                <div class="bold">
+                    Návod:
+                </div>
+                <div name="element0" *ngFor="let item of popis[index].popis">
+                    {{item}}
+                    <br>
+                </div>
+                <button (click)="time()">
+                    {{ minutes }}:{{ seconds }}
+                </button>
+                <button (click)="finished()">
+                    Hotovo
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

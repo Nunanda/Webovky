@@ -1,69 +1,37 @@
-/*CSS*/
+#container {
+    padding: 40px;
+}
 
 #sloupce {
     display: flex;
-    margin-top: 2%;
-    width: 85vw;
-    margin: auto;
-}
-
-#sloupec1 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec2 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
 }
 
 #slovnik_popis {
-    width: 600px;
-    min-height: 600px;
     border-radius: 15px;
     background: #C8E7F4;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding: 25px;
+    max-width: 600px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
 #nazev_stylu {
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
-    padding: 10px;
+    font-size: calc(1rem + 1vw);
 }
 
-#pole1 {
-    width: 337.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#pole2 {
-    width: 337.5px;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
-
-#pole {
-    display: flex;
-}
-
-.text_zkratka {
-    font-size: 30px;
+.znacka_zkratka {
+    font-size: calc(.7rem + 1vw);
+    text-align: center;
 }
 
 .pole_zkratka {
     height: 150px;
     width: 150px;
-    border-radius: 10%;
+    border-radius: 20px;
     background: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -72,77 +40,112 @@
 }
 
 #zkratka {
-    font-weight: 600;
+    font-weight: 600px;
     font-size: 72px;
-}
-
-.polickoznacka {
-    height: 150px;
-    width: 150px;
-    border-radius: 10%;
-    background: #FFFFFF;
-}
-
-.text_znacka {
-    font-size: 30px;
 }
 
 .znacka {
     width: 150px;
+    height: 150px;
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-.text_popis {
-    font-weight: bold;
-    font-size: 30px;
+.size {
+    max-width: 445.71px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    margin-top: 8px;
+}
+
+#direction_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#direction_row {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    margin-top: 10px;
 }
 
 .popis {
-    font-size: 30px;
+    font-size: calc(.6rem + 1vw);
 }
 
 #popis_obsah {
-    width: 80%;
-    margin: auto;
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
-.Text_animace {
+.nadpisky {
     font-weight: bold;
-    font-size: 30px;
+    font-size: calc(1rem + 1vw);
+    margin-top: 20px;
 }
 
-.Text_real {
+#nadpisek_popis {
+    font-size: calc(.7rem + 1vw);
     font-weight: bold;
-    font-size: 30px;
-    margin-top: 30px;
 }
 
-.Gif_okraj {
-    width: 445.71px;
-    height: 250px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    border-radius: 20px;
+@media screen and (max-width: 808px) {
+    #container {
+        padding: 20px;
+    }
+
 }
 
-.Animace {
-    width: 100%;
-    border-radius: 15px;
+@media screen and (max-width: 991px) {
+    .pole_zkratka {
+        height: 130px;
+        width: 130px;
+    }
+
+    #zkratka {
+        font-size: 65px;
+    }
+
+    .znacka {
+        height: 130px;
+        width: 130px;
+    }
+
 }
 
-.Video_okraj {
-    width: 445.71px;
-    height: 250px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    border-radius: 20px;
+@media screen and (max-width: 767px) {
+    .pole_zkratka {
+        height: 120px;
+        width: 120px;
+    }
+
+    #zkratka {
+        font-size: 58px;
+    }
+
+    .znacka {
+        height: 120px;
+        width: 120px;
+    }
+
 }
 
-.Real {
-    width: 100%;
-    border-radius: 15px;
-}
+@media screen and (max-width: 479px) {
+    .pole_zkratka {
+        height: 100px;
+        width: 100px;
+    }
 
-h2 {
-    font-weight: bold;
+    #zkratka {
+        font-size: 50px;
+    }
+
+    .znacka {
+        height: 100px;
+        width: 100px;
+    }
+
 }

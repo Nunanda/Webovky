@@ -1,58 +1,73 @@
-/*CSS*/
-
 body {
     margin: 0;
+    padding: 0;
     background-color: #fff;
     font-family: sans-serif;
     min-height: 100vh;
     background-image: url("../assets/icon/pozadi.png");
     background-size: cover;
     background-position: center;
-    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 #page {
     background-color: #fff;
     width: 85vw;
-    min-height: 100vh;
+    height: 100vh;
     margin: auto;
-}
-
-#page_padding {
-    width: 85vw;
-    min-height: 100vh;
-    padding: 40px;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 #hledaci_lista {
     position: sticky;
     top: 0;
-    height: 90px;
+    height: 80px;
     width: 100%;
-    background: #C8E7F4;
+    background-color: #C8E7F4;
     display: flex;
     align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    justify-content: space-between;
-    
+    z-index: 1000;
 }
 
 #hledaci_bunka {
     display: flex;
     background-color: #fff;
-    width: 55%;
+    width: 40%;
     height: 60px;
     border-radius: 50px;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: space-between;
+    margin-left: 8%;
 }
 
 #logo {
     background-size: cover;
     background-position: center;
     width: 100%;
-    max-width: 90px;
+    max-width: 80px;
+    height: auto;
+}
+
+#account {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 4%;
+}
+
+#hamburger {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 50px;
     height: auto;
 }
 
@@ -60,23 +75,52 @@ body {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 300;
-    padding: 1%;
+    margin-left: 4%;
 }
 
-#Slogan {
-    font-weight: 100;
-    font-size: 1.5rem;
-    padding: 2%;
+#Hledat {
+    opacity: 80%;
+    font-size: 1.2rem;
+    margin-left: 20px;
 }
 
-#Menu {
+#Lupa {
+    margin-right: 20px;
     width: 100%;
-    height: 5%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2%; 
+    max-width: 40px;
+    height: auto;
+}
+
+.dropdown-content {
+    min-width: 160px;
+    background-color: #f1f1f1;
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: unset;
 }
 
 .Menu-block {
@@ -87,91 +131,200 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
 }
 
-#Hledat {
-    opacity: 80%;
-    font-size: larger;
+#Menu {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
 }
 
-.dropdown-content {
-    min-width: 160px;
+.button {
+    border: none;
+    background: none;
+    display: none;
+}
+
+.sidenav {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-y: hidden;
+    top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+}
+
+.sidenav .dropdown-content0 {
+    width: 100%;
     background-color: #f1f1f1;
     display: none;
-    position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 4;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
-  
-.dropdown-content a {
+
+.sidenav .dropdown-content1 {
+    width: 100%;
+    background-color: #f1f1f1;
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.sidenav .dropdown-content a {
     color: #000;
     padding: 12px 16px;
     text-decoration: none;
+}
+
+.sidenav #Menu {
     display: block;
-}
-  
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-  
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    margin-top: 0;
 }
 
-.dropdown {
-    position: unset;
+.sidenav .Menu-block {
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    background: #F4B9CD;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
 }
 
-/*MEDIA QUERY*/
-
-@media screen and (max-width: 1210px) {
-    #Slogan {
-        font-size: 1.3rem;
+@media screen and (max-width: 991px) {
+    .Menu-block {
+        padding: 10px;
     }
 
-    #selecro {
-        font-size: 1.6rem;
-    }
-  
-}
-
-@media screen and (max-width: 1024px) {
-    #page {
-      width: 100vw;
+    #hledaci_lista {
+        height: 75px;
     }
 
-    #page_padding {
-        width: 100vw;
-    }
-  
-}
-
-@media screen and (max-width: 840px) {
-    #Slogan {
-        display: none;
+    #logo {
+        max-width: 75px;
     }
 
     #hledaci_bunka {
-        width: 65%;
-        margin-right: 2%;
+        height: 50px;
     }
-  
+
+    #selecro {
+        font-size: 1.7rem;
+    }
+
+    #Lupa {
+        max-width: 40px;
+    }
+
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 767px) {
+    #selecro {
+        font-size: 1.5rem;
+    }
+
+    #hledaci_lista {
+        height: 65px;
+    }
+
+    #logo {
+        max-width: 65px;
+    }
+
+    #hledaci_bunka {
+        height: 45px;
+    }
+
+    #Lupa {
+        max-width: 35px;
+    }
+
+    #Hledat {
+        font-size: 1rem;
+    }
+
+    #account {
+        max-width: 40px;
+        border-radius: 10px;
+    }
+
+    #hamburger {
+        max-width: 40px;
+        border-radius: 10px;
+    }
+
+    .button {
+        display: block;
+    }
+
+    #Menu {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
     #selecro {
         display: none;
     }
 
     #hledaci_lista {
-        justify-content: unset;
+        height: 60px;
+    }
 
+    #logo {
+        max-width: 60px;
     }
 
     #hledaci_bunka {
-        width: 80%;
+        height: 42px;
+        margin-left: 4%;
+        width: 55%;
     }
-  
-} 
+
+    #account {
+        max-width: 35px;
+    }
+
+    #hamburger {
+        max-width: 35px;
+    }
+
+}
+
+@media screen and (max-width: 1153px) {
+    body {
+        background-image: none;
+    }
+
+    #page {
+        width: 100%;
+    }
+
+}

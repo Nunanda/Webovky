@@ -2,21 +2,15 @@
     <h2>
         Návody
     </h2>
-    <div id="line"></div>
     <div id="sloupce">
-        <div id="sloupec_1">
-            <h3>
-                Lehké
-            </h3>
-            <div class="bunky" *ngFor="let item of navod">
-                <div id="bunka_lehke" *ngIf="item.obtiznost == 'lehky';">
-                    <div id="zeleny_okraj">
-                        <div class="Nazev_navodu">
-                            {{item.title}}
-                        </div>
-                    </div>
-                    <div id="obsah">
-                        <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
+        <ng-container *ngFor="let item of navod">
+            <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.title)">
+                <div class="Nazev_navodu {{item.obtiznost}}_name">
+                    {{item.title}}
+                </div>
+                <div class="obsah">
+                    <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
+                    <div class="text">
                         <table>
                             <tr>
                                 <td>
@@ -44,93 +38,8 @@
                             </tr>
                         </table>
                     </div>
-                </div> 
+                </div>
             </div>
-        </div>
-        <div id="sloupec_2">
-            <h3>
-                Střední
-            </h3>
-            <div class="bunky" *ngFor="let item of navod">
-                <div id="bunka_stredni" *ngIf="item.obtiznost == 'stredni';">
-                    <div id="zluty_okraj">
-                        <div class="Nazev_navodu">
-                            {{item.title}}
-                        </div>
-                    </div>
-                    <div id="obsah">
-                        <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Název:
-                                    </strong>
-                                    {{item.title}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Zkratky:
-                                    </strong>
-                                    {{item.zkratky}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    {{item.pomucky}}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> 
-            </div>
-        <div id="sloupec_3">
-            <h3>
-                Těžké
-            </h3>
-            <div class="bunky" *ngFor="let item of navod">
-                <div id="bunka_tezke" *ngIf="item.obtiznost == 'tezky';">
-                    <div id="cerveny_okraj">
-                        <div class="Nazev_navodu">
-                            {{item.title}}
-                        </div>
-                    </div>
-                    <div id="obsah">
-                        <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Název:
-                                    </strong>
-                                    {{item.title}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Zkratky:
-                                    </strong>
-                                    {{item.zkratky}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    {{item.pomucky}}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> 
-            </div>
-        </div>
+        </ng-container>
     </div>
 </div>

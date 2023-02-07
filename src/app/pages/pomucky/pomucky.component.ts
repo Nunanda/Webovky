@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PomuckyService } from '../../service/pomucky.service';
 import { Router } from '@angular/router';
-import { Pomucka } from 'src/app/types';
+import { PopisPomucek } from 'src/app/types';
 
 @Component({
   selector: 'app-pomucky',
@@ -11,12 +11,23 @@ import { Pomucka } from 'src/app/types';
 export class PomuckyComponent implements OnInit {
 
   pomucka: any;
+  kroky: Array<PopisPomucek>;
 
-  constructor(private pomuckyService: PomuckyService, private router: Router) { }
+  constructor(private pomuckyService: PomuckyService, private router: Router) {
+    const nazev = (this.router.url.split('/'))[2];
+    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
+    this.kroky = this.pomucka.kroky;
+  }
 
   ngOnInit() {
     const nazev = (this.router.url.split('/'))[2];
     this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
+    this.kroky = this.pomucka.kroky;
   }
 
+  ngDoCheck() {
+    const nazev = (this.router.url.split('/'))[2];
+    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
+    this.kroky = this.pomucka.kroky;
+  }
 }

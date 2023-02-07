@@ -1,4 +1,6 @@
-/*CSS*/
+#container {
+    padding: 40px;
+}
 
 .novinky {
     background: #C8E7F4;
@@ -11,12 +13,13 @@
 
 p {
     font-weight: 400;
-    font-size: large;
+    font-size: calc(.6rem + .5vw);
 }
 
 h2 {
     text-align: center;
     font-weight: bold;
+    font-size: calc(1rem + 1vw);
 }
 
 .obrazek {
@@ -27,13 +30,15 @@ h2 {
 }
 
 #obrazky {
-   text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #soc_site {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .card {
@@ -50,5 +55,69 @@ h2 {
 .socials_logo {
     width: 100%;
     max-width: 50px;
+    min-width: 50px;
     height: auto;
+}
+
+#soc {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 808px) {
+    #container {
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    #container {
+        padding: 20px;
+    }
+
+    .obrazek {
+        max-width: 230px;
+    }
+
+    .socials_logo {
+        max-width: 30px;
+        min-width: 30px;
+    }
+
+    .novinky {
+        margin-top: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .novinky {
+        padding: 10px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .obrazek {
+        max-width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    .obrazek {
+        max-width: 140px;
+        padding: 8px;
+    }
+
+    .socials_logo {
+        max-width: 25px;
+        min-width: 25px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
 }

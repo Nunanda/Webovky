@@ -8,9 +8,9 @@ describe('PomuckyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PomuckyComponent ]
+      declarations: [PomuckyComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PomuckyComponent);
     component = fixture.componentInstance;

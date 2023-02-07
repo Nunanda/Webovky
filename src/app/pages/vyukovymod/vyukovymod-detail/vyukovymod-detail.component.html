@@ -1,0 +1,51 @@
+<div id="container">
+    <h2>
+        {{title}}
+    </h2>
+    <div class="columns">
+        <div class="column">
+            <div class="bublina">
+                <div>
+                    <strong>
+                        Kroky:
+                    </strong>
+                    {{InfoVyuky[index].cislo}}
+                </div>
+                <div *ngIf="InfoVyuky[index].styl != null">
+                    <strong>
+                        Styl:
+                    </strong>
+                    {{InfoVyuky[index].styl}}
+                </div>
+                <div>
+                    <strong>
+                        Pomucky:
+                    </strong>
+                    {{InfoVyuky[index].pouzijeme}}
+                </div>
+                <div id="popis" innerHTML="{{InfoVyuky[index].popis}}">
+                    <strong>
+                        Popis:
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="video">
+                <iframe [src]="InfoVyuky[index].videoUrl | safe" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div id="buttons">
+        <button (click)="previousIndex()" type="button">
+            <img src="../../../../assets/icon/Vlevo.png">
+        </button>
+        {{index+1}}/{{InfoVyuky.length}}
+        <button (click)="nextIndex()" type="button">
+            <img src="../../../../assets/icon/Vpravo.png">
+        </button>
+    </div>
+</div>

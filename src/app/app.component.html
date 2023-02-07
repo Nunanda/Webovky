@@ -1,112 +1,206 @@
 <!DOCTYPE html>
-<html lang="cs">  
-  <head>
-    <meta charset="utf-8" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-  </head>
-  <body>
-    <div id="page">
-      <div id="hledaci_lista">
-        <img id="logo" src="/assets/icon/logo.png">
-        <div id="selecro">
-          selecro
-        </div>      
-        <div id="hledaci_bunka">
-          <div id="Hledat">Hledat...</div>
-          <div id="Lupa"><img src="/assets/icon/search1.svg"></div>
-        </div>
-        <div id="Slogan">
-          Tvořit může každý!
-        </div>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8" name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+</head>
+
+<body>
+  <div id="page">
+    <div id="hledaci_lista">
+      <img routerLink="/home" id="logo" src="/assets/icon/logo.png">
+      <div id="selecro">
+        selecro
       </div>
-      <div id="Menu">
-        <div class="blok" routerLink="/home">
-          <button routerlink="/home" class="Menu-block">
-            <img class="googleicons" src="/assets/icon/info.svg">
+      <div id="hledaci_bunka">
+        <div id="Hledat">
+          Hledat...
+        </div>
+        <img id="Lupa" src="/assets/icon/search1.svg">
+      </div>
+      <img id="account" src="/assets/icon/account.svg">
+      <div id="mySidenav" class="sidenav">
+        <div id="Menu">
+          <div class="blok" routerLink="/home">
+            <button (click)="opencloseNav()" routerLink="/home" class="Menu-block">
+              <img class="googleicons" src="/assets/icon/info.svg">
               Selecro
-          </button>
-        </div>
-        <div class="dropdown">
-          <button class="Menu-block">
-            <img class="googleicons" src="/assets/icon/style.svg">
+            </button>
+          </div>
+          <div class="dropdown">
+            <button class="Menu-block" (click)="showHidePomucky()">
+              <img class="googleicons" src="/assets/icon/style.svg">
               Pomůcky
-          </button>
-          <div class="dropdown-content">
-            <a href="/pomucky/hacek">
-              Háček
-            </a>
-            <a href="/pomucky/prize">
-              Příze
-            </a>
-            <a href="/pomucky/znackovac">
-              Značkovač
-            </a>
-            <a href="/pomucky/jehla">
-              Jehla
-            </a>
-            <a href="/pomucky/nuzky">
-              Nůžky
-            </a>
-            <a href="/pomucky/bezpecnostni-oci-a-nos">
-              Bezpečnostní oči a nos
-            </a>
-            <a href="/pomucky/chrastitko">
-              Chrastítko
-            </a>
-            <a href="/pomucky/pocitadlo">
-              Počítadlo
-            </a>
-            <a href="/pomucky/navijec-prize">
-              Navíječ příze
-            </a>
-            <a href="/pomucky/vypln">
-              Výplň
-            </a>
+            </button>
+            <div class="dropdown-content0" id="dropdown-content0">
+              <a (click)="opencloseNav()" routerLink="pomucky/hacek">
+                Háček
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/prize">
+                Příze
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/znackovac">
+                Značkovač
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/jehla">
+                Jehla
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/nuzky">
+                Nůžky
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/bezpecnostni-oci-a-nos">
+                Bezpečnostní oči a nos
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/chrastitko">
+                Chrastítko
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/pocitadlo">
+                Počítadlo
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/navijec-prize">
+                Navíječ příze
+              </a>
+              <a (click)="opencloseNav()" routerLink="/pomucky/vypln">
+                Výplň
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="dropdown">
-          <button class="Menu-block">
-            <img class="googleicons" src="/assets/icon/book.svg">
+          <div class="dropdown">
+            <button class="Menu-block" (click)="showHideSlovnik()">
+              <img class="googleicons" src="/assets/icon/book.svg">
               Slovník
-          </button>
-          <div class="dropdown-content">
-            <a href="/slovnik/retizkove-oko">
-              Řetízkové oko
-            </a>
-            <a href="/slovnik/pevne-oko">
-              Pevné oko
-            </a>
-            <a href="/slovnik/kratky-sloupek">
-              Krátký sloupek
-            </a>
-            <a href="/slovnik/polodlouhy-sloupek">
-              Polodlouhý sloupek
-            </a>
-            <a href="/slovnik/dlouhy-sloupek">
-              Dlouhý sloupek
-            </a>
-            <a href="/slovnik/rozhackovani">
-              Rozháčkování
-            </a>
-            <a href="/slovnik/shackovani">
-              Sháčkování
-            </a>
-            <a href="/slovnik/magicky-krouzek">
-              Magický kroužek
-            </a>
+            </button>
+            <div class="dropdown-content1" id="dropdown-content1">
+              <a routerLink="/slovnik/retizkove-oko">
+
+                Řetízkové oko
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/pevne-oko">
+                Pevné oko
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/kratky-sloupek">
+                Krátký sloupek
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/polodlouhy-sloupek">
+                Polodlouhý sloupek
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/dlouhy-sloupek">
+                Dlouhý sloupek
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/rozhackovani">
+                Rozháčkování
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/shackovani">
+                Sháčkování
+              </a>
+              <a (click)="opencloseNav()" routerLink="/slovnik/magicky-krouzek">
+                Magický kroužek
+              </a>
+            </div>
           </div>
-        </div>
-        <button routerLink="/vyukovymod" class="Menu-block">
-          <img class="googleicons" src="/assets/icon/school.svg">
+          <button (click)="opencloseNav()" routerLink="/vyukovymod" class="Menu-block">
+            <img class="googleicons" src="/assets/icon/school.svg">
             Výukový mód
-        </button>
-        <button routerLink="/navody" class="Menu-block">
-          <img class="googleicons" src="/assets/icon/view.svg">
+          </button>
+          <button (click)="opencloseNav()" routerLink="/navody" class="Menu-block">
+            <img class="googleicons" src="/assets/icon/view.svg">
             Návody
+          </button>
+        </div>
+      </div>
+      <button (click)="opencloseNav()" class="button">
+        <img id="hamburger" src="/assets/icon/hamburger-menu.svg">
+      </button>
+    </div>
+    <div id="Menu">
+      <div class="blok" routerLink="/home">
+        <button routerLink="/home" class="Menu-block">
+          <img class="googleicons" src="/assets/icon/info.svg">
+          Selecro
         </button>
       </div>
-      <div id="page_padding">
-        <router-outlet></router-outlet>
+      <div class="dropdown">
+        <button class="Menu-block">
+          <img class="googleicons" src="/assets/icon/style.svg">
+          Pomůcky
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="pomucky/hacek">
+            Háček
+          </a>
+          <a routerLink="/pomucky/prize">
+            Příze
+          </a>
+          <a routerLink="/pomucky/znackovac">
+            Značkovač
+          </a>
+          <a routerLink="/pomucky/jehla">
+            Jehla
+          </a>
+          <a routerLink="/pomucky/nuzky">
+            Nůžky
+          </a>
+          <a routerLink="/pomucky/bezpecnostni-oci-a-nos">
+            Bezpečnostní oči a nos
+          </a>
+          <a routerLink="/pomucky/chrastitko">
+            Chrastítko
+          </a>
+          <a routerLink="/pomucky/pocitadlo">
+            Počítadlo
+          </a>
+          <a routerLink="/pomucky/navijec-prize">
+            Navíječ příze
+          </a>
+          <a routerLink="/pomucky/vypln">
+            Výplň
+          </a>
+        </div>
       </div>
+      <div class="dropdown">
+        <button class="Menu-block">
+          <img class="googleicons" src="/assets/icon/book.svg">
+          Slovník
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="/slovnik/retizkove-oko">
+            Řetízkové oko
+          </a>
+          <a routerLink="/slovnik/pevne-oko">
+            Pevné oko
+          </a>
+          <a routerLink="/slovnik/kratky-sloupek">
+            Krátký sloupek
+          </a>
+          <a routerLink="/slovnik/polodlouhy-sloupek">
+            Polodlouhý sloupek
+          </a>
+          <a routerLink="/slovnik/dlouhy-sloupek">
+            Dlouhý sloupek
+          </a>
+          <a routerLink="/slovnik/rozhackovani">
+            Rozháčkování
+          </a>
+          <a routerLink="/slovnik/shackovani">
+            Sháčkování
+          </a>
+          <a routerLink="/slovnik/magicky-krouzek">
+            Magický kroužek
+          </a>
+        </div>
+      </div>
+      <button routerLink="/vyukovymod" class="Menu-block">
+        <img class="googleicons" src="/assets/icon/school.svg">
+        Výukový mód
+      </button>
+      <button routerLink="/navody" class="Menu-block">
+        <img class="googleicons" src="/assets/icon/view.svg">
+        Návody
+      </button>
     </div>
-  </body>
+    <router-outlet></router-outlet>
+  </div>
+</body>
+
 </html>

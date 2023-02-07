@@ -1,4 +1,4 @@
 export * from './pomucka';
 export * from './styl';
-export * from './navody';
-export * from './vyrobek';
+export * from './navod';
+export * from './vyuka';

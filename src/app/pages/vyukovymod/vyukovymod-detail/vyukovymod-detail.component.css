@@ -1,0 +1,123 @@
+#container {
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.column {
+  width: 50%;
+}
+
+.columns {
+  display: flex;
+  gap: 3%;
+}
+
+.bublina {
+  background-color: #C8E7F4;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+  font-size: calc(.7rem + .5vw);
+}
+
+button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  background-color: #eaeaf4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+button:hover {
+  background-color: rgb(208, 208, 208);
+}
+
+button:active {
+  background-color: rgb(208, 208, 208);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+  transform: translateY(4px);
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  align-items: center;
+}
+
+#popis {
+  margin-top: 15px;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 99%;
+    margin: auto;
+  }
+
+  .columns {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bublina {
+    margin-bottom: 50px;
+    max-width: 800px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 808px) {
+  #container {
+    padding: 20px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  button {
+    font-size: 18px;
+    padding: 13px 23px;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+  button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+}

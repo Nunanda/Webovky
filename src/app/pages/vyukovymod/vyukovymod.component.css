@@ -1,45 +1,25 @@
-/*CSS*/
+#container {
+    padding: 40px;
+}
 
 #sloupce {
     display: flex;
     margin-top: 2%;
-}
-
-#sloupec_1 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_2 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#sloupec_3 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bunka {
     border-radius: 20px;
-    width: 350px;
-    height: 200px;
     background-color: #f7e4ea;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
-
-.strong {
-    font-weight: bold;
+    width: 30%;
+    min-width: 364px;
 }
 
 .ruzovy_okraj {
-    height: 30px;
+    padding: 5px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
     display: flex;
@@ -50,19 +30,76 @@
 
 #obsah {
     display: flex;
-    align-items: center;
-}
-
-table {
-    margin: 10px;
+    padding: 15px;
 }
 
 #obrazek_navodu {
-    height: 150px;
+    width: 120px;
     border-radius: 10px;
-    margin: 10px;
 }
 
 h2 {
     text-align: center;
+}
+
+.text {
+    padding-left: 15px;
+}
+
+@media screen and (max-width: 808px) {
+    #container {
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .bunka {
+        min-width: 330px;
+    }
+
+    #obsah {
+        padding: 10px;
+    }
+
+    #obrazek_navodu {
+        width: 90px;
+    }
+
+    .text {
+        font-size: .8rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .bunka {
+        min-width: 320px;
+    }
+
+    #obsah {
+        padding: 8px;
+    }
+
+    #obrazek_navodu {
+        width: 80px;
+    }
+
+    .text {
+        font-size: .75rem;
+    }
+
+    .ruzovy_okraj {
+        padding: 2px;
+        font-size: .9rem;
+    }
+
+}
+
+
+@media screen and (max-width: 479px) {
+    #obrazek_navodu {
+        width: 70px;
+    }
+
 }

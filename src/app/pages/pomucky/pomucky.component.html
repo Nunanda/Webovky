@@ -1,37 +1,20 @@
-<title class="nadpis">
-  {{pomucka.titulek}}
-</title>
-<hr class="Line">
-<div class="bublina">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{pomucka.popis}}
-    </div>
-    <div *ngIf="pomucka.obrazek" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}.png">
+<div id="container">
+  <h2>
+    {{pomucka.title}}
+  </h2>
+  <div class="Line1"></div>
+  <div class="bubliny">
+    <div *ngFor="let krok of kroky" class="bublina">
+      {{krok.popis}}
+      <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
     </div>
   </div>
-</div>
-<div *ngIf="pomucka.okno1" class="bublina-spodni">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{pomucka.popis1}}
-    </div>
-    <div *ngIf="pomucka.obrazek1" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}1.png">
+  <div class="bublina-spodni">
+    <div class="video">
+      <iframe [src]="pomucka.videoURL | safe" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
-</div>
-<div *ngIf="pomucka.okno2" class="bublina-spodni">
-  <div class="rozdeleni">
-    <div class="sloupec">
-      {{pomucka.popis2}}
-    </div>
-    <div *ngIf="pomucka.obrazek2" class="sloupec1">
-      <img  class="pomucka" src="assets/icon/{{pomucka.nazev}}2.png">
-    </div>
-  </div>
-</div>
-<div class="bublina-spodni">
-  video
 </div>

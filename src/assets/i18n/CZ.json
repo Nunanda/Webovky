@@ -6,13 +6,14 @@
         "socialniSite": "Sociální sítě"
     },
 
-    "NAVODY.DETAIL": {
+    "NAVODYDETAIL": {
         "pouzitiStylu": "Použité styly:",
         "navod": "Návod:",
         "hotovo": "Hotovo"
     },
 
     "NAVODY": {
+        "navody": "Návody",
         "nazev": "Název:",
         "stylyZkratky": "Zkratky:",
         "pomucky": "Pomůcky:"
@@ -28,10 +29,10 @@
         "veSkutecnosti": "Ve skutečnosti"
     },
 
-    "VYUKOVYMOD.DETAIL": {
+    "VYUKOVYMODDETAIL": {
         "krok": "Krok:",
         "styl": "Styl:",
-        "pomucky": "Pomucky:",
+        "pomucky": "Pomůcky:",
         "popis": "Popis:"
     },
 
@@ -43,17 +44,28 @@
 
     "APP" : {
         "hledat": "Hledat...",
-        "Pomucky": "Pomůcky",
-        "Hacek": "Háček",
-        "Prize": "Příze",
-        "Znackovac": "Značkovač",
-        "Jehla": "Jehla",
-        "Nuzky": "Nůžky",
-        "BezpecnostniOciANos": "Bezpečnostní oči a nos",
-        "Chrastitko": "Chrastítko",
-        "Pocitadlo": "Počítadlo",
-        "NavijecPrize": "Navíječ příze",
-        "Vypln": "Výplň"
+        "pomucky": "Pomůcky",
+        "hacek": "Háček",
+        "prize": "Příze",
+        "znackovac": "Značkovač",
+        "jehla": "Jehla",
+        "nuzky": "Nůžky",
+        "bezpecnostniOciANos": "Bezpečnostní oči a nos",
+        "chrastitko": "Chrastítko",
+        "pocitadlo": "Počítadlo",
+        "navijecPrize": "Navíječ příze",
+        "vypln": "Výplň",
+        "slovnik": "Slovník",
+        "retizkoveOko": "Řetízkové oko",
+        "pevneOko": "Pevné oko",
+        "kratkySloupek": "Krátký sloupek",
+        "polodlouhySloupek": "Polodlouhý sloupek",
+        "dlouhySloupek": "Dlouhý sloupek",
+        "rozhackovani": "Rozháčkování",
+        "shackovani": "Sháčkování",
+        "magickyKrouzek": "Magický kroužek",
+        "vyukovyMod": "Výukový mód",
+        "navody": "Návody"
     }
 }
 

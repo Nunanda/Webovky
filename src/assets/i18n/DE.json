@@ -6,13 +6,14 @@
         "socialniSite": "Social Media"
     },
 
-    "NAVODY.DETAIL": {
-        "pouzitiStylu": "Použité styly:",
+    "NAVODYDETAIL": {
+        "pouzitiStylu": "Styles used:",
         "navod": "Manual:",
         "hotovo": "Done"
     },
 
     "NAVODY": {
+        "navody": "Manuals",
         "nazev": "Name:",
         "stylyZkratky": "Styles:",
         "pomucky": "Tools:"
@@ -28,31 +29,42 @@
         "veSkutecnosti": "In real life"
     },
 
-    "VYUKOVYMOD.DETAIL": {
+    "VYUKOVYMODDETAIL": {
         "krok": "Step:",
         "styl": "Style:",
         "pomucky": "Tools:",
-        "popis": "Description"
+        "popis": "Description:"
     },
 
     "VYUKOVYMOD": {
         "vyukovyMod": "Educational mode",
         "pocetKroku": "Amount of steps:",
-        "popis": "Popis:"
+        "popis": "Description:"
     },
 
     "APP" : {
         "hledat": "Find...",
-        "Pomucky": "Tools",
-        "Hacek": "Hook",
-        "Prize": "Yarn",
-        "Znackovac": "Row marker",
-        "Jehla": "Needle",
-        "Nuzky": "Scissors",
-        "BezpecnostniOciANos": "Safety eyes and nose",
-        "Chrastitko": "Rattle",
-        "Pocitadlo": "Row counter",
-        "NavijecPrize": "Yarn winder",
-        "Vypln": "Filling"
+        "pomucky": "Tools",
+        "hacek": "Hook",
+        "prize": "Yarn",
+        "znackovac": "Row marker",
+        "jehla": "Needle",
+        "nuzky": "Scissors",
+        "bezpecnostniOciANos": "Safety eyes and nose",
+        "chrastitko": "Rattle",
+        "pocitadlo": "Row counter",
+        "navijecPrize": "Yarn winder",
+        "vypln": "Filling",
+        "slovnik": "Dictionary",
+        "retizkoveOko": "Chain",
+        "pevneOko": "Slip stitch",
+        "kratkySloupek": "Single crochet",
+        "polodlouhySloupek": "Half double crochet",
+        "dlouhySloupek": "Double crochet",
+        "rozhackovani": "Increase",
+        "shackovani": "Decrease",
+        "magickyKrouzek": "Magic ring",
+        "vyukovyMod": "Educational mode",
+        "navody": "Manuals"
     }
 }

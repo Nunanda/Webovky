@@ -6,7 +6,7 @@
         <div class="bunka">
             <div id="blok">
                 <div class="bold">
-                    {{ 'NAVODY.DETAIL.pouzitiStylu' | translate }}
+                    {{ 'NAVODYDETAIL.pouzitiStylu' | translate }}
                 </div>
                 <div>
                     {{navod.zkratky}}
@@ -27,7 +27,7 @@
                     {{popis[index].titulekCasti}}:
                 </div>
                 <div class="padding-top" *ngIf="popis[index].zkratkyCasti != null">
-                    {{ 'NAVODY.DETAIL.pouzitiStylu' | translate }}
+                    {{ 'NAVODYDETAIL.pouzitiStylu' | translate }}
                     {{popis[index].zkratkyCasti}}
                 </div>
                 <div id="buttons">
@@ -39,14 +39,14 @@
                         <img src="../../../../assets/icon/Vpravo.png">
                     </button>
                 </div>
-                <div class="bold">{{'NAVODY.DETAIL.navod' | translate }}</div>
+                <div class="bold">{{'NAVODYDETAIL.navod' | translate }}</div>
                 <div innerHTML="{{popis[index].popis}}"></div>
                 <div class="buttons">
                     <button (click)="time()">
                         {{ minutes }}:{{ seconds }}
                     </button>
                     <button (click)="finished()">
-                        {{ 'NAVODY.DETAIL.hotovo' | translate }}
+                        {{ 'NAVODYDETAIL.hotovo' | translate }}
                     </button>
                 </div>
             </div>

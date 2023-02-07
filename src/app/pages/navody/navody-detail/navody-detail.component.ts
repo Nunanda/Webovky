@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavodyService } from '../../../service/navody.service';
 import { Navod, Popis } from '../../../types';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navody-detail',
@@ -19,18 +18,12 @@ export class NavodyDetailComponent implements OnInit {
   timer: any = 0;
   element: NodeListOf<HTMLElement> | null;
 
-  constructor(private navodyService: NavodyService, private router: Router, public translate: TranslateService) {
+  constructor(private navodyService: NavodyService, private router: Router) {
     this.title = localStorage.getItem("title");
     this.popis = new Array<Popis>;
     this.navod = new Array<Navod>;
     this.index = 0;
     this.element = document.getElementsByName("button0");
-    translate.addLangs(['cs','en']);
-    translate.setDefaultLang('cs');
-  }
-  
-  switchLanguage(lang:string){
-    this.translate.use(lang);
   }
 
   ngOnInit() {

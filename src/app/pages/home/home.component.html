@@ -1,15 +1,3 @@
-<div id="translation">
-    <select
-      class="form-control"
-      #selectedlang
-      (change)="switchLanguage(selectedlang.value)">
-      <option *ngFor="let language of translate.getLangs()"
-      [value]="language"
-      [selected]="language === translate.currentLang">
-      {{ language }}
-    </option>
-    </select>
-</div>
 <div id="container">
     <div id="privitaci_modry_blok">
         <div class="novinky">
@@ -42,5 +30,4 @@
         <a class="card" href="https://www.pinterest.com/selecro/" target="_blank">
             <img class="socials_logo" src="assets/icon/pin.svg">
         </a>
-    </div>
 </div>

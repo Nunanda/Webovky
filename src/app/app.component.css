@@ -252,33 +252,6 @@ a:first-child {
     text-align: left;
 }
 
-/*@media screen and (max-width: 991px) {
-    .Menu-block {
-        padding: 10px;
-    }
-
-    #hledaci_lista {
-        height: 75px;
-    }
-
-    #logo {
-        max-width: 75px;
-    }
-
-    #hledaci_bunka {
-        height: 50px;
-    }
-
-    #selecro {
-        font-size: 1.7rem;
-    }
-
-    #Lupa {
-        max-width: 40px;
-    }
-
-}*/
-
 @media screen and (max-width: 1110px) {
     #selecro {
         font-size: 1.5rem;

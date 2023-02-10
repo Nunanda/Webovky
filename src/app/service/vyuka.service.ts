@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Info, Vyrobek } from '../types';
-import { TranslateService } from '@ngx-translate/core';
+import { InfoVyuky, Vyuka } from '../types';
 
-const poleVyrobku: Array<Vyrobek> = [
+const poleVyrobku: Array<Vyuka> = [
   {
     nazev: "chobotnicka",
     title: "Chobotnicka",
@@ -351,33 +350,19 @@ const poleVyrobku: Array<Vyrobek> = [
 })
 export class VyukaService {
 
-  mapaVyrobku: Map<String, Vyrobek>;
 
-  constructor(public translate: TranslateService) {
-    this.mapaVyrobku = new Map();
-    this.initMap();
-    translate.addLangs(['CZ','EN']);
-    translate.setDefaultLang('CZ');
-  }
-  switchLanguage(lang:string){
-    this.translate.use(lang);
-  }
-
-  private initMap() {
-    poleVyrobku.forEach(vyrobek => {
-      this.mapaVyrobku.set(vyrobek.nazev, vyrobek);
-    });
+  constructor() {
   }
 
   public getVyrobekByName(name: string) {
-    return this.mapaVyrobku.get(name);
+    return poleVyrobku.find(element => element.title == name);
   }
 
-  public getVsechnyPomucky(): Array<Vyrobek> {
+  public getVsechnyPomucky(): Array<Vyuka> {
     return poleVyrobku;
   }
 
-  public getKroky(title: string): Array<Info> {
+  public getKroky(title: string): Array<InfoVyuky> {
     let index = poleVyrobku.findIndex(x => x.title === title);
     return poleVyrobku[index].kroky;
   }

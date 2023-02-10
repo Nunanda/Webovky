@@ -9,21 +9,21 @@
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.krok' | translate }}
                     </strong>
-                    {{krok[index].cislo}}
+                    {{InfoVyuky[index].cislo}}
                 </div>
-                <div *ngIf="krok[index].styl != null">
+                <div *ngIf="InfoVyuky[index].styl != null">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.styl' | translate }}
                     </strong>
-                    {{krok[index].styl}}
+                    {{InfoVyuky[index].styl}}
                 </div>
                 <div>
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
                     </strong>
-                    {{krok[index].pouzijeme}}
+                    {{InfoVyuky[index].pouzijeme}}
                 </div>
-                <div id="popis" innerHTML="{{krok[index].popis}}">
+                <div id="popis" innerHTML="{{InfoVyuky[index].popis}}">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.popis' | translate }}
                     </strong>
@@ -32,7 +32,7 @@
         </div>
         <div class="column">
             <div class="video">
-                <iframe [src]="krok[index].videoUrl | safe" title="YouTube video player" frameborder="0"
+                <iframe [src]="InfoVyuky[index].videoUrl | safe" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
@@ -43,7 +43,7 @@
         <button (click)="previousIndex()" type="button">
             <img src="../../../../assets/icon/Vlevo.png">
         </button>
-        {{index+1}}/{{krok.length}}
+        {{index+1}}/{{InfoVyuky.length}}
         <button (click)="nextIndex()" type="button">
             <img src="../../../../assets/icon/Vpravo.png">
         </button>

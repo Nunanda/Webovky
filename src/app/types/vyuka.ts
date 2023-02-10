@@ -1,12 +1,12 @@
-export type Vyrobek = {
+export type Vyuka = {
     title: string;
     nazev: string,
     popis: string,
     pocet: string,
-    kroky: Array<Info>
+    kroky: Array<InfoVyuky>
 }
 
-export type Info = {
+export type InfoVyuky = {
     cislo: string,
     styl: string | null,
     pouzijeme: string,

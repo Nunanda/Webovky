@@ -3,19 +3,19 @@ export type Navod = {
   nazev: string,
   zkratky: string,
   pomucky: string,
-  popisy: Array<Popis>,
-  obtiznost: Obtiznost
+  popisy: Array<PopisNavodu>,
+  obtiznost: ObtiznostNavodu
 }
 
-export type Popis = {
+export type PopisNavodu = {
   obrazek: boolean,
   zkratkyCasti: string | null,
   nazevCasti: string,
   titulekCasti: string,
-  popis: string
+  popis: Array<string>
 }
 
-export enum Obtiznost {
+export enum ObtiznostNavodu {
   tezky = 'tezky',
   stredni = 'stredni',
   lehky = 'lehky'

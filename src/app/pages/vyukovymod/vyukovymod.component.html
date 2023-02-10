@@ -4,7 +4,7 @@
     </h2>
     <router-outlet></router-outlet>
     <div id="sloupce">
-        <span class="bunka" *ngFor="let item of vyrobek" (click)="getKroky(item.title)">
+        <span class="bunka" *ngFor="let item of vyuka" (click)="goKroky(item.title)">
             <div class="ruzovy_okraj">
                 {{item.title}}
             </div>

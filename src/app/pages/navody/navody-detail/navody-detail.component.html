@@ -15,7 +15,7 @@
             </div>
             <div id="blok0">
                 <div *ngFor="let item of popis">
-                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)">
+                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)" (click)="setindex(item)">
                         {{item.titulekCasti}}
                     </button>
                 </div>
@@ -49,6 +49,16 @@
                         {{ 'NAVODYDETAIL.hotovo' | translate }}
                     </button>
                 </div>
+                <div name="element0" *ngFor="let item of popis[index].popis">
+                    {{item}}
+                    <br>
+                </div>
+                <button (click)="time()">
+                    {{ minutes }}:{{ seconds }}
+                </button>
+                <button (click)="finished()">
+                    Hotovo
+                </button>
             </div>
         </div>
     </div>

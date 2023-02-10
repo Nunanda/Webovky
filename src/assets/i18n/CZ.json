@@ -64,13 +64,5 @@
         "magickyKrouzek": "Magický kroužek",
         "vyukovyMod": "Výukový mód",
         "navody": "Návody"
-    },
-
-    "POLEVYROBKU": {
-        "nazvy": [
-            { "nazev": "chobotnicka" },
-            { "nazev": "ruze" },
-            { "nazev": "zalozka" }
-        ]
     }
 }

@@ -118,6 +118,7 @@ a:first-child {
     display: block;
     background: #f2d4de;
     border-bottom: solid;
+    border-width: 1px;
     border-color: #c0a8b0;
 }
 

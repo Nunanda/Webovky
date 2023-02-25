@@ -11,6 +11,8 @@ import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { LocationStrategy, PathLocationStrategy  } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,14 @@ import { SafePipe } from './safe.pipe';
     VyukovymodDetailComponent,
     NavodyDetailComponent,
     SafePipe,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     YouTubePlayerModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

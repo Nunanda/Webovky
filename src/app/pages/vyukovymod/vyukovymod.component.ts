@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VyukaService } from '../../service/vyuka.service';
-import { Vyuka } from '../../types'
+import { Vyuka } from '../../types';
 
 @Component({
   selector: 'app-vyukovymod',

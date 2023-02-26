@@ -19,9 +19,4 @@ export class SlovnikComponent implements OnInit {
     this.styl = this.SlovnikService.getStylByName(nazev);
   }
 
-  ngDoCheck() {
-    const nazev = (this.router.url.split('/'))[2];
-    this.styl = this.SlovnikService.getStylByName(nazev);
-  }
-
 }

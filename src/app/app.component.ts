@@ -18,7 +18,7 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
   }
-  title = 'Webovky';
+
   ngOnInit(): void {
     this.router.navigate(['home']);
     this.element1 = document.getElementById("mySidenav");
@@ -53,4 +53,5 @@ export class AppComponent {
       this.element3?.setAttribute("style", "display: block");
     }
   }
+
 }

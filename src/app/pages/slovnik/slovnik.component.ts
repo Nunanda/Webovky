@@ -23,5 +23,4 @@ export class SlovnikComponent implements OnInit {
     const nazev = (this.router.url.split('/'))[2];
     this.styl = this.SlovnikService.getStylByName(nazev);
   }
-
 }

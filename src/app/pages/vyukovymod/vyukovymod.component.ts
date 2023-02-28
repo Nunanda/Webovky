@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VyukaService } from '../../service/vyuka.service';
-import { VyukaEn, VyukaCz} from '../../types'
+import { Vyuka } from '../../types';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vyukovymod',
@@ -10,23 +11,23 @@ import { VyukaEn, VyukaCz} from '../../types'
 })
 export class VyukaComponent implements OnInit {
 
-  vyukaCz: Array<VyukaCz>;
-  vyukaEn: Array<VyukaEn>;
+  vyuka: Array<Vyuka>;
 
-  constructor(private vyukaService: VyukaService, private router: Router) {
-    this.vyukaEn = new Array<VyukaEn>;
-    this.vyukaCz = new Array<VyukaCz>;
+  constructor(private vyukaService: VyukaService, private router: Router, private translate: TranslateService) {
+    this.vyuka = new Array<Vyuka>;
   }
 
   ngOnInit() {
-    this.vyukaCz = this.vyukaService.getVsechnyPomuckyCz();
-    this.vyukaEn = this.vyukaService.getVsechnyPomuckyEn();
+    this.vyuka = this.vyukaService.getVsechnyPomucky();
+    this.translate.get('')
   }
 
-  public goKroky(titleCz: string) {
-    localStorage.setItem("title", titleCz);
+  public goKroky(title: string) {
+    localStorage.setItem("title", title);
     this.router.navigate(["vyukovymod/vyukovymod-detail"]);
     console.log();
   }
+
+  
   
 }

@@ -1,6 +1,6 @@
 <div id="container">
     <h2>
-        {{ titleCz }}
+        {{ title | translate }}
     </h2>
     <div class="columns">
         <div class="column">
@@ -9,21 +9,21 @@
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.krok' | translate }}
                     </strong>
-                    {{InfoVyukyCz[index].cisloCz}}
+                    {{InfoVyuky[index].cislo}
                 </div>
-                <div *ngIf="InfoVyukyCz[index].stylCz != null">
+                <div *ngIf="InfoVyuky[index].styl != null">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.styl' | translate }}
                     </strong>
-                    {{InfoVyukyCz[index].stylCz}}
+                    {{InfoVyuky[index].styl}}
                 </div>
                 <div>
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
                     </strong>
-                    {{InfoVyukyCz[index].pouzijemeCz}}
+                    {{ InfoVyuky[index].pouzijeme | translate }}
                 </div>
-                <div id="popis" innerHTML="{{InfoVyukyCz[index].popisCz}}">
+                <div id="popis" innerHTML="{{InfoVyuky[index].popis | translate }}">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.popis' | translate }}
                     </strong>
@@ -32,7 +32,7 @@
         </div>
         <div class="column">
             <div class="video">
-                <iframe [src]="InfoVyukyCz[index].videoUrlCz | safe" title="YouTube video player" frameborder="0"
+                <iframe [src]="InfoVyuky[index].videoUrl | safe" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
@@ -40,11 +40,11 @@
         </div>
     </div>
     <div id="buttons">
-        <button (click)="previousIndexCz()" type="button">
+        <button (click)="previousIndex()" type="button">
             <img src="../../../../assets/icon/Vlevo.png">
         </button>
-        {{index+1}}/{{InfoVyukyCz.length}}
-        <button (click)="nextIndexCz()" type="button">
+        {{index+1}}/{{InfoVyuky.length}}
+        <button (click)="nextIndex()" type="button">
             <img src="../../../../assets/icon/Vpravo.png">
         </button>
     </div>

@@ -53,5 +53,4 @@ export class AppComponent {
       this.element3?.setAttribute("style", "display: block");
     }
   }
-
 }

@@ -2,6 +2,19 @@
     <h2>
         Návody
     </h2>
+    <!--
+    <div>
+        <button (click)="lehkeNavody()">
+            Lehké
+        </button>
+        <button (click)="stredniNavody()">
+            Střední
+        </button>
+        <button (click)="tezkeNavody()">
+            Těžké
+        </button>
+    </div> -->
+
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
             <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.title)">
@@ -15,9 +28,9 @@
                             <tr>
                                 <td>
                                     <strong>
-                                        Název:
+                                        Počet částí:
                                     </strong>
-                                    {{item.title}}
+                                    {{item.pocet}}
                                 </td>
                             </tr>
                             <tr>
@@ -26,14 +39,6 @@
                                         Zkratky:
                                     </strong>
                                     {{item.zkratky}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Pomůcky:
-                                    </strong>
-                                    {{item.pomucky}}
                                 </td>
                             </tr>
                         </table>

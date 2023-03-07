@@ -2,6 +2,7 @@
     <h2>
         Návody
     </h2>
+    <!--
     <div>
         <button (click)="lehkeNavody()">
             Lehké
@@ -12,7 +13,8 @@
         <button (click)="tezkeNavody">
             Těžké
         </button>
-    </div>
+    </div> -->
+
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
             <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.title)">

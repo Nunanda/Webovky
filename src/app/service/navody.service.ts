@@ -121,46 +121,46 @@ const poleNavody: Array<Navod> = [
         obrazek: true,
         nazevCasti: "hlava-zelva",
         titulekCasti: "Hlava",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "ks (4 řad)", "4 ks, A", "3 ks, A", "2 ks, A", "ks, A", "Po"]
+        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "ks (4 řad)", "4 ks, A", "3 ks, A", "2 ks, A", "ks, A", "A", "Po"]
       },
       {
         obrazek: true,
         nazevCasti: "horni-cast-krunyre-zelva",
         titulekCasti: "Horní část krunýře",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "ks (3 řady)", "Po"]
+        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "ks (3 řady)", "Po"]
       },
       {
         obrazek: true,
         nazevCasti: "spodni-cast-krunyre-zelva",
         titulekCasti: "Spodní část krunýře",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po"]
+        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po"]
       },
       {
         obrazek: true,
         nazevCasti: "zadni-ploutev-zelva",
         titulekCasti: "Zadní ploutev (2x)",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
+        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
       },
       {
         obrazek: true,
         nazevCasti: "predni-ploutev-zelva",
         titulekCasti: "Přední ploutev (2x)",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
+        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
       },
       {
         obrazek: false, //false, ale obrázek se zobrazuje
         nazevCasti: "ocasek-zelva",
         titulekCasti: "Ocásek",
         popis: ["Mk (4)", "ks (2 řady)", "Po"]
-      },
+      },/*
       {
         obrazek: false, //dodat fotku doplnky
         nazevCasti: "doplnky-zelva",
         titulekCasti: "Doplňky",
         popis: ["Jednu řadu pod očima můžu vytvořit tváře. Jednoduše si vyberu jeden bod, do kterého píchnu a jehlu vytáhnu o 2 očka dál. Zakončím zapošitím", "Pusinku z kousku černé. Vyberu si místa, kde chci mít koutky. Těmito dvěma body jehlu protáhnu dvakrát, abych měla venku volný oblouček nitě. Tu potom zachytím zhruba uprostřed, a tak upevním"]
-      },
+      },*/
     ],
-  },
+  },/*
   {
     obtiznost: ObtiznostNavodu.lehky,
     nazev: "obraceci-chobotnicka",
@@ -307,7 +307,7 @@ const poleNavody: Array<Navod> = [
         popis: ["Mk (6)", "V", "(DS, PDS, DS) do jednoho oka 3krát, 9Po"]
       },
     ],
-  },
+  },*/
 ];
 
 @Injectable({

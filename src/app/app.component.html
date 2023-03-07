@@ -102,23 +102,6 @@
             <img class="googleicons" src="/assets/icon/school.svg">
             Výukový mód
           </button>
-          <div class="dropdown">
-            <button class="Menu-block" (click)="showHideNavody()">
-              <img class="googleicons" src="/assets/icon/view.svg">
-              Návody
-            </button>
-            <div class="dropdown-content2" id="dropdown-content2">
-              <a (click)="opencloseNav()" routerLink="/navody/detail">
-                Všechny
-              </a>
-              <a (click)="opencloseNav()" routerLink="/navody">
-                Dokončené
-              </a>
-              <a (click)="opencloseNav()" routerLink="/navody">
-                Prémiové
-              </a>
-            </div>
-          </div>
         </div>
       </div>
       <button (click)="opencloseNav()" class="button">
@@ -206,22 +189,22 @@
         <img class="googleicons" src="/assets/icon/school.svg">
         Výukový mód
       </button>
-      <div class="dropdown">
-        <button class="Menu-block">
+      <div>
+        <button class="Menu-block" routerLink="/navody">
           <img class="googleicons" src="/assets/icon/view.svg">
           Návody
-        </button>
-        <div class="dropdown-content">
+        </button> <!--
+        <div class="dropdown-content">       class="dropdown"
           <a routerLink="/navody">
-            Lehké
+            Vše
           </a>
           <a routerLink="/navody">
-            Střední
+            Dokončené
           </a>
           <a routerLink="/navody">
-            Těžké
+            Prémiové
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
     <router-outlet></router-outlet>

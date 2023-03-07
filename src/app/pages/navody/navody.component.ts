@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavodyService } from '../../service/navody.service';
 import { Router } from '@angular/router';
-import { Navod } from 'src/app/types';
+import { Navod } from '../../types';
 
 @Component({
   selector: 'app-navody',

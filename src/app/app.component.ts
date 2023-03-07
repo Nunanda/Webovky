@@ -20,7 +20,7 @@ export class AppComponent {
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
   }
-  title = 'Webovky';
+
   ngOnInit(): void {
     this.router.navigate(['home']);
     this.element1 = document.getElementById("mySidenav");

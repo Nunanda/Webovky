@@ -133,9 +133,9 @@
  }
 
  .unfinished {
-  background-color: #f2d4de;
-}
+   background-color: #f2d4de;
+ }
 
-.finished {
-  background-color: #f5a3be;
-}
+ .finished {
+   background-color: #f5a3be;
+ }

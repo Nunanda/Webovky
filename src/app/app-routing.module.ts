@@ -9,13 +9,15 @@ import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'slovnik/:nazevStylu', component: SlovnikComponent },
   { path: 'pomucky/:nazevPomucky', component: PomuckyComponent },
   { path: 'navody', component: NavodyComponent },
   { path: 'vyukovymod', component: VyukaComponent },
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
-  { path: 'navody/navody-detail', component: NavodyDetailComponent }
+  { path: 'navody/navody-detail', component: NavodyDetailComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

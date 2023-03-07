@@ -8,10 +8,9 @@
                 <div class="bold">
                     Použijeme tyto styly:
                 </div>
-                <div>
-                    {{navod.zkratky}}
+                <div innerHTML="{{navod.zkratky}}">
                 </div>
-                <img id="obrazek_navodu" src="../assets/icon/{{navod.nazev}}.jpg">
+                <img id="obrazek_navodu" src="../assets/icon/{{popis[index].nazevCasti}}.jpg">
             </div>
             <div id="blok0">
                 <div *ngFor="let item of popis">
@@ -26,32 +25,25 @@
                 <div class="bold">
                     {{popis[index].titulekCasti}}:
                 </div>
-                <div class="padding-top" *ngIf="popis[index].zkratkyCasti != null">
-                    Použijeme tyto styly:
-                    {{popis[index].zkratkyCasti}}
+
+                <div name="element0" *ngFor="let item0 of popisy">
+                    {{item0}}
+                    <br>
                 </div>
-                <div id="buttons">
+                <div class="buttons">
                     <button (click)="previousIndex()" type="button">
                         <img src="../../../../assets/icon/Vlevo.svg">
                     </button>
-                    &nbsp;
+                    <button (click)="time()">
+                        {{ minutes }}:{{ seconds }}
+                    </button>
+                    <button (click)="finished()">
+                        Hotovo
+                    </button>
                     <button (click)="nextIndex()" type="button">
                         <img src="../../../../assets/icon/Vpravo.svg">
                     </button>
                 </div>
-                <div class="bold">
-                    Návod:
-                </div>
-                <div name="element0" *ngFor="let item of popis[index].popis">
-                    {{item}}
-                    <br>
-                </div>
-                <button (click)="time()">
-                    {{ minutes }}:{{ seconds }}
-                </button>
-                <button (click)="finished()">
-                    Hotovo
-                </button>
             </div>
         </div>
     </div>

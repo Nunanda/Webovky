@@ -109,7 +109,7 @@ const poleNavody: Array<Navod> = [
     nazev: "vodni-zelva",
     title: "Vodní želva",
     zkratky: "Mk, Ks, Řo, Po, V, A",
-    pocet: 4,
+    pocet: 6,
     popisy: [
       {
         obrazek: true,

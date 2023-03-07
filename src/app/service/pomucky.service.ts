@@ -5,7 +5,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "hacek",
     title: "Háček",
-    videoURL: "bV-dubempbc",
+    videoURL: "XL4ze9vLC3s",
     kroky: [
       {
         popis: "Existuje široká škála velikostí.",
@@ -28,7 +28,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "prize",
     title: "Příze",
-    videoURL: "IOvAdXIL8Vg",
+    videoURL: null,
     kroky: [
       {
         popis: "Dnes můžeme najít obrovské množství značek a materiálů (akrylové, bavlněné, směsové).",
@@ -51,7 +51,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "znackovac",
     title: "Značkovač",
-    videoURL: "LtpxNswfMrs",
+    videoURL: null,
     kroky: [
       {
         popis: "Slouží nám k označení počátku řady, ale dá se použít i jiný kousek příze.",
@@ -74,7 +74,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "jehla",
     title: "Jehla",
-    videoURL: "U6YFVgPBqJ4",
+    videoURL: null,
     kroky: [
       {
         popis: "Na přišívání jednotlivých dílů, zapošívání nitě. Upřednostňované plastové jehly se více hodí, pokud děláte se silnějším typem příze.",
@@ -87,7 +87,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "nuzky",
     title: "Nůžky",
-    videoURL: "50Hvj3rbFAQ",
+    videoURL: null,
     kroky: [
       {
         popis: "Nůžky asi už někdy používal každý z nás a u háčkování to není nějak zvlášť jiné.",
@@ -110,7 +110,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "bezpecnostni-oci-a-nos",
     title: "Bezpečnostní oči a nos",
-    videoURL: "6MKkv62YKcQ",
+    videoURL: null,
     kroky: [
       {
         popis: "Dnes se dá pořídit spousta tvarů, velikostí a barev očí a nosů s bezpečnostní pojistkou.",
@@ -133,7 +133,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "chrastitko",
     title: "Chrastítko",
-    videoURL: "ZHjAEHY40-s",
+    videoURL: null,
     kroky: [
       {
         popis: "Pokud chcete svůj výrobek nějak ozvláštnit pro dítě, nebo třeba domácího mazlíčka, můžete dovnitř přidat chrastítko.",
@@ -187,7 +187,7 @@ const polePomucek: Array<Pomucka> = [
   {
     nazev: "vypln",
     title: "Výplň",
-    videoURL: "DvlX75z79tw",
+    videoURL: null,
     kroky: [
       {
         popis: "Pokud vytváříte něco prostorového (zvířátka, hračky, atd...), tak se vám bude hodit nějaká výplň. Tu může tvořit vata, nebo duté vlákno. Po delší době háčkování můžete použít i zbytky přízí z minulého tvoření. Je to taková recyklace, kterou já uplatňuji třeba u jehelníčků",

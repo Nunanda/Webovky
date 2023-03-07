@@ -4,7 +4,7 @@ import { InfoVyuky, Vyuka } from '../types'
 const poleVyrobku: Array<Vyuka> = [
   {
     nazev: "chobotnicka",
-    title: "Chobotnička",
+    title: "Chobotnicka",
     popis: "vyrobek na vytvoreni chobotnicky",
     pocet: "12",
     kroky: [

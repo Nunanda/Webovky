@@ -12,13 +12,11 @@ export class AppComponent {
   element1: HTMLElement | null;
   element2: HTMLElement | null;
   element3: HTMLElement | null;
-  element4: HTMLElement | null;
 
   constructor(private router: Router) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
   }
   title = 'Webovky';
   ngOnInit(): void {
@@ -26,7 +24,6 @@ export class AppComponent {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
   }
 
   public opencloseNav() {
@@ -36,6 +33,7 @@ export class AppComponent {
     else {
       this.element1?.setAttribute("style", "height: 0");
     }
+
   }
 
   public showHidePomucky() {
@@ -53,15 +51,6 @@ export class AppComponent {
     }
     else {
       this.element3?.setAttribute("style", "display: block");
-    }
-  }
-
-  public showHideNavody() {
-    if (this.element4?.getAttribute("style") === "display: block") {
-      this.element4?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element4?.setAttribute("style", "display: block");
     }
   }
 }

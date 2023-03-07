@@ -73,6 +73,7 @@
             </button>
             <div class="dropdown-content1" id="dropdown-content1">
               <a routerLink="/slovnik/retizkove-oko">
+
                 Řetízkové oko
               </a>
               <a (click)="opencloseNav()" routerLink="/slovnik/pevne-oko">
@@ -193,23 +194,10 @@
         <img class="googleicons" src="/assets/icon/school.svg">
         Výukový mód
       </button>
-      <div>
-        <button class="Menu-block" routerLink="/navody">
-          <img class="googleicons" src="/assets/icon/view.svg">
-          Návody
-        </button> <!--
-        <div class="dropdown-content">       class="dropdown"
-          <a routerLink="/navody">
-            Vše
-          </a>
-          <a routerLink="/navody">
-            Dokončené
-          </a>
-          <a routerLink="/navody">
-            Prémiové
-          </a>
-        </div>-->
-      </div>
+      <button routerLink="/navody" class="Menu-block">
+        <img class="googleicons" src="/assets/icon/view.svg">
+        Návody
+      </button>
     </div>
     <router-outlet></router-outlet>
   </div>

@@ -193,10 +193,23 @@
         <img class="googleicons" src="/assets/icon/school.svg">
         Výukový mód
       </button>
-      <button routerLink="/navody" class="Menu-block">
-        <img class="googleicons" src="/assets/icon/view.svg">
-        Návody
-      </button>
+      <div>
+        <button class="Menu-block" routerLink="/navody">
+          <img class="googleicons" src="/assets/icon/view.svg">
+          Návody
+        </button> <!--
+        <div class="dropdown-content">       class="dropdown"
+          <a routerLink="/navody">
+            Vše
+          </a>
+          <a routerLink="/navody">
+            Dokončené
+          </a>
+          <a routerLink="/navody">
+            Prémiové
+          </a>
+        </div>-->
+      </div>
     </div>
     <router-outlet></router-outlet>
   </div>

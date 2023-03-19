@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,13 @@ export class AppComponent {
   element3: HTMLElement | null;
   element4: HTMLElement | null;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public translate: TranslateService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
+    translate.addLangs(['CZ','EN']);
+    translate.setDefaultLang('CZ');
   }
 
   ngOnInit(): void {
@@ -27,6 +30,10 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
+  }
+
+  public switchLanguage(lang:string) {
+    return this.translate.use(lang);
   }
 
   public opencloseNav() {

@@ -20,6 +20,10 @@ export class VyukaComponent implements OnInit {
     this.vyuka = this.vyukaService.getVsechnyPomucky();
   }
 
+  ngDoCheck() {
+    this.vyuka = this.vyukaService.getVsechnyPomucky();
+  }
+
   public goKroky(title: string) {
     localStorage.setItem("title", title);
     this.router.navigate(["vyukovymod/vyukovymod-detail"]);

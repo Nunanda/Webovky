@@ -19,7 +19,7 @@ export class VyukaComponent implements OnInit {
 
   ngOnInit() {
     this.vyuka = this.vyukaService.getVsechnyPomucky();
-    this.translate.get('')
+    this.translate.get('lang');
   }
 
   public goKroky(title: string) {

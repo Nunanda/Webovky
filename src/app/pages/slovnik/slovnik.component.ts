@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SlovnikService } from '../../service/slovnik.service';
+import { SlovnikTranslation } from './slovnik.translations';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-slovnik',
@@ -11,17 +13,31 @@ import { Router } from '@angular/router';
 export class SlovnikComponent implements OnInit {
 
   styl: any;
+  title: string;
 
-  constructor(private SlovnikService: SlovnikService, private router: Router) { }
+  constructor(private router: Router, private translate: TranslateService) { 
+    translate.addLangs(['CZ','EN']);
+    translate.setDefaultLang('CZ');
+    const language = this.translate.getBrowserLang || this.translate.defaultLang
+    this.title = SlovnikTranslation['title'][this.translate.langs.indexOf(language)];
+  }
+
+  switchLanguage(lang:string){
+    this.translate.use(lang);
+  }
 
   ngOnInit() {
-    const nazev = (this.router.url.split('/'))[2];
-    this.styl = this.SlovnikService.getStylByName(nazev);
+    
   }
 
   ngDoCheck() {
-    const nazev = (this.router.url.split('/'))[2];
-    this.styl = this.SlovnikService.getStylByName(nazev);
+    
+  }
+
+  public slovnikPojmy(title: string) {
+    localStorage.setItem("title", title);
+    this.router.navigate(["vyukovymod/vyukovymod-detail"]);
+    console.log();
   }
 
 }

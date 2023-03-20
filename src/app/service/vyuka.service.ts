@@ -700,10 +700,10 @@ export class VyukaService {
 
   public getVyrobekByName(name: string) {
     if (this.translate.currentLang === "EN") {
-      return poleVyrobkuEN.find(element => element.title == name);
+      return poleVyrobkuEN.find(element => element.nazev == name);
     }
     else {
-      return poleVyrobkuCZ.find(element => element.title == name);
+      return poleVyrobkuCZ.find(element => element.nazev == name);
     }
   }
 
@@ -716,13 +716,13 @@ export class VyukaService {
     }
   }
 
-  public getKroky(title: string): Array<InfoVyuky> {
+  public getKroky(nazev: string): Array<InfoVyuky> {
     if (this.translate.currentLang === "EN") {
-      let index = poleVyrobkuEN.findIndex(x => x.title === title);
+      let index = poleVyrobkuEN.findIndex(x => x.nazev === nazev);
       return poleVyrobkuEN[index].kroky;
     }
     else {
-      let index = poleVyrobkuCZ.findIndex(x => x.title === title);
+      let index = poleVyrobkuCZ.findIndex(x => x.nazev === nazev);
       return poleVyrobkuCZ[index].kroky;
     }
   }

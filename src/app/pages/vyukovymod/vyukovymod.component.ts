@@ -24,8 +24,8 @@ export class VyukaComponent implements OnInit {
     this.vyuka = this.vyukaService.getVsechnyPomucky();
   }
 
-  public goKroky(title: string) {
-    localStorage.setItem("title", title);
+  public goKroky(nazev: string) {
+    localStorage.setItem("nazev", nazev);
     this.router.navigate(["vyukovymod/vyukovymod-detail"]);
   }
 

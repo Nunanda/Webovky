@@ -22,8 +22,12 @@ export class NavodyComponent implements OnInit {
     this.navod = this.navodyService.getVsechnyNavody();
   }
 
-  public getPopisy(title: string) {
-    localStorage.setItem("title", title);
+  ngDoCheck() {
+    this.navod = this.navodyService.getVsechnyNavody();
+  }
+
+  public getPopisy(nazev: string) {
+    localStorage.setItem("nazev", nazev);
     this.router.navigate(["navody/navody-detail"]);
   }
 

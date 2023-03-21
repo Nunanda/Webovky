@@ -7,7 +7,7 @@
             <div id="direction_row">
                 <div class="direction_column">
                     <div class="znacka_zkratka">
-                        Zkratka:
+                        {{ 'SLOVNIK.slovnikZkratka' | translate }}
                     </div>
                     <div class="pole_zkratka">
                         <div id="zkratka">
@@ -17,14 +17,14 @@
                 </div>
                 <div id="direction_column">
                     <div class="znacka_zkratka">
-                        Značka:
+                        {{ 'SLOVNIK.image' | translate }}
                     </div>
                     <img class="znacka" src="/assets/icon/{{styl.nazev}}.svg">
                 </div>
             </div>
             <div id="popis_obsah">
                 <div id="nadpisek_popis">
-                    Popis
+                    {{ 'SLOVNIK.animace' | translate }}
                 </div>
                 <div class="popis" innerHTML="{{styl.popis}}">
                 </div>
@@ -32,11 +32,11 @@
         </div>
         <div id="direction_column">
             <div class="nadpisky">
-                Animace
+                {{ 'SLOVNIK.animace' | translate }}
             </div>
             <img class="size" src="assets/icon/{{styl.nazev}}.gif">
             <div class="nadpisky">
-                Ve skutečnosti
+                {{ 'SLOVNIK.veSkutecnosti' | translate }}
             </div>
             <img class="size" src="assets/icon/{{styl.nazev}}-real.png">
         </div>

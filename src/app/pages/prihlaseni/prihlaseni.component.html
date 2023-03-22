@@ -1,0 +1,20 @@
+<div id="container">
+    <div>
+        <label position="floating">Email or username</label>
+        <input type="email" ></input>
+      </div>
+      <div>
+        <label position="floating">Password</label>
+        <input type="{{ showPassword ? 'text' : 'password' }}" ></input>
+       <!-- <icon slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="togglePassword()"></icon> [(ngModel)]="password" (change)="passwordCheck()" [(ngModel)]="email" (change)="emailCheck()" -->
+      </div>
+      <br>
+      <br>
+      <button (click)="login()">Přihlásit se</button>
+      <br>
+      <div class="odkaz">
+        Ještě nemáte účet? <a href="/registrace">Zaregistruj se!</a>
+      </div>
+      <br>
+      <strong>Zapomněli jste heslo?</strong>
+</div>

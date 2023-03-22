@@ -7,6 +7,8 @@ import { PomuckyComponent } from './pages/pomucky/pomucky.component';
 import { NavodyComponent } from './pages/navody/navody.component';
 import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
+import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
+import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'navody', component: NavodyComponent },
   { path: 'vyukovymod', component: VyukaComponent },
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
-  { path: 'navody/:nazevNavodu', component: NavodyDetailComponent }
+  { path: 'navody/:nazevNavodu', component: NavodyDetailComponent },
+  { path: 'prihlaseni', component: PrihlaseniComponent },
+  { path: 'registrace', component: RegistraceComponent }
 ];
 
 @NgModule({

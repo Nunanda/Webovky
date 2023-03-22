@@ -564,7 +564,7 @@ const poleVyrobkuEN: Array<Vyuka> = [
   {
     nazev: "zalozka",
     title: "Bookmark",
-    popis: "Fun bbokmark for people of all ages",
+    popis: "Fun bookmark for people of all ages",
     pocet: "18",
     kroky: [
       {

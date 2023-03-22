@@ -14,9 +14,8 @@
 
     "NAVODY": {
         "navody": "Manuals",
-        "nazev": "Name:",
         "stylyZkratky": "Styles:",
-        "pomucky": "Tools:"
+        "pocetCasti": "Number of parts:"
     },
 
     "SLOVNIK": {

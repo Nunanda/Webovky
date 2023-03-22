@@ -1,6 +1,6 @@
 <div id="container">
     <h2>
-        Výukový mód
+        {{ 'VYUKOVYMOD.vyukovyMod' | translate }}
     </h2>
     <router-outlet></router-outlet>
     <div id="sloupce">
@@ -15,7 +15,7 @@
                         <tr>
                             <td>
                                 <strong>
-                                    Počet kroků:
+                                    {{ 'VYUKOVYMOD.pocetKroku' | translate }}
                                 </strong>
                                 {{item.pocet}}
                             </td>
@@ -23,7 +23,7 @@
                         <tr>
                             <td>
                                 <strong>
-                                    Popis:
+                                    {{ 'VYUKOVYMOD.popis' | translate }}
                                 </strong>
                                 {{item.popis}}
                             </td>

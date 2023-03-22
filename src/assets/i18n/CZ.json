@@ -14,9 +14,8 @@
 
     "NAVODY": {
         "navody": "Návody",
-        "nazev": "Název:",
         "stylyZkratky": "Zkratky:",
-        "pomucky": "Pomůcky:"
+        "pocetCasti": "Počet částí:"
     },
 
     "SLOVNIK": {

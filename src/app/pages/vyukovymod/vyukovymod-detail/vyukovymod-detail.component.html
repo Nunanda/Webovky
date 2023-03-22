@@ -7,25 +7,25 @@
             <div class="bublina">
                 <div>
                     <strong>
-                        Kroky:
+                        {{ 'VYUKOVYMODDETAIL.krok' | translate }}
                     </strong>
                     {{InfoVyuky[index].cislo}}
                 </div>
                 <div *ngIf="InfoVyuky[index].styl != null">
                     <strong>
-                        Styl:
+                        {{ 'VYUKOVYMODDETAIL.styl' | translate }}
                     </strong>
                     {{InfoVyuky[index].styl}}
                 </div>
                 <div>
                     <strong>
-                        Pomucky:
+                        {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
                     </strong>
                     {{InfoVyuky[index].pouzijeme}}
                 </div>
                 <div id="popis" innerHTML="{{InfoVyuky[index].popis}}">
                     <strong>
-                        Popis:
+                        {{ 'VYUKOVYMODDETAIL.popis' | translate }}
                     </strong>
                 </div>
             </div>

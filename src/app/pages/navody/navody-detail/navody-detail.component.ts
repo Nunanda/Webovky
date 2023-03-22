@@ -10,7 +10,7 @@ import { Navod, PopisNavodu } from '../../../types';
 })
 export class NavodyDetailComponent implements OnInit {
 
-  title: any;
+  nazev: any;
   popis: PopisNavodu[];
   navod: any;
   index: number;
@@ -22,7 +22,7 @@ export class NavodyDetailComponent implements OnInit {
   element0: NodeListOf<HTMLElement> | undefined;
 
   constructor(private navodyService: NavodyService, private router: Router) {
-    this.title = localStorage.getItem("title");
+    this.nazev = localStorage.getItem("nazev");
     this.popis = new Array<PopisNavodu>();
     this.navod = new Array<Navod>();
     this.index = 0;
@@ -31,11 +31,17 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navod = this.navodyService.getNavodyByName(this.title);
-    this.popis = this.navodyService.getPopisy(this.title);
+    this.navod = this.navodyService.getNavodyByName(this.nazev);
+    this.popis = this.navodyService.getPopisy(this.nazev);
     this.popisy = this.popis[this.index].popis;
     this.element = document.getElementsByName("button0");
     this.element0 = document.getElementsByName("element0");
+  }
+
+  ngDoCheck() {
+    this.navod = this.navodyService.getNavodyByName(this.nazev);
+    this.popis = this.navodyService.getPopisy(this.nazev);
+    this.popisy = this.popis[this.index].popis;
   }
 
   public setindex(item: PopisNavodu) {

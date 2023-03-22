@@ -1,6 +1,6 @@
 <div id="container">
     <h2>
-        Návody
+        {{ 'NAVODY.navody' | translate }}
     </h2>
     <!--
     <div>
@@ -17,7 +17,7 @@
 
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
-            <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.title)">
+            <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.nazev)">
                 <div class="Nazev_navodu {{item.obtiznost}}_name">
                     {{item.title}}
                 </div>
@@ -28,7 +28,7 @@
                             <tr>
                                 <td>
                                     <strong>
-                                        Počet částí:
+                                        {{ 'NAVODY.pocetCasti' | translate }}
                                     </strong>
                                     {{item.pocet}}
                                 </td>
@@ -36,7 +36,7 @@
                             <tr>
                                 <td>
                                     <strong>
-                                        Zkratky:
+                                        {{ 'NAVODY.stylyZkratky' | translate }}
                                     </strong>
                                     {{item.zkratky}}
                                 </td>

@@ -1,0 +1,67 @@
+{
+    "HOME": {
+        "uvitani": "Welcome!",
+        "webovaAplikace": "The Selecro team made a web app for you to learn to crochet.",
+        "mobilniAplikace": "We're working on an app for you to download on any device. You will be able to create an account, where you could make posts, create your own manuals, rate and comment on posts of other users and a lot more...",
+        "socialniSite": "Social Media"
+    },
+
+    "NAVODYDETAIL": {
+        "pouzitiStylu": "Styles used:",
+        "navod": "Manual:",
+        "hotovo": "Done"
+    },
+
+    "NAVODY": {
+        "navody": "Manuals",
+        "stylyZkratky": "Styles:",
+        "pocetCasti": "Number of parts:"
+    },
+
+    "SLOVNIK": {
+        "slovnikZkratka": "Abbreviation:",
+        "image": "Label:",
+        "popis": "Description",
+        "animace": "Animation",
+        "veSkutecnosti": "In real life"
+    },
+
+    "VYUKOVYMODDETAIL": {
+        "krok": "Step:",
+        "styl": "Style:",
+        "pomucky": "Tools:",
+        "popis": "Description:"
+    },
+
+    "VYUKOVYMOD": {
+        "vyukovyMod": "Educational mode",
+        "pocetKroku": "Amount of steps:",
+        "popis": "Description:"
+    },
+
+    "APP" : {
+        "hledat": "Find...",
+        "pomucky": "Tools",
+        "hacek": "Hook",
+        "prize": "Yarn",
+        "znackovac": "Row marker",
+        "jehla": "Needle",
+        "nuzky": "Scissors",
+        "bezpecnostniOciANos": "Safety eyes and nose",
+        "chrastitko": "Rattle",
+        "pocitadlo": "Row counter",
+        "navijecPrize": "Yarn winder",
+        "vypln": "Filling",
+        "slovnik": "Dictionary",
+        "retizkoveOko": "Chain",
+        "pevneOko": "Slip stitch",
+        "kratkySloupek": "Single crochet",
+        "polodlouhySloupek": "Half double crochet",
+        "dlouhySloupek": "Double crochet",
+        "rozhackovani": "Increase",
+        "shackovani": "Decrease",
+        "magickyKrouzek": "Magic ring",
+        "vyukovyMod": "Educational mode",
+        "navody": "Manuals"
+    }
+}

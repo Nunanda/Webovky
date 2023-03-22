@@ -101,6 +101,10 @@
    justify-content: center;
  }
 
+ .buttons0 {
+   display: none;
+ }
+
  @media screen and (max-width: 808px) {
    #container {
      padding: 20px;
@@ -131,6 +135,28 @@
    }
 
  }
+
+ @media screen and (max-width: 1453px) {
+    .buttons0 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .buttons {
+      display: none;
+    }
+
+    .buttons1 {
+      margin-top: 20px;
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+    }
+
+ }
+
 
  .unfinished {
    background-color: #f2d4de;

@@ -13,6 +13,11 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { SafePipe } from './safe.pipe';
 import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
 import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,11 +32,17 @@ import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.co
     SafePipe,
     PrihlaseniComponent,
     RegistraceComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

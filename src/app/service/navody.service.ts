@@ -315,153 +315,153 @@ const poleNavodyEN: Array<Navod> = [
   {
     obtiznost: ObtiznostNavodu.stredni,
     nazev: "dinosaurus",
-    title: "EN Dinosaurus",
-    zkratky: "Mk, V, Ks, A, Po, Řo",
+    title: "Dino",
+    zkratky: "Mr, Inc, Sc, Dec, SlSt, Ch",
     pocet: 7,
     popisy: [
       {
         obrazek: true,
         nazevCasti: "dinosaurus",
-        titulekCasti: "Příprava",
-        popis: ["Háček (velikost 4,5 mm)", "Dolphin Baby 2 klubka na tělo", "Dolphin Baby 1 na ostny", "Kousek černé příze na nozdry", "Bezpečnostní očka (velikost 10 mm)", "Značkovač", "Nůžky", "Výplň", "Jehla"]
+        titulekCasti: "What you'll need",
+        popis: ["Hook (size 4,5 mm)", "Dolphin Baby 2 balls of yarn for the body", "Dolphin Baby 1 ball of yarn for the spikes", "A piece of black yarn for nostrils", "Safety eyes (size 10 mm)", "Stitch marker", "Scissors", "Filling", "Needle"]
       },
       {
         obrazek: true,
         nazevCasti: "hlava-dinosaura",
-        titulekCasti: "Hlava",
-        popis: ["Mk (6)", "V", "ks, V", "2ks, V", "3ks, V", "4ks, V", "ks, V", "ks (6 řad)", "5ks, A", "4ks, A", "3ks, A", "2ks, A", "ks, A", "A", "Po"]
+        titulekCasti: "Head",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "Sc (6 rows)", "5Sc, Dec", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "Dec", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "nos-dinosaura",
-        titulekCasti: "Nos",
-        popis: ["Mk (6)", "V", "ks, V", "2ks, V", "3ks, V", "ks (3 řady)", "3ks, A", "Po"]
+        titulekCasti: "Nose",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "Sc (3 rows)", "3Sc, Dec", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "telo-dinosaura",
-        titulekCasti: "Tělo",
-        popis: ["Mk (6)", " V", "ks, V", "2ks, V", "3ks, V", "4ks, V", "5ks, V", "6ks, V", "ks (3 řady)", "6ks, A", "5ks, A", "4ks, A", "ks (3 řady)", "3ks, A", "ks (1 řada)", "2ks, A", "ks (1 řada)", "Po"]
+        titulekCasti: "Body",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "Sc (3 rows)", "6Sc, Dec", "5Sc, Dec", "4Sc, Dec", "Sc (3 rows)", "3Sc, Dec", "Sc (1 row)", "2Sc, A", "Sc (1 rows)", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "predni-noha-dinosaura",
-        titulekCasti: "Přední noha (2x)",
-        popis: ["Mk (6)", "V", "ks (7 řad)", "Po"]
+        titulekCasti: "Front leg (2x)",
+        popis: ["Mr (6)", "Inc", "Sc (7 rows)", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "zadni-noha-dinosaura",
-        titulekCasti: "Zadní noha (2x)",
-        popis: ["Mk (6)", "V", "ks, V", "2ks, V", "ks (2 řady)", "2ks, A", "4A, 10ks", "2A, 10ks", "ks (8 řad)", "A", "Po"]
+        titulekCasti: "Back leg (2x)",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (2 rows)", "2Sc, Dec", "4Dec, 10Sc", "2Dec, 10Sc", "Sc (8 rows)", "Dec", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "ocas-dinosaura",
-        titulekCasti: "Ocas",
-        popis: ["Mk (6)", "V", "11ks, V", "12ks, V", "13ks, V", "14ks, V", "15ks, V", "16ks, V", "17ks, V", "18ks, V", "19ks, V", "20ks, V", "21ks, V", "22ks, V", "23ks, V", "Po"]
+        titulekCasti: "Tail",
+        popis: ["Mr (6)", "Inc", "11Sc, Inc", "12Sc, Inc", "13Sc, Inc", "14Sc, Inc", "15Sc, Inc", "16Sc, Inc", "17Sc, Inc", "18Sc, Inc", "19Sc, Inc", "20Sc, Inc", "21Sc, Inc", "22Sc, Inc", "23Sc, Inc", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "osten-dinosaura",
-        titulekCasti: "Osten (6x)",
-        popis: ["Mk (6)", "2ks, V", "3ks, V", "4ks, V", "5ks, V", "6ks, V", "Po"]
+        titulekCasti: "Spike (6x)",
+        popis: ["Mr (6)", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"]
       }
     ]
   },
   {
     obtiznost: ObtiznostNavodu.lehky,
     nazev: "harold",
-    title: "EN Harold",
-    zkratky: "Mk, Ks, Řo, Po, V, A",
+    title: "Harold",
+    zkratky: "Mr, Sc, Ch, SlSt, Inc, Dec",
     pocet: 5,
     popisy: [
       {
         obrazek: true,
         nazevCasti: "harold",
-        titulekCasti: "Příprava",
-        popis: ["Háček (velikost 3 mm)", "Bezpečnostní očka (velikost 10 mm)", "YarnArt Jeans 1 klubko", "Kousek černé na doplňky", "Výplň", "Značkovač", "Nůžky", "Jehla"]
+        titulekCasti: "What you'll need",
+        popis: ["Hook (size 3 mm)", "Safety eyes (velikost 10 mm)", "YarnArt Jeans 1 ball of yarn", "Piece of black string for details", "Filling", "Stitch marker", "Scissors", "Needle"]
       },
       {
         obrazek: true,
         nazevCasti: "hlava-harold",
-        titulekCasti: "Hlava",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "ks (6 řad)", "4 ks, A", "3 ks, A", "2 ks, A", "ks, A", "Po"]
+        titulekCasti: "Head",
+        popis: ["Mr (8)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "Sc (6 rows)", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "chapadla-harold",
-        titulekCasti: "Chapadla",
-        popis: ["6*(25řo, otočím směr háčkování a střídám 2V, W, Po do dalšího oka opět za vnější přízi) "]
+        titulekCasti: "Tentacles",
+        popis: ["6*(25Ch, change the direction of crocheting and alternate 2Dec, double Dec, SlSt, into the next chain again on the inside)"]
       },
       {
         obrazek: true,
         nazevCasti: "vyplneni-harold",
-        titulekCasti: "Vyplnění",
-        popis: ["Nezapomeňte v tomto bodě vyplnit."]
+        titulekCasti: "Filling",
+        popis: ["Don't forget to fill it in."]
       },
       {
         obrazek: true,
         nazevCasti: "uzavreni-harold",
-        titulekCasti: "Uzavření",
-        popis: ["A", "o na zakončení, necháme si delší kus příze na zapošití."]
+        titulekCasti: "Closing off",
+        popis: ["Dec", "SlSt to close off, leave a longer strand of yarn for sewing."]
       },
       {
         obrazek: true,
         nazevCasti: "doplnky-harold",
-        titulekCasti: "Doplňky",
-        popis: ["Obočí a pusinku našijeme černou přízí."]
+        titulekCasti: "Details",
+        popis: ["Create the eyebrows and mouth with black yarn."]
       }
     ]
   },
   {
     obtiznost: ObtiznostNavodu.stredni,
     nazev: "vodni-zelva",
-    title: "EN Vodní želva",
-    zkratky: "Mk, Ks, Řo, Po, V, A",
+    title: "Sea turtle",
+    zkratky: "Mr, Sc, Ch, SlSt, Inc, Dec",
     pocet: 6,
     popisy: [
       {
         obrazek: true,
         nazevCasti: "vodni-zelva",
-        titulekCasti: "Příprava",
-        popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 1 klubíčko na tělo", "YarnArt Jeans 1 klubíčko na krunýř", "Kousek černé a růžové na doplňky", "Bezpečnostní očka (10 mm)", "Značkovač", "Výplň", "Nůžky", "Jehla"]
+        titulekCasti: "What you'll need",
+        popis: ["Hook (size 3 mm)", "YarnArt Jeans 1 ball of yarn", "YarnArt Jeans 1 ball of yarn", "Piece of black and pink string for details.", "Safety eyes (10 mm)", "Stitch marker", "Filling", "Scissors", "Needle"]
       },
       {
         obrazek: true,
         nazevCasti: "hlava-zelva",
-        titulekCasti: "Hlava",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "ks (4 řad)", "4 ks, A", "3 ks, A", "2 ks, A", "ks, A", "A", "Po"]
+        titulekCasti: "Head",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "Sc (4 rows)", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "Dec", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "horni-cast-krunyre-zelva",
-        titulekCasti: "Horní část krunýře",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "ks (3 řady)", "Po"]
+        titulekCasti: "Top part of shell",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "Sc (3 rows)", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "spodni-cast-krunyre-zelva",
-        titulekCasti: "Spodní část krunýře",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po"]
+        titulekCasti: "Bottom part of shell",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"]
       },
       {
         obrazek: true,
         nazevCasti: "zadni-ploutev-zelva",
-        titulekCasti: "Zadní ploutev (2x)",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
+        titulekCasti: "Back fin (2x)",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "SlSt", "After finish, fold the circle in half and sew it together."]
       },
       {
         obrazek: true,
         nazevCasti: "predni-ploutev-zelva",
-        titulekCasti: "Přední ploutev (2x)",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
+        titulekCasti: "Front fin (2x)",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt", "After finish, fold the circle in half and sew it together."]
       },
       {
         obrazek: false, //false, ale obrázek se zobrazuje
         nazevCasti: "ocasek-zelva",
-        titulekCasti: "Ocásek",
-        popis: ["Mk (4)", "ks (2 řady)", "Po"]
+        titulekCasti: "Tail",
+        popis: ["Mr (4)", "Sc (2 rows)", "SlSt"]
       },/*
       {
         obrazek: false, //dodat fotku doplnky

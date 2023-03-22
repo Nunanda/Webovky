@@ -7,8 +7,7 @@
     },
 
     "NAVODYDETAIL": {
-        "pouzitiStylu": "Použité styly:",
-        "navod": "Návod:",
+        "pouzitiStylu": "Použijeme tyto styly:",
         "hotovo": "Hotovo"
     },
 
@@ -21,7 +20,6 @@
     "SLOVNIK": {
         "slovnikZkratka": "Zkratka:",
         "image": "Značka:",
-        "popis": "Popis",
         "animace": "Animace",
         "veSkutecnosti": "Ve skutečnosti"
     },

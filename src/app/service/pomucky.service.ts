@@ -422,4 +422,13 @@ export class PomuckyService {
     }
   }
 
+  public getTitles(): Array<string> {
+    if (this.translate.currentLang === "EN") {
+      return polePomucekEN.map((item) => item.title);
+    }
+    else {
+      return polePomucekCZ.map((item) => item.title);
+    }
+  }
+
 }

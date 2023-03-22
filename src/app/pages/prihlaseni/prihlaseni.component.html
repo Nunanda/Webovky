@@ -1,13 +1,14 @@
 <div id="container">
   <div>
     <label position="floating">Email, nebo uživatelské jméno</label>
-    <input type="email" (change)="emailCheck()"/>
+    <input type="email" />
   </div>
       <div>
         <label position="floating">Heslo</label>
-        <input [type]="showPassword ? 'text' : 'password'" /> <mat-icon>remove_red_eye</mat-icon><br>
-        <span class="material-icons">visibility_off</span>
-        
+        <input [type]="showPassword ? 'text' : 'password'" /> 
+        <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
+          {{showPassword ? 'visibility' : 'visibility_off'}}
+        </i>
     
       </div>
       <br>

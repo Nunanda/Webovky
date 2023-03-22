@@ -1,4 +1,4 @@
-body {
+#body {
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -347,7 +347,7 @@ a:first-child {
 }
 
 @media screen and (max-width: 1300px) {
-    body {
+    #body {
         background-image: none;
     }
 

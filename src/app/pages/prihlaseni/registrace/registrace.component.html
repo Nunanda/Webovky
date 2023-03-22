@@ -1,1 +1,25 @@
-<p>registrace works!</p>
+<div id="conteiner">
+    <div>
+        <label position="floating">Uživatelské jméno</label>
+        <input type="username"/>
+    </div>
+    <div>
+        <label position="floating">Email</label>
+        <input type="email"/>
+    </div>
+    <div>
+        <label position="floating">Heslo</label>
+        <input [type]="showPassword ? 'text' : 'password'" /> 
+        <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
+          {{showPassword ? 'visibility' : 'visibility_off'}}
+        </i>
+    </div>
+    <div>
+        <label position="floating">Zopakujte heslo</label>
+        <input [type]="showPassword2 ? 'text' : 'password'" /> 
+        <i class="material-icons" matSuffix (click)="showPassword2 = !showPassword2">
+          {{showPassword ? 'visibility' : 'visibility_off'}}
+        </i>
+    </div>
+
+</div>

@@ -1,25 +1,46 @@
-<div id="conteiner">
-    <div>
-        <label position="floating">Uživatelské jméno</label>
-        <input type="username"/>
-    </div>
-    <div>
-        <label position="floating">Email</label>
-        <input type="email"/>
-    </div>
-    <div>
-        <label position="floating">Heslo</label>
-        <input [type]="showPassword ? 'text' : 'password'" /> 
-        <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
-          {{showPassword ? 'visibility' : 'visibility_off'}}
-        </i>
-    </div>
-    <div>
-        <label position="floating">Zopakujte heslo</label>
-        <input [type]="showPassword2 ? 'text' : 'password'" /> 
-        <i class="material-icons" matSuffix (click)="showPassword2 = !showPassword2">
-          {{showPassword ? 'visibility' : 'visibility_off'}}
-        </i>
-    </div>
-
+<div class="register-container">
+    <h2>
+        Registrace
+    </h2>
+    <form (ngSubmit)="register()">
+        <div class="form-group">
+            <label for="email">
+                Email
+            </label>
+            <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="username">
+                Username
+            </label>
+            <input type="username" class="form-control" id="username" required [(ngModel)]="username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Heslo
+            </label>
+            <div class="password-container">
+                <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password" required
+                    [(ngModel)]="password0" name="password">
+                <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
+                    {{showPassword0 ? 'visibility' : 'visibility_off'}}
+                </i>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Zopakujte heslo
+            </label>
+            <div class="password-container">
+                <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password" required
+                    [(ngModel)]="password1" name="password">
+                <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
+                    {{showPassword1 ? 'visibility' : 'visibility_off'}}
+                </i>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Registrovat se
+        </button>
+    </form>
 </div>

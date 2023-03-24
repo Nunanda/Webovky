@@ -6,23 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prihlaseni.component.css']
 })
 export class PrihlaseniComponent implements OnInit {
-  passwordToggleIcon = "visibility";
-  showPassword!: boolean;
+
+  showPassword: boolean = false;
+  email: string = "";
+  password: string = "";
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public togglePassword() {
-    this.showPassword = !this.showPassword;
-    if (this.passwordToggleIcon == 'visibility') {
-      this.passwordToggleIcon = 'visibility_off';
-    }
-    else {
-      this.passwordToggleIcon = 'visibility';
-    }
+  async login() {
   }
-
-  public login() {}
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/service';
 import { AuthService } from 'src/app/service';
-import { UserService } from 'src/app/service/user.service';
-import { ValidationService } from 'src/app/service/validation.service';
+import { UserService } from 'src/app/service';
+import { ValidationService } from 'src/app/service';
 
 @Component({
   selector: 'app-prihlaseni',

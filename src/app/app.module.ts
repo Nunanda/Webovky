@@ -14,10 +14,6 @@ import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
 import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SafePipe } from './safe.pipe';
 import { LocationStrategy, PathLocationStrategy  } from '@angular/common';
@@ -39,7 +35,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     PrihlaseniComponent,
     RegistraceComponent,
     ProfileComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -47,9 +42,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     YouTubePlayerModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

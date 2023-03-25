@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/service/auth.service';
-import { ValidationService } from 'src/app/service/validation.service';
+import { AuthService } from 'src/app/service';
+import { ValidationService } from 'src/app/service';
 import { Language } from 'src/app/types';
 
 @Component({

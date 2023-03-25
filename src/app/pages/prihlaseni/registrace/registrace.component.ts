@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export enum Language {
-  CZ = 'CZ',
-  EN = 'EN',
-}
+import { Language } from 'src/app/service/auth.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-registrace',
@@ -18,13 +15,27 @@ export class RegistraceComponent implements OnInit {
   username: string = "";
   password0: string = "";
   password1: string = "";
-  Language: Language = Language.CZ;
+  language: Language = Language.CZ;
+  isSuccessful: boolean = false;
+  isSignUpFailed: boolean = false;
+  errorMessage: string = "";
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  async register() {
+  register(): void {
+    this.authService.register(this.email, this.password0, this.username, this.language).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
 }

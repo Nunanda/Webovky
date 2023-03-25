@@ -1,0 +1,27 @@
+<div id="container">
+    <h2>
+        Profil
+    </h2>
+    <div>
+        Username: {{currentUser.username}}
+    </div>
+    <div>
+        Příjmení: {{currentUser.surname}}
+    </div>
+    <div>
+        Nick: {{currentUser.nick}}
+    </div>
+    <div>
+        Jméno: {{currentUser.name}}
+    </div>
+    <div>
+        Email: {{currentUser.email}}
+    </div>
+    <div>
+        Datum vytvoření: {{currentUser.date}}
+    </div>
+    <div>
+        Bio: {{currentUser.bio}}
+    </div>
+    <button (click)="signOut()">Odhlásit</button>
+</div>

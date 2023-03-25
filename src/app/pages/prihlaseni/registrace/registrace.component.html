@@ -1,8 +1,8 @@
-<div class="register-container">
+<div id="container">
     <h2>
         Registrace
     </h2>
-    <form (ngSubmit)="register()">
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.valid && register()" #f="ngForm" novalidate>
         <div class="form-group">
             <label for="email">
                 Email

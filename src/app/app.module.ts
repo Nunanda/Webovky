@@ -10,7 +10,6 @@ import { NavodyComponent } from './pages/navody/navody.component';
 import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { SafePipe } from './safe.pipe';
 import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
 import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     SafePipe,
     PrihlaseniComponent,
     RegistraceComponent,
+    ProfileComponent,
     
   ],
   imports: [

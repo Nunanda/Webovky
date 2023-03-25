@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavodyService } from '../../service/navody.service';
 import { Router } from '@angular/router';
+import { NavodyService } from 'src/app/service';
 import { Navod } from 'src/app/types';
 
 @Component({

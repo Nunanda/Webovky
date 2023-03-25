@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SlovnikService } from '../../service/slovnik.service';
+import { SlovnikService } from 'src/app/service';
 import { Router } from '@angular/router';
 
 @Component({

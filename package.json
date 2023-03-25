@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    "build": "ng build --proxy-config proxy.conf.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ci:clean": "rimraf ./dist",
     "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom --code-coverage",
-    "ci:build": "ng build --prod"
+    "ci:build": "ng build --prod --proxy-config proxy.conf.json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,8 @@
     "@angular/router": "^14.0.0",
     "@angular/youtube-player": "^14.2.6",
     "ci": "^2.2.0",
+    "https": "^1.0.0",
+    "https-agent": "^1.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

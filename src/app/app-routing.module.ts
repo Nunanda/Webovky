@@ -9,6 +9,7 @@ import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
 import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
   { path: 'navody/:nazevNavodu', component: NavodyDetailComponent },
   { path: 'prihlaseni', component: PrihlaseniComponent },
-  { path: 'prihlaseni/:registrace', component: RegistraceComponent }
+  { path: 'prihlaseni/:registrace', component: RegistraceComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

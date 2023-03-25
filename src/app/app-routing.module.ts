@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
   { path: 'navody/:nazevNavodu', component: NavodyDetailComponent },
   { path: 'prihlaseni', component: PrihlaseniComponent },
-  { path: 'prihlaseni/:registrace', component: RegistraceComponent },
+  { path: 'prihlaseni/registrace', component: RegistraceComponent },
   { path: 'profile', component: ProfileComponent }
 ];
 

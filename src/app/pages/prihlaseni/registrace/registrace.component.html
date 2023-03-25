@@ -21,7 +21,7 @@
             </label>
             <div class="password-container">
                 <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password" required
-                    [(ngModel)]="password0" name="password">
+                    [(ngModel)]="password0" name="password0">
                 <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
                     {{showPassword0 ? 'visibility' : 'visibility_off'}}
                 </i>
@@ -33,11 +33,20 @@
             </label>
             <div class="password-container">
                 <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password" required
-                    [(ngModel)]="password1" name="password">
+                    [(ngModel)]="password1" name="password1">
                 <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
                     {{showPassword1 ? 'visibility' : 'visibility_off'}}
                 </i>
             </div>
+        </div>
+        <div class="form-group">
+            <label for="language">
+                Jazyk
+            </label>
+            <select [(ngModel)]="language">
+                <option value="CZ">Čeština</option>
+                <option value="EN">Angličtina</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">
             Registrovat se

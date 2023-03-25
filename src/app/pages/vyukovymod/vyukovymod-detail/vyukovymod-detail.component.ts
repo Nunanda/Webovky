@@ -10,18 +10,26 @@ import { InfoVyuky } from 'src/app/types';
 })
 export class VyukovymodDetailComponent implements OnInit {
 
-  title: any;
+  nazev: any;
+  vyuka: any;
   InfoVyuky: Array<InfoVyuky>;
   index: number;
 
   constructor(private vyukaService: VyukaService, private router: Router) {
-    this.title = localStorage.getItem("title");
+    this.nazev = localStorage.getItem("nazev");
     this.InfoVyuky = new Array<InfoVyuky>;
+    this.vyuka = new Array<Vyuka>();
     this.index = 0;
   }
 
   ngOnInit() {
-    this.InfoVyuky = this.vyukaService.getKroky(this.title);
+    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
+    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
+  }
+
+  ngDoCheck() {
+    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
+    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
   }
 
   public nextIndex() {

@@ -1,31 +1,31 @@
 <div id="container">
     <h2>
-        {{title}}
+        {{vyuka.title}}
     </h2>
     <div class="columns">
         <div class="column">
             <div class="bublina">
                 <div>
                     <strong>
-                        Kroky:
+                        {{ 'VYUKOVYMODDETAIL.rada' | translate }}
                     </strong>
                     {{InfoVyuky[index].cislo}}
                 </div>
                 <div *ngIf="InfoVyuky[index].styl != null">
                     <strong>
-                        Styl:
+                        {{ 'VYUKOVYMODDETAIL.styl' | translate }}
                     </strong>
                     {{InfoVyuky[index].styl}}
                 </div>
                 <div>
                     <strong>
-                        Pomucky:
+                        {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
                     </strong>
                     {{InfoVyuky[index].pouzijeme}}
                 </div>
                 <div id="popis" innerHTML="{{InfoVyuky[index].popis}}">
                     <strong>
-                        Popis:
+                        {{ 'VYUKOVYMODDETAIL.popis' | translate }}
                     </strong>
                 </div>
             </div>
@@ -41,11 +41,11 @@
     </div>
     <div id="buttons">
         <button (click)="previousIndex()" type="button">
-            <img src="../../../../assets/icon/Vlevo.png">
+            <img src="../../../../assets/icon/Vlevo.svg">
         </button>
         {{index+1}}/{{InfoVyuky.length}}
         <button (click)="nextIndex()" type="button">
-            <img src="../../../../assets/icon/Vpravo.png">
+            <img src="../../../../assets/icon/Vpravo.svg">
         </button>
     </div>
 </div>

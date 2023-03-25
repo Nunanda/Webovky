@@ -12,7 +12,8 @@ export class SlovnikComponent implements OnInit {
 
   styl: any;
 
-  constructor(private SlovnikService: SlovnikService, private router: Router) { }
+  constructor(private SlovnikService: SlovnikService, private router: Router) {
+  }
 
   ngOnInit() {
     const nazev = (this.router.url.split('/'))[2];
@@ -23,5 +24,4 @@ export class SlovnikComponent implements OnInit {
     const nazev = (this.router.url.split('/'))[2];
     this.styl = this.SlovnikService.getStylByName(nazev);
   }
-
 }

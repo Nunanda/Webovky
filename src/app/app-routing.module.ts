@@ -12,6 +12,7 @@ import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.co
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'slovnik/:nazevStylu', component: SlovnikComponent },
   { path: 'pomucky/:nazevPomucky', component: PomuckyComponent },

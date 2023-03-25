@@ -1,14 +1,14 @@
 <div id="container">
+    <h2 class="margin_bottom">
+        {{styl.title}}
+    </h2>
     <div id="sloupce">
         <div id="slovnik_popis">
-            <div id="nazev_stylu">
-                {{styl.title}}
-            </div>
             <div id="direction_row">
                 <div class="direction_column">
-                    <div class="znacka_zkratka">
-                        Zkratka:
-                    </div>
+                    <h4>
+                        {{ 'SLOVNIK.slovnikZkratka' | translate }}
+                    </h4>
                     <div class="pole_zkratka">
                         <div id="zkratka">
                             {{styl.zkratka}}
@@ -16,28 +16,27 @@
                     </div>
                 </div>
                 <div id="direction_column">
-                    <div class="znacka_zkratka">
-                        Značka:
-                    </div>
-                    <img class="znacka" src="/assets/icon/{{styl.nazev}}.png">
+                    <h4>
+                        {{ 'SLOVNIK.image' | translate }}
+                    </h4>
+                    <img class="znacka" src="/assets/icon/{{styl.nazev}}.svg">
                 </div>
             </div>
             <div id="popis_obsah">
-                <div id="nadpisek_popis">
-                    Popis
-                </div>
-                <div class="popis" innerHTML="{{styl.popis}}">
-                </div>
+                <h5 class="bold">
+                    {{ 'SLOVNIK.animace' | translate }}
+                </h5>
+                <p innerHTML="{{styl.popis}}"></p>
             </div>
         </div>
         <div id="direction_column">
-            <div class="nadpisky">
-                Animace
-            </div>
+            <h2 class="margin_top">
+                {{ 'SLOVNIK.animace' | translate }}
+            </h2>
             <img class="size" src="assets/icon/{{styl.nazev}}.gif">
-            <div class="nadpisky">
-                Ve skutečnosti
-            </div>
+            <h2 class="margin_top">
+                {{ 'SLOVNIK.veSkutecnosti' | translate }}
+            </h2>
             <img class="size" src="assets/icon/{{styl.nazev}}-real.png">
         </div>
     </div>

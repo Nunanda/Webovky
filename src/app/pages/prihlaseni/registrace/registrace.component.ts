@@ -25,6 +25,7 @@ export class RegistraceComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   ngOnReload() {
     console.log(this.language);
   }
@@ -33,15 +34,16 @@ export class RegistraceComponent implements OnInit {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
       this.authService.register(this.email, this.password0, this.username, this.language).subscribe(
         data => {
-          console.log(data);
           this.isSuccessful = true;
           this.isSignUpFailed = false;
         },
         err => {
+          //Anet
           this.errorMessage = err.error.message;
           this.isSignUpFailed = true;
         }
       );
     }
+    //else if() {} Anet
   }
 }

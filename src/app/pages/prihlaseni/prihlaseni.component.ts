@@ -43,6 +43,7 @@ export class PrihlaseniComponent implements OnInit {
               this.reloadPage();
             },
             err => {
+              //Anet
               this.errorMessage = err.error.message;
               this.isLoginFailed = true;
             }
@@ -54,6 +55,7 @@ export class PrihlaseniComponent implements OnInit {
         }
       );
     }
+    //else if() {} Anet
   }
 
   reloadPage(): void {

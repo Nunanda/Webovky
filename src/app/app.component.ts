@@ -25,7 +25,6 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['home']);
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");

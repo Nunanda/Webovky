@@ -20,6 +20,7 @@ import { LocationStrategy, PathLocationStrategy  } from '@angular/common';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { VerificationComponent } from './pages/verification/verification.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     PrihlaseniComponent,
     RegistraceComponent,
     ProfileComponent,
+    VerificationComponent,
   ],
   imports: [
     BrowserModule,

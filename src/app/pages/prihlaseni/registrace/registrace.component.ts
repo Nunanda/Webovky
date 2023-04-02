@@ -32,7 +32,7 @@ export class RegistraceComponent implements OnInit {
 
   register(): void {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
-      this.authService.register(this.email, this.password0, this.username, this.language).subscribe(
+      this.authService.register(this.email, this.username, this.password0, this.language).subscribe(
         data => {
           this.isSuccessful = true;
           this.isSignUpFailed = false;

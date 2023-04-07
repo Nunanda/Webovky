@@ -6,11 +6,13 @@
         selecro
       </div>
       <div id="hledaci_bunka">
-        <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"
-          placeholder="{{ 'APP.hledat' | translate }}">
-        <img id="Lupa" src="/assets/icon/search1.svg">
+        <div class="row1">
+          <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"
+            placeholder="{{ 'APP.hledat' | translate }}">
+          <img id="Lupa" src="/assets/icon/search1.svg">
+        </div>
         <ul *ngIf="search && search.length >= 2">
-          <button *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item }}</button>
+          <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item }}</button>
         </ul>
       </div>
       <img id="account" src="/assets/icon/account.svg">

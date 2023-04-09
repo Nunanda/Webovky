@@ -34,20 +34,55 @@ input {
     width: 100%;
     background-color: #C8E7F4;
     display: flex;
-    align-items: center;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     z-index: 1000;
 }
 
-#hledaci_bunka {
+#part1 {
     display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#part2 {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.search_button {
+    border-style: none;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, .5);
+}
+
+.search_button:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.search_button:last-child {
+    border-radius: 0 0 10px 10px;
+    border-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+#hledaci_bunka {
     background-color: #fff;
-    width: 40%;
+    width: 60%;
     height: 60px;
     border-radius: 50px;
     align-items: center;
     justify-content: space-between;
-    margin-left: 8%;
 }
 
 #logo {
@@ -58,6 +93,13 @@ input {
     height: auto;
 }
 
+.row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
 #account {
     background-color: #fff;
     padding: 5px;
@@ -65,30 +107,26 @@ input {
     width: 100%;
     max-width: 50px;
     height: auto;
-    margin-right: 20px;
-    margin-left: 4%;
 }
 
 #hamburger {
     background-color: #fff;
     padding: 5px;
     border-radius: 15px;
-    width: 100%;
     max-width: 50px;
-    height: auto;
 }
 
 #selecro {
     text-transform: uppercase;
     font-size: 1.8rem;
     font-weight: 300;
-    margin-left: 4%;
 }
 
 #Hledat {
     opacity: 80%;
     font-size: 1.2rem;
     margin-left: 20px;
+    width: 100%;
 }
 
 #Lupa {
@@ -178,6 +216,11 @@ a:first-child {
     border: none;
     background: none;
     display: none;
+    padding: 0;
+}
+
+.form-control {
+    width: 50px;
 }
 
 .sidenav {
@@ -280,7 +323,12 @@ a:first-child {
 
 @media screen and (max-width: 1110px) {
     #selecro {
-        font-size: 1.5rem;
+        display: none;
+    }
+
+    #part1 {
+        justify-content: flex-start;
+        margin-left: 30px;
     }
 
     #hledaci_lista {
@@ -291,9 +339,10 @@ a:first-child {
         max-width: 65px;
     }
 
-    #hledaci_bunka {
+    #hledaci_bunka, .row1 {
         height: 45px;
     }
+    
 
     #Lupa {
         max-width: 35px;
@@ -303,12 +352,7 @@ a:first-child {
         font-size: 1rem;
     }
 
-    #account {
-        max-width: 40px;
-        border-radius: 10px;
-    }
-
-    #hamburger {
+    #account, #hamburger {
         max-width: 40px;
         border-radius: 10px;
     }
@@ -321,45 +365,57 @@ a:first-child {
         display: none;
     }
 
-    a:last-child {
-        border-radius: 0px;
-    }
-
-    a:first-child {
+    a:last-child, a:first-child {
         border-radius: 0px;
     }
 
 }
 
 @media screen and (max-width: 479px) {
-    #selecro {
+    #selecro, #logo {
         display: none;
+    }
+
+    #part2 {
+        gap: 10px;
+        margin-right: 15px;
+        width: 50%;
+    }
+
+    #part1 {
+        width: 50%;
+        margin-left: 5px;
     }
 
     #hledaci_lista {
         height: 60px;
     }
 
-    #logo {
-        max-width: 60px;
-    }
-
     #hledaci_bunka {
         height: 42px;
         margin-left: 4%;
-        width: 55%;
+        width: 100%;
     }
 
-    #account {
-        max-width: 35px;
+    #account, #hamburger {
+        max-width: 33px;
     }
 
-    #hamburger {
-        max-width: 35px;
+    #Lupa {
+        max-width: 30px;
     }
 
     .sidenav {
         top: 60px;
+    }
+
+    #Hledat {
+        margin-left: 10px;
+    }
+
+    .search_button {
+        padding: 5px;
+        font-size: 0.8rem;
     }
 
 }

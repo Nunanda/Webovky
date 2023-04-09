@@ -17,9 +17,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -40,9 +37,6 @@ import { MatSelectModule } from '@angular/material/select';
     YouTubePlayerModule,
     HttpClientModule,
     FormsModule,
-    NgxMatSelectSearchModule,
-    MatFormFieldModule,
-    MatSelectModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

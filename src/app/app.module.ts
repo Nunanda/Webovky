@@ -22,7 +22,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { FilterPipe } from './filter.pipe';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     RegistraceComponent,
     ProfileComponent,
     VerificationComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

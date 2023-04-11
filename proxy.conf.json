@@ -1,0 +1,13 @@
+{
+  "/api/*":
+  {
+    "target": "https://minec.serveminecraft.net:3002/",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+  

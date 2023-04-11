@@ -6,6 +6,18 @@
         <div id="selecro">
           selecro
         </div>
+        <img id="Lupa" src="/assets/icon/search1.svg">
+      </div>
+      <img id="account" src="/assets/icon/account.svg" routerLink="/prihlaseni">
+      <div id="translation">
+        <select class="form-control" #selectedlang (change)="switchLanguage(selectedlang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language"
+            [selected]="language === translate.currentLang">
+            {{ language }}
+          </option>
+        </select>
+      </div>
+      <div id="mySidenav" class="sidenav">
         <div id="hledaci_bunka">
           <div class="row1">
             <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"

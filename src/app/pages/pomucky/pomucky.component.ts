@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PomuckyService } from '../../service/pomucky.service';
 import { Router } from '@angular/router';
-import { PopisPomucek } from '../../types';
+import { PomuckyService } from 'src/app/service';
+import { PopisPomucek } from 'src/app/types';
 
 @Component({
   selector: 'app-pomucky',

@@ -28,6 +28,7 @@
           },
           "configurations": {
             "production": {
+              "proxyConfig": "proxy.conf.json",
               "budgets": [
                 {
                   "type": "initial",

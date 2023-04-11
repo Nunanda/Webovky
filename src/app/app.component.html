@@ -6,16 +6,17 @@
         <div id="selecro">
           selecro
         </div>
-        <img id="Lupa" src="/assets/icon/search1.svg">
-      </div>
-      <img id="account" src="/assets/icon/account.svg" routerLink="/prihlaseni">
-      <div id="translation">
-        <select class="form-control" #selectedlang (change)="switchLanguage(selectedlang.value)">
-          <option *ngFor="let language of translate.getLangs()" [value]="language"
-            [selected]="language === translate.currentLang">
-            {{ language }}
-          </option>
-        </select>
+        <div id="hledaci_bunka">
+          <div class="row1">
+            <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"
+              placeholder="{{ 'APP.hledat' | translate }}">
+            <img id="Lupa" src="/assets/icon/search1.svg">
+            <ul *ngIf="search && search.length >= 2">
+              <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item
+                }}</button>
+            </ul>
+          </div>
+        </div>
       </div>
       <div id="mySidenav" class="sidenav">
         <div id="hledaci_bunka">
@@ -25,7 +26,8 @@
             <img id="Lupa" src="/assets/icon/search1.svg">
           </div>
           <ul *ngIf="search && search.length >= 2">
-            <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item }}</button>
+            <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item
+              }}</button>
           </ul>
         </div>
       </div>
@@ -38,7 +40,7 @@
             </option>
           </select>
         </div>
-        <img id="account" src="/assets/icon/account.svg">
+        <img id="account" src="/assets/icon/account.svg" routerLink="/prihlaseni">
         <div id="mySidenav" class="sidenav">
           <div id="Menu">
             <div class="blok" routerLink="/home">

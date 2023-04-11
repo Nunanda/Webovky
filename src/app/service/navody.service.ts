@@ -657,4 +657,13 @@ export class NavodyService {
     }
   }
 
+  public getTitles(): Array<string> {
+    if (this.translate.currentLang === "EN") {
+      return poleNavodyEN.map((item) => item.title);
+    }
+    else {
+      return poleNavodyCZ.map((item) => item.title);
+    }
+  }
+
 }

@@ -135,12 +135,21 @@ export class SlovnikService {
     }
   }
 
-  public getVsechnyPomucky(): Array<Styl> {
+  public getVsechnyStyly(): Array<Styl> {
     if (this.translate.currentLang === "EN") {
       return poleStyluEN;
     }
     else {
       return poleStyluCZ;
+    }
+  }
+
+  public getTitles(): Array<string> {
+    if (this.translate.currentLang === "EN") {
+      return poleStyluEN.map((item) => item.title);
+    }
+    else {
+      return poleStyluCZ.map((item) => item.title);
     }
   }
 

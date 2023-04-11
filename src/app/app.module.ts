@@ -21,6 +21,8 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VerificationComponent } from './pages/verification/verification.component';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { VerificationComponent } from './pages/verification/verification.compone
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(email: string, passwordHash: string): Observable<any> {
-    return this.http.post('/api/users/login', {
+    return this.http.post('https://minec.serveminecraft.net:3002/users/login', {
       email,
       passwordHash
     }, httpOptions);

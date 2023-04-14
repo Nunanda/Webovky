@@ -10,8 +10,8 @@ const polePomucekCZ: Array<Pomucka> = [
     kroky: [
       {
         popis: "Existuje široká škála velikostí.",
-        obrazek: null,
-        exist: false,
+        obrazek: "velikosti-hacku",
+        exist: true,
       },
       {
         popis: "Háčky se dělají z různých materiálů.",
@@ -92,18 +92,18 @@ const polePomucekCZ: Array<Pomucka> = [
     kroky: [
       {
         popis: "Nůžky asi už někdy používal každý z nás a u háčkování to není nějak zvlášť jiné.",
-        obrazek: "nuzky",
+        obrazek: "zastrihovaci-nuzky",
         exist: true,
       },
       {
         popis: "Klasické nůžky na papír nejsou na některé příze vhodné, protože potom ji přestříháváme na několikrát a akorát se nám konec třepí.",
-        obrazek: "zdobneNuzky",
+        obrazek: "nuzky",
         exist: true,
       },
       {
         popis: "Můžete si pořídit nůžky na látku, nebo různé speciálně zdobené, tvarované.",
-        obrazek: null,
-        exist: false,
+        obrazek: "zdobene-nuzky",
+        exist: true,
       },
     ]
   },
@@ -193,7 +193,7 @@ const polePomucekCZ: Array<Pomucka> = [
       {
         popis: "Pokud vytváříte něco prostorového (zvířátka, hračky, atd...), tak se vám bude hodit nějaká výplň. Tu může tvořit vata, nebo duté vlákno. Po delší době háčkování můžete použít i zbytky přízí z minulého tvoření. Je to taková recyklace, kterou já uplatňuji třeba u jehelníčků",
         obrazek: "vypln",
-        exist: false,
+        exist: true,
       },
     ]
   }
@@ -289,18 +289,18 @@ const polePomucekEN: Array<Pomucka> = [
     kroky: [
       {
         popis: "Using scissors is an easy task for most people. In crocheting it’s no different.",
-        obrazek: "nuzky",
+        obrazek: "zastrihovaci-nuzky",
         exist: true,
       },
       {
         popis: "Scissors that are used for paper mostly aren’t suitable for yarn and you’ll have to cut it more times and that makes the yarn flutter.",
-        obrazek: "zdobneNuzky",
+        obrazek: "nuzky",
         exist: true,
       },
       {
         popis: "You can get scissors that are made for fabric, or in a different shape and with different decorations.",
-        obrazek: null,
-        exist: false,
+        obrazek: "zdobene-nuzky",
+        exist: true,
       },
     ]
   },
@@ -390,7 +390,7 @@ const polePomucekEN: Array<Pomucka> = [
       {
         popis: "If you’re creating a 3D product (animal, toy, etc.), then you will need filling. Cotton or hollow fiber can be used for filling. You can also use your cut off loose yarn, failed attempts. It’s good for recycling.",
         obrazek: "vypln",
-        exist: false,
+        exist: true,
       },
     ]
   }

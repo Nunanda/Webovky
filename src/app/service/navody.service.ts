@@ -439,128 +439,128 @@ const poleNavodyEN: Array<Navod> = [
       {
         obrazek: true,
         nazevCasti: "doplnky-zelva",
-        titulekCasti: "Doplňky",
-        popis: ["Jednu řadu pod očima můžu vytvořit tváře. Jednoduše si vyberu jeden bod, do kterého píchnu a jehlu vytáhnu o 2 očka dál. Zakončím zapošitím", "Pusinku z kousku černé. Vyberu si místa, kde chci mít koutky. Těmito dvěma body jehlu protáhnu dvakrát, abych měla venku volný oblouček nitě. Tu potom zachytím zhruba uprostřed, a tak upevním"]
+        titulekCasti: "Details",
+        popis: ["You can create cheeks one row under the eyes. Choose one point, where to put your needle, skip two chains and then pull it out. Finish off by sewing.", "Create a mouth from a piece of black yarn. Choose two points where you want to have corners of the mouth. Through these two chains, push the needle two times, so you're left witf a loose arch of yarn. Attach this piece of yarn in the middle by sewing."]
       },
     ],
   },
   {
     obtiznost: ObtiznostNavodu.lehky,
     nazev: "obraceci-chobotnicka",
-    title: "Obracecí chobotnička",
-    zkratky: "Mk, Ks, Řo, Po, PDS, V, A",
+    title: "Two Sided Octopus",
+    zkratky: "Mr, Sc, Ch, Sl St, Hdc, Inc, Dec",
     pocet: 8,
     popisy: [
       {
         obrazek: true,
         nazevCasti: "obraceci-chobotnicka",
-        titulekCasti: "Příprava",
-        popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 2 klubíčka (každé jiné barvy)", "YarnArt Jeans černá na oči a doplňky", "Značkovač", "Nůžky", "Jehla"]
+        titulekCasti: "What you'll need",
+        popis: ["Hook (size 3 mm)", "YarnArt Jeans 2 balls of yarn (each a different color)", "YarnArt Jeans black yarn for eyes and details", "Stitch marker", "Scissors", "Needle"]
       },
       {
         obrazek: true,
         nazevCasti: "hlava-obraceci-chobotnicka",
-        titulekCasti: "Hlava (2x)",
-        popis: ["Mk (8)", "V", "ks, V", "2 ks, V", "ks (9 řad)", "Po"]
+        titulekCasti: "Head (2x)",
+        popis: ["Mr (8)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (9 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "sesiti-hlava-obraceci-chobotnicka",
-        titulekCasti: "Sešití hlav",
-        popis: ["Jednu hlavu obrátím vzhůru nohama", "Obrácenou hlavu vložím do té druhé", "Sešívám delší nití", "Nezapomenu na konci zapošít, aby hlavy držely při otáčení"]
+        titulekCasti: "Sewing the heads together",
+        popis: ["Turn one head inside out.", "Put that head into the other one.", "Sew with a longer needle.", "Don't forget to sew so the heads hold together when turning over."]
       },
       {
         obrazek: true,
         nazevCasti: "chapadlo-obraceci-chobotnicka",
-        titulekCasti: "Chapadlo (16x)",
-        popis: ["6Řo", "Obracím směr 4PDS, 5PDS do jednoho oka, 4PDS", "Po"]
+        titulekCasti: "Tentacle (16x)",
+        popis: ["6Ch", "Change direction 4Hdc, 5Hdc into one chain, 4Hdc", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "sesiti-chapadlo-obraceci-chobotnicka",
-        titulekCasti: "Sešití chapadla (8x)",
-        popis: ["Vezmu jedno chapadlo od každé barvy a dám je pohledovou stranou do sebe", "Sešivám je nejdelší ze čtyř nití, co z nich vysí", "K tělu budu přišívat na 4 oka bez mezery"]
+        titulekCasti: "Sewing the tentacles together (8x)",
+        popis: ["Take one tentacle of each color and put them together the correct way.", "Sew together with the longest of the four strings, that are hanging from them.", "Connect the boby by sewing into four chain."]
       },
       {
         obrazek: true,
         nazevCasti: "stastna-obraceci-chobotnicka",
-        titulekCasti: "Šťastné oko (2x)",
-        popis: ["Mk (6)", "V", "ks, V", "Po"]
+        titulekCasti: "Happy eye (2x)",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "nastvana-obraceci-chobotnicka",
-        titulekCasti: "Naštvané oči (2x)",
-        popis: ["Levé: Mk (5)", "Řo, otočím, 5ks, 2Řo, 3ks, Po", "Pravé: Mk (5)", "Řo, 7ks, 2Řo, ks, Po"]
+        titulekCasti: "Angry eyes (2x)",
+        popis: ["Left eye: Mr (5)", "Ch, turn around, 5Sc, 2Ch, 3Sc, Sl St", "Right eye: Mr (5)", "Ch, 7Sc, 2Ch, Sc, Sl St"]
       },
       {
         obrazek: false,
         nazevCasti: "dolpnky-obraceci-chobotnicka",
-        titulekCasti: "Doplňky",
-        popis: ["Dá se přidat ještě pusinka", "Bílá čárka do oka"]
+        titulekCasti: "Detail",
+        popis: ["You can add a mouth", "White line into eye"]
       },
     ],
   },
   {
     obtiznost: ObtiznostNavodu.tezky,
     nazev: "pavouk",
-    title: "Pavouk",
-    zkratky: "Mk, Ks, Řo, Po, PDS, V, A",
+    title: "Spider",
+    zkratky: "Mr, Sc, Ch, Sl St, Hdc, Inc, Dec",
     pocet: 7,
     popisy: [
       {
         obrazek: true,
         nazevCasti: "pavouk",
-        titulekCasti: "Příprava",
-        popis: ["Háček (velikost 3 mm)", "YarnArt Jeans 1 klubíčko", "Jakákoliv tenká příze s chlupem", "Kousek černé na pusu", "Bezpečnostní očka (velikost 10 mm a 8 mm)", "Značkovač", "Výplň", "Nůžky", "Jehla"]
+        titulekCasti: "What you'll need",
+        popis: ["Hook (size 3 mm)", "YarnArt Jeans 1 ball of yarn", "Any fluffy yarn", "A piece of black of yarn for the mouth", "Safety eyes (soze 10 mm a 8 mm)", "Stitch marker", "Fillings", "Scissors", "Needle"]
       },
       {
         obrazek: true,
         nazevCasti: "hlava-pavouk",
-        titulekCasti: "Hlava",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5ks, V", "ks (2 řady)", "5ks, A", "4ks, A", "3ks, A", "2ks, A", "ks, A", "A", "Po"]
+        titulekCasti: "Head",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "Sc (2 rows)", "5Sc, Dec", "4Sc, Dec", "3Sc, Dec", "2Sc, DEC", "Sc, Dec", "Dec", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "telo-pavouk",
-        titulekCasti: "Tělo",
-        popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5ks, V", "6ks, V", "ks (3 řady)", "6ks, A", "5ks, A", "ks (1 řada)", "4ks, A", "3ks, A", "ks (1 řada)", "Po"]
+        titulekCasti: "Body",
+        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "Sc (3 rows)", "6Sc, Dec", "5Sc, Dec", "Sc (1 rows)", "4Sc, Dec", "3Sc, Dec", "Sc (1 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "prvni-noha-pavouk",
-        titulekCasti: "První noha (2x)",
-        popis: ["Mk (6)", "2ks, V", "ks (4 řady)", "Po"]
+        titulekCasti: "Front legs (2x)",
+        popis: ["Mr (6)", "2Sc, Inc", "Sc (4 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "druha-noha-pavouk",
-        titulekCasti: "Druhá noha (2x)",
-        popis: ["Mk (6)", "2ks, V", "ks (3 řady)", "3Po, ks, 3PDS, ks", "ks (3 řady)", "Po"]
+        titulekCasti: "Second leg (2x)",
+        popis: ["Mr (6)", "2Sc, Inc", "Sc (3 rows)", "3Sl St, Sc, 3Hdc, Sc", "Sc (3 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "treti-noha-pavouk",
-        titulekCasti: "Třetí noha (2x)",
-        popis: ["Mk (6)", "2ks, V", "ks (4 řady)", "3Po, ks, 3PDS, ks", "ks (4 řady)", "Po"]
+        titulekCasti: "Third leg (2x)",
+        popis: ["Mr (6)", "2Sc, Inc", "Sc (4 rows)", "3Sl St, Sc, 3Hdc, Sc", "Sc (4 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "ctvrta-noha-pavouk",
-        titulekCasti: "Čtvrtá noha (2x)",
-        popis: ["Mk (6)", "2ks, V", "ks (5 řad)", "3Po, ks, 3PDS, ks", "ks (5 řad)", "Po"]
+        titulekCasti: "Fourth leg (2x)",
+        popis: ["Mr (6)", "2Sc, Inc", "Sc (5 rows)", "3Sl St, Sc, 3Hdc, Sc", "Sc (5 rows)", "Sl St"]
       },
       {
         obrazek: true,
         nazevCasti: "zub-pavouk",
-        titulekCasti: "Zub (2x)",
-        popis: ["Mk (6)", "2ks, V", "ks (2 řady)"]
+        titulekCasti: "Tooth (2x)",
+        popis: ["Mr (6)", "2Sc, Inc", "Sc (2 řady)"]
       },
       {
         obrazek: false,
         nazevCasti: "doplnky-pavouk",
-        titulekCasti: "Doplňky",
-        popis: ["Chloupky na nohou", "Pusinka"]
+        titulekCasti: "Details",
+        popis: ["Hairs on legs", "Mouth"]
       },
     ],
   },

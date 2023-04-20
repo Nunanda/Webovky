@@ -10,7 +10,7 @@
                 </div>
                 <div innerHTML="{{navod.zkratky}}">
                 </div>
-                <img id="obrazek_navodu" *ngIf="popis[index].obrazek != false" src="../assets/icon/{{popis[index].nazevCasti}}.jpg">
+                <img id="obrazek_navodu" *ngIf="popis[index].obrazek" src="../assets/icon/{{popis[index].nazevCasti}}.jpg">
             </div>
             <div id="blok0">
                 <div *ngFor="let item of popis">

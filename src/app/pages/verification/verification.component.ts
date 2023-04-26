@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-verification',
@@ -19,7 +20,7 @@ export class VerificationComponent implements OnInit {
       return;
     }
 
-    this.http.post('/api/verify-email', {token}).subscribe(
+    this.http.post(environment.apiUrl + '/verify-email', {token}).subscribe(
       () => {
         this.verified = true;
       },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/service';
+import { Router } from '@angular/router';
+import { AuthService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
 import { Language } from 'src/app/types';
 
@@ -22,25 +23,22 @@ export class RegistraceComponent implements OnInit {
   errorMessage: string = "";
   alertController: any;
   upozorneni: string = "";
-  passwordRegEx = new RegExp('^[a-zA-Z0-9?!.@#$%^&*_-]{8,20}$');
 
-  constructor(private authService: AuthService, private validationService: ValidationService) { }
+  constructor(private router: Router, private authService: AuthService, private validationService: ValidationService, private tokenStorage: TokenService) { }
 
   ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.router.navigate(["profile"]);
+    }
   }
 
-  ngOnReload() {
-    console.log(this.language);
-  }
-
-  public passwordCheck(): boolean{
+  /*public passwordCheck(): boolean{
     return this.passwordRegEx.test(this.password0) && this.passwordRegEx.test(this.password1)
-  }
+  }*/
 
   register(): void {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
       this.authService.register(this.email, this.username, this.password0, this.language).subscribe(
-
         data => {
           this.isSuccessful = true;
           this.isSignUpFailed = false;
@@ -62,9 +60,8 @@ export class RegistraceComponent implements OnInit {
           else if (err == "username already exist:" + this.email) {
             this.upozorneni = "zadané uživatelské jméno již existuje."
           }
-
           else {
-            this.upozorneni ;
+            this.upozorneni = "jina chyba";
           }
         }
       );

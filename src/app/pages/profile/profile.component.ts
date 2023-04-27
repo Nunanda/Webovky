@@ -11,14 +11,14 @@ export class ProfileComponent implements OnInit {
 
   currentUser: any;
 
-  constructor(private router: Router, private token: TokenService) { }
+  constructor(private router: Router, private tokenservice: TokenService) { }
 
-  ngOnInit(): void {
-    this.currentUser = this.token.getUser();
+  ngOnInit() {
+    this.currentUser = this.tokenservice.getUser();
   }
 
   signOut() {
-    this.token.signOut();
+    this.tokenservice.signOut();
     this.router.navigate(["home"]);
   }
 }

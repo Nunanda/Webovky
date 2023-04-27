@@ -1,12 +1,11 @@
 export type Pomucka = {
-  nazev: string,
   title: string,
-  kroky: Array<PopisPomucek>,
+  nazev: string,
   videoURL: any,
+  kroky: Array<PopisPomucek>,
 }
 
 export type PopisPomucek = {
   popis: string,
   obrazek: string | null,
-  exist: boolean,
 } 

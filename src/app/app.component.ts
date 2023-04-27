@@ -18,13 +18,13 @@ export class AppComponent {
   items: Array<string>;
   search: any;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService,private router: Router, public translate: TranslateService) {
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
     this.items = new Array<string>;
-    translate.addLangs(['CZ','EN']);
+    translate.addLangs(['CZ', 'EN']);
     translate.setDefaultLang('CZ');
   }
 
@@ -47,24 +47,24 @@ export class AppComponent {
   }
 
   getRoute(item: string) {
-    if(this.vyukaService.getTitles().includes(item)) {
+    if (this.vyukaService.getTitles().includes(item)) {
       localStorage.setItem("nazev", this.vyukaService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!);
       this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
     }
-    else if(this.navodyService.getTitles().includes(item)) {
+    else if (this.navodyService.getTitles().includes(item)) {
       localStorage.setItem("nazev", this.navodyService.getVsechnyNavody().find(item0 => item0.title == item)?.nazev!);
       this.router.navigate(["navody/navody-detail/"]);
     }
-    else if(this.slovnikService.getTitles().includes(item)) {
+    else if (this.slovnikService.getTitles().includes(item)) {
       this.router.navigate(["slovnik/" + this.slovnikService.getVsechnyStyly().find(item0 => item0.title == item)?.nazev!]);
     }
-    else if(this.pomuckyService.getTitles().includes(item)) {
+    else if (this.pomuckyService.getTitles().includes(item)) {
       this.router.navigate(["pomucky/" + this.pomuckyService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!]);
     }
     this.search = "";
   }
 
-  public switchLanguage(lang:string) {
+  public switchLanguage(lang: string) {
     return this.translate.use(lang);
   }
 

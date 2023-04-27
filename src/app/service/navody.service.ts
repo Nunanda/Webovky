@@ -149,13 +149,13 @@ const poleNavodyCZ: Array<Navod> = [
         popis: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po", "Po dokončení kolečko ohneme napůl a sešijeme k sobě."]
       },
       {
-        obrazek: true, 
+        obrazek: true,
         nazevCasti: "ocasek-zelva",
         titulekCasti: "Ocásek",
         popis: ["Mk (4)", "ks (2 řady)", "Po"]
       },
       {
-        obrazek: true, 
+        obrazek: true,
         nazevCasti: "doplnky-zelva",
         titulekCasti: "Doplňky",
         popis: ["Jednu řadu pod očima můžu vytvořit tváře. Jednoduše si vyberu jeden bod, do kterého píchnu a jehlu vytáhnu o 2 očka dál. Zakončím zapošitím", "Pusinku z kousku černé. Vyberu si místa, kde chci mít koutky. Těmito dvěma body jehlu protáhnu dvakrát, abych měla venku volný oblouček nitě. Tu potom zachytím zhruba uprostřed, a tak upevním"]
@@ -285,63 +285,63 @@ const poleNavodyCZ: Array<Navod> = [
 ];
 
 const poleNavodyEN: Array<Navod> = [
- /* {
-    obtiznost: ObtiznostNavodu.stredni,
-    nazev: "dinosaurus",
-    title: "Dino",
-    zkratky: "Mr, Inc, Sc, Dec, SlSt, Ch",
-    pocet: 7,
-    popisy: [
-      {
-        obrazek: true,
-        nazevCasti: "dinosaurus",
-        titulekCasti: "What you'll need",
-        popis: ["Hook (size 4,5 mm)", "Dolphin Baby 2 balls of yarn for the body", "Dolphin Baby 1 ball of yarn for the spikes", "A piece of black yarn for nostrils", "Safety eyes (size 10 mm)", "Stitch marker", "Scissors", "Filling", "Needle"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "hlava-dinosaura",
-        titulekCasti: "Head",
-        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "Sc (6 rows)", "5Sc, Dec", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "Dec", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "nos-dinosaura",
-        titulekCasti: "Nose",
-        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "Sc (3 rows)", "3Sc, Dec", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "telo-dinosaura",
-        titulekCasti: "Body",
-        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "Sc (3 rows)", "6Sc, Dec", "5Sc, Dec", "4Sc, Dec", "Sc (3 rows)", "3Sc, Dec", "Sc (1 row)", "2Sc, A", "Sc (1 rows)", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "predni-noha-dinosaura",
-        titulekCasti: "Front leg (2x)",
-        popis: ["Mr (6)", "Inc", "Sc (7 rows)", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "zadni-noha-dinosaura",
-        titulekCasti: "Back leg (2x)",
-        popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (2 rows)", "2Sc, Dec", "4Dec, 10Sc", "2Dec, 10Sc", "Sc (8 rows)", "Dec", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "ocas-dinosaura",
-        titulekCasti: "Tail",
-        popis: ["Mr (6)", "Inc", "11Sc, Inc", "12Sc, Inc", "13Sc, Inc", "14Sc, Inc", "15Sc, Inc", "16Sc, Inc", "17Sc, Inc", "18Sc, Inc", "19Sc, Inc", "20Sc, Inc", "21Sc, Inc", "22Sc, Inc", "23Sc, Inc", "SlSt"]
-      },
-      {
-        obrazek: true,
-        nazevCasti: "osten-dinosaura",
-        titulekCasti: "Spike (6x)",
-        popis: ["Mr (6)", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"]
-      }
-    ]
-  },*/
+  /* {
+     obtiznost: ObtiznostNavodu.stredni,
+     nazev: "dinosaurus",
+     title: "Dino",
+     zkratky: "Mr, Inc, Sc, Dec, SlSt, Ch",
+     pocet: 7,
+     popisy: [
+       {
+         obrazek: true,
+         nazevCasti: "dinosaurus",
+         titulekCasti: "What you'll need",
+         popis: ["Hook (size 4,5 mm)", "Dolphin Baby 2 balls of yarn for the body", "Dolphin Baby 1 ball of yarn for the spikes", "A piece of black yarn for nostrils", "Safety eyes (size 10 mm)", "Stitch marker", "Scissors", "Filling", "Needle"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "hlava-dinosaura",
+         titulekCasti: "Head",
+         popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "Sc (6 rows)", "5Sc, Dec", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "Dec", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "nos-dinosaura",
+         titulekCasti: "Nose",
+         popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "Sc (3 rows)", "3Sc, Dec", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "telo-dinosaura",
+         titulekCasti: "Body",
+         popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3SC, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "Sc (3 rows)", "6Sc, Dec", "5Sc, Dec", "4Sc, Dec", "Sc (3 rows)", "3Sc, Dec", "Sc (1 row)", "2Sc, A", "Sc (1 rows)", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "predni-noha-dinosaura",
+         titulekCasti: "Front leg (2x)",
+         popis: ["Mr (6)", "Inc", "Sc (7 rows)", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "zadni-noha-dinosaura",
+         titulekCasti: "Back leg (2x)",
+         popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "Sc (2 rows)", "2Sc, Dec", "4Dec, 10Sc", "2Dec, 10Sc", "Sc (8 rows)", "Dec", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "ocas-dinosaura",
+         titulekCasti: "Tail",
+         popis: ["Mr (6)", "Inc", "11Sc, Inc", "12Sc, Inc", "13Sc, Inc", "14Sc, Inc", "15Sc, Inc", "16Sc, Inc", "17Sc, Inc", "18Sc, Inc", "19Sc, Inc", "20Sc, Inc", "21Sc, Inc", "22Sc, Inc", "23Sc, Inc", "SlSt"]
+       },
+       {
+         obrazek: true,
+         nazevCasti: "osten-dinosaura",
+         titulekCasti: "Spike (6x)",
+         popis: ["Mr (6)", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"]
+       }
+     ]
+   },*/
   {
     obtiznost: ObtiznostNavodu.lehky,
     nazev: "harold",
@@ -431,7 +431,7 @@ const poleNavodyEN: Array<Navod> = [
         popis: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt", "After finish, fold the circle in half and sew it together."]
       },
       {
-        obrazek: true, 
+        obrazek: true,
         nazevCasti: "ocasek-zelva",
         titulekCasti: "Tail",
         popis: ["Mr (4)", "Sc (2 rows)", "SlSt"]

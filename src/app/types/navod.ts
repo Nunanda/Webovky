@@ -3,8 +3,8 @@ export type Navod = {
   nazev: string,
   zkratky: string,
   pocet: number,
-  popisy: Array<PopisNavodu>,
   obtiznost: ObtiznostNavodu
+  popisy: Array<PopisNavodu>,
 }
 
 export type PopisNavodu = {

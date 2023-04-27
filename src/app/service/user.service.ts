@@ -11,6 +11,6 @@ export class UserService {
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
   getProfile(token: string): Observable<any> {
-    return this.http.get(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}})
+    return this.http.get(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}});
   }
 }

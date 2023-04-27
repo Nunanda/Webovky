@@ -29,4 +29,10 @@ export class AuthService {
       language
     }, httpOptions);
   }
+
+  emailVerify(token: string | null): Observable<any> {
+    return this.http.post(environment.apiUrl + '/verify-email', {
+      token
+    });
+  }
 }

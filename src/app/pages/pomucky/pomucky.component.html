@@ -5,7 +5,7 @@
   <div class="bubliny">
     <div *ngFor="let krok of kroky" class="bublina">
       {{krok.popis}}
-      <img *ngIf="krok.exist" class="pomucka" src="../assets/icon/{{krok.obrazek}}.png">
+      <img *ngIf="krok.obrazek != null" class="pomucka" src="assets/icon/{{krok.obrazek}}.png">
     </div>
   </div>
   <div *ngIf="pomucka.videoURL != null" class="bublina-spodni">

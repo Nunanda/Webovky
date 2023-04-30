@@ -32,7 +32,6 @@ export class TokenService {
     if (user) {
       return JSON.parse(user);
     }
-
     return {};
   }
 }

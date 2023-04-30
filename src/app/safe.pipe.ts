@@ -11,5 +11,4 @@ export class SafePipe implements PipeTransform {
   transform(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${url}?showinfo=0&loop=1&modestbranding=1`);
   }
-
 }

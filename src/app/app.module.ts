@@ -11,7 +11,7 @@ import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
-import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
+import { RegistraceComponent } from './pages/registrace/registrace.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './pages/profile/profile.component';

@@ -8,7 +8,7 @@ import { NavodyComponent } from './pages/navody/navody.component';
 import { VyukovymodDetailComponent } from './pages/vyukovymod/vyukovymod-detail/vyukovymod-detail.component';
 import { NavodyDetailComponent } from './pages/navody/navody-detail/navody-detail.component';
 import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
-import { RegistraceComponent } from './pages/prihlaseni/registrace/registrace.component';
+import { RegistraceComponent } from './pages/registrace/registrace.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VerificationComponent } from './pages/verification/verification.component';
 
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
   { path: 'navody/:nazevNavodu', component: NavodyDetailComponent },
   { path: 'prihlaseni', component: PrihlaseniComponent },
-  { path: 'prihlaseni/registrace', component: RegistraceComponent },
+  { path: 'registrace', component: RegistraceComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'verification', component: VerificationComponent }
 ];

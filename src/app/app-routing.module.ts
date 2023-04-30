@@ -11,6 +11,7 @@ import { PrihlaseniComponent } from './pages/prihlaseni/prihlaseni.component';
 import { RegistraceComponent } from './pages/registrace/registrace.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VerificationComponent } from './pages/verification/verification.component';
+import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'prihlaseni', component: PrihlaseniComponent },
   { path: 'registrace', component: RegistraceComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'verification', component: VerificationComponent }
+  { path: 'verification', component: VerificationComponent },
+  { path: 'passwdchange', component: PasswdchangeComponent },
 ];
 
 @NgModule({

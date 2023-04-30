@@ -22,6 +22,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { FilterPipe } from './filter.pipe';
+import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FilterPipe } from './filter.pipe';
     ProfileComponent,
     VerificationComponent,
     FilterPipe,
+    PasswdchangeComponent,
   ],
   imports: [
     BrowserModule,

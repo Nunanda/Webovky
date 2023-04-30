@@ -35,4 +35,12 @@ export class AuthService {
       token
     });
   }
+
+  passwdReset(token: string | null, password0: string, password1: string): Observable<any> {
+    return this.http.post(environment.apiUrl + '/password-change', {
+      token,
+      password0,
+      password1
+    });
+  }
 }

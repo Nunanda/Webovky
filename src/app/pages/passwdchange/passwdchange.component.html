@@ -1,0 +1,31 @@
+<div id="container">
+    <form (ngSubmit)="passwdchange()" #passwdForm="ngForm">
+        <div class="form-group">
+            <label for="password">
+                Nové Heslo
+            </label>
+            <div class="password-container">
+                <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password" required
+                    [(ngModel)]="password0" name="password0">
+                <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
+                    {{showPassword0 ? 'visibility' : 'visibility_off'}}
+                </i>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Zopakujte nové heslo
+            </label>
+            <div class="password-container">
+                <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password" required
+                    [(ngModel)]="password1" name="password1">
+                <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
+                    {{showPassword1 ? 'visibility' : 'visibility_off'}}
+                </i>
+            </div>
+        </div>
+        <button type="submit">
+          Změnit heslo
+        </button>
+      </form>
+</div>

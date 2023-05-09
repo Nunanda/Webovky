@@ -13,4 +13,12 @@ export class UserService {
   getProfile(token: string): Observable<any> {
     return this.http.get(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}});
   }
+
+  setProfile(token: string, user: JSON): Observable<any> {
+    return this.http.put(environment.apiUrl + '/users/{id}', user, { headers: { Authorization: `Bearer ` + token}});
+  }
+
+  delProfile(token: string): Observable<any> {
+    return this.http.delete(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}});
+  }
 }

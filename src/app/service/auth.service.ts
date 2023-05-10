@@ -43,4 +43,10 @@ export class AuthService {
       password1
     });
   }
+
+  sendPasswdResetEmail(email: string): Observable<any> {
+    return this.http.post(environment.apiUrl + '/send-password-change', {
+      email
+    });
+  }
 }

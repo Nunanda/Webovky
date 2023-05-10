@@ -62,5 +62,31 @@
         Obnovit heslo!
       </a>
     </div>
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+      Přihlásit
+    </button>
+  </form>
+  <br>
+  <div>
+    Ještě nemáte účet?
+    <a routerLink="/registrace">
+      Zaregistruj se!
+    </a>
+  </div>
+  <br>
+  <strong>
+    Zapomněli jste heslo?
+  </strong>
+  <div>
+    <form (ngSubmit)="passwordReset()">
+    <label for="email">
+      Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+    </label>
+    <input type="email" class="form-control" ngModel email id="email1" required name="emai1"
+      #emailInput="ngModel">
+    <button type="submit" >
+      Obnovit heslo!
+    </button>
+    </form>
   </div>
 </div>

@@ -22,7 +22,9 @@ export class PasswdchangeComponent implements OnInit {
   passwdchange(): void {
     if (this.validationService.validatePassword(this.password0, this.password1)) {
       this.authService.passwdReset(this.route.snapshot.queryParamMap.get('token'), this.password0, this.password1).subscribe(
-        data => { },
+        data => {
+          this.router.navigate(["prihlaseni"]);
+        },
         err => {
           //tady bude kod od Anet: default, 'Invalid or expired verification token', 'User does not exist', 'Failed to update user password'
         }

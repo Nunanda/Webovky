@@ -3,11 +3,29 @@
 }
 
 input {
-    max-width: 200px;
+    width: 300px;
 }
 
 h2 {
     text-align: center;
+}
+
+#blok {
+    background-color: #C8E7F4;
+    border-radius: 20px;
+    width: 50%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+button {
+    width: 300px;
 }
 
 @media screen and (max-width: 808px) {
@@ -23,9 +41,37 @@ h2 {
 }
 
 @media screen and (max-width: 767px) {
+    #blok {
+        width: 70%;
+    }
+}
 
+@media screen and (max-width: 600px) {
+    #blok {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 479px) {
+    input {
+        width: 260px;
+    }
 
+    button {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    input {
+        width: 220px;
+    }
+
+    button {
+        width: 220px;
+    }
+
+    #blok {
+        height: 550px;
+    }
 }

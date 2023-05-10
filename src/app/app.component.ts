@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, NavodyService, PomuckyService, SlovnikService } from './service';
+import { VyukaService, NavodyService, PomuckyService, SlovnikService, TokenService } from './service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -18,14 +18,20 @@ export class AppComponent {
   items: Array<string>;
   search: any;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService) {
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
     this.items = new Array<string>;
     translate.addLangs(['CZ', 'EN']);
-    translate.setDefaultLang('CZ');
+    if (this.tokenService.getUser().language === "EN") {
+      translate.setDefaultLang('EN');
+      translate.use('EN');
+    }
+    else {
+      translate.setDefaultLang('CZ');
+    }
   }
 
   ngOnInit(): void {

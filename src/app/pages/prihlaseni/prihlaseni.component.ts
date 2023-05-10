@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { TokenService } from 'src/app/service';
 import { AuthService } from 'src/app/service';
 import { UserService } from 'src/app/service';
@@ -21,7 +22,7 @@ export class PrihlaseniComponent implements OnInit {
   upozorneni: string = "";
 
 
-  constructor(private router: Router, private tokenStorage: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService) { }
+  constructor(private router: Router, private tokenStorage: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService,  public translate: TranslateService) { }
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
@@ -38,6 +39,12 @@ export class PrihlaseniComponent implements OnInit {
           this.userService.getProfile(data.token).subscribe(
             data => {
               this.tokenStorage.saveUser(data);
+              if (data.language === "EN") {
+                this.translate.use("EN");
+              }
+              else {
+                this.translate.use("CZ");
+              }
               this.isLoginFailed = false;
               this.router.navigate(["home"]);
             },
@@ -74,6 +81,20 @@ export class PrihlaseniComponent implements OnInit {
         message: 'Špatně zadaný email.',
         buttons: ['OK'],
       })
+    }
+  }
+
+  passwordReset(): void {
+    if (this.validationService.validateEmail(this.email)) {
+      this.authService.sendPasswdResetEmail(this.email).subscribe(
+        data => { },
+        err => {
+        //Anet error handling
+        }
+      );
+    }
+    else {
+      //Anet error handling
     }
   }
 }

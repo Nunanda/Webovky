@@ -23,6 +23,12 @@
     <div>
         Bio: {{currentUser.bio}}
     </div>
+    <button (click)="editProfile()">
+        Ulozit profil
+    </button>
+    <button (click)="deleteProfile()">
+        Smazat profil
+    </button>
     <button (click)="signOut()">
         Odhlásit
     </button>

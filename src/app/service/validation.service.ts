@@ -16,6 +16,10 @@ export class ValidationService {
   }
 
   validatePassword(password0: string, password1: string): boolean {
-    return password0 == password1;
+    return password0 == password1 && password0.length >= 8;
+  }
+
+  validateEmail(email: string): boolean {
+    return email.includes("@");
   }
 }

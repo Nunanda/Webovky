@@ -57,8 +57,15 @@
     Zapomněli jste heslo?
   </strong>
   <div>
-    <a routerLink="/zapomenute-heslo">
+    <form (ngSubmit)="passwordReset()">
+    <label for="email">
+      Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+    </label>
+    <input type="email" class="form-control" ngModel email id="email1" required name="emai1"
+      #emailInput="ngModel">
+    <button type="submit" >
       Obnovit heslo!
-    </a>
+    </button>
+    </form>
   </div>
 </div>

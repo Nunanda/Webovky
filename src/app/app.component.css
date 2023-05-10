@@ -138,7 +138,6 @@ ul {
 
 #dropdown-content0 a {
     color: #000;
-    padding: 14px 18px;
     text-decoration: none;
     display: block;
     background: #f2d4de;
@@ -167,9 +166,8 @@ a:first-child {
     border-radius: 10px 10px 0px 0px;
 }
 
-.dropdown-content a {
+#dropdown-content1 a {
     color: #000;
-    padding: 14px 18px;
     text-decoration: none;
     display: block;
     background: #f2d4de;

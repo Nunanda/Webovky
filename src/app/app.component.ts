@@ -25,7 +25,7 @@ export class AppComponent {
     this.element4 = document.getElementById("dropdown-content2");
     this.items = new Array<string>;
     translate.addLangs(['CZ', 'EN']);
-    if (this.tokenService.getUser().language === "EN") {
+    if (this.tokenService.getUser() && this.tokenService.getUser().language === "EN") {
       translate.setDefaultLang('EN');
       translate.use('EN');
     }

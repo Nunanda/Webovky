@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
+const PICTURE_KEY = 'picture';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,14 @@ export class TokenService {
     if (user) {
       return JSON.parse(user);
     }
-    return {};
+    return;
+  }
+
+  public getPicture(): any {
+    return window.sessionStorage.getItem(PICTURE_KEY)
+  }
+
+  public savePicture(imageUrl: string): any {
+    window.sessionStorage.setItem(PICTURE_KEY, imageUrl);
   }
 }

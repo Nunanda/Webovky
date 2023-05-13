@@ -22,10 +22,10 @@ export class PrihlaseniComponent implements OnInit {
   upozorneni: string = "";
 
 
-  constructor(private router: Router, private tokenStorage: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService,  public translate: TranslateService) { }
+  constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
 
   ngOnInit() {
-    if (this.tokenStorage.getToken()) {
+    if (this.tokenService.getToken()) {
       this.router.navigate(["profile"]);
     }
   }
@@ -34,12 +34,12 @@ export class PrihlaseniComponent implements OnInit {
     if (this.validationService.validateLogin(this.email, this.password)) {
       this.authService.login(this.email, this.password).subscribe(
         data => {
-          this.tokenStorage.saveToken(data.token);
+          this.tokenService.saveToken(data.token);
           this.isLoginFailed = false;
           this.userService.getProfile(data.token).subscribe(
-            data => {
-              this.tokenStorage.saveUser(data);
-              if (data.language === "EN") {
+            data0 => {
+              this.tokenService.saveUser(data0);
+              if (data0.language === "EN") {
                 this.translate.use("EN");
               }
               else {
@@ -55,19 +55,19 @@ export class PrihlaseniComponent implements OnInit {
           );
         },
         err => {
-          if (err.message == "Network Error") {
+          if (err.message === "Network Error") {
             this.upozorneni = "Špatné připojení k internetu.";
           }
-          else if (err.message == "user not found with this username:" + this.email) {
+          else if (err.message === "user not found with this username:" + this.email) {
             this.upozorneni = "Tohle uživatelské jméno u nás není registrován.";
           }
-          else if (err.message == "user not found with this email:" + this.email) {
+          else if (err.message === "user not found with this email:" + this.email) {
             this.upozorneni = "Tento email u nás není registrován.";
           }
-          else if (err.message == "email is not verified") {
+          else if (err.message === "email is not verified") {
             this.upozorneni = "Email nebyl potvrzen. Potvrďte prosím registraci ve svém emailu.";
           }
-          else if (err.message == "password is not valid") {
+          else if (err.message === "password is not valid") {
             this.upozorneni = "Špatně zadané heslo.";
           }
           this.errorMessage = err.error.message;

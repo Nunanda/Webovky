@@ -40,6 +40,7 @@ export class RegistraceComponent implements OnInit {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
       this.authService.register(this.email, this.username, this.password0, this.language).subscribe(
         data => {
+          window.alert("Verifikujte si email do 1 hodiny");
           this.isSuccessful = true;
           this.isSignUpFailed = false;
           this.router.navigate(["prihlaseni"]);

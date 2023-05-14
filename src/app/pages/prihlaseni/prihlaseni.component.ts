@@ -20,6 +20,7 @@ export class PrihlaseniComponent implements OnInit {
   errorMessage: string = "";
   alertController: any;
   upozorneni: string = "";
+  email1: string = "";
 
 
   constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
@@ -85,9 +86,11 @@ export class PrihlaseniComponent implements OnInit {
   }
 
   passwordReset(): void {
-    if (this.validationService.validateEmail(this.email)) {
-      this.authService.sendPasswdResetEmail(this.email).subscribe(
-        data => { },
+    if (this.validationService.validateEmail(this.email1)) {
+      this.authService.sendPasswdResetEmail(this.email1).subscribe(
+        data => {
+          window.alert("check your email");
+        },
         err => {
         //Anet error handling
         }

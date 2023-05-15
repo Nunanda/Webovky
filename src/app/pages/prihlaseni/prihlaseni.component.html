@@ -18,7 +18,7 @@
             Email není platný.
           </div>
         </div>
-      </div> 
+      </div>
       <div class="form-group">
         <label for="password">
           Heslo
@@ -39,9 +39,9 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <!--<div class="form-group">
         Upozornění na chyby: {{upozorneni}}
-      </div>
+      </div>-->
       <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
         Přihlásit
       </button>
@@ -54,39 +54,19 @@
       </a>
     </div>
     <br>
+    <strong>
+      Zapomněli jste heslo?
+    </strong>
     <div>
-      <strong>
-        Zapomněli jste heslo?
-      </strong>
-      <a routerLink="/zapomenute-heslo">
-        Obnovit heslo!
-      </a>
+      <form (ngSubmit)="passwordReset()">
+        <label for="email">
+          Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+        </label>
+        <input type="email" class="form-control" ngModel email id="email1" required name="emai1" #emailInput="ngModel">
+        <button type="submit">
+          Obnovit heslo!
+        </button>
+      </form>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
-      Přihlásit
-    </button>
-  </div>
-  <br>
-  <div>
-    Ještě nemáte účet?
-    <a routerLink="/registrace">
-      Zaregistruj se!
-    </a>
-  </div>
-  <br>
-  <strong>
-    Zapomněli jste heslo?
-  </strong>
-  <div>
-    <form (ngSubmit)="passwordReset()">
-    <label for="email">
-      Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
-    </label>
-    <input type="email" class="form-control" ngModel email id="email1" required name="emai1"
-      #emailInput="ngModel">
-    <button type="submit" >
-      Obnovit heslo!
-    </button>
-    </form>
   </div>
 </div>

@@ -2,6 +2,15 @@
     <h2>
         Profil
     </h2>
+    <div *ngIf="imageUrl">
+        <img [src]="imageUrl" alt="Profile Picture">
+    </div>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*">
+    <div *ngIf="data">
+        Bad data type of picture
+    </div>
+    <button (click)="onUpload()">Upload</button>
+    <button (click)="delProfilePicture()">Delete profile pic //nefunguje zatim :D</button>
     <div>
         Username: {{currentUser.username}}
     </div>

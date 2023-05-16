@@ -1,139 +1,136 @@
-<!DOCTYPE html>
-<html lang="cs">
-
-<head>
-  <meta charset="utf-8" name="viewport"
-    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
-</head>
-
-<body>
+<div id="body">
   <div id="page">
     <div id="hledaci_lista">
-      <img routerLink="/home" id="logo" src="/assets/icon/logo.png">
-      <div id="selecro">
-        selecro
-      </div>
-      <div id="hledaci_bunka">
-        <div id="Hledat">
-          {{ 'APP.hledat' | translate }}
+      <img routerLink="/home" id="logo" src="assets/icon/logo.png">
+      <div id="part1">
+        <div id="selecro">
+          selecro
         </div>
-        <img id="Lupa" src="/assets/icon/search1.svg">
-      </div>
-      <img id="account" src="/assets/icon/account.svg">
-      <div id="translation">
-        <select
-          class="form-control"
-          #selectedlang
-          (change)="switchLanguage(selectedlang.value)">
-          <option *ngFor="let language of translate.getLangs()"
-          [value]="language"
-          [selected]="language === translate.currentLang">
-          {{ language }}
-        </option>
-        </select>
-      </div>
-      <div id="mySidenav" class="sidenav">
-        <div id="Menu">
-          <div class="blok" routerLink="/home">
-            <button (click)="opencloseNav()" routerLink="/home" class="Menu-block">
-              <img class="googleicons" src="/assets/icon/info.svg">
-              Selecro
-            </button>
+        <div id="hledaci_bunka">
+          <div class="row1">
+            <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"
+              placeholder="{{ 'APP.hledat' | translate }}">
+            <img id="Lupa" src="assets/icon/search1.svg">
           </div>
-          <div class="dropdown">
-            <button class="Menu-block" (click)="showHidePomucky()">
-              <img class="googleicons" src="/assets/icon/style.svg">
-              {{ 'APP.pomucky' | translate }}
-            </button>
-            <div class="dropdown-content0" id="dropdown-content0">
-              <a (click)="opencloseNav()" routerLink="/pomucky/hacek">
-                {{ 'APP.hacek' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/prize">
-                {{ 'APP.prize' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/znackovac">
-                {{ 'APP.znackovac' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/jehla">
-                {{ 'APP.jehla' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/nuzky">
-                {{ 'APP.nuzky' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/bezpecnostni-oci-a-nos">
-                {{ 'APP.bezpecnostniOciANos' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/chrastitko">
-                {{ 'APP.chrastitko' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/pocitadlo">
-                {{ 'APP.pocitadlo' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/navijec-prize">
-                {{ 'APP.navijecPrize' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/pomucky/vypln">
-                {{ 'APP.vypln' | translate }}
-              </a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="Menu-block" (click)="showHideSlovnik()">
-              <img class="googleicons" src="/assets/icon/book.svg">
-              {{ 'APP.slovnik' | translate }}
-            </button>
-            <div class="dropdown-content1" id="dropdown-content1">
-              <a (click)="opencloseNav()" routerLink="/slovnik/retizkove-oko">
-                {{ 'APP.retizkoveOko' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/pevne-oko">
-                {{ 'APP.pevneOko' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/kratky-sloupek">
-                {{ 'APP.kratkySloupek' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/polodlouhy-sloupek">
-                {{ 'APP.polodlouhySloupek' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/dlouhy-sloupek">
-                {{ 'APP.dlouhySloupek' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/rozhackovani">
-                {{ 'APP.rozhackovani' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/shackovani">
-                {{ 'APP.shackovani' | translate }}
-              </a>
-              <a (click)="opencloseNav()" routerLink="/slovnik/magicky-krouzek">
-                {{ 'APP.magickyKrouzek' | translate }}
-              </a>
-            </div>
-          </div>
-          <button (click)="opencloseNav()" routerLink="/vyukovymod" class="Menu-block">
-            <img class="googleicons" src="/assets/icon/school.svg">
-            {{ 'APP.vyukovyMod' | translate }}
-          </button>
-          <button (click)="opencloseNav()" routerLink="/navody" class="Menu-block">
-            <img class="googleicons" src="/assets/icon/view.svg">
-            {{ 'APP.navody' | translate }}
-          </button>
+          <ul *ngIf="search && search.length >= 2">
+            <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item
+              }}</button>
+          </ul>
         </div>
       </div>
-      <button (click)="opencloseNav()" class="button">
-        <img id="hamburger" src="/assets/icon/hamburger-menu.svg">
-      </button>
+      <div id="part2">
+        <div id="translation">
+          <select class="form-control" #selectedlang (change)="switchLanguage(selectedlang.value)">
+            <option *ngFor="let language of translate.getLangs()" [value]="language"
+              [selected]="language === translate.currentLang">
+              {{ language }}
+            </option>
+          </select>
+        </div>
+        <img id="account" src="assets/icon/account.svg" routerLink="/prihlaseni">
+        <div id="mySidenav" class="sidenav">
+          <div id="Menu">
+            <div class="blok" routerLink="/home">
+              <button (click)="opencloseNav()" routerLink="/home" class="Menu-block">
+                <img class="googleicons" src="assets/icon/info.svg">
+                Selecro
+              </button>
+            </div>
+            <div class="dropdown">
+              <button class="Menu-block" (click)="showHidePomucky()">
+                <img class="googleicons" src="assets/icon/style.svg">
+                {{ 'APP.pomucky' | translate }}
+              </button>
+              <div class="dropdown-content0" id="dropdown-content0">
+                <a (click)="opencloseNav()" routerLink="/pomucky/hacek">
+                  {{ 'APP.hacek' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/prize">
+                  {{ 'APP.prize' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/znackovac">
+                  {{ 'APP.znackovac' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/jehla">
+                  {{ 'APP.jehla' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/nuzky">
+                  {{ 'APP.nuzky' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/bezpecnostni-oci-a-nos">
+                  {{ 'APP.bezpecnostniOciANos' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/chrastitko">
+                  {{ 'APP.chrastitko' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/pocitadlo">
+                  {{ 'APP.pocitadlo' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/navijec-prize">
+                  {{ 'APP.navijecPrize' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/pomucky/vypln">
+                  {{ 'APP.vypln' | translate }}
+                </a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="Menu-block" (click)="showHideSlovnik()">
+                <img class="googleicons" src="assets/icon/book.svg">
+                {{ 'APP.slovnik' | translate }}
+              </button>
+              <div class="dropdown-content1" id="dropdown-content1">
+                <a (click)="opencloseNav()" routerLink="/slovnik/retizkove-oko">
+                  {{ 'APP.retizkoveOko' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/pevne-oko">
+                  {{ 'APP.pevneOko' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/kratky-sloupek">
+                  {{ 'APP.kratkySloupek' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/polodlouhy-sloupek">
+                  {{ 'APP.polodlouhySloupek' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/dlouhy-sloupek">
+                  {{ 'APP.dlouhySloupek' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/rozhackovani">
+                  {{ 'APP.rozhackovani' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/shackovani">
+                  {{ 'APP.shackovani' | translate }}
+                </a>
+                <a (click)="opencloseNav()" routerLink="/slovnik/magicky-krouzek">
+                  {{ 'APP.magickyKrouzek' | translate }}
+                </a>
+              </div>
+            </div>
+            <button (click)="opencloseNav()" routerLink="/vyukovymod" class="Menu-block">
+              <img class="googleicons" src="assets/icon/school.svg">
+              {{ 'APP.vyukovyMod' | translate }}
+            </button>
+            <button (click)="opencloseNav()" routerLink="/navody" class="Menu-block">
+              <img class="googleicons" src="assets/icon/view.svg">
+              {{ 'APP.navody' | translate }}
+            </button>
+          </div>
+        </div>
+        <button (click)="opencloseNav()" class="button" id="space_left">
+          <img id="hamburger" src="assets/icon/hamburger-menu.svg">
+        </button>
+      </div>
     </div>
     <div id="Menu">
       <div class="blok" routerLink="/home">
         <button routerLink="/home" class="Menu-block">
-          <img class="googleicons" src="/assets/icon/info.svg">
+          <img class="googleicons" src="assets/icon/info.svg">
           Selecro
         </button>
       </div>
       <div class="dropdown">
         <button class="Menu-block">
-          <img class="googleicons" src="/assets/icon/style.svg">
+          <img class="googleicons" src="assets/icon/style.svg">
           {{ 'APP.pomucky' | translate }}
         </button>
         <div class="dropdown-content">
@@ -171,7 +168,7 @@
       </div>
       <div class="dropdown">
         <button class="Menu-block">
-          <img class="googleicons" src="/assets/icon/book.svg">
+          <img class="googleicons" src="assets/icon/book.svg">
           {{ 'APP.slovnik' | translate }}
         </button>
         <div class="dropdown-content">
@@ -202,14 +199,15 @@
         </div>
       </div>
       <button routerLink="/vyukovymod" class="Menu-block">
-        <img class="googleicons" src="/assets/icon/school.svg">
+        <img class="googleicons" src="assets/icon/school.svg">
         {{ 'APP.vyukovyMod' | translate }}
       </button>
       <div>
         <button class="Menu-block" routerLink="/navody">
-          <img class="googleicons" src="/assets/icon/view.svg">
+          <img class="googleicons" src="assets/icon/view.svg">
           {{ 'APP.navody' | translate }}
-        </button> <!--
+        </button>
+        <!--
         <div class="dropdown-content">       class="dropdown"
           <a routerLink="/navody">
             Vše
@@ -225,6 +223,4 @@
     </div>
     <router-outlet></router-outlet>
   </div>
-</body>
-
-</html>
+</div>

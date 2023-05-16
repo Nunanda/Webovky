@@ -7,7 +7,7 @@
             <div class="bublina">
                 <div>
                     <strong>
-                        {{ 'VYUKOVYMODDETAIL.krok' | translate }}
+                        {{ 'VYUKOVYMODDETAIL.rada' | translate }}
                     </strong>
                     {{InfoVyuky[index].cislo}}
                 </div>
@@ -41,11 +41,11 @@
     </div>
     <div id="buttons">
         <button (click)="previousIndex()" type="button">
-            <img src="../../../../assets/icon/Vlevo.svg">
+            <img src="assets/icon/Vlevo.svg">
         </button>
         {{index+1}}/{{InfoVyuky.length}}
         <button (click)="nextIndex()" type="button">
-            <img src="../../../../assets/icon/Vpravo.svg">
+            <img src="assets/icon/Vpravo.svg">
         </button>
     </div>
 </div>

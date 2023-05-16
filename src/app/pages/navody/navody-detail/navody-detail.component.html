@@ -10,11 +10,12 @@
                 </div>
                 <div innerHTML="{{navod.zkratky}}">
                 </div>
-                <img id="obrazek_navodu" src="../assets/icon/{{popis[index].nazevCasti}}.jpg">
+                <img id="obrazek_navodu" *ngIf="popis[index].obrazek" src="assets/icon/{{popis[index].nazevCasti}}.jpg">
             </div>
             <div id="blok0">
                 <div *ngFor="let item of popis">
-                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)" (click)="setindex(item)">
+                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)"
+                        (click)="setindex(item)">
                         {{item.titulekCasti}}
                     </button>
                 </div>
@@ -25,14 +26,13 @@
                 <div class="bold">
                     {{popis[index].titulekCasti}}:
                 </div>
-
                 <div name="element0" *ngFor="let item0 of popisy">
                     {{item0}}
                     <br>
                 </div>
                 <div class="buttons">
                     <button (click)="previousIndex()" type="button">
-                        <img src="../../../../assets/icon/Vlevo.svg">
+                        <img src="assets/icon/Vlevo.svg">
                     </button>
                     <button (click)="time()">
                         {{ minutes }}:{{ seconds }}
@@ -41,13 +41,13 @@
                         {{ 'NAVODYDETAIL.hotovo' | translate }}
                     </button>
                     <button (click)="nextIndex()" type="button">
-                        <img src="../../../../assets/icon/Vpravo.svg">
+                        <img src="assets/icon/Vpravo.svg">
                     </button>
                 </div>
                 <div class="buttons0">
                     <div class="buttons1">
                         <button (click)="previousIndex()" type="button">
-                            <img src="../../../../assets/icon/Vlevo.svg">
+                            <img src="assets/icon/Vlevo.svg">
                         </button>
                         <button (click)="time()">
                             {{ minutes }}:{{ seconds }}
@@ -55,7 +55,7 @@
                     </div>
                     <div class="buttons1">
                         <button (click)="nextIndex()" type="button">
-                            <img src="../../../../assets/icon/Vpravo.svg">
+                            <img src="assets/icon/Vpravo.svg">
                         </button>
                         <button (click)="finished()">
                             {{ 'NAVODYDETAIL.hotovo' | translate }}
@@ -66,5 +66,3 @@
         </div>
     </div>
 </div>
-
-

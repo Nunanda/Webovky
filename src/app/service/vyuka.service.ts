@@ -727,4 +727,13 @@ export class VyukaService {
     }
   }
 
+  public getTitles(): Array<string> {
+    if (this.translate.currentLang === "EN") {
+      return poleVyrobkuEN.map((item) => item.title);
+    }
+    else {
+      return poleVyrobkuCZ.map((item) => item.title);
+    }
+  }
+
 }

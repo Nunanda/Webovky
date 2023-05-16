@@ -14,7 +14,6 @@
             Těžké
         </button>
     </div> -->
-
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
             <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.nazev)">
@@ -22,7 +21,7 @@
                     {{item.title}}
                 </div>
                 <div class="obsah">
-                    <img id="obrazek_navodu" src="../assets/icon/{{item.nazev}}.jpg">
+                    <img id="obrazek_navodu" src="assets/icon/{{item.nazev}}.jpg">
                     <div class="text">
                         <table>
                             <tr>

@@ -1,6 +1,6 @@
 export type Styl = {
-  nazev: string,
   title: string,
-  zkratka: string,
+  nazev: string,
   popis: string,
+  zkratka: string,
 }

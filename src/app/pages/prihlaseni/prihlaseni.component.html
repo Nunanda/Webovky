@@ -1,0 +1,73 @@
+<div id="container">
+  <h2>
+    Přihlášení
+  </h2>
+  <div id="blok">
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="email">
+          Email
+        </label>
+        <input type="email" class="form-control" ngModel email id="email" required [(ngModel)]="email" name="email"
+          #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+          <div *ngIf="emailInput.errors?.['required']">
+            {{upozorneni}}
+          </div>
+          <div *ngIf="emailInput.errors?.['email']">
+            Email není platný.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">
+          Heslo
+        </label>
+        <div class="password-container">
+          <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" required
+            [(ngModel)]="password" name="password" minlength="8" #passwordInput="ngModel">
+          <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
+            {{showPassword ? 'visibility' : 'visibility_off'}}
+          </i>
+        </div>
+        <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">
+          <div *ngIf="passwordInput.errors?.['required']">
+            Heslo je povinné.
+          </div>
+          <div *ngIf="passwordInput.errors?.['minlength']">
+            Heslo musí mít alespoň 8 znaků.
+          </div>
+        </div>
+      </div>
+      <!--<div class="form-group">
+        Upozornění na chyby: {{upozorneni}}
+      </div>-->
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        Přihlásit
+      </button>
+    </form>
+    <br>
+    <div>
+      Ještě nemáte účet?
+      <a routerLink="/registrace">
+        Zaregistruj se!
+      </a>
+    </div>
+    <br>
+    <strong>
+      Zapomněli jste heslo?
+    </strong>
+    <div>
+      <form (ngSubmit)="passwordReset()">
+        <label for="email1">
+          Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+        </label>
+        <input type="email" class="form-control" [(ngModel)]="email1" id="email1" required name="email1"
+          #emailInput="ngModel">
+        <button type="submit">
+          Reset hesla
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

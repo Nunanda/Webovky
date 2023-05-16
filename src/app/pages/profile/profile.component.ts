@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { TokenService, UserService } from 'src/app/service';
+import { AuthService, TokenService, UserService, ValidationService } from 'src/app/service';
 
 @Component({
   selector: 'app-profile',
@@ -13,12 +13,14 @@ export class ProfileComponent implements OnInit {
   currentUser: any;
   imageUrl!: string;
   data: boolean = false;
+  email: string = "";
 
-  constructor(private router: Router, private tokenService: TokenService, private userService: UserService, public translate: TranslateService) { }
+  constructor(private router: Router, private tokenService: TokenService, private userService: UserService, public translate: TranslateService, private validationService: ValidationService, private authService: AuthService) { }
 
   ngOnInit() {
     this.currentUser = this.tokenService.getUser();
     const token = this.tokenService.getToken();
+    this.email = this.currentUser.email;
     if (this.currentUser.link !== null && token !== null) {
       this.userService.getPicture(token).subscribe(
         response => {
@@ -59,6 +61,9 @@ export class ProfileComponent implements OnInit {
     if (token !== null) {
       this.userService.setProfile(token, this.currentUser).subscribe(
         data => {
+          if (this.currentUser.email !== this.email) {
+            window.alert("Validate your new email");
+          }
         },
         error => { }//Anet error handling
       );
@@ -70,17 +75,19 @@ export class ProfileComponent implements OnInit {
 
   deleteProfile() {
     const token = this.tokenService.getToken();
-    if (token !== null) {
-      this.userService.delProfile(token).subscribe(
-        data => {
-          this.tokenService.signOut();
-          this.router.navigate(["home"]);
-        },
-        error => { }//Anet error handling
-      );
-    }
-    else {
-      //Anet error handling
+    if (window.confirm('Are sure you want to delete this item ?')) {
+      if (token !== null) {
+        this.userService.delProfile(token).subscribe(
+          data => {
+            this.tokenService.signOut();
+            this.router.navigate(["home"]);
+          },
+          error => { }//Anet error handling
+        );
+      }
+      else {
+        //Anet error handling
+      }
     }
   }
 
@@ -155,5 +162,21 @@ export class ProfileComponent implements OnInit {
       uint8Array[i] = byteString.charCodeAt(i);
     }
     return new Blob([arrayBuffer], { type: mimeString });
+  }
+
+  passwordReset(): void {
+    if (this.validationService.validateEmail(this.currentUser.email)) {
+      this.authService.sendPasswdResetEmail(this.currentUser.email).subscribe(
+        data => {
+          window.alert("check your email");
+        },
+        err => {
+          //Anet error handling
+        }
+      );
+    }
+    else {
+      //Anet error handling
+    }
   }
 }

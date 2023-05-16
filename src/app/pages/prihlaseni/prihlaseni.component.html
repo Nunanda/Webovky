@@ -46,27 +46,28 @@
         Přihlásit
       </button>
     </form>
-  <br>
-  <div>
-    Ještě nemáte účet?
-    <a routerLink="/registrace">
-      Zaregistruj se!
-    </a>
-  </div>
-  <br>
-  <strong>
-    Zapomněli jste heslo?
-  </strong>
-  <div>
-    <form (ngSubmit)="passwordReset()">
-    <label for="email">
-      Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
-    </label>
-    <input type="email" class="form-control" ngModel email id="email1" required name="emai1"
-      #emailInput="ngModel">
-    <button type="submit" >
-      Obnovit heslo!
-    </button>
-    </form>
+    <br>
+    <div>
+      Ještě nemáte účet?
+      <a routerLink="/registrace">
+        Zaregistruj se!
+      </a>
+    </div>
+    <br>
+    <strong>
+      Zapomněli jste heslo?
+    </strong>
+    <div>
+      <form (ngSubmit)="passwordReset()">
+        <label for="email1">
+          Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+        </label>
+        <input type="email" class="form-control" [(ngModel)]="email1" id="email1" required name="email1"
+          #emailInput="ngModel">
+        <button type="submit">
+          Reset hesla
+        </button>
+      </form>
+    </div>
   </div>
 </div>

@@ -20,7 +20,6 @@ export class PrihlaseniComponent implements OnInit {
   alertController: any;
   upozorneni: string = "";
 
-
   constructor(private router: Router, private tokenStorage: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService) { }
 
   ngOnInit() {
@@ -44,24 +43,33 @@ export class PrihlaseniComponent implements OnInit {
             err => {
               this.errorMessage = err.error.message;
               this.isLoginFailed = true;
+              if (err.message == "password is not valid") {
+                this.upozorneni = "Špatně zadané heslo.";
+                console.log("vidim")
+              }
             }
           );
         },
         err => {
           if (err.message == "Network Error") {
             this.upozorneni = "Špatné připojení k internetu.";
+            console.log("vidim")
           }
           else if (err.message == "user not found with this username:" + this.email) {
             this.upozorneni = "Tohle uživatelské jméno u nás není registrován.";
+            console.log("vidim")
           }
           else if (err.message == "user not found with this email:" + this.email) {
             this.upozorneni = "Tento email u nás není registrován.";
+            console.log("vidim")
           }
           else if (err.message == "email is not verified") {
             this.upozorneni = "Email nebyl potvrzen. Potvrďte prosím registraci ve svém emailu.";
+            console.log("vidim")
           }
           else if (err.message == "password is not valid") {
             this.upozorneni = "Špatně zadané heslo.";
+            console.log("vidim")
           }
           this.errorMessage = err.error.message;
           this.isLoginFailed = true;

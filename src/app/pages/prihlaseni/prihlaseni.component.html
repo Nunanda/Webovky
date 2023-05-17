@@ -57,12 +57,13 @@
     <strong>
       Zapomněli jste heslo?
     </strong>
+    <p>Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.</p> 
     <div>
       <form (ngSubmit)="passwordReset()">
         <label for="email1">
-          Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+          
         </label>
-        <input type="email" class="form-control" [(ngModel)]="email1" id="email1" required name="email1"
+        <input type="email" class="form-control"  [(ngModel)]="email1" id="email1" required name="email1"
           #emailInput="ngModel">
         <button type="submit">
           Reset hesla

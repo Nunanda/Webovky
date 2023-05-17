@@ -7,38 +7,77 @@
             <label for="email">
                 Email
             </label>
-            <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email">
+            <input type="email" class="form-control" ngModel email id="email" required [(ngModel)]="email" name="email"
+            #emailInput="ngModel">
         </div>
+        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+            <div *ngIf="emailInput.errors?.['required']">
+              {{upozorneni}}
+            </div>
+            <div *ngIf="emailInput.errors?.['email']">
+              Email není platný.
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="username">
                 Uživatelské jméno
             </label>
-            <input type="username" class="form-control" id="username" required [(ngModel)]="username" name="username">
+            <input type="username" class="form-control" id="username" required [(ngModel)]="username" name="username" minlength="4" #usernameInput="ngModel">
         </div>
+        <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)" class="alert alert-danger">
+            <div *ngIf="usernameInput.errors?.['required']">
+              Uživatelské jméno je povinné.
+            </div>
+            <div *ngIf="usernameInput.errors?.['minlength']">
+              Heslo musí mít alespoň 4 znaků.
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="password">
                 Heslo
             </label>
             <div class="password-container">
                 <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password" required
-                    [(ngModel)]="password0" name="password0">
+                    [(ngModel)]="password0" name="password0" minlength="8" #passwordInput="ngModel">
                 <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
                     {{showPassword0 ? 'visibility' : 'visibility_off'}}
                 </i>
             </div>
         </div>
+        <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">
+            <div *ngIf="passwordInput.errors?.['required']">
+              Heslo je povinné.
+            </div>
+            <div *ngIf="passwordInput.errors?.['minlength']">
+              Heslo musí mít alespoň 8 znaků.
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="password">
                 Zopakujte heslo
             </label>
             <div class="password-container">
                 <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password" required
-                    [(ngModel)]="password1" name="password1">
+                    [(ngModel)]="password1" name="password1" #password1Input = "ngModel" minlength="8">
                 <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
                     {{showPassword1 ? 'visibility' : 'visibility_off'}}
                 </i>
             </div>
         </div>
+
+        <div *ngIf="password1Input.invalid && (password1Input.dirty || password1Input.touched)" class="alert alert-danger">
+            <div *ngIf="password1Input.errors?.['required']">
+              Heslo je povinné.
+            </div>
+            <div *ngIf="password1Input.errors?.['minlength']">
+              Heslo musí mít alespoň 8 znaků.
+            </div>
+        </div>
+        
+
         <div class="form-group">
             <label for="language">
                 Jazyk 

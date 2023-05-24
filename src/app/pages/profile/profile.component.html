@@ -1,6 +1,6 @@
 <div id="container">
     <h2>
-        Profil
+        {{ 'PROFIL.profil' | translate }}
     </h2>
     <div *ngIf="imageUrl">
         <img [src]="imageUrl" alt="Profile Picture">
@@ -12,36 +12,36 @@
     <button (click)="onUpload()">Upload</button>
     <button (click)="delProfilePicture()">Delete profile pic //nefunguje zatim :D</button>
     <div>
-        Username: {{currentUser.username}}
+        {{ 'REGISTRACE.username' | translate }} {{currentUser.username}}
     </div>
     <div>
-        Příjmení: {{currentUser.surname}}
+        {{ 'PROFIL.prijmeni' | translate }} {{currentUser.surname}}
     </div>
     <div>
-        Nick: {{currentUser.nick}}
+        {{ 'PROFIL.nick' | translate }} {{currentUser.nick}}
     </div>
     <div>
-        Jméno: {{currentUser.name}}
+        {{ 'PROFIL.jmeno' | translate }} {{currentUser.name}}
     </div>
     <div>
-        Email: {{currentUser.email}}
+        E-mail: {{currentUser.email}}
     </div>
     <div>
-        Datum vytvoření: {{currentUser.date}}
+        {{ 'PROFIL.datum' | translate }} {{currentUser.date}}
     </div>
     <div>
         Bio: {{currentUser.bio}}
     </div>
     <button (click)="passwordReset()">
-        Reset hesla
+        {{ 'PROFIL.reset' | translate }}
     </button>
     <button (click)="editProfile()">
-        Ulozit profil
+        {{ 'PROFIL.save' | translate }}
     </button>
     <button (click)="deleteProfile()">
-        Smazat profil
+        {{ 'PROFIL.delete' | translate }}
     </button>
     <button (click)="signOut()">
-        Odhlásit
+        {{ 'PROFIL.odhlasit' | translate }}
     </button>
 </div>

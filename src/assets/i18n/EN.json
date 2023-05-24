@@ -63,5 +63,49 @@
         "magickyKrouzek": "Magic ring",
         "vyukovyMod": "Educational mode",
         "navody": "Manuals"
+    },
+
+    "REGISTRACE": {
+        "registrace": "Registration",
+        "username": "Username",
+        "heslo": "Password",
+        "hesloZnovu": "Repeat password",
+        "registrovat": "Register now"
+    },
+
+    "VERIFIKACE": {
+        "text1": "Please wait while we verify your email address...",
+        "text2": "Your email address has been successfully verified!"
+    },
+
+    "PROFIL": {
+        "profil": "Profile",
+        "prijmeni": "Surname",
+        "nick": "Nickname",
+        "jmeno": "Name",
+        "datum": "Date of creation",
+        "reset": "Password reset",
+        "save": "Save profile",
+        "delete": "Delete profile",
+        "odhlasit": "Sign out"
+    },
+
+    "PRIHLASENI": {
+        "prihlaseni": "Sign in",
+        "emailNeboNick": "E-mail or username",
+        "neniPlatny": "E-mail or username is not valid.",
+        "povinneHeslo": "Password is required.",
+        "osmZnaku": "Password must have atleast 8 symbols.",
+        "prihlasit": "Sign in",
+        "nemateUcet": "Don't have an account?",
+        "zaregistruj": "Register here!",
+        "zapomenuteHeslo": "Forgot your password?",
+        "zadaniEmailu": "Enter an e-mail to which a password reset link will be sent."
+    },
+
+    "PSSWDCHANGE": {
+        "noveHeslo": "New password",
+        "zmenit": "Change password"
     }
+
 }

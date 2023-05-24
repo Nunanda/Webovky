@@ -61,5 +61,49 @@
         "magickyKrouzek": "Magický kroužek",
         "vyukovyMod": "Výukový mód",
         "navody": "Návody"
+    },
+
+    "REGISTRACE": {
+        "registrace": "Registrace",
+        "username": "Přihlašovací jméno",
+        "heslo": "Heslo",
+        "hesloZnovu": "Zopakujte heslo",
+        "registrovat": "Registrovat se"
+    },
+    
+    "VERIFIKACE": {
+        "text1": "Počkejte zatímco Vám ověřujeme e-mailovou adresu...",
+        "text2": "Vaše e-mailová adresa byla ověřena!"
+    },
+
+    "PROFIL": {
+        "profil": "Profil",
+        "prijmeni": "Příjmení",
+        "nick": "Přezdívka",
+        "jmeno": "Jméno",
+        "datum": "Datum vytvoření",
+        "reset": "Reset hesla",
+        "save": "Uložit profil",
+        "delete": "Smazat profil",
+        "odhlasit": "Odhlásit"
+    },
+
+    "PRIHLASENI": {
+        "prihlaseni": "Přihlášení",
+        "emailNeboNick": "E-mail nebo přihlašovací jméno",
+        "neniPlatny": "E-mail nebo přihlašovací jméno není platné.",
+        "povinneHeslo": "Heslo je povinné.",
+        "osmZnaku": "Heslo musí mít alespoň 8 znaků.",
+        "prihlasit": "Přihlásit",
+        "nemateUcet": "Ještě nemáte účet?",
+        "zaregistruj": "Zaregistrujte se!",
+        "zapomenuteHeslo": "Zapomněli jste heslo?",
+        "zadaniEmailu": "Zadejte e-mail, na který vám bude zaslán odkaz pro obnovení hesla."
+    },
+
+    "PSSWDCHANGE": {
+        "noveHeslo": "Nové heslo",
+        "zmenit": "Změnit heslo"
     }
+
 }

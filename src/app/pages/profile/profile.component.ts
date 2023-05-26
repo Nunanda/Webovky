@@ -110,7 +110,7 @@ export class ProfileComponent implements OnInit {
   delProfilePicture() {
     const token = this.tokenService.getToken();
     if (token !== null) {
-      this.userService.setPicture(token, new FormData()).subscribe(
+      this.userService.delProfile(token).subscribe(
         data => {
         },
         error => { }//Anet error handling

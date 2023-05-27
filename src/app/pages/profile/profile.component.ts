@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private router: Router, private tokenService: TokenService, private userService: UserService, public translate: TranslateService, private validationService: ValidationService, private authService: AuthService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.currentUser = this.tokenService.getUser();
     const token = this.tokenService.getToken();
     this.email = this.currentUser.email;
@@ -51,12 +51,12 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  signOut() {
+  signOut(): void {
     this.tokenService.signOut();
     this.router.navigate(["home"]);
   }
 
-  editProfile() {
+  editProfile(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
       this.userService.setProfile(token, this.currentUser).subscribe(
@@ -73,7 +73,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  deleteProfile() {
+  deleteProfile(): void {
     const token = this.tokenService.getToken();
     if (window.confirm('Are sure you want to delete this item ?')) {
       if (token !== null) {
@@ -91,7 +91,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  getProfilePicture() {
+  getProfilePicture(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
       this.imageUrl = "";
@@ -107,7 +107,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  delProfilePicture() {
+  delProfilePicture(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
       this.userService.setPicture(token, new FormData()).subscribe(
@@ -121,7 +121,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  onUpload() {
+  onUpload(): void {
     const token = this.tokenService.getToken();
     const formData = new FormData();
     formData.append('image', this.dataURItoBlob(this.imageUrl));
@@ -137,7 +137,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  onFileSelected(event: any) {
+  onFileSelected(event: any): void {
     const file = event.target.files[0];
     const reader = new FileReader();
     if (file && file.type.startsWith('image/')) {
@@ -153,7 +153,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  dataURItoBlob(dataURI: string) {
+  dataURItoBlob(dataURI: string): Blob {
     const byteString = atob(dataURI.split(',')[1]);
     const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const arrayBuffer = new ArrayBuffer(byteString.length);

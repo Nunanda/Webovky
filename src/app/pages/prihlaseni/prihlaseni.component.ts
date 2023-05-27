@@ -25,7 +25,7 @@ export class PrihlaseniComponent implements OnInit {
 
   constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.router.navigate(["profile"]);
     }

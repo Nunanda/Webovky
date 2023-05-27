@@ -68,7 +68,7 @@ export class RegistraceComponent implements OnInit {
         }
       );
     }
-    else if(this.validationService.validatePassword(this.password0, this.password1)) {
+    else if (this.validationService.validatePassword(this.password0, this.password1)) {
       this.upozorneni = "Zadaná hesla se neshodují."
     }
     else if (!this.email) {

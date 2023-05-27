@@ -19,13 +19,13 @@ export class PomuckyComponent implements OnInit {
     this.kroky = this.pomucka.kroky;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const nazev = (this.router.url.split('/'))[2];
     this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
     this.kroky = this.pomucka.kroky;
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     const nazev = (this.router.url.split('/'))[2];
     this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
     this.kroky = this.pomucka.kroky;

@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'verification', component: VerificationComponent },
   { path: 'passwdchange', component: PasswdchangeComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({

@@ -18,7 +18,7 @@ export class UserService {
   }
 
   delProfile(token: string): Observable<any> {
-    return this.http.delete(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}});
+    return this.http.delete(environment.apiUrl + '/users/{id}/profilePictureDel', { headers: { Authorization: `Bearer ` + token}});
   }
 
   getPicture(token: string): Observable<any> {

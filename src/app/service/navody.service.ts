@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Navod, ObtiznostNavodu, PopisNavodu } from '../types';
+import { Navod, ObtiznostNavodu, PopisNavodu } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
 
 const poleNavodyCZ: Array<Navod> = [
@@ -625,7 +625,7 @@ export class NavodyService {
   constructor(private translate: TranslateService) {
   }
 
-  public getNavodyByName(name: string) {
+  public getNavodyByName(name: string): Navod |void {
     if (this.translate.currentLang === "EN") {
       return poleNavodyEN.find(element => element.nazev == name);
     }

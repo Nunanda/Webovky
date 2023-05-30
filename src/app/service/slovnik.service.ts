@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Styl } from '../types';
+import { Styl } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
 
 const poleStyluCZ: Array<Styl> = [
@@ -126,7 +126,7 @@ export class SlovnikService {
   constructor(private translate: TranslateService) {
   }
 
-  public getStylByName(name: string) {
+  public getStylByName(name: string): Styl | void {
     if (this.translate.currentLang === "EN") {
       return poleStyluEN.find(element => element.nazev == name);
     }

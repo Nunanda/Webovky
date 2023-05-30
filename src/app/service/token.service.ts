@@ -23,24 +23,23 @@ export class TokenService {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public saveUser(user: any): void {
+  public saveUser(user: JSON): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
-  public getUser(): any {
+  public getUser(): JSON | void {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
       return JSON.parse(user);
     }
-    return;
   }
 
-  public getPicture(): any {
-    return window.sessionStorage.getItem(PICTURE_KEY)
+  public getPicture(): string | null {
+    return window.sessionStorage.getItem(PICTURE_KEY);
   }
 
-  public savePicture(imageUrl: string): any {
+  public savePicture(imageUrl: string): void {
     window.sessionStorage.setItem(PICTURE_KEY, imageUrl);
   }
 }

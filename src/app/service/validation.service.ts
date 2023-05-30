@@ -8,7 +8,7 @@ export class ValidationService {
   constructor() { }
 
   validateLogin(email: string, password: string): boolean {
-    return (email.length >= 4 || email.includes("@")) && password.length >= 8;
+    return (email.length >= 1 || email.includes("@")) && password.length >= 8;
   }
   
   validateRegister(email: string, password0: string, password1: string, username: string): boolean {

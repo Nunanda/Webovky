@@ -3,45 +3,87 @@
         Registrace
     </h2>
     <div id="blok">
-        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.valid && register()" #f="ngForm" novalidate>
+        <form name="form" (ngSubmit)="f.valid && register()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="email">
                     Email
                 </label>
-                <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email">
+                <input type="email" class="form-control" id="email" required email [(ngModel)]="email" name="email"
+                    #emailInput="ngModel" (ngModelChange)="errorMessage = ''">
+            </div>
+            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
+                <div *ngIf="emailInput.errors?.['required']">
+                    Email je povinný.
+                </div>
+                <div *ngIf="emailInput.errors?.['email']">
+                    Email není platný.
+                </div>
+            </div>
+            <div *ngIf="errorMessage === 'email already exist'" class="alert alert-danger">
+                {{errorMessage}}
             </div>
             <div class="form-group">
                 <label for="username">
                     Username
                 </label>
-                <input type="username" class="form-control" id="username" required [(ngModel)]="username" name="username">
+                <input type="username" class="form-control" id="username" required [(ngModel)]="username"
+                    name="username" minlength="4" #usernameInput="ngModel" (ngModelChange)="errorMessage = ''">
+            </div>
+            <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)"
+                class="alert alert-danger">
+                <div *ngIf="usernameInput.errors?.['required']">
+                    Username je povinné.
+                </div>
+                <div *ngIf="usernameInput.errors?.['minlength']">
+                    Username musí mít alespoň 4 znaků.
+                </div>
+            </div>
+            <div *ngIf="errorMessage === 'username already exist'" class="alert alert-danger">
+                {{errorMessage}}
             </div>
             <div class="form-group">
                 <label for="password">
                     Heslo
                 </label>
                 <div class="password-container">
-                    <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password" required
-                        [(ngModel)]="password0" name="password0">
+                    <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password0" required
+                        [(ngModel)]="password0" name="password0" minlength="8" #passwordInput0="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
                         {{showPassword0 ? 'visibility' : 'visibility_off'}}
                     </i>
                 </div>
+                <div *ngIf="passwordInput0.invalid && (passwordInput0.dirty || passwordInput0.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="passwordInput0.errors?.['required']">
+                        Heslo je povinné.
+                    </div>
+                    <div *ngIf="passwordInput0.errors?.['minlength']">
+                        Heslo musí mít alespoň 8 znaků.
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="password">
+                <label for="password1">
                     Zopakujte heslo
                 </label>
                 <div class="password-container">
-                    <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password" required
-                        [(ngModel)]="password1" name="password1">
+                    <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password1" required
+                        [(ngModel)]="password1" name="password1" minlength="8" #passwordInput1="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
                         {{showPassword1 ? 'visibility' : 'visibility_off'}}
                     </i>
                 </div>
+                <div *ngIf="passwordInput1.invalid && (passwordInput1.dirty || passwordInput1.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="passwordInput1.errors?.['required']">
+                        Heslo je povinné.
+                    </div>
+                    <div *ngIf="passwordInput1.errors?.['minlength']">
+                        Heslo musí mít alespoň 8 znaků.
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-            </div>
+            <br>
             <button type="submit" class="btn btn-primary">
                 Registrovat se
             </button>

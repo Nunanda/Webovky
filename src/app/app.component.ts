@@ -16,7 +16,7 @@ export class AppComponent {
   element2: HTMLElement | null;
   element3: HTMLElement | null;
   element4: HTMLElement | null;
-  items: Array<string>;
+  items: Array<string> = new Array<string>;;
   search: string | undefined;
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
@@ -24,14 +24,16 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
-    this.items = new Array<string>;
     translate.addLangs(['CZ', 'EN']);
-    if (this.tokenService.getUser() && localStorage.getItem("language") === "EN") {
-      translate.setDefaultLang('EN');
-      translate.use('EN');
+    if (localStorage.getItem("language") === "EN") {
+      this.translate.currentLang = 'EN';
+      this.translate.setDefaultLang('EN');
+      this.translate.use('EN');
     }
     else {
-      translate.setDefaultLang('CZ');
+      this.translate.currentLang = 'CZ';
+      this.translate.setDefaultLang('CZ');
+      this.translate.use('CZ');
     }
   }
 
@@ -72,6 +74,7 @@ export class AppComponent {
   }
 
   switchLanguage(lang: string): Observable<any> {
+    localStorage.setItem("language", lang);
     return this.translate.use(lang);
   }
 

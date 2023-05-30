@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, NavodyService, PomuckyService, SlovnikService } from './service';
+import { VyukaService, NavodyService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,16 +17,22 @@ export class AppComponent {
   element3: HTMLElement | null;
   element4: HTMLElement | null;
   items: Array<string>;
-  search: any;
+  search: string | undefined;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService) {
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
     this.items = new Array<string>;
     translate.addLangs(['CZ', 'EN']);
-    translate.setDefaultLang('CZ');
+    if (this.tokenService.getUser() && localStorage.getItem("language") === "EN") {
+      translate.setDefaultLang('EN');
+      translate.use('EN');
+    }
+    else {
+      translate.setDefaultLang('CZ');
+    }
   }
 
   ngOnInit(): void {
@@ -37,7 +44,7 @@ export class AppComponent {
     this.items.sort();
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
@@ -46,7 +53,7 @@ export class AppComponent {
     this.items.sort();
   }
 
-  getRoute(item: string) {
+  getRoute(item: string): void {
     if (this.vyukaService.getTitles().includes(item)) {
       localStorage.setItem("nazev", this.vyukaService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!);
       this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
@@ -64,11 +71,11 @@ export class AppComponent {
     this.search = "";
   }
 
-  public switchLanguage(lang: string) {
+  switchLanguage(lang: string): Observable<any> {
     return this.translate.use(lang);
   }
 
-  public opencloseNav() {
+  opencloseNav(): void {
     if (this.element1?.getAttribute("style") == "height: 0") {
       this.element1?.setAttribute("style", "height: 100%");
     }
@@ -77,7 +84,7 @@ export class AppComponent {
     }
   }
 
-  public showHidePomucky() {
+  showHidePomucky(): void {
     if (this.element2?.getAttribute("style") === "display: block") {
       this.element2?.setAttribute("style", "display: none");
     }
@@ -86,7 +93,7 @@ export class AppComponent {
     }
   }
 
-  public showHideSlovnik() {
+  showHideSlovnik(): void {
     if (this.element3?.getAttribute("style") === "display: block") {
       this.element3?.setAttribute("style", "display: none");
     }
@@ -95,7 +102,7 @@ export class AppComponent {
     }
   }
 
-  public showHideNavody() {
+  showHideNavody(): void {
     if (this.element4?.getAttribute("style") === "display: block") {
       this.element4?.setAttribute("style", "display: none");
     }
@@ -103,4 +110,5 @@ export class AppComponent {
       this.element4?.setAttribute("style", "display: block");
     }
   }
+
 }

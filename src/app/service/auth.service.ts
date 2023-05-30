@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Language } from '../types';
+import { Language } from 'src/app/types';
 import { environment } from 'src/environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -33,7 +33,7 @@ export class AuthService {
   emailVerify(token: string | null): Observable<any> {
     return this.http.post(environment.apiUrl + '/verify-email', {
       token
-    });
+    }, httpOptions);
   }
 
   passwdReset(token: string | null, password0: string, password1: string): Observable<any> {
@@ -41,6 +41,12 @@ export class AuthService {
       token,
       password0,
       password1
-    });
+    }, httpOptions);
+  }
+
+  sendPasswdResetEmail(email: string): Observable<any> {
+    return this.http.post(environment.apiUrl + '/send-password-change', {
+      email
+    }, httpOptions);
   }
 }

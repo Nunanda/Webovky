@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InfoVyuky, Vyuka } from '../types';
+import { InfoVyuky, Vyuka } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
 
 const poleVyrobkuCZ: Array<Vyuka> = [
@@ -698,7 +698,7 @@ export class VyukaService {
   constructor(private translate: TranslateService) {
   }
 
-  public getVyrobekByName(name: string) {
+  public getVyrobekByName(name: string): Vyuka | void {
     if (this.translate.currentLang === "EN") {
       return poleVyrobkuEN.find(element => element.nazev == name);
     }

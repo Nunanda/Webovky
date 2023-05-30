@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NavodyService } from 'src/app/service';
 import { Navod, PopisNavodu } from 'src/app/types';
 
@@ -21,7 +20,7 @@ export class NavodyDetailComponent implements OnInit {
   element: NodeListOf<HTMLElement> | undefined;
   element0: NodeListOf<HTMLElement> | undefined;
 
-  constructor(private navodyService: NavodyService, private router: Router) {
+  constructor(private navodyService: NavodyService) {
     this.nazev = localStorage.getItem("nazev");
     this.popis = new Array<PopisNavodu>();
     this.navod = new Array<Navod>();
@@ -30,7 +29,7 @@ export class NavodyDetailComponent implements OnInit {
     this.popisy = new Array<string>();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.navod = this.navodyService.getNavodyByName(this.nazev);
     this.popis = this.navodyService.getPopisy(this.nazev);
     this.popisy = this.popis[this.index].popis;
@@ -38,13 +37,13 @@ export class NavodyDetailComponent implements OnInit {
     this.element0 = document.getElementsByName("element0");
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.navod = this.navodyService.getNavodyByName(this.nazev);
     this.popis = this.navodyService.getPopisy(this.nazev);
     this.popisy = this.popis[this.index].popis;
   }
 
-  public setindex(item: PopisNavodu) {
+  setindex(item: PopisNavodu): void {
     this.index = this.popis.indexOf(item);
     this.popisy = this.popis[this.index].popis;
     this.index0 = 0;
@@ -58,15 +57,15 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  get minutes() {
+  get minutes(): number {
     return Math.floor(this.timer / 60) % 60;
   }
 
-  get seconds() {
+  get seconds(): string {
     return ("00" + this.timer % 60).slice(-2);
   }
 
-  public time() {
+  time(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = 0;
@@ -76,7 +75,7 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  public finished() {
+  finished(): void {
     if (this.element?.item(this.index).className === "finished") {
       this.element?.item(this.index).classList.remove("finished");
       this.element?.item(this.index).classList.add("unfinished");
@@ -91,7 +90,7 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  public previousIndex() {
+  previousIndex(): void {
     if (this.index0 - 1 >= 0) {
       if (this.index0 >= this.popisy.length) {
         this.element?.item(this.index).classList.remove("finished");
@@ -106,7 +105,7 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  public nextIndex() {
+  nextIndex(): void {
     if (this.index0 + 1 == this.popisy.length) {
       this.finished();
     }
@@ -117,5 +116,4 @@ export class NavodyDetailComponent implements OnInit {
       }
     }
   }
-
 }

@@ -82,6 +82,9 @@
                         Heslo musí mít alespoň 8 znaků.
                     </div>
                 </div>
+                <div *ngIf="!passwordInput1.errors?.['minlength'] && (password0 !== password1)" class="alert alert-danger">
+                    Hesla se neshodují.
+                </div>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">

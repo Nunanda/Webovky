@@ -3,20 +3,20 @@
     Přihlášení
   </h2>
   <div id="blok">
-    <form (ngSubmit)="login()" #loginForm="ngForm">
+    <form name="form" (ngSubmit)="f.valid && login()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="email">
           Email nebo username
         </label>
-        <input type="email" class="form-control" id="email" required [(ngModel)]="email" minlength="4" name="email"
-          #emailInput="ngModel">
+        <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email"
+          #emailInput="ngModel" (ngModelChange)="errorMessage = ''">
         <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
           <div *ngIf="emailInput.errors?.['required']">
-            Email nebo username není platný.
+            Toto pole je povinné.
           </div>
-          <div *ngIf="emailInput.errors?.['minlength']">
-            Email nebo username není platný.
-          </div>
+        </div>
+        <div *ngIf="errorMessage === 'user not found'" class="alert alert-danger">
+          {{errorMessage}}
         </div>
       </div>
       <div class="form-group">
@@ -25,7 +25,7 @@
         </label>
         <div class="password-container">
           <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" required
-            [(ngModel)]="password" name="password" minlength="8" #passwordInput="ngModel">
+            [(ngModel)]="password" name="password" minlength="8" #passwordInput="ngModel" (ngModelChange)="errorMessage = ''">
           <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
             {{showPassword ? 'visibility' : 'visibility_off'}}
           </i>
@@ -38,36 +38,47 @@
             Heslo musí mít alespoň 8 znaků.
           </div>
         </div>
+        <div *ngIf="errorMessage === 'password is not valid'" class="alert alert-danger">
+          {{errorMessage}}
+        </div>
       </div>
-      <!--<div class="form-group">
-        Upozornění na chyby: {{upozorneni}}
-      </div>-->
-      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+      <br>
+      <button type="submit" class="btn btn-primary">
         Přihlásit
       </button>
     </form>
-    <br>
     <div>
       Ještě nemáte účet?
       <a routerLink="/registrace">
         Zaregistruj se!
       </a>
     </div>
-    <br>
     <strong>
       Zapomněli jste heslo?
     </strong>
-    <div>
-      <form (ngSubmit)="passwordReset()">
+    <form name="form1" (ngSubmit)="f1.valid && passwordReset()" #f1="ngForm" novalidate>
+      <div class="form-group">
         <label for="email1">
-          Zadejte email, na který vám bude zaslán odkaz pro obnovení hesla.
+          Zadejte email pro obnovení hesla.
         </label>
-        <input type="email" class="form-control" [(ngModel)]="email1" id="email1" required name="email1"
-          #emailInput="ngModel">
-        <button type="submit">
-          Reset hesla
-        </button>
-      </form>
-    </div>
+        <input type="email" class="form-control" id="email1" required email [(ngModel)]="email1" name="email1"
+          #emailInput1="ngModel" (ngModelChange)="errorMessage1 = ''">
+      </div>
+      <div *ngIf="emailInput1.invalid && (emailInput1.dirty || emailInput1.touched)" class="alert alert-danger">
+        <div *ngIf="emailInput1.errors?.['required']">
+          Email je povinný.
+        </div>
+        <div *ngIf="emailInput1.errors?.['email']">
+          Email není platný.
+        </div>
+      </div>
+      <div *ngIf="errorMessage1 === 'email not recognized'" class="alert alert-danger">
+        {{errorMessage1}}
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">
+        Reset hesla
+      </button>
+    </form>
   </div>
 </div>

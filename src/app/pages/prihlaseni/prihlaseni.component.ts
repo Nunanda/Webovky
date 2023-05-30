@@ -49,8 +49,7 @@ export class PrihlaseniComponent implements OnInit {
               }
               this.router.navigate(["home"]);
             },
-            err1 => {
-              this.errorMessage = err1.error.error.message;
+            _err1 => {
             }
           );
         },

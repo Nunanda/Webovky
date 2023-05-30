@@ -12,7 +12,7 @@
         </div>
         <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
             <div *ngIf="emailInput.errors?.['required']">
-              {{upozorneni}}
+              Email je povinný.
             </div>
             <div *ngIf="emailInput.errors?.['email']">
               Email není platný.

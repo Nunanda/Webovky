@@ -13,8 +13,8 @@
             <img id="Lupa" src="assets/icon/search1.svg">
           </div>
           <ul *ngIf="search && search.length >= 2">
-            <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item
-              }}
+            <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">
+              {{ item }}
             </button>
           </ul>
         </div>

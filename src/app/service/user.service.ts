@@ -26,6 +26,10 @@ export class UserService {
   }
 
   setPicture(token: string, formData: FormData): Observable<any> {
-    return this.http.post(environment.apiUrl + '/users/{id}/profilePictureSet', formData, { headers: { Authorization: `Bearer ` + token}});
+    return this.http.put(environment.apiUrl + '/users/{id}/profilePictureSet', formData, { headers: { Authorization: `Bearer ` + token}});
+  }
+
+  delPicture(token: string): Observable<any> {
+    return this.http.delete(environment.apiUrl + '/users/{id}/profilePictureDel', { responseType: 'blob', headers: { Authorization: `Bearer ` + token}});
   }
 }

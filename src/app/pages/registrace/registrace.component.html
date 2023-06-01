@@ -90,6 +90,9 @@
             <button type="submit" class="btn btn-primary">
                 Registrovat se
             </button>
+            <div *ngIf="errorMessage !== 'username already exist' && errorMessage !== 'email already exist' && errorMessage" class="alert alert-danger">
+                Apologies, but the service is currently unavailable.
+            </div>
         </form>
     </div>
 </div>

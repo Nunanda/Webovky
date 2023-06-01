@@ -5,6 +5,7 @@ import { TokenService } from 'src/app/service';
 import { AuthService } from 'src/app/service';
 import { UserService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -64,7 +65,7 @@ export class PrihlaseniComponent implements OnInit {
     if (this.validationService.validateEmail(this.email1)) {
       this.authService.sendPasswdResetEmail(this.email1).subscribe(
         _data => {
-          window.alert("check your mailbox");
+          Swal.fire('Hi', 'Check your mailbox', 'success');
         },
         err => {
           this.errorMessage1 = err.error.error.message;

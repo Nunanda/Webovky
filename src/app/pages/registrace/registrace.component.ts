@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
 import { Language } from 'src/app/types';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registrace',
@@ -32,7 +33,7 @@ export class RegistraceComponent implements OnInit {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
       this.authService.register(this.email, this.username, this.password0, this.translate.currentLang as Language).subscribe(
         _data => {
-          window.alert("Verifikujte si email do 1 hodiny");
+          Swal.fire('Welcome', 'Verify your email within 1 hour', 'success');
           this.router.navigate(["prihlaseni"]);
         },
         err => {

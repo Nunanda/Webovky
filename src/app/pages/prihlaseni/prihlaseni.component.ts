@@ -47,6 +47,16 @@ export class PrihlaseniComponent implements OnInit {
                 this.translate.use("CZ");
               }
               this.isLoginFailed = false;
+              if (data0.link) {
+                this.userService.getPicture(data.token).subscribe(
+                  data1 => {
+                    this.blobToBase64(data1, (base64String) => {
+                      this.tokenService.savePicture(base64String);
+                    });
+                  },
+                  error => { }//Anet error handling
+                );
+              }
               this.router.navigate(["home"]);
             },
             err => {
@@ -99,5 +109,14 @@ export class PrihlaseniComponent implements OnInit {
     else {
       //Anet error handling
     }
+  }
+  
+  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+      callback(base64String);
+    };
+    reader.readAsDataURL(blob);
   }
 }

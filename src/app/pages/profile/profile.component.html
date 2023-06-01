@@ -1,9 +1,9 @@
-<div id="container">
+<div id="container" *ngIf="currentUser">
     <h2>
         Profil
     </h2>
-    <div *ngIf="imageUrl">
-        <img [src]="imageUrl" alt="Profile Picture">
+    <div *ngIf="imageURL">
+        <img [src]="imageURL" alt="Profile Picture">
     </div>
     <input type="file" (change)="onFileSelected($event)" accept="image/*">
     <div *ngIf="data">

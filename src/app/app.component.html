@@ -14,7 +14,8 @@
           </div>
           <ul *ngIf="search && search.length >= 2">
             <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">{{ item
-              }}</button>
+              }}
+            </button>
           </ul>
         </div>
       </div>
@@ -27,7 +28,7 @@
             </option>
           </select>
         </div>
-        <img id="account" src="assets/icon/account.svg" routerLink="/prihlaseni">
+        <img id="account" src="{{ imageURL }}" routerLink="/prihlaseni">
         <div id="mySidenav" class="sidenav">
           <div id="Menu">
             <div class="blok" routerLink="/home">

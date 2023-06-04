@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pomucka } from '../types';
+import { Pomucka } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
 
 const polePomucekCZ: Array<Pomucka> = [
@@ -358,7 +358,7 @@ export class PomuckyService {
   constructor(private translate: TranslateService) {
   }
 
-  public getPomuckaByName(name: string) {
+  public getPomuckaByName(name: string): Pomucka | undefined{
     if (this.translate.currentLang === "EN") {
       return polePomucekEN.find(element => element.nazev == name);
     }

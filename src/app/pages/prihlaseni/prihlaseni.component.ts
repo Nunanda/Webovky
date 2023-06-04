@@ -5,6 +5,7 @@ import { TokenService } from 'src/app/service';
 import { AuthService } from 'src/app/service';
 import { UserService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -16,16 +17,14 @@ export class PrihlaseniComponent implements OnInit {
   showPassword: boolean = false;
   email: string = "";
   password: string = "";
-  isLoginFailed: boolean = false;
   errorMessage: string = "";
-  alertController: any;
-  upozorneni: string = "";
   email1: string = "";
+  errorMessage1: string = "";
 
 
   constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.router.navigate(["profile"]);
     }
@@ -36,68 +35,62 @@ export class PrihlaseniComponent implements OnInit {
       this.authService.login(this.email, this.password).subscribe(
         data => {
           this.tokenService.saveToken(data.token);
-          this.isLoginFailed = false;
           this.userService.getProfile(data.token).subscribe(
             data0 => {
               this.tokenService.saveUser(data0);
               if (data0.language === "EN") {
-                this.translate.use("EN");
+                this.translate.currentLang = 'EN';
+                this.translate.setDefaultLang('EN');
+                this.translate.use('EN');
               }
               else {
-                this.translate.use("CZ");
+                this.translate.currentLang = 'CZ';
+                this.translate.setDefaultLang('CZ');
+                this.translate.use('CZ');
               }
-              this.isLoginFailed = false;
+              if (data0.link) {
+                this.userService.getPicture(data.token).subscribe(
+                  data1 => {
+                    this.blobToBase64(data1, (base64String) => {
+                      this.tokenService.savePicture(base64String);
+                    });
+                  },
+                  _err1 => {
+                  }
+                );
+              }
               this.router.navigate(["home"]);
             },
-            err => {
-              this.errorMessage = err.error.message;
-              this.isLoginFailed = true;
+            _err0 => {
             }
           );
         },
         err => {
-          if (err.message === "Network Error") {
-            this.upozorneni = "Špatné připojení k internetu.";
-          }
-          else if (err.message === "user not found with this username:" + this.email) {
-            this.upozorneni = "Tohle uživatelské jméno u nás není registrován.";
-          }
-          else if (err.message === "user not found with this email:" + this.email) {
-            this.upozorneni = "Tento email u nás není registrován.";
-          }
-          else if (err.message === "email is not verified") {
-            this.upozorneni = "Email nebyl potvrzen. Potvrďte prosím registraci ve svém emailu.";
-          }
-          else if (err.message === "password is not valid") {
-            this.upozorneni = "Špatně zadané heslo.";
-          }
-          this.errorMessage = err.error.message;
-          this.isLoginFailed = true;
+          this.errorMessage = err.error.error.message;
         }
       );
-    }
-    else if (!this.errorMessage) {
-      const alert = this.alertController.create({
-        header: 'UPOZORNĚNÍ!',
-        message: 'Špatně zadaný email.',
-        buttons: ['OK'],
-      })
     }
   }
 
   passwordReset(): void {
     if (this.validationService.validateEmail(this.email1)) {
       this.authService.sendPasswdResetEmail(this.email1).subscribe(
-        data => {
-          window.alert("check your email");
+        _data => {
+          Swal.fire('Hi', 'Check your mailbox', 'success');
         },
         err => {
-        //Anet error handling
+          this.errorMessage1 = err.error.error.message;
         }
       );
     }
-    else {
-      //Anet error handling
-    }
+  }
+  
+  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+      callback(base64String);
+    };
+    reader.readAsDataURL(blob);
   }
 }

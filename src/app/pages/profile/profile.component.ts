@@ -11,52 +11,30 @@ import { AuthService, TokenService, UserService, ValidationService } from 'src/a
 export class ProfileComponent implements OnInit {
 
   currentUser: any;
-  imageUrl!: string;
+  imageURL!: string;
   data: boolean = false;
   email: string = "";
 
   constructor(private router: Router, private tokenService: TokenService, private userService: UserService, public translate: TranslateService, private validationService: ValidationService, private authService: AuthService) { }
 
-  ngOnInit() {
-    this.currentUser = this.tokenService.getUser();
-    const token = this.tokenService.getToken();
-    this.email = this.currentUser.email;
-    if (this.currentUser.link !== null && token !== null) {
-      this.userService.getPicture(token).subscribe(
-        response => {
-          this.imageUrl = URL.createObjectURL(response);
-          this.tokenService.savePicture(URL.createObjectURL(response));
-        },
-        error => { }//Anet error handling
-      );
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.currentUser = this.tokenService.getUser();
+      this.email = this.currentUser.email;
+      this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
     }
     else {
-      //Anet error handling
-    }
-    if (token !== null) {
-      this.userService.getProfile(token).subscribe(
-        data0 => {
-          this.tokenService.saveUser(data0);
-          if (data0.language === "EN") {
-            this.translate.use("EN");
-          }
-          else {
-            this.translate.use("CZ");
-          }
-        },
-        err => {
-          //Anet error handling
-        }
-      );
+      this.signOut();
+      this.router.navigate(["prihlaseni"]);
     }
   }
 
-  signOut() {
+  signOut(): void {
     this.tokenService.signOut();
     this.router.navigate(["home"]);
   }
 
-  editProfile() {
+  editProfile(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
       this.userService.setProfile(token, this.currentUser).subscribe(
@@ -73,7 +51,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  deleteProfile() {
+  deleteProfile(): void {
     const token = this.tokenService.getToken();
     if (window.confirm('Are sure you want to delete this item ?')) {
       if (token !== null) {
@@ -91,26 +69,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  getProfilePicture() {
+  delProfilePicture(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
-      this.imageUrl = "";
-      this.userService.getPicture(token).subscribe(
-        response => {
-          this.imageUrl = URL.createObjectURL(response);
-        },
-        error => { }//Anet error handling
-      );
-    }
-    else {
-      //Anet error handling
-    }
-  }
-
-  delProfilePicture() {
-    const token = this.tokenService.getToken();
-    if (token !== null) {
-      this.userService.setPicture(token, new FormData()).subscribe(
+      this.userService.delPicture(token).subscribe(
         data => {
         },
         error => { }//Anet error handling
@@ -121,13 +83,17 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  onUpload() {
+  onUpload(): void {
     const token = this.tokenService.getToken();
-    const formData = new FormData();
-    formData.append('image', this.dataURItoBlob(this.imageUrl));
-    if (token !== null && !this.data) {
+    if (token !== null && this.imageURL !== "assets/icon/account.svg") {
+      const formData = new FormData();
+      formData.append('image', this.dataURItoBlob(this.imageURL));
       this.userService.setPicture(token, formData).subscribe(
         data => {
+          this.blobToBase64(this.dataURItoBlob(this.imageURL), (base64String) => {
+            this.tokenService.savePicture(base64String);
+          });
+          this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
         },
         error => { }//Anet error handling
       );
@@ -137,23 +103,26 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  onFileSelected(event: any) {
+  onFileSelected(event: any): void {
     const file = event.target.files[0];
     const reader = new FileReader();
     if (file && file.type.startsWith('image/')) {
       this.data = false;
+      this.blobToBase64(file, (base64String) => {
+        this.tokenService.savePicture(base64String);
+      });
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.imageUrl = reader.result as string;
+        this.imageURL = reader.result as string;
       };
     }
     else {
       this.data = true;
-      this.imageUrl = "";
+      this.imageURL = "assets/icon/account.svg";
     }
   }
 
-  dataURItoBlob(dataURI: string) {
+  dataURItoBlob(dataURI: string): Blob {
     const byteString = atob(dataURI.split(',')[1]);
     const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const arrayBuffer = new ArrayBuffer(byteString.length);
@@ -178,5 +147,14 @@ export class ProfileComponent implements OnInit {
     else {
       //Anet error handling
     }
+  }
+
+  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+      callback(base64String);
+    };
+    reader.readAsDataURL(blob);
   }
 }

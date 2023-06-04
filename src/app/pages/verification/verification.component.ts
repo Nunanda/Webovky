@@ -12,9 +12,9 @@ export class VerificationComponent implements OnInit {
 
   verified: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private authService: AuthService, private tokenService: TokenService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private authService: AuthService, private tokenService: TokenService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.authService.emailVerify(this.route.snapshot.queryParamMap.get('token')).subscribe(
       data => {
         this.tokenService.signOut();

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TokenService } from './token.service';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient, private tokenService: TokenService) { }
+  constructor(private http: HttpClient) { }
 
   getProfile(token: string): Observable<any> {
     return this.http.get(environment.apiUrl + '/users/{id}', { headers: { Authorization: `Bearer ` + token}});
@@ -27,6 +26,10 @@ export class UserService {
   }
 
   setPicture(token: string, formData: FormData): Observable<any> {
-    return this.http.post(environment.apiUrl + '/users/{id}/profilePictureSet', formData, { headers: { Authorization: `Bearer ` + token}});
+    return this.http.put(environment.apiUrl + '/users/{id}/profilePictureSet', formData, { headers: { Authorization: `Bearer ` + token}});
+  }
+
+  delPicture(token: string): Observable<any> {
+    return this.http.delete(environment.apiUrl + '/users/{id}/profilePictureDel', { responseType: 'blob', headers: { Authorization: `Bearer ` + token}});
   }
 }

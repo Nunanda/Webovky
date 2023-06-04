@@ -48,9 +48,20 @@ export class PrihlaseniComponent implements OnInit {
                 this.translate.setDefaultLang('CZ');
                 this.translate.use('CZ');
               }
+              if (data0.link) {
+                this.userService.getPicture(data.token).subscribe(
+                  data1 => {
+                    this.blobToBase64(data1, (base64String) => {
+                      this.tokenService.savePicture(base64String);
+                    });
+                  },
+                  _err1 => {
+                  }
+                );
+              }
               this.router.navigate(["home"]);
             },
-            _err1 => {
+            _err0 => {
             }
           );
         },
@@ -72,5 +83,14 @@ export class PrihlaseniComponent implements OnInit {
         }
       );
     }
+  }
+  
+  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+      callback(base64String);
+    };
+    reader.readAsDataURL(blob);
   }
 }

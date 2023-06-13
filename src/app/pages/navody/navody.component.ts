@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Socket, io } from 'socket.io-client';
 import { NavodyService } from 'src/app/service';
 import { Navod } from 'src/app/types';
 
@@ -10,32 +11,24 @@ import { Navod } from 'src/app/types';
 })
 export class NavodyComponent implements OnInit {
 
-  navod: Array<Navod> = new Array<Navod>;
-  //NavodyService: any;
-  //obtiznost!: String;
-
-  constructor(private navodyService: NavodyService, private router: Router) { }
+  private socket!: Socket;
 
   ngOnInit(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
+    this.socket = io('https://selecro.freemyip.com:4000');
+
+    this.socket.on('message', (message) => {
+      console.log('Received message:', message);
+
+      // Handle the received message
+    });
+
+    // Send a message to the server
+    this.socket.emit('message', 'Hello, server!');
   }
 
-  ngDoCheck(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
+  ngOnDestroy(): void {
+    if (this.socket) {
+      this.socket.disconnect();
+    }
   }
-
-  public getPopisy(nazev: string): void {
-    localStorage.setItem("nazev", nazev);
-    this.router.navigate(["navody/navody-detail/"]);
-  }
-
-  /*public lehkeNavody() {
-    this.obtiznost.valueOf();
-  }
-
-  public stredniNavody() {
-  }
-
-  public tezkeNavody() {
-  }*/
 }

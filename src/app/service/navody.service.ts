@@ -18,10 +18,10 @@ export class NavodyService {
   private socket!: Socket;
 
   constructor(private translate: TranslateService) {
-    this.socket = io(environment.socketUrl);
   }
 
   public load(): Promise<void> {
+    this.socket = io(environment.socketUrl);
     return new Promise((resolve, _reject) => {
       this.socket.on('message', (message) => {
         console.log(message);

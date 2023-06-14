@@ -15,6 +15,35 @@
         </button>
     </div> -->
     <div id="sloupce">
-        
+        <ng-container *ngFor="let item of navod">
+            <div class="bunka {{item.obtiznost}}" (click)="getPopisy(item.nazev)">
+                <div class="Nazev_navodu {{item.obtiznost}}_name">
+                    {{item.title}}
+                </div>
+                <div class="obsah">
+                    <img id="obrazek_navodu" src="assets/icon/{{item.nazev}}.jpg">
+                    <div class="text">
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        {{ 'NAVODY.pocetCasti' | translate }}
+                                    </strong>
+                                    {{item.pocet}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        {{ 'NAVODY.stylyZkratky' | translate }}
+                                    </strong>
+                                    {{item.zkratky}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </div>
 </div>

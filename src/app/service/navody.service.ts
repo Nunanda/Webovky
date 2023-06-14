@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Navod, PopisNavodu } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
-import { WebSocketSubject, webSocket } from 'rxjs/webSocket';
+import { Socket, io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 const poleNavodyCZ: Array<Navod> = [
 ];
@@ -14,25 +14,26 @@ const poleNavodyEN: Array<Navod> = [
   providedIn: 'root'
 })
 export class NavodyService {
-  private socket$!: WebSocketSubject<any>;
+
+  private socket!: Socket;
 
   constructor(private translate: TranslateService) {
+    this.socket = io(environment.socketUrl);
   }
 
-  public connect(): void {
-    this.socket$ = webSocket('ws://localhost:3000');
+  public load(): Promise<void> {
+    return new Promise((resolve, _reject) => {
+      this.socket.on('message', (message) => {
+        console.log(message);
+      });
+      resolve();
+    });
   }
 
-  public sendMessage(message: string): void {
-    this.socket$.next(message);
-  }
-
-  public receiveMessage(): Observable<string> {
-    return this.socket$.asObservable();
-  }
-
-  public disconnect(): void {
-    this.socket$.complete();
+  public destroy(): void {
+    if (this.socket) {
+      this.socket.disconnect();
+    }
   }
 
   public getNavodyByName(name: string): Navod |void {

@@ -21,9 +21,14 @@ export class NavodyService {
   }
 
   public load(): Promise<void> {
-    this.socket = io(environment.socketUrl);
+    this.socket = io(environment.socketUrl, {
+      extraHeaders: {
+        'Access-Control-Allow-Origin': 'https://selecro.freemyip.com',
+      },
+    });
     return new Promise((resolve, _reject) => {
       this.socket.on('message', (message) => {
+        poleNavodyCZ.push(message);
         console.log(message);
       });
       resolve();

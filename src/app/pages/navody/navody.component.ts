@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavodyService } from 'src/app/service';
-import { Navod } from 'src/app/types';
+import { InstructionService } from 'src/app/service';
+import { Instruction } from 'src/app/types';
 
 @Component({
   selector: 'app-navody',
@@ -10,23 +10,18 @@ import { Navod } from 'src/app/types';
 })
 export class NavodyComponent implements OnInit {
 
-  navod: Array<Navod> = new Array<Navod>;
+  navod: Array<Instruction> = new Array<Instruction>;
   //NavodyService: any;
   //obtiznost!: String;
 
-  constructor(private navodyService: NavodyService, private router: Router) { }
+  constructor(private instructionService: InstructionService, private router: Router) { }
 
   ngOnInit(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
-    this.navodyService.load();
+    this.navod = this.instructionService.getAllInstructions();
   }
 
   ngDoCheck(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
-  }
-
-  ngOnDestroy(): void {
-    this.navodyService.destroy();
+    this.navod = this.instructionService.getAllInstructions();
   }
 
   public getPopisy(nazev: string): void {

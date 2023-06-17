@@ -1,21 +1,22 @@
-export type Navod = {
+export type Instruction = {
+  id: number,
   title: string,
-  nazev: string,
-  zkratky: string,
-  pocet: number,
-  obtiznost: ObtiznostNavodu
-  popisy: Array<PopisNavodu>,
+  difficulty: Difficulty,
+  link: string,
+  private: boolean,
+  shortcuts: string,
+  steps: Array<Step>,
 }
 
-export type PopisNavodu = {
-  obrazek: boolean,
-  nazevCasti: string,
-  titulekCasti: string,
-  popis: Array<string>
+export type Step = {
+  id: number,
+  title: string,
+  link: string,
+  description: Array<string>,
 }
 
-export enum ObtiznostNavodu {
-  tezky = 'tezky',
-  stredni = 'stredni',
-  lehky = 'lehky'
+export enum Difficulty {
+  easy,
+  medium,
+  hard,
 }

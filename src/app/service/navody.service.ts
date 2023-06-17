@@ -1,38 +1,68 @@
 import { Injectable } from '@angular/core';
-import { Navod, PopisNavodu } from 'src/app/types';
+import { Instruction, Step } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
 import { Socket, io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 
-const poleNavodyCZ: Array<Navod> = [
+const poleInstructionyCZ: Array<Instruction> = [
 ];
 
-const poleNavodyEN: Array<Navod> = [
+const poleInstructionyEN: Array<Instruction> = [
 ];
+
+enum ShortcutEnumCZ {
+  Řo = 'Řo',
+  Po = 'Po',
+  Ks = 'Ks',
+  Pds = 'Pds',
+  Ds = 'Ds',
+  V = 'V',
+  A = 'A',
+  Mk = 'Mk',
+}
+
+enum ShortcutEnumEN {
+  Ch = 'Ch',
+  SlSt = 'SlSt',
+  Sc = 'Sc',
+  Hdc = 'Hdc',
+  Dc = 'Dc',
+  Inc = 'Inc',
+  Dec = 'Dec',
+  Mr = 'Mr',
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class NavodyService {
+export class InstructionService {
 
   private socket!: Socket;
 
   constructor(private translate: TranslateService) {
-  }
-
-  public load(): Promise<void> {
-    this.socket = io(environment.socketUrl, {
-      extraHeaders: {
-        'Access-Control-Allow-Origin': 'https://selecro.freemyip.com',
-      },
-    });
-    return new Promise((resolve, _reject) => {
-      this.socket.on('message', (message) => {
-        poleNavodyCZ.push(message);
-        console.log(message);
+    this.socket = io(environment.socketUrl);
+    this.socket.on('message', (message) => {
+      if (message) {
+      poleInstructionyCZ.push(message[0]);
+      poleInstructionyCZ.forEach(instruction => {
+        const matchedShortcuts: Set<string> = new Set();
+        instruction.shortcuts = "";
+        instruction.steps.forEach(step => {
+          step.description.forEach(description => {
+            Object.values(ShortcutEnumCZ).forEach(shortcut => {
+              if (description.includes(shortcut)) {
+                matchedShortcuts.add(shortcut);
+              }
+            });
+          })
+        });
+        instruction.shortcuts = Array.from(matchedShortcuts).join(', ');
       });
-      resolve();
-    });
+      } else {
+        this.destroy();
+      }
+    }
+    );
   }
 
   public destroy(): void {
@@ -41,41 +71,41 @@ export class NavodyService {
     }
   }
 
-  public getNavodyByName(name: string): Navod |void {
+  public getInstructionsByTitle(title: string): Instruction | void {
     if (this.translate.currentLang === "EN") {
-      return poleNavodyEN.find(element => element.nazev == name);
+      return poleInstructionyEN.find(element => element.title == title);
     }
     else {
-      return poleNavodyCZ.find(element => element.nazev == name);
+      return poleInstructionyCZ.find(element => element.title == title);
     }
   }
 
-  public getVsechnyNavody(): Array<Navod> {
+  public getAllInstructions(): Array<Instruction> {
     if (this.translate.currentLang === "EN") {
-      return poleNavodyEN;
+      return poleInstructionyEN;
     }
     else {
-      return poleNavodyCZ;
+      return poleInstructionyCZ;
     }
   }
 
-  public getPopisy(nazev: string): Array<PopisNavodu> {
+  public getStepsByTitle(title: string): Array<Step> {
     if (this.translate.currentLang === "EN") {
-      let index = poleNavodyEN.findIndex(x => x.nazev == nazev);
-      return poleNavodyEN[index].popisy;
+      let index = poleInstructionyEN.findIndex(x => x.title == title);
+      return poleInstructionyEN[index].steps;
     }
     else {
-      const index = poleNavodyCZ.findIndex(x => x.nazev == nazev);
-      return poleNavodyCZ[index].popisy;
+      const index = poleInstructionyCZ.findIndex(x => x.title == title);
+      return poleInstructionyCZ[index].steps;
     }
   }
 
-  public getTitles(): Array<string> {
+  public getAllTitles(): Array<string> {
     if (this.translate.currentLang === "EN") {
-      return poleNavodyEN.map((item) => item.title);
+      return poleInstructionyEN.map((item) => item.title);
     }
     else {
-      return poleNavodyCZ.map((item) => item.title);
+      return poleInstructionyCZ.map((item) => item.title);
     }
   }
 

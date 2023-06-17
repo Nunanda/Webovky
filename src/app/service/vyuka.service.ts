@@ -707,7 +707,7 @@ export class VyukaService {
     }
   }
 
-  public getVsechnyPomucky(): Array<Vyuka> {
+  public getVsechnyVyrobky(): Array<Vyuka> {
     if (this.translate.currentLang === "EN") {
       return poleVyrobkuEN;
     }

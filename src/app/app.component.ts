@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, NavodyService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
+import { VyukaService, InstructionService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
@@ -20,7 +20,7 @@ export class AppComponent {
   search: string | undefined;
   imageURL: string = "assets/icon/account.svg";
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
@@ -43,7 +43,7 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
+    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
     this.items.sort();
     this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
   }
@@ -53,18 +53,18 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
+    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
     this.items.sort();
     this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
   }
 
   getRoute(item: string): void {
     if (this.vyukaService.getTitles().includes(item)) {
-      localStorage.setItem("nazev", this.vyukaService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!);
+      localStorage.setItem("nazev", this.vyukaService.getVsechnyVyrobky().find(item0 => item0.title == item)?.nazev!);
       this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
     }
-    else if (this.navodyService.getTitles().includes(item)) {
-      localStorage.setItem("nazev", this.navodyService.getVsechnyNavody().find(item0 => item0.title == item)?.nazev!);
+    else if (this.instructionService.getAllTitles().includes(item)) {
+      localStorage.setItem("nazev", this.instructionService.getAllInstructions().find(item0 => item0.title == item)?.title!);
       this.router.navigate(["navody/navody-detail/"]);
     }
     else if (this.slovnikService.getTitles().includes(item)) {

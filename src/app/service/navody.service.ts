@@ -43,7 +43,10 @@ export class InstructionService {
     this.socket = io(environment.socketUrl);
     this.socket.on('message', (message) => {
       if (message) {
-      poleInstructionyCZ.push(message[0]);
+        message.forEach((value: Instruction) => {
+          poleInstructionyCZ.push(value)
+        }
+      );
       poleInstructionyCZ.forEach(instruction => {
         const matchedShortcuts: Set<string> = new Set();
         instruction.shortcuts = "";

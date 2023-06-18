@@ -16,7 +16,7 @@ export type Step = {
 }
 
 export enum Difficulty {
-  easy,
-  medium,
-  hard,
+  easy = 'easy',
+  medium = 'medium',
+  hard = 'hard',
 }

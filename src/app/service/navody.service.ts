@@ -32,6 +32,12 @@ enum ShortcutEnumEN {
   Mr = 'Mr',
 }
 
+const difficultyOrder = {
+  easy: 1,
+  medium: 2,
+  hard: 3,
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,24 +49,25 @@ export class InstructionService {
     this.socket = io(environment.socketUrl);
     this.socket.on('message', (message) => {
       if (message) {
-        message.forEach((value: Instruction) => {
-          poleInstructionyCZ.push(value)
-        }
-      );
-      poleInstructionyCZ.forEach(instruction => {
-        const matchedShortcuts: Set<string> = new Set();
-        instruction.shortcuts = "";
-        instruction.steps.forEach(step => {
-          step.description.forEach(description => {
-            Object.values(ShortcutEnumCZ).forEach(shortcut => {
-              if (description.includes(shortcut)) {
-                matchedShortcuts.add(shortcut);
-              }
-            });
-          })
+        poleInstructionyCZ.push(message);
+        poleInstructionyCZ.forEach(instruction => {
+          const matchedShortcuts: Set<string> = new Set();
+          instruction.shortcuts = "";
+          instruction.steps.forEach(step => {
+            step.description.forEach(description => {
+              Object.values(ShortcutEnumCZ).forEach(shortcut => {
+                if (description.includes(shortcut)) {
+                  matchedShortcuts.add(shortcut);
+                }
+              });
+            })
+          });
+          instruction.shortcuts = Array.from(matchedShortcuts).join(', ');
         });
-        instruction.shortcuts = Array.from(matchedShortcuts).join(', ');
-      });
+        poleInstructionyCZ.sort((a, b) => {
+          const difficultyA = difficultyOrder[a.difficulty];
+          const difficultyB = difficultyOrder[b.difficulty];
+          return difficultyA - difficultyB;});
       } else {
         this.destroy();
       }

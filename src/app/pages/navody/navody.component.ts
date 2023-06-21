@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { InstructionService } from 'src/app/service';
 import { Instruction } from 'src/app/types';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navody',
@@ -11,6 +13,7 @@ import { Instruction } from 'src/app/types';
 export class NavodyComponent implements OnInit {
 
   navod: Array<Instruction> = new Array<Instruction>;
+  api: string = environment.apiUrl;
   //NavodyService: any;
   //obtiznost!: String;
 

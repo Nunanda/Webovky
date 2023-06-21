@@ -10,7 +10,7 @@
                 </div>
                 <div innerHTML="{{navod.shortcuts}}">
                 </div>
-                <img id="obrazek_navodu" *ngIf="popis[index].link" src="">
+                <img id="obrazek_navodu" *ngIf="popis[index].link !== 'string'" src="{{api}}/{{popis[index].link}}.jpg">
             </div>
             <div id="blok0">
                 <div *ngFor="let item of popis">

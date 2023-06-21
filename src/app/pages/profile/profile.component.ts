@@ -74,6 +74,8 @@ export class ProfileComponent implements OnInit {
     if (token !== null) {
       this.userService.delPicture(token).subscribe(
         data => {
+          this.imageURL = "assets/icon/account.svg";
+          this.tokenService.savePicture("");
         },
         error => { }//Anet error handling
       );

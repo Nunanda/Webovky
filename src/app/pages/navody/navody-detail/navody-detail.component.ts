@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstructionService } from 'src/app/service';
 import { Instruction, Step } from 'src/app/types';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navody-detail',
@@ -19,6 +20,7 @@ export class NavodyDetailComponent implements OnInit {
   timer: number = 0;
   element: NodeListOf<HTMLElement> | undefined;
   element0: NodeListOf<HTMLElement> | undefined;
+  api: string = environment.apiUrl;
 
   constructor(private instructionService: InstructionService) {
     this.nazev = localStorage.getItem("nazev");

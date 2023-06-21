@@ -1,3 +1,5 @@
+import { SafeUrl } from "@angular/platform-browser"
+
 export type Instruction = {
   id: number,
   title: string,

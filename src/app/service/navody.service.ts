@@ -47,7 +47,15 @@ export class InstructionService {
 
   constructor(private translate: TranslateService) {
     this.socket = io(environment.socketUrl);
+    let serverResponded = false;
+    const timeout = setTimeout(() => {
+      if (!serverResponded) {
+        this.destroy();
+      }
+    }, 5000);
     this.socket.on('message', (message) => {
+      serverResponded = true;
+      clearTimeout(timeout);
       if (message) {
         poleInstructionyCZ.push(message);
         poleInstructionyCZ.forEach(instruction => {
@@ -67,7 +75,8 @@ export class InstructionService {
         poleInstructionyCZ.sort((a, b) => {
           const difficultyA = difficultyOrder[a.difficulty];
           const difficultyB = difficultyOrder[b.difficulty];
-          return difficultyA - difficultyB;});
+          return difficultyA - difficultyB;
+        });
       } else {
         this.destroy();
       }

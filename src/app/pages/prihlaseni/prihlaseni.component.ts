@@ -21,7 +21,6 @@ export class PrihlaseniComponent implements OnInit {
   email1: string = "";
   errorMessage1: string = "";
 
-
   constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
 
   ngOnInit(): void {

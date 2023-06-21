@@ -15,11 +15,11 @@ export class VyukaComponent implements OnInit {
   constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.vyuka = this.vyukaService.getVsechnyPomucky();
+    this.vyuka = this.vyukaService.getVsechnyVyrobky();
   }
 
   ngDoCheck(): void {
-    this.vyuka = this.vyukaService.getVsechnyPomucky();
+    this.vyuka = this.vyukaService.getVsechnyVyrobky();
   }
 
   goKroky(nazev: string): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavodyService } from 'src/app/service';
-import { Navod, PopisNavodu } from 'src/app/types';
+import { InstructionService } from 'src/app/service';
+import { Instruction, Step } from 'src/app/types';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navody-detail',
@@ -10,7 +11,7 @@ import { Navod, PopisNavodu } from 'src/app/types';
 export class NavodyDetailComponent implements OnInit {
 
   nazev: any;
-  popis: PopisNavodu[];
+  popis: Step[];
   navod: any;
   index: number;
   index0: number;
@@ -19,33 +20,36 @@ export class NavodyDetailComponent implements OnInit {
   timer: number = 0;
   element: NodeListOf<HTMLElement> | undefined;
   element0: NodeListOf<HTMLElement> | undefined;
+  api: string = environment.apiUrl;
 
-  constructor(private navodyService: NavodyService) {
+  constructor(private instructionService: InstructionService) {
     this.nazev = localStorage.getItem("nazev");
-    this.popis = new Array<PopisNavodu>();
-    this.navod = new Array<Navod>();
+    this.popis = new Array<Step>();
+    this.navod = new Array<Instruction>();
     this.index = 0;
     this.index0 = 0;
     this.popisy = new Array<string>();
   }
 
   ngOnInit(): void {
-    this.navod = this.navodyService.getNavodyByName(this.nazev);
-    this.popis = this.navodyService.getPopisy(this.nazev);
-    this.popisy = this.popis[this.index].popis;
+    this.navod = this.instructionService.getInstructionsByTitle(this.nazev);
+    this.popis = this.instructionService.getStepsByTitle(this.nazev);
+    this.popisy = this.popis[this.index].description;
     this.element = document.getElementsByName("button0");
     this.element0 = document.getElementsByName("element0");
   }
 
   ngDoCheck(): void {
-    this.navod = this.navodyService.getNavodyByName(this.nazev);
-    this.popis = this.navodyService.getPopisy(this.nazev);
-    this.popisy = this.popis[this.index].popis;
+    this.navod = this.instructionService.getInstructionsByTitle(this.nazev);
+    this.popis = this.instructionService.getStepsByTitle(this.nazev);
+    this.popisy = this.popis[this.index].description;
+    this.element = document.getElementsByName("button0");
+    this.element0 = document.getElementsByName("element0");
   }
 
-  setindex(item: PopisNavodu): void {
+  setindex(item: Step): void {
     this.index = this.popis.indexOf(item);
-    this.popisy = this.popis[this.index].popis;
+    this.popisy = this.popis[this.index].description;
     this.index0 = 0;
     if (this.element?.item(this.index).className === "finished") {
       this.element0?.forEach(x => x.setAttribute("style", "text-decoration: line-through; color: gray"));

@@ -26,27 +26,27 @@
     color: #fff;
 }
 
-.lehky {
+.easy {
     background-color: #E2FAE3;
 }
 
-.stredni {
+.medium {
     background-color: #F9FAE1;
 }
 
-.tezky {
+.hard {
     background-color: #FDE6E6;
 }
 
-.lehky_name {
+.easy_name {
     background: #3EDE44;
 }
 
-.stredni_name {
+.medium_name {
     background: #D6DA34;
 }
 
-.tezky_name {
+.hard_name {
     background: #f73636;
 }
 

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://selecro.freemyip.com:3002',
-  socketUrl: 'https://selecro.freemyip.com:4002',
+  apiUrl: 'https://backend.selecro.cz:8443',
+  socketUrl: 'https://backend.selecro.cz:8880',
 };
 
 /*

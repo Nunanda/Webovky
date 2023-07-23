@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://selecro.freemyip.com:3001',
-  socketUrl: 'https://selecro.freemyip.com:4001',
+  apiUrl: 'https://backend.selecro.cz:443',
+  socketUrl: 'https://backend.selecro.cz:8080',
 };

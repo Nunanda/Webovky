@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Language } from 'src/app/types';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +18,11 @@ export class AuthService {
     return this.http.post(environment.apiUrl + '/login', {
       email,
       passwordHash
-    }, httpOptions);
+    }, httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError('An error occurred. Please try again later.');
+      })
+    );
   }
 
   register(email: string, username: string, password: string, language: Language): Observable<any> {
@@ -27,13 +31,21 @@ export class AuthService {
       password,
       username,
       language
-    }, httpOptions);
+    }, httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError('An error occurred. Please try again later.');
+      })
+    );
   }
 
   emailVerify(token: string | null): Observable<any> {
     return this.http.post(environment.apiUrl + '/verify-email', {
       token
-    }, httpOptions);
+    }, httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError('An error occurred. Please try again later.');
+      })
+    );
   }
 
   passwdReset(token: string | null, password0: string, password1: string): Observable<any> {
@@ -41,12 +53,20 @@ export class AuthService {
       token,
       password0,
       password1
-    }, httpOptions);
+    }, httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError('An error occurred. Please try again later.');
+      })
+    );
   }
 
   sendPasswdResetEmail(email: string): Observable<any> {
     return this.http.post(environment.apiUrl + '/send-password-change', {
       email
-    }, httpOptions);
+    }, httpOptions).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError('An error occurred. Please try again later.');
+      })
+    );
   }
 }

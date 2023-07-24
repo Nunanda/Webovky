@@ -54,18 +54,35 @@ export class PrihlaseniComponent implements OnInit {
                       this.tokenService.savePicture(base64String);
                     });
                   },
-                  _err1 => {
+                  err1 => {
+                    try {
+                      this.errorMessage = err1.error.error.message;
+                    }
+                    catch (_e) {
+                      this.errorMessage = err1;
+                    }
                   }
                 );
               }
               this.router.navigate(["home"]);
             },
-            _err0 => {
+            err0 => {
+              try {
+                this.errorMessage = err0.error.error.message;
+              }
+              catch (_e) {
+                this.errorMessage = err0;
+              }
             }
           );
         },
         err => {
-          this.errorMessage = err.error.error.message;
+          try {
+            this.errorMessage = err.error.error.message;
+          }
+          catch (_e) {
+            this.errorMessage = err;
+          }
         }
       );
     }

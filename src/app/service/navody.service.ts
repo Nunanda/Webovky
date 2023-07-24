@@ -53,7 +53,7 @@ export class InstructionService {
         this.destroy();
       }
     }, 5000);
-    this.socket.on('message', (message) => {
+    this.socket.on('message', (message: Instruction) => {
       serverResponded = true;
       clearTimeout(timeout);
       if (message) {

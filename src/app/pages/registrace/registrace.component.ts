@@ -37,7 +37,12 @@ export class RegistraceComponent implements OnInit {
           this.router.navigate(["prihlaseni"]);
         },
         err => {
-          this.errorMessage = err.error.error.message;
+          try {
+            this.errorMessage = err.error.error.message;
+          }
+          catch (_e) {
+            this.errorMessage = err;
+          }
         }
       );
     }

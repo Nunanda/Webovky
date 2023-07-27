@@ -1,8 +1,10 @@
+name: Angular Build and Deploy
+
 on:
   push:
     branches:
-      - "dev"
-      - "main"
+      - dev
+      - main
   workflow_dispatch:
   
 jobs:
@@ -14,32 +16,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install
+      - name: Install Node.js and Angular CLI
         run: |
-          export CURRENT_DIR=`pwd`
-          cd $CURRENT_DIR
-          echo "CURRENT_DIR=$CURRENT_DIR" >> $GITHUB_ENV
+          sudo apt update
           sudo apt install -y nodejs npm
           sudo npm install -g @angular/cli
 
       - name: Build
         run: |
-          npm install
           npm ci
-          ng build --configuration=production
+          ng build --configuration=${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
 
-      - name: Set develop dir
+      - name: Set deploy dir
         run: |
-          echo "DEPLOY_DIR=./www/domains/develop.selecro.cz" >> $GITHUB_ENV
-        if: github.ref == 'refs/heads/dev'
-
-      - name: Set prod dir
-        run: |
-          echo "DEPLOY_DIR=./www/domains/selecro.cz" >> $GITHUB_ENV
-        if: github.ref == 'refs/heads/main'
-
-      - name: List Files in Distribution Directory
-        run: ls -R ./dist
+          echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www/domains/selecro.cz' || './www/domains/develop.selecro.cz' }}" >> $GITHUB_ENV
 
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest

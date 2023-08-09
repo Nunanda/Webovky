@@ -18,7 +18,7 @@ export class AppComponent {
   element4: HTMLElement | null;
   items: Array<string> = new Array<string>;;
   search: string | undefined;
-  imageURL: string = "assets/icon/account.svg";
+  imageURL: string = "assets/icon/svg/account.svg";
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
     this.element1 = document.getElementById("mySidenav");
@@ -45,7 +45,7 @@ export class AppComponent {
     this.element4 = document.getElementById("dropdown-content2");
     this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
     this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
+    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
   }
 
   ngDoCheck(): void {
@@ -55,7 +55,7 @@ export class AppComponent {
     this.element4 = document.getElementById("dropdown-content2");
     this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
     this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
+    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
   }
 
   getRoute(item: string): void {

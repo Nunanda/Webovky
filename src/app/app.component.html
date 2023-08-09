@@ -1,7 +1,7 @@
 <div id="body">
   <div id="page">
     <div id="hledaci_lista">
-      <img routerLink="/home" id="logo" src="assets/icon/logo.jpg">
+      <img routerLink="/home" id="logo" src="assets/icon/svg/logo.svg">
       <div id="part1">
         <div id="selecro">
           selecro
@@ -10,7 +10,7 @@
           <div class="row1">
             <input id="Hledat" class="form-control" type="text" name="search" [(ngModel)]="search" autocomplete="off"
               placeholder="{{ 'APP.hledat' | translate }}">
-            <img id="Lupa" src="assets/icon/search1.svg">
+            <img id="Lupa" src="assets/icon/svg/search1.svg">
           </div>
           <ul *ngIf="search && search.length >= 2">
             <button class="search_button" *ngFor="let item of items | filter: search" (click)="getRoute(item)">
@@ -33,13 +33,13 @@
           <div id="Menu">
             <div class="blok" routerLink="/home">
               <button (click)="opencloseNav()" routerLink="/home" class="Menu-block">
-                <img class="googleicons" src="assets/icon/info.svg">
+                <img class="googleicons" src="assets/icon/svg/info.svg">
                 Selecro
               </button>
             </div>
             <div class="dropdown">
               <button class="Menu-block" (click)="showHidePomucky()">
-                <img class="googleicons" src="assets/icon/style.svg">
+                <img class="googleicons" src="assets/icon/svg/style.svg">
                 {{ 'APP.pomucky' | translate }}
               </button>
               <div class="dropdown-content0" id="dropdown-content0">
@@ -77,7 +77,7 @@
             </div>
             <div class="dropdown">
               <button class="Menu-block" (click)="showHideSlovnik()">
-                <img class="googleicons" src="assets/icon/book.svg">
+                <img class="googleicons" src="assets/icon/svg/book.svg">
                 {{ 'APP.slovnik' | translate }}
               </button>
               <div class="dropdown-content1" id="dropdown-content1">
@@ -108,30 +108,30 @@
               </div>
             </div>
             <button (click)="opencloseNav()" routerLink="/vyukovymod" class="Menu-block">
-              <img class="googleicons" src="assets/icon/school.svg">
+              <img class="googleicons" src="assets/icon/svg/school.svg">
               {{ 'APP.vyukovyMod' | translate }}
             </button>
             <button (click)="opencloseNav()" routerLink="/navody" class="Menu-block">
-              <img class="googleicons" src="assets/icon/view.svg">
+              <img class="googleicons" src="assets/icon/svg/view.svg">
               {{ 'APP.navody' | translate }}
             </button>
           </div>
         </div>
         <button (click)="opencloseNav()" class="button" id="space_left">
-          <img id="hamburger" src="assets/icon/hamburger-menu.svg">
+          <img id="hamburger" src="assets/icon/svg/hamburger-menu.svg">
         </button>
       </div>
     </div>
     <div id="Menu">
       <div class="blok" routerLink="/home">
         <button routerLink="/home" class="Menu-block">
-          <img class="googleicons" src="assets/icon/info.svg">
+          <img class="googleicons" src="assets/icon/svg/info.svg">
           Selecro
         </button>
       </div>
       <div class="dropdown">
         <button class="Menu-block">
-          <img class="googleicons" src="assets/icon/style.svg">
+          <img class="googleicons" src="assets/icon/svg/style.svg">
           {{ 'APP.pomucky' | translate }}
         </button>
         <div class="dropdown-content">
@@ -169,7 +169,7 @@
       </div>
       <div class="dropdown">
         <button class="Menu-block">
-          <img class="googleicons" src="assets/icon/book.svg">
+          <img class="googleicons" src="assets/icon/svg/book.svg">
           {{ 'APP.slovnik' | translate }}
         </button>
         <div class="dropdown-content">
@@ -200,12 +200,12 @@
         </div>
       </div>
       <button routerLink="/vyukovymod" class="Menu-block">
-        <img class="googleicons" src="assets/icon/school.svg">
+        <img class="googleicons" src="assets/icon/svg/school.svg">
         {{ 'APP.vyukovyMod' | translate }}
       </button>
       <div>
         <button class="Menu-block" routerLink="/navody">
-          <img class="googleicons" src="assets/icon/view.svg">
+          <img class="googleicons" src="assets/icon/svg/view.svg">
           {{ 'APP.navody' | translate }}
         </button>
         <!--

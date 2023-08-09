@@ -11,7 +11,7 @@ input {
     background-color: #fff;
     font-family: sans-serif;
     min-height: 100vh;
-    background-image: url("../assets/icon/pozadi.jpg");
+    background-image: url("src/assets/icon/jpg/pozadi.jpg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -89,7 +89,9 @@ ul {
     background-size: cover;
     background-position: center;
     width: 100%;
-    max-width: 80px;
+    max-width: 90px;
+    padding-left: 10px;
+    align-self: start;
     height: auto;
 }
 

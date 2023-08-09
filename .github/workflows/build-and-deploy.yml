@@ -39,4 +39,8 @@ jobs:
           password: ${{ secrets.CD_FTP_PASSWORD }}
           local_dir: "./dist/webovky"
           remote_dir: ${{ env.DEPLOY_DIR }}
-          delete: "false"
+          delete: "true"
+
+      - name: Clean up
+        run: |
+          rm -r ./dist

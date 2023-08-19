@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Language } from 'src/app/types';
 import { environment } from 'src/environments/environment';
 
@@ -20,7 +20,7 @@ export class AuthService {
       passwordHash
     }, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
-        return throwError('An error occurred. Please try again later.');
+        return throwError(error);
       })
     );
   }
@@ -33,7 +33,7 @@ export class AuthService {
       language
     }, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
-        return throwError('An error occurred. Please try again later.');
+        return throwError(error);
       })
     );
   }
@@ -43,7 +43,7 @@ export class AuthService {
       token
     }, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
-        return throwError('An error occurred. Please try again later.');
+        return throwError(error);
       })
     );
   }
@@ -55,7 +55,7 @@ export class AuthService {
       password1
     }, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
-        return throwError('An error occurred. Please try again later.');
+        return throwError(error);
       })
     );
   }
@@ -65,7 +65,7 @@ export class AuthService {
       email
     }, httpOptions).pipe(
       catchError((error: HttpErrorResponse) => {
-        return throwError('An error occurred. Please try again later.');
+        return throwError(error);
       })
     );
   }

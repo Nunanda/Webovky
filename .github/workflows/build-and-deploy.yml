@@ -1,0 +1,46 @@
+name: Angular Build and Deploy
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checking out code"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Node.js and Angular CLI
+        run: |
+          sudo apt update
+          sudo apt install -y nodejs npm
+          sudo npm install -g @angular/cli
+
+      - name: Build
+        run: |
+          npm ci
+          ng build --configuration=${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+
+      - name: Set deploy dir
+        run: |
+          echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www/domains/selecro.cz' || './www/domains/develop.selecro.cz' }}" >> $GITHUB_ENV
+
+      - name: Upload via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ secrets.CD_FTP_SERVER }}
+          user: ${{ secrets.CD_FTP_USERNAME }}
+          password: ${{ secrets.CD_FTP_PASSWORD }}
+          local_dir: "./dist/webovky"
+          remote_dir: ${{ env.DEPLOY_DIR }}
+          delete: "true"
+
+      - name: Clean up
+        run: |
+          rm -r ./dist

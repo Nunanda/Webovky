@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www/domains/selecro.cz' || './www/domains/develop.selecro.cz' }}" >> $GITHUB_ENV
 
-      - name: Upload from public_html via FTP
+      - name: Upload via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.CD_FTP_SERVER }}

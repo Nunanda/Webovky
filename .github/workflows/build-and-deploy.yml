@@ -29,7 +29,7 @@ jobs:
 
       - name: Set deploy dir
         run: |
-          echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './www/domains/selecro.cz' || './www/domains/develop.selecro.cz' }}" >> $GITHUB_ENV
+          echo "DEPLOY_DIR=${{ github.ref == 'refs/heads/main' && './public_html/domains/selecro.cz' || './public_html/domains/develop.selecro.cz' }}" >> $GITHUB_ENV
 
       - name: Upload via FTP
         uses: airvzxf/ftp-deployment-action@latest

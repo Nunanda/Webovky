@@ -34,7 +34,7 @@ export class NavodyDetailComponent implements OnInit {
   ngOnInit(): void {
     this.navod = this.instructionService.getInstructionsByTitle(this.nazev);
     this.popis = this.instructionService.getStepsByTitle(this.nazev);
-    this.popisy = this.popis[this.index].description;
+    this.popisy = this.popis[this.index].descriptionCz;
     this.element = document.getElementsByName("button0");
     this.element0 = document.getElementsByName("element0");
   }
@@ -42,14 +42,14 @@ export class NavodyDetailComponent implements OnInit {
   ngDoCheck(): void {
     this.navod = this.instructionService.getInstructionsByTitle(this.nazev);
     this.popis = this.instructionService.getStepsByTitle(this.nazev);
-    this.popisy = this.popis[this.index].description;
+    this.popisy = this.popis[this.index].descriptionCz;
     this.element = document.getElementsByName("button0");
     this.element0 = document.getElementsByName("element0");
   }
 
   setindex(item: Step): void {
     this.index = this.popis.indexOf(item);
-    this.popisy = this.popis[this.index].description;
+    this.popisy = this.popis[this.index].descriptionCz;
     this.index0 = 0;
     if (this.element?.item(this.index).className === "finished") {
       this.element0?.forEach(x => x.setAttribute("style", "text-decoration: line-through; color: gray"));

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService, TokenService, UserService, ValidationService } from 'src/app/service';
+import { TokenService, ValidationService } from 'src/app/service';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   data: boolean = false;
   email: string = "";
 
-  constructor(private router: Router, private tokenService: TokenService, private userService: UserService, public translate: TranslateService, private validationService: ValidationService, private authService: AuthService) { }
+  constructor(private router: Router, private tokenService: TokenService, public translate: TranslateService, private validationService: ValidationService) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -37,14 +37,6 @@ export class ProfileComponent implements OnInit {
   editProfile(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
-      this.userService.setProfile(token, this.currentUser).subscribe(
-        data => {
-          if (this.currentUser.email !== this.email) {
-            window.alert("Validate your new email");
-          }
-        },
-        error => { }//Anet error handling
-      );
     }
     else {
       //Anet error handling
@@ -55,13 +47,6 @@ export class ProfileComponent implements OnInit {
     const token = this.tokenService.getToken();
     if (window.confirm('Are sure you want to delete this item ?')) {
       if (token !== null) {
-        this.userService.delProfile(token).subscribe(
-          data => {
-            this.tokenService.signOut();
-            this.router.navigate(["home"]);
-          },
-          error => { }//Anet error handling
-        );
       }
       else {
         //Anet error handling
@@ -72,13 +57,6 @@ export class ProfileComponent implements OnInit {
   delProfilePicture(): void {
     const token = this.tokenService.getToken();
     if (token !== null) {
-      this.userService.delPicture(token).subscribe(
-        data => {
-          this.imageURL = "assets/icon/account.svg";
-          this.tokenService.savePicture("");
-        },
-        error => { }//Anet error handling
-      );
     }
     else {
       //Anet error handling
@@ -90,15 +68,6 @@ export class ProfileComponent implements OnInit {
     if (token !== null && this.imageURL !== "assets/icon/account.svg") {
       const formData = new FormData();
       formData.append('image', this.dataURItoBlob(this.imageURL));
-      this.userService.setPicture(token, formData).subscribe(
-        data => {
-          this.blobToBase64(this.dataURItoBlob(this.imageURL), (base64String) => {
-            this.tokenService.savePicture(base64String);
-          });
-          this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
-        },
-        error => { }//Anet error handling
-      );
     }
     else {
       //Anet error handling
@@ -137,14 +106,6 @@ export class ProfileComponent implements OnInit {
 
   passwordReset(): void {
     if (this.validationService.validateEmail(this.currentUser.email)) {
-      this.authService.sendPasswdResetEmail(this.currentUser.email).subscribe(
-        data => {
-          window.alert("check your email");
-        },
-        err => {
-          //Anet error handling
-        }
-      );
     }
     else {
       //Anet error handling

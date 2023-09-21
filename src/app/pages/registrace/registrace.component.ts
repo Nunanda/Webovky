@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthService, TokenService } from 'src/app/service';
+import { TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
-import { Language } from 'src/app/types';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registrace',
@@ -21,7 +19,7 @@ export class RegistraceComponent implements OnInit {
   password1: string = "";
   errorMessage: string = "";
 
-  constructor(private router: Router, private authService: AuthService, private validationService: ValidationService, private tokenStorage: TokenService, private translate: TranslateService) { }
+  constructor(private router: Router, private validationService: ValidationService, private tokenStorage: TokenService, private translate: TranslateService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -31,20 +29,6 @@ export class RegistraceComponent implements OnInit {
 
   register(): void {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
-      this.authService.register(this.email, this.username, this.password0, this.translate.currentLang as Language).subscribe(
-        _data => {
-          Swal.fire('Welcome', 'Verify your email within 1 hour', 'success');
-          this.router.navigate(["prihlaseni"]);
-        },
-        err => {
-          try {
-            this.errorMessage = err.error.error.message;
-          }
-          catch (_e) {
-            this.errorMessage = err;
-          }
-        }
-      );
     }
   }
 }

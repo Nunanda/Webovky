@@ -16,9 +16,9 @@
     </div> -->
     <div id="sloupce">
         <ng-container *ngFor="let item of navod">
-            <div class="bunka {{item.difficulty}}" (click)="getPopisy(item.title)">
+            <div class="bunka {{item.difficulty}}" (click)="getPopisy(item.titleCz)">
                 <div class="Nazev_navodu {{item.difficulty}}_name">
-                    {{item.title}}
+                    {{item.titleCz}}
                 </div>
                 <div class="obsah">
                     <img id="obrazek_navodu" src="{{api}}/{{item.link}}.jpg">
@@ -37,7 +37,7 @@
                                     <strong>
                                         {{ 'NAVODY.stylyZkratky' | translate }}
                                     </strong>
-                                    {{item.shortcuts}}
+                                    {{item.titleCz}}
                                 </td>
                             </tr>
                         </table>

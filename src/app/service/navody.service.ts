@@ -1,130 +1,48 @@
 import { Injectable } from '@angular/core';
-import { Instruction, Step } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
-import { Socket, io } from 'socket.io-client';
-import { environment } from 'src/environments/environment';
+import { Instruction, Step } from 'src/app/types';
 
-const poleInstructionyCZ: Array<Instruction> = [
+const poleInstructiony: Array<Instruction> = [
 ];
-
-const poleInstructionyEN: Array<Instruction> = [
-];
-
-enum ShortcutEnumCZ {
-  Řo = 'Řo',
-  Po = 'Po',
-  Ks = 'Ks',
-  Pds = 'Pds',
-  Ds = 'Ds',
-  V = 'V',
-  A = 'A',
-  Mk = 'Mk',
-}
-
-enum ShortcutEnumEN {
-  Ch = 'Ch',
-  SlSt = 'SlSt',
-  Sc = 'Sc',
-  Hdc = 'Hdc',
-  Dc = 'Dc',
-  Inc = 'Inc',
-  Dec = 'Dec',
-  Mr = 'Mr',
-}
-
-const difficultyOrder = {
-  easy: 1,
-  medium: 2,
-  hard: 3,
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class InstructionService {
 
-  private socket!: Socket;
-
   constructor(private translate: TranslateService) {
-    this.socket = io(environment.socketUrl);
-    let serverResponded = false;
-    const timeout = setTimeout(() => {
-      if (!serverResponded) {
-        this.destroy();
-      }
-    }, 5000);
-    this.socket.on('message', (message: Instruction) => {
-      serverResponded = true;
-      clearTimeout(timeout);
-      if (message) {
-        poleInstructionyCZ.push(message);
-        poleInstructionyCZ.forEach(instruction => {
-          const matchedShortcuts: Set<string> = new Set();
-          instruction.shortcuts = "";
-          instruction.steps.forEach(step => {
-            step.description.forEach(description => {
-              Object.values(ShortcutEnumCZ).forEach(shortcut => {
-                if (description.includes(shortcut)) {
-                  matchedShortcuts.add(shortcut);
-                }
-              });
-            })
-          });
-          instruction.shortcuts = Array.from(matchedShortcuts).join(', ');
-        });
-        poleInstructionyCZ.sort((a, b) => {
-          const difficultyA = difficultyOrder[a.difficulty];
-          const difficultyB = difficultyOrder[b.difficulty];
-          return difficultyA - difficultyB;
-        });
-      } else {
-        this.destroy();
-      }
-    }
-    );
-  }
-
-  public destroy(): void {
-    if (this.socket) {
-      this.socket.disconnect();
-    }
   }
 
   public getInstructionsByTitle(title: string): Instruction | void {
     if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN.find(element => element.title == title);
+      return poleInstructiony.find(element => element.titleEn == title);
     }
     else {
-      return poleInstructionyCZ.find(element => element.title == title);
+      return poleInstructiony.find(element => element.titleCz == title);
     }
   }
 
   public getAllInstructions(): Array<Instruction> {
-    if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN;
-    }
-    else {
-      return poleInstructionyCZ;
-    }
+    return poleInstructiony;
   }
 
   public getStepsByTitle(title: string): Array<Step> {
     if (this.translate.currentLang === "EN") {
-      let index = poleInstructionyEN.findIndex(x => x.title == title);
-      return poleInstructionyEN[index].steps;
+      let index = poleInstructiony.findIndex(x => x.titleEn == title);
+      return poleInstructiony[index].steps;
     }
     else {
-      const index = poleInstructionyCZ.findIndex(x => x.title == title);
-      return poleInstructionyCZ[index].steps;
+      const index = poleInstructiony.findIndex(x => x.titleCz == title);
+      return poleInstructiony[index].steps;
     }
   }
 
   public getAllTitles(): Array<string> {
     if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN.map((item) => item.title);
+      return poleInstructiony.map((item) => item.titleEn);
     }
     else {
-      return poleInstructionyCZ.map((item) => item.title);
+      return poleInstructiony.map((item) => item.titleCz);
     }
   }
 

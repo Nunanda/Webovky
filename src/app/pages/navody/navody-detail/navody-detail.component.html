@@ -16,7 +16,7 @@
                 <div *ngFor="let item of popis">
                     <button class="unfinished" id="button0" name="button0" (click)="setindex(item)"
                         (click)="setindex(item)">
-                        {{item.title}}
+                        {{item.titleCz}}
                     </button>
                 </div>
             </div>
@@ -24,7 +24,7 @@
         <div class="bunka">
             <div class="content">
                 <div class="bold">
-                    {{popis[index].title}}:
+                    {{popis[index].titleCz}}:
                 </div>
                 <div name="element0" *ngFor="let item0 of popisy">
                     {{item0}}

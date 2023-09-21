@@ -64,7 +64,7 @@ export class AppComponent {
       this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
     }
     else if (this.instructionService.getAllTitles().includes(item)) {
-      localStorage.setItem("nazev", this.instructionService.getAllInstructions().find(item0 => item0.title == item)?.title!);
+      localStorage.setItem("nazev", this.instructionService.getAllInstructions().find(item0 => item0.titleCz == item)?.titleCz!);
       this.router.navigate(["navody/navody-detail/"]);
     }
     else if (this.slovnikService.getTitles().includes(item)) {

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'https://backend-dev.selecro.cz',
-  kmsURL: 'https://kms-dev.selecro.cz',
+  kmsUrl: 'https://kms-dev.selecro.cz',
 };
 
 /*

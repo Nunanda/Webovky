@@ -1,45 +1,32 @@
 import { Injectable } from '@angular/core';
 
-const TOKEN_KEY = 'auth-token';
-const USER_KEY = 'auth-user';
-const PICTURE_KEY = 'picture';
-
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
+  private readonly TOKEN_KEY = 'auth_token';
+  private readonly TOKEN_KEY_KMS = 'auth_token_kms';
+
   constructor() { }
 
   signOut(): void {
-    window.sessionStorage.clear();
+    localStorage.removeItem(this.TOKEN_KEY);
+    localStorage.removeItem(this.TOKEN_KEY_KMS);
   }
 
-  public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+  saveToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY, token);
   }
 
-  public getToken(): string | null {
-    return window.sessionStorage.getItem(TOKEN_KEY);
+  getToken(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY);
   }
 
-  public saveUser(user: JSON): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  saveKmsToken(token: string): void {
+    localStorage.setItem(this.TOKEN_KEY_KMS, token);
   }
 
-  public getUser(): JSON | void {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-      return JSON.parse(user);
-    }
-  }
-
-  public getPicture(): string | null {
-    return window.sessionStorage.getItem(PICTURE_KEY);
-  }
-
-  public savePicture(imageUrl: string): void {
-    window.sessionStorage.setItem(PICTURE_KEY, imageUrl);
+  getKmsToken(): string | null {
+    return localStorage.getItem(this.TOKEN_KEY_KMS);
   }
 }

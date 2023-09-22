@@ -5,3 +5,5 @@ export * from './vyuka.service';
 export * from './token.service';
 export * from './validation.service';
 export * from './public.service';
+export * from './private.service';
+export * from './kms.service';

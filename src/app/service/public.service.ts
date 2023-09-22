@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Language } from '../types';
 
@@ -8,8 +8,8 @@ import { Language } from '../types';
   providedIn: 'root'
 })
 export class PublicService {
-  private apiUrl = environment.apiUrl;
-  httpOptions = {
+  private readonly apiUrl = environment.apiUrl;
+  private readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })

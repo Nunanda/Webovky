@@ -14,24 +14,24 @@ export type UserPublicDetail = {
   link: string,
   followerCount: number,
   followeeCount: number,
-  instructions: Instruction[] | PremiumInstruction[],
+  instructions?: Instruction[] | PremiumInstruction[] | null,
 }
 
 export type User = {
-    id: number,
-    email: string,
-    username: string,
-    wrappedDEK: string,
-    initializationVector: string,
-    kekSalt: string,
-    language: Language,
-    darkmode: boolean,
-    date: Date,
-    nick?: string | null,
-    bio?: string | null,
-    link?: string | null,
-    favorites?: number[],
-  }
+  id: number,
+  email: string,
+  username: string,
+  wrappedDEK: string,
+  initializationVector: string,
+  kekSalt: string,
+  language: Language,
+  darkmode: boolean,
+  date: Date,
+  nick?: string | null,
+  bio?: string | null,
+  link?: string | null,
+  favorites?: number[],
+}
 
 export type UserLink = {
   id: number,

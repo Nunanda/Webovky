@@ -21,18 +21,19 @@
         </option>
       </select>
       <img id="account" routerLink="/prihlaseni" src="{{ imageURL }}">
+      <img id="hamburger" (click)="opencloseNav()" src="assets/icon/svg/hamburger-menu.svg">
     </div>
-    <div id="menu">
+    <div id="menu" #menu>
       <div id="blok1" routerLink="/home">
         <img src="assets/icon/svg/info.svg">
         Selecro
       </div>
-      <div id="blok2">
+      <div id="blok2" (click)="showHidePomucky()">
         <div id="blok2_div">
           <img src="assets/icon/svg/style.svg">
           {{ 'APP.pomucky' | translate }}
         </div>
-        <div id="blok2_container">
+        <div id="blok2_container" #blok2_container>
           <ng-container *ngFor="let term of pomucky">
             <a id="pomucky" [routerLink]="'/pomucky/' + term.nazev">
               {{ term.title | translate }}

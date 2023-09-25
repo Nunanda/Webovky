@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { VyukaService, InstructionService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,59 +10,62 @@ import { Pomucka, Styl } from './types';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
 
-  element1: HTMLElement | null;
-  element2: HTMLElement | null;
-  element3: HTMLElement | null;
-  element4: HTMLElement | null;
-  items: Array<string> = new Array<string>;
+  @ViewChild('menu', { read: ElementRef }) menu: ElementRef | undefined;
+  menuVisible: boolean = false;
+  items: string[] = new Array<string>();
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
-  slovnik: Styl[];
-  pomucky: Pomucka[];
+  slovnik: Styl[] | undefined;
+  pomucky: Pomucka[] | undefined;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
-    this.slovnik = this.slovnikService.getVsechnyStyly();
-    this.pomucky = this.pomuckyService.getVsechnyPomucky();
-    translate.addLangs(['CZ', 'EN']);
-    if (localStorage.getItem("language") === "EN") {
-      this.translate.currentLang = 'EN';
-      this.translate.setDefaultLang('EN');
-      this.translate.use('EN');
-    }
-    else {
-      this.translate.currentLang = 'CZ';
-      this.translate.setDefaultLang('CZ');
-      this.translate.use('CZ');
-    }
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
+    this.loadResources();
+    this.initializeLanguage();
   }
 
   ngOnInit(): void {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
-    this.slovnik = this.slovnikService.getVsechnyStyly();
-    this.pomucky = this.pomuckyService.getVsechnyPomucky();
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
-    this.items.sort();
-    this.imageURL = "assets/icon/svg/account.svg";
+    this.loadResources();
   }
 
   ngDoCheck(): void {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
+    this.loadResources();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    if (window.innerWidth > 1100) {
+      this.menuVisible = true;
+      if (this.menu && this.menu.nativeElement) {
+        this.menu.nativeElement.style.display = 'flex';
+      }
+    } else {
+      this.menuVisible = false;
+      if (this.menu && this.menu.nativeElement) {
+        this.menu.nativeElement.style.display = 'none';
+      }
+    }
+  }
+
+  initializeLanguage(): void {
+    this.translate.addLangs(['CZ', 'EN']);
+    const selectedLanguage = localStorage.getItem("language");
+    const defaultLanguage = selectedLanguage === "EN" ? 'EN' : 'CZ';
+    this.translate.currentLang = defaultLanguage;
+    this.translate.setDefaultLang(defaultLanguage);
+    this.translate.use(defaultLanguage);
+  }
+
+  loadResources(): void {
     this.slovnik = this.slovnikService.getVsechnyStyly();
     this.pomucky = this.pomuckyService.getVsechnyPomucky();
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
+    this.items = [
+      ...this.vyukaService.getTitles(),
+      ...this.slovnikService.getTitles(),
+      ...this.pomuckyService.getTitles(),
+      ...this.instructionService.getAllTitles()
+    ];
     this.items.sort();
     this.imageURL = "assets/icon/svg/account.svg";
   }
@@ -91,38 +94,20 @@ export class AppComponent {
   }
 
   opencloseNav(): void {
-    if (this.element1?.getAttribute("style") == "height: 0") {
-      this.element1?.setAttribute("style", "height: 100%");
-    }
-    else {
-      this.element1?.setAttribute("style", "height: 0");
+    if (this.menu && this.menu.nativeElement) {
+      if (this.menuVisible) {
+        this.menu.nativeElement.style.display = 'none';
+      }
+      else {
+        this.menu.nativeElement.style.display = 'block';
+      }
+      this.menuVisible = !this.menuVisible;
     }
   }
 
   showHidePomucky(): void {
-    if (this.element2?.getAttribute("style") === "display: block") {
-      this.element2?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element2?.setAttribute("style", "display: block");
-    }
   }
 
   showHideSlovnik(): void {
-    if (this.element3?.getAttribute("style") === "display: block") {
-      this.element3?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element3?.setAttribute("style", "display: block");
-    }
-  }
-
-  showHideNavody(): void {
-    if (this.element4?.getAttribute("style") === "display: block") {
-      this.element4?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element4?.setAttribute("style", "display: block");
-    }
   }
 }

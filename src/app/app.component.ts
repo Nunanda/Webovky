@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { VyukaService, InstructionService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { Pomucka, Styl } from './types';
 
 @Component({
   selector: 'app-root',
@@ -16,15 +17,19 @@ export class AppComponent {
   element2: HTMLElement | null;
   element3: HTMLElement | null;
   element4: HTMLElement | null;
-  items: Array<string> = new Array<string>;;
+  items: Array<string> = new Array<string>;
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
+  slovnik: Styl[];
+  pomucky: Pomucka[];
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
     this.element1 = document.getElementById("mySidenav");
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
+    this.slovnik = this.slovnikService.getVsechnyStyly();
+    this.pomucky = this.pomuckyService.getVsechnyPomucky();
     translate.addLangs(['CZ', 'EN']);
     if (localStorage.getItem("language") === "EN") {
       this.translate.currentLang = 'EN';
@@ -43,9 +48,11 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
+    this.slovnik = this.slovnikService.getVsechnyStyly();
+    this.pomucky = this.pomuckyService.getVsechnyPomucky();
     this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
     this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
+    this.imageURL = "assets/icon/svg/account.svg";
   }
 
   ngDoCheck(): void {
@@ -53,9 +60,11 @@ export class AppComponent {
     this.element2 = document.getElementById("dropdown-content0");
     this.element3 = document.getElementById("dropdown-content1");
     this.element4 = document.getElementById("dropdown-content2");
+    this.slovnik = this.slovnikService.getVsechnyStyly();
+    this.pomucky = this.pomuckyService.getVsechnyPomucky();
     this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.instructionService.getAllTitles()];
     this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
+    this.imageURL = "assets/icon/svg/account.svg";
   }
 
   getRoute(item: string): void {
@@ -116,5 +125,4 @@ export class AppComponent {
       this.element4?.setAttribute("style", "display: block");
     }
   }
-
 }

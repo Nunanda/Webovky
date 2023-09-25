@@ -19,9 +19,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
-      this.currentUser = this.tokenService.getUser();
       this.email = this.currentUser.email;
-      this.imageURL = this.tokenService.getPicture() || "assets/icon/account.svg";
+      this.imageURL = "assets/icon/account.svg";
     }
     else {
       this.signOut();
@@ -79,9 +78,6 @@ export class ProfileComponent implements OnInit {
     const reader = new FileReader();
     if (file && file.type.startsWith('image/')) {
       this.data = false;
-      this.blobToBase64(file, (base64String) => {
-        this.tokenService.savePicture(base64String);
-      });
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imageURL = reader.result as string;

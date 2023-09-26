@@ -13,14 +13,15 @@ import { Pomucka, Styl } from './types';
 export class AppComponent {
 
   @ViewChild('menu', { read: ElementRef }) menu: ElementRef | undefined;
-  menuVisible: boolean = false;
   @ViewChild('menu_pomucky', { read: ElementRef }) menuPomucky: ElementRef | undefined;
   @ViewChild('img_pomucky', { read: ElementRef }) imgPomucky: ElementRef | undefined;
-  menuPomuckyVisible: boolean = false;
   @ViewChild('menu_slovnik', { read: ElementRef }) menuSlovnik: ElementRef | undefined;
   @ViewChild('img_slovnik', { read: ElementRef }) imgSlovnik: ElementRef | undefined;
+
+  menuVisible: boolean = false;
+  menuPomuckyVisible: boolean = false;
   menuSlovnikVisible: boolean = false;
-  items: string[] = new Array<string>();
+  items: string[] = [];
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
   slovnik: Styl[] | undefined;
@@ -44,6 +45,10 @@ export class AppComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
+    this.toggleMenuVisibility();
+  }
+
+  toggleMenuVisibility(): void {
     if (window.innerWidth > 1100) {
       if (this.menu) {
         this.menu.nativeElement.style.display = 'flex';

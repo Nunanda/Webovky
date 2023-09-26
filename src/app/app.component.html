@@ -32,23 +32,25 @@
         <div id="blok2_div">
           <img src="assets/icon/svg/style.svg">
           {{ 'APP.pomucky' | translate }}
+          <img src="assets/icon/svg/down.svg" #img_pomucky>
         </div>
-        <div id="blok2_container" #blok2_container>
+        <div id="blok2_container" #menu_pomucky>
           <ng-container *ngFor="let term of pomucky">
-            <a id="pomucky" [routerLink]="'/pomucky/' + term.nazev">
+            <a id="pomucky" (click)="opencloseNav()" [routerLink]="'/pomucky/' + term.nazev">
               {{ term.title | translate }}
             </a>
           </ng-container>
         </div>
       </div>
-      <div id="blok3">
+      <div id="blok3" (click)="showHideSlovnik()">
         <div id="blok3_div">
           <img src="assets/icon/svg/book.svg">
           {{ 'APP.slovnik' | translate }}
+          <img src="assets/icon/svg/down.svg" #img_slovnik>
         </div>
-        <div id="blok3_container">
+        <div id="blok3_container" #menu_slovnik>
           <ng-container *ngFor="let term of slovnik">
-            <a id="slovnik" [routerLink]="'/slovnik/' + term.nazev">
+            <a id="slovnik" (click)="opencloseNav()" [routerLink]="'/slovnik/' + term.nazev">
               {{ term.title | translate }}
             </a>
           </ng-container>

@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, InstructionService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
+import { VyukaService, InstructionService, PomuckyService, SlovnikService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { Pomucka, Styl } from './types';
@@ -14,6 +14,12 @@ export class AppComponent {
 
   @ViewChild('menu', { read: ElementRef }) menu: ElementRef | undefined;
   menuVisible: boolean = false;
+  @ViewChild('menu_pomucky', { read: ElementRef }) menuPomucky: ElementRef | undefined;
+  @ViewChild('img_pomucky', { read: ElementRef }) imgPomucky: ElementRef | undefined;
+  menuPomuckyVisible: boolean = false;
+  @ViewChild('menu_slovnik', { read: ElementRef }) menuSlovnik: ElementRef | undefined;
+  @ViewChild('img_slovnik', { read: ElementRef }) imgSlovnik: ElementRef | undefined;
+  menuSlovnikVisible: boolean = false;
   items: string[] = new Array<string>();
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
@@ -23,6 +29,9 @@ export class AppComponent {
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
     this.loadResources();
     this.initializeLanguage();
+    if (window.innerWidth > 1100) {
+      this.menuVisible = true;
+    }
   }
 
   ngOnInit(): void {
@@ -36,14 +45,38 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     if (window.innerWidth > 1100) {
-      this.menuVisible = true;
-      if (this.menu && this.menu.nativeElement) {
+      if (this.menu) {
         this.menu.nativeElement.style.display = 'flex';
+        this.menuVisible = true;
+      }
+      if (this.menuPomucky && this.imgPomucky) {
+        this.menuPomucky.nativeElement.style.position = 'absolute';
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      if (this.menuSlovnik && this.imgSlovnik) {
+        this.menuSlovnik.nativeElement.style.position = 'absolute';
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
       }
     } else {
-      this.menuVisible = false;
-      if (this.menu && this.menu.nativeElement) {
+      if (this.menu) {
         this.menu.nativeElement.style.display = 'none';
+        this.menuVisible = false;
+      }
+      if (this.menuPomucky && this.imgPomucky) {
+        this.menuPomucky.nativeElement.style.position = 'relative';
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      if (this.menuSlovnik && this.imgSlovnik) {
+        this.menuSlovnik.nativeElement.style.position = 'relative';
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
       }
     }
   }
@@ -94,20 +127,45 @@ export class AppComponent {
   }
 
   opencloseNav(): void {
-    if (this.menu && this.menu.nativeElement) {
-      if (this.menuVisible) {
+    if (this.menu && this.imgPomucky && this.imgSlovnik) {
+      if (this.menuVisible && window.innerWidth < 1100) {
         this.menu.nativeElement.style.display = 'none';
+        this.menuVisible = false;
       }
-      else {
+      else if (window.innerWidth < 1100) {
         this.menu.nativeElement.style.display = 'block';
+        this.menuVisible = true;
       }
-      this.menuVisible = !this.menuVisible;
     }
   }
 
   showHidePomucky(): void {
+    if (this.menuPomucky && this.imgPomucky) {
+      if (this.menuPomuckyVisible) {
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      else {
+        this.menuPomucky.nativeElement.style.display = 'block';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/up.svg";
+        this.menuPomuckyVisible = true;
+      }
+    }
   }
 
   showHideSlovnik(): void {
+    if (this.menuSlovnik && this.imgSlovnik) {
+      if (this.menuSlovnikVisible) {
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
+      }
+      else {
+        this.menuSlovnik.nativeElement.style.display = 'block';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/up.svg";
+        this.menuSlovnikVisible = true;
+      }
+    }
   }
 }

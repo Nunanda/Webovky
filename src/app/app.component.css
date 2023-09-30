@@ -11,35 +11,29 @@
 }
 
 #lista {
-    height: 85px;
-    background-color: #C8E7F4;
-    box-shadow: 0 3px 8px #0003;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin: 0 auto;
-    padding: 10px;
+    justify-content: center;
+    column-gap: 8vw;
+    background-color: #C8E7F4;
+    box-shadow: 0 3px 8px #0003;
 }
 
 #logo {
+    order: 1;
     max-width: 90px;
-    padding-left: 10px;
 }
 
 #selecro {
-    font-size: 2rem;
-    font-weight: 300;
-    margin-left: 3vw;
+    order: 2;
+    font-size: calc(1rem + 1vw);
 }
 
 #hledaci_bunka {
-    border-radius: 122px;
+    order: 3;
+    border-radius: 30px;
     background-color: #FFF;
-    flex-shrink: 2;
     min-width: 30vw;
-    max-width: 10vw;
-    margin-left: 8vw;
 }
 
 #hledat {
@@ -49,7 +43,7 @@
     background-position: right center;
     background-origin: content-box;
     padding: 5px 20px;
-    font-size: 1.2rem;
+    font-size: calc(.9rem + .4vw);
     border-color: transparent;
     background-color: transparent;
     height: 60px;
@@ -58,6 +52,7 @@
 
 #search_result_ul {
     min-width: 30vw;
+    max-width: 34vw;
     position: absolute;
     z-index: 3;
     padding: 0;
@@ -68,8 +63,7 @@
 
 #search_result_li {
     color: #000;
-    padding: 14px 18px;
-    text-decoration: none;
+    padding: 14px;
     background: #E9E9ED;
     display: block;
     border-bottom: solid;
@@ -87,14 +81,15 @@
 }
 
 #translation {
-    padding: .375rem .75rem;
+    order: 4;
+    padding: .375em .75em;
     background-color: #fff;
     border: 1px solid #ced4da;
     appearance: none;
-    margin-left: 19vw;
 }
 
 #account {
+    order: 5;
     background-color: #fff;
     padding: 5px;
     border-radius: 15px;
@@ -102,72 +97,61 @@
 }
 
 #hamburger {
+    order: 6;
     background-color: #fff;
     padding: 5px;
     border-radius: 15px;
     max-width: 50px;
     display: none;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
 }
 
 #menu {
-    width: 100%;
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2%;
+    column-gap: 2vw;
+    margin-top: 20px;
     position: relative;
-    z-index: 2;
 }
 
 #blok1,
 #blok4,
-#blok5 {
-    padding: 15px;
-    background: #F4B9CD;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 3px 8px #0003;
-    min-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-}
-
-#blok2,
-#blok3 {
-    position: relative;
-}
-
+#blok5,
 #blok2_div,
 #blok3_div {
     padding: 15px;
     background: #F4B9CD;
     border-radius: 20px;
-    border: none;
     box-shadow: 0 3px 8px #0003;
     min-width: 200px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     gap: 5%;
 }
 
 #blok2_container,
 #blok3_container {
     min-width: 200px;
+    max-width: 100px;
     background-color: #f1f1f1;
     display: none;
     position: absolute;
     box-shadow: 0 3px 8px #0003;
     text-align: center;
     border-radius: 20px;
-    z-index: 1;
 }
 
 #pomucky,
 #slovnik {
+    min-width: 8vw;
     color: #000;
     padding: 14px 18px;
     text-decoration: none;
@@ -198,90 +182,75 @@
         width: 100%;
     }
 
-    #translation {
-        margin-left: 5vw;
-    }
-
-    #hledaci_bunka {
-        margin-left: -2vw;
-    }
-
-    #selecro {
-        margin-left: -3vw;
+    #lista {
+        column-gap: 10vw;
     }
 }
 
 @media screen and (max-width: 1100px) {
-    #menu {
-        display: none;
-        margin-top: 0;
-        position: absolute;
+    #lista {
+        column-gap: 4vw;
     }
 
+    #account,
     #hamburger {
         display: block;
+        position: relative;
+        height: 50px;
+        width: 50px;
+        padding: 5px;
     }
 
-    #translation,
-    #hledaci_bunka {
-        margin-left: 0vw;
-    }
-
-    #blok1,
-    #blok4,
-    #blok5,
-    #blok2_div,
-    #blok3_div {
-        border-radius: 0;
-        box-shadow: none;
-        border-bottom: solid;
-        border-width: 1px;
-        border-color: #c0a8b0;
-    }
-
-    #pomucky:last-child,
-    #slovnik:last-child {
-        border-radius: 0;
-    }
-
-    #pomucky:first-child,
-    #slovnik:first-child {
-        border-radius: 0;
+    #menu {
+        position: fixed;
+        margin-top: 0;
+        right: 0;
+        display: none;
+        gap: 1%;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 810px) {
+    #lista {
+        column-gap: 5vw;
+    }
+
+    #logo {
+        max-width: 80px;
+    }
+
     #selecro {
         display: none;
     }
 
     #hledaci_bunka {
-        min-width: 40vw;
+        min-width: calc(1rem + 30vw);
+        max-width: calc(1rem + 30vw);
     }
 
     #account,
     #hamburger {
-        max-width: 7vw;
+        max-width: calc(1rem + 5vw);
+        max-height: calc(1rem + 5vw);
     }
 
     #hledat {
-        font-size: 1rem;
-        height: 45px;
-        background-size: 20%;
+        font-size: calc(.9rem + .4vw);
+        height: 50px;
+        background-size: calc(1rem + 2vw);
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 500px) {
+    #lista {
+        padding: 10px;
+    }
+    
     #logo {
         display: none;
     }
 
     #hledaci_bunka {
         min-width: 45vw;
-    }
-
-    #account,
-    #hamburger {
-        max-width: 10vw;
     }
 }

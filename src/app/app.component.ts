@@ -138,7 +138,7 @@ export class AppComponent {
         this.menuVisible = false;
       }
       else if (window.innerWidth < 1100) {
-        this.menu.nativeElement.style.display = 'block';
+        this.menu.nativeElement.style.display = 'grid';
         this.menuVisible = true;
       }
     }
@@ -152,7 +152,7 @@ export class AppComponent {
         this.menuPomuckyVisible = false;
       }
       else {
-        this.menuPomucky.nativeElement.style.display = 'block';
+        this.menuPomucky.nativeElement.style.display = 'grid';
         this.imgPomucky.nativeElement.src = "assets/icon/svg/up.svg";
         this.menuPomuckyVisible = true;
       }
@@ -167,7 +167,7 @@ export class AppComponent {
         this.menuSlovnikVisible = false;
       }
       else {
-        this.menuSlovnik.nativeElement.style.display = 'block';
+        this.menuSlovnik.nativeElement.style.display = 'grid';
         this.imgSlovnik.nativeElement.src = "assets/icon/svg/up.svg";
         this.menuSlovnikVisible = true;
       }

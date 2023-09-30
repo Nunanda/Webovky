@@ -7,20 +7,27 @@ import { Router } from '@angular/router';
   templateUrl: './slovnik.component.html',
   styleUrls: ['./slovnik.component.css']
 })
-
 export class SlovnikComponent implements OnInit {
 
   styl: any;
 
-  constructor(private SlovnikService: SlovnikService, private router: Router) { }
+  constructor(private slovnikService: SlovnikService, private router: Router) { }
 
   ngOnInit(): void {
-    const nazev = (this.router.url.split('/'))[2];
-    this.styl = this.SlovnikService.getStylByName(nazev);
+    this.updateStyl();
   }
 
   ngDoCheck(): void {
-    const nazev = (this.router.url.split('/'))[2];
-    this.styl = this.SlovnikService.getStylByName(nazev);
+    this.updateStyl();
+  }
+
+  updateStyl(): void {
+    const nazev = this.extractNazevFromUrl();
+    this.styl = this.slovnikService.getStylByName(nazev);
+  }
+
+  extractNazevFromUrl(): string {
+    const urlSegments = this.router.url.split('/');
+    return urlSegments[2];
   }
 }

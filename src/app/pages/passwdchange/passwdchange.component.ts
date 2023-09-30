@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TokenService, ValidationService } from 'src/app/service';
+import { PublicService, TokenService, ValidationService } from 'src/app/service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-passwdchange',
@@ -14,14 +15,29 @@ export class PasswdchangeComponent implements OnInit {
   password0: string = "";
   password1: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private validationService: ValidationService, private tokenService: TokenService) { }
+  constructor(private validationService: ValidationService, private route: ActivatedRoute, private publicService: PublicService, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
   }
 
   passwdchange(): void {
     if (this.validationService.validatePassword(this.password0, this.password1)) {
+      const token = this.route.snapshot.queryParamMap.get('token');
+      if (token) {
+        this.publicService.changePassword(token, this.password0, this.password1).subscribe(
+          response => {
+            Swal.fire('Hi', 'Password changed', 'success');
+            this.tokenService.signOut();
+            this.router.navigate(["prihlaseni"]);
+          },
+          error => {
+            console.log(error.error.error.message);
+            //error
+          }
+        )
+      } else {
+        //no token
+      }
     }
-    else { }//tady bude kód od Anet
   }
 }

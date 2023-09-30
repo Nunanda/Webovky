@@ -14,8 +14,6 @@ export class NavodyComponent implements OnInit {
 
   navod: Array<Instruction> = new Array<Instruction>;
   api: string = environment.apiUrl;
-  //NavodyService: any;
-  //obtiznost!: String;
 
   constructor(private instructionService: InstructionService, private router: Router) { }
 
@@ -31,14 +29,4 @@ export class NavodyComponent implements OnInit {
     localStorage.setItem("nazev", nazev);
     this.router.navigate(["navody/navody-detail/"]);
   }
-
-  /*public lehkeNavody() {
-    this.obtiznost.valueOf();
-  }
-
-  public stredniNavody() {
-  }
-
-  public tezkeNavody() {
-  }*/
 }

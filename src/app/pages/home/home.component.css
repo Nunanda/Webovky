@@ -2,18 +2,12 @@
     padding: 40px;
 }
 
-.novinky {
+#novinky {
     background: #C8E7F4;
     border-radius: 20px;
     text-align: center;
     padding: 15px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    margin: auto;
-}
-
-p {
-    font-weight: 400;
-    font-size: calc(.6rem + .5vw);
 }
 
 h2 {
@@ -22,23 +16,18 @@ h2 {
     font-size: calc(1rem + 1vw);
 }
 
-.obrazek {
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
-
 #obrazky {
     margin-top: 20px;
     text-align: center;
 }
 
+.obrazek {
+    padding: 20px;
+    max-width: 300px;
+}
+
 #soc_site {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
 }
 
 .card {
@@ -46,10 +35,10 @@ h2 {
     padding: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     display: flex;
-    justify-content: center;
     align-items: center;
     border: none;
     flex: 1;
+    position: inherit;
 }
 
 .socials_logo {
@@ -57,10 +46,6 @@ h2 {
     max-width: 50px;
     min-width: 50px;
     height: auto;
-}
-
-#soc {
-    margin-top: 20px;
 }
 
 @media screen and (max-width: 808px) {

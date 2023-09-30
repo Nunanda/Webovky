@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { TokenService } from 'src/app/service';
+import { PrivateService, PublicService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -18,7 +19,7 @@ export class PrihlaseniComponent implements OnInit {
   email1: string = "";
   errorMessage1: string = "";
 
-  constructor(private router: Router, private tokenService: TokenService, private validationService: ValidationService, public translate: TranslateService) { }
+  constructor(private router: Router, private tokenService: TokenService, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -28,20 +29,45 @@ export class PrihlaseniComponent implements OnInit {
 
   login(): void {
     if (this.validationService.validateLogin(this.email, this.password)) {
+      this.publicService.login(this.email, this.password).subscribe(
+        response => {
+          this.tokenService.saveToken(response.data.token);
+          this.privateService.getUser().subscribe(
+            response1 => {
+              if (response1.language === "EN") {
+                this.translate.currentLang = 'EN';
+                this.translate.setDefaultLang('EN');
+                this.translate.use('EN');
+              }
+              else {
+                this.translate.currentLang = 'CZ';
+                this.translate.setDefaultLang('CZ');
+                this.translate.use('CZ');
+              }
+              this.router.navigate(["home"]);
+            },
+            error1 => {
+              this.errorMessage1 = error1.error.error.message;
+            }
+          )
+        },
+        error => {
+          this.errorMessage = error.error.error.message;
+        }
+      );
     }
   }
 
   passwordReset(): void {
     if (this.validationService.validateEmail(this.email1)) {
+      this.publicService.sendPasswordChange(this.email1).subscribe(
+        _response => {
+          Swal.fire('Hi', 'Check your mailbox', 'success');
+        },
+        error => {
+          this.errorMessage1 = error.error.error.message;
+        }
+      );
     }
-  }
-  
-  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64String = reader.result as string;
-      callback(base64String);
-    };
-    reader.readAsDataURL(blob);
   }
 }

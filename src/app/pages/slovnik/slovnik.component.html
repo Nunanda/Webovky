@@ -1,6 +1,6 @@
 <div id="container">
     <h2 class="margin_bottom">
-        {{styl.title}}
+        {{ styl.title }}
     </h2>
     <div id="sloupce">
         <div id="slovnik_popis">
@@ -11,7 +11,7 @@
                     </h4>
                     <div class="pole_zkratka">
                         <div id="zkratka">
-                            {{styl.zkratka}}
+                            {{ styl.zkratka }}
                         </div>
                     </div>
                 </div>
@@ -19,25 +19,25 @@
                     <h4>
                         {{ 'SLOVNIK.image' | translate }}
                     </h4>
-                    <img class="znacka" src="assets/icon/svg/{{styl.nazev}}.svg">
+                    <img class="znacka" src="assets/icon/svg/{{ styl.nazev }}.svg">
                 </div>
             </div>
             <div id="popis_obsah">
                 <h5 class="bold">
                     {{ 'SLOVNIK.animace' | translate }}
                 </h5>
-                <p innerHTML="{{styl.popis}}"></p>
+                <p innerHTML="{{ styl.popis }}"></p>
             </div>
         </div>
-        <div id="direction_column">
+        <div class="direction_column">
             <h2 class="margin_top">
                 {{ 'SLOVNIK.animace' | translate }}
             </h2>
-            <img class="size" src="assets/icon/gif/{{styl.nazev}}.gif">
+            <img class="size" src="assets/icon/gif/{{ styl.nazev }}.gif">
             <h2 class="margin_top">
                 {{ 'SLOVNIK.veSkutecnosti' | translate }}
             </h2>
-            <img class="size" src="assets/icon/jpg/{{styl.nazev}}-real.jpg">
+            <img class="size" src="assets/icon/jpg/{{ styl.nazev }}-real.jpg">
         </div>
     </div>
 </div>

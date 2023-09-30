@@ -18,7 +18,8 @@
     font-size: calc(.7rem + .5vw);
 }
 
-h2, h4{
+h2,
+h4 {
     text-align: center;
 }
 
@@ -75,7 +76,7 @@ h2, h4{
 
 #popis_obsah {
     margin-top: 50px;
-}   
+}
 
 .margin_top {
     margin-top: 30px;
@@ -140,7 +141,8 @@ h2, h4{
         width: 100px;
     }
 
-    h4, h5 {
+    h4,
+    h5 {
         font-size: 1rem;
     }
 

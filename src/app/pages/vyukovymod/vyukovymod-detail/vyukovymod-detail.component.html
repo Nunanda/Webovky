@@ -1,6 +1,6 @@
 <div id="container">
     <h2>
-        {{vyuka.title}}
+        {{ vyuka?.title }}
     </h2>
     <div class="columns">
         <div class="column">
@@ -9,23 +9,25 @@
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.rada' | translate }}
                     </strong>
-                    {{InfoVyuky[index].cislo}}
+                    {{ InfoVyuky[index].cislo }}
                 </div>
                 <div *ngIf="InfoVyuky[index].styl != null">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.styl' | translate }}
                     </strong>
-                    {{InfoVyuky[index].styl}}
+                    {{ InfoVyuky[index].styl }}
                 </div>
                 <div>
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
+
                     </strong>
-                    {{InfoVyuky[index].pouzijeme}}
+                    {{ InfoVyuky[index].pouzijeme }}
                 </div>
-                <div id="popis" innerHTML="{{InfoVyuky[index].popis}}">
+                <div id="popis" [innerHTML]="InfoVyuky[index].popis">
                     <strong>
                         {{ 'VYUKOVYMODDETAIL.popis' | translate }}
+
                     </strong>
                 </div>
             </div>
@@ -43,7 +45,7 @@
         <button (click)="previousIndex()" type="button">
             <img src="assets/icon/svg/Vlevo.svg">
         </button>
-        {{index+1}}/{{InfoVyuky.length}}
+        {{ index + 1 }}/{{ InfoVyuky.length }}
         <button (click)="nextIndex()" type="button">
             <img src="assets/icon/svg/Vpravo.svg">
         </button>

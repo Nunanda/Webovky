@@ -10,42 +10,32 @@ import { InfoVyuky, Vyuka } from 'src/app/types';
 export class VyukovymodDetailComponent implements OnInit {
 
   nazev: any;
-  vyuka: any;
-  InfoVyuky: Array<InfoVyuky>;
-  index: number;
+  vyuka: Vyuka | void | undefined;
+  InfoVyuky: InfoVyuky[] = [];
+  index: number = 0;
 
   constructor(private vyukaService: VyukaService) {
-    this.nazev = localStorage.getItem("nazev");
-    this.InfoVyuky = new Array<InfoVyuky>;
-    this.vyuka = new Array<Vyuka>();
-    this.index = 0;
+    this.nazev = localStorage.getItem("vyukovymod");
   }
 
   ngOnInit(): void {
-    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
-    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
+    this.loadVyukaData();
   }
 
   ngDoCheck(): void {
+    this.loadVyukaData();
+  }
+
+  private loadVyukaData(): void {
     this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
     this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
   }
 
   nextIndex(): void {
-    if (this.index + 1 >= this.InfoVyuky.length) {
-      this.index = 0;
-    }
-    else {
-      this.index++;
-    }
+    this.index = (this.index + 1) % this.InfoVyuky.length;
   }
 
   previousIndex(): void {
-    if (this.index - 1 < 0) {
-      this.index = this.InfoVyuky.length - 1;
-    }
-    else {
-      this.index--;
-    }
+    this.index = (this.index - 1 + this.InfoVyuky.length) % this.InfoVyuky.length;
   }
 }

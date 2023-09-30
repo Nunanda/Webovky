@@ -2,14 +2,13 @@
     <h2>
         {{ 'VYUKOVYMOD.vyukovyMod' | translate }}
     </h2>
-    <router-outlet></router-outlet>
     <div id="sloupce">
-        <span class="bunka" *ngFor="let item of vyuka" (click)="goKroky(item.nazev)">
+        <div class="bunka" *ngFor="let item of vyuka" (click)="goKroky(item.nazev)">
             <div class="ruzovy_okraj">
-                {{item.title}}
+                {{ item.title }}
             </div>
             <div id="obsah">
-                <img id="obrazek_navodu" src="assets/icon/jpg/{{item.nazev}}.jpg">
+                <img id="obrazek_navodu" [src]="'assets/icon/jpg/' + item.nazev + '.jpg'">
                 <div class="text">
                     <table>
                         <tr>
@@ -17,7 +16,7 @@
                                 <strong>
                                     {{ 'VYUKOVYMOD.pocetKroku' | translate }}
                                 </strong>
-                                {{item.pocet}}
+                                {{ item.pocet }}
                             </td>
                         </tr>
                         <tr>
@@ -25,12 +24,12 @@
                                 <strong>
                                     {{ 'VYUKOVYMOD.popis' | translate }}
                                 </strong>
-                                {{item.popis}}
+                                {{ item.popis }}
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
-        </span>
+        </div>
     </div>
 </div>

@@ -11,23 +11,28 @@ import { PopisPomucek } from 'src/app/types';
 export class PomuckyComponent implements OnInit {
 
   pomucka: any;
-  kroky: Array<PopisPomucek>;
+  kroky: Array<PopisPomucek> | undefined;
 
   constructor(private pomuckyService: PomuckyService, private router: Router) {
-    const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomucka.kroky;
+    this.initializePomucka();
   }
 
   ngOnInit(): void {
-    const nazev = (this.router.url.split('/'))[2];
+    this.initializePomucka();
+  }
+
+  ngDoCheck(): void {
+    this.initializePomucka();
+  }
+
+  private initializePomucka(): void {
+    const nazev = this.getNazevFromUrl();
     this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
     this.kroky = this.pomucka.kroky;
   }
 
-  ngDoCheck(): void {
-    const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomucka.kroky;
+  private getNazevFromUrl(): string {
+    const parts = this.router.url.split('/');
+    return parts[2];
   }
 }

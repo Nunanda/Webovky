@@ -10,20 +10,24 @@ import { Vyuka } from 'src/app/types';
 })
 export class VyukaComponent implements OnInit {
 
-  vyuka: Array<Vyuka> = new Array<Vyuka>;
+  vyuka: Vyuka[] = [];
 
   constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.vyuka = this.vyukaService.getVsechnyVyrobky();
+    this.loadVyuka();
   }
 
   ngDoCheck(): void {
-    this.vyuka = this.vyukaService.getVsechnyVyrobky();
+    this.loadVyuka();
   }
 
   goKroky(nazev: string): void {
-    localStorage.setItem("nazev", nazev);
+    localStorage.setItem("vyukovymod", nazev);
     this.router.navigate(["vyukovymod/vyukovymod-detail"]);
+  }
+
+  loadVyuka(): void {
+    this.vyuka = this.vyukaService.getVsechnyVyrobky();
   }
 }

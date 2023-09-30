@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { TokenService } from 'src/app/service';
+import { KmsService, PublicService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
-
+import { Language } from 'src/app/types';
+import Swal from 'sweetalert2';
+ 
 @Component({
   selector: 'app-registrace',
   templateUrl: './registrace.component.html',
@@ -19,7 +21,7 @@ export class RegistraceComponent implements OnInit {
   password1: string = "";
   errorMessage: string = "";
 
-  constructor(private router: Router, private validationService: ValidationService, private tokenStorage: TokenService, private translate: TranslateService) { }
+  constructor(private router: Router, private publicService: PublicService, private validationService: ValidationService, private tokenStorage: TokenService, private translate: TranslateService, private kmsService: KmsService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -27,8 +29,30 @@ export class RegistraceComponent implements OnInit {
     }
   }
 
-  register(): void {
+  async register(): Promise<void> {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
+      const kekSalt = "c";
+      const initializationVector = "c";
+      const DEK = "c";
+      this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, kekSalt, initializationVector).subscribe(
+        response => {
+          Swal.fire('Welcome', 'Verify your email within 1 hour', 'success');
+          this.router.navigate(["prihlaseni"]);
+          console.log(response.data.token);
+          this.kmsService.userpassLogin(response.data.userId, this.password0).subscribe(
+            response1 => {
+              this.tokenStorage.saveKmsToken(response1.data.token);
+            },
+            error => {
+              //error
+            }
+          )
+        },
+        error => {
+          this.errorMessage = error.error.error.message;
+          //error
+        }
+      )
     }
   }
 }

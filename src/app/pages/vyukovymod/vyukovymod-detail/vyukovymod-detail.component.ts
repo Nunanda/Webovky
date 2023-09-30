@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VyukaService } from 'src/app/service';
-import { InfoVyuky, Vyuka } from 'src/app/types';
+import { InfoVyuky } from 'src/app/types';
 
 @Component({
   selector: 'app-vyukovymod-detail',
@@ -9,13 +9,14 @@ import { InfoVyuky, Vyuka } from 'src/app/types';
 })
 export class VyukovymodDetailComponent implements OnInit {
 
-  nazev: any;
-  vyuka: Vyuka | void | undefined;
-  InfoVyuky: InfoVyuky[] = [];
+  nazev: string;
+  title: string;
+  infoVyuky: InfoVyuky[] = [];
   index: number = 0;
 
   constructor(private vyukaService: VyukaService) {
-    this.nazev = localStorage.getItem("vyukovymod");
+    this.nazev = localStorage.getItem("vyukovymod") || "";
+    this.title = this.vyukaService.getTitle(this.nazev);
   }
 
   ngOnInit(): void {
@@ -27,15 +28,14 @@ export class VyukovymodDetailComponent implements OnInit {
   }
 
   private loadVyukaData(): void {
-    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
-    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
+    this.infoVyuky = this.vyukaService.getKroky(this.nazev);
   }
 
   nextIndex(): void {
-    this.index = (this.index + 1) % this.InfoVyuky.length;
+    this.index = (this.index + 1) % this.infoVyuky.length;
   }
 
   previousIndex(): void {
-    this.index = (this.index - 1 + this.InfoVyuky.length) % this.InfoVyuky.length;
+    this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
   }
 }

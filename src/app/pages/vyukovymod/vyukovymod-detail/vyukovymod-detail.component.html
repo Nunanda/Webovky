@@ -1,53 +1,31 @@
 <div id="container">
     <h2>
-        {{ vyuka?.title }}
+        {{title}}
     </h2>
-    <div class="columns">
-        <div class="column">
-            <div class="bublina">
-                <div>
-                    <strong>
-                        {{ 'VYUKOVYMODDETAIL.rada' | translate }}
-                    </strong>
-                    {{ InfoVyuky[index].cislo }}
-                </div>
-                <div *ngIf="InfoVyuky[index].styl != null">
-                    <strong>
-                        {{ 'VYUKOVYMODDETAIL.styl' | translate }}
-                    </strong>
-                    {{ InfoVyuky[index].styl }}
-                </div>
-                <div>
-                    <strong>
-                        {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
-
-                    </strong>
-                    {{ InfoVyuky[index].pouzijeme }}
-                </div>
-                <div id="popis" [innerHTML]="InfoVyuky[index].popis">
-                    <strong>
-                        {{ 'VYUKOVYMODDETAIL.popis' | translate }}
-
-                    </strong>
-                </div>
+    <div id="columns">
+        <div id="column_1">
+            <strong>
+                {{ 'VYUKOVYMODDETAIL.rada' | translate }}
+            </strong>
+            {{infoVyuky[index].cislo}}
+            <br>
+            <strong>
+                {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
+            </strong>
+            {{infoVyuky[index].pouzijeme}}
+            <div id="popis" innerHTML="{{infoVyuky[index].popis}}">
+                <strong>
+                    {{ 'VYUKOVYMODDETAIL.popis' | translate }}
+                </strong>
             </div>
         </div>
-        <div class="column">
-            <div class="video">
-                <iframe [src]="InfoVyuky[index].videoUrl | safe" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
+        <iframe id="column_2" [src]="infoVyuky[index].videoUrl | safe" width="560" height="315" frameborder="0"
+            allowfullscreen>
+        </iframe>
     </div>
     <div id="buttons">
-        <button (click)="previousIndex()" type="button">
-            <img src="assets/icon/svg/Vlevo.svg">
-        </button>
-        {{ index + 1 }}/{{ InfoVyuky.length }}
-        <button (click)="nextIndex()" type="button">
-            <img src="assets/icon/svg/Vpravo.svg">
-        </button>
+        <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">
+        {{index+1}}/{{infoVyuky.length}}
+        <img id="button_2"  src="assets/icon/svg/Vpravo.svg" (click)="nextIndex()">
     </div>
 </div>

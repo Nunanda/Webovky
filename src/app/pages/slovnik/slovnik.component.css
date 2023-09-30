@@ -18,11 +18,6 @@
     font-size: calc(.7rem + .5vw);
 }
 
-h2,
-h4 {
-    text-align: center;
-}
-
 .bold {
     font-weight: bold;
 }

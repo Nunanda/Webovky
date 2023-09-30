@@ -52,6 +52,7 @@ export class AppComponent {
     if (window.innerWidth > 1100) {
       if (this.menu) {
         this.menu.nativeElement.style.display = 'flex';
+        this.menu.nativeElement.style.width = "100%";
         this.menuVisible = true;
       }
       if (this.menuPomucky && this.imgPomucky) {
@@ -68,7 +69,7 @@ export class AppComponent {
       }
     } else {
       if (this.menu) {
-        this.menu.nativeElement.style.display = 'none';
+        this.menu.nativeElement.style.width = 0;
         this.menuVisible = false;
       }
       if (this.menuPomucky && this.imgPomucky) {
@@ -132,13 +133,13 @@ export class AppComponent {
   }
 
   opencloseNav(): void {
-    if (this.menu && this.imgPomucky && this.imgSlovnik) {
+    if (this.menu) {
       if (this.menuVisible && window.innerWidth < 1100) {
-        this.menu.nativeElement.style.display = 'none';
+        this.menu.nativeElement.style.width = 0;
         this.menuVisible = false;
       }
       else if (window.innerWidth < 1100) {
-        this.menu.nativeElement.style.display = 'grid';
+        this.menu.nativeElement.style.width = "250px";
         this.menuVisible = true;
       }
     }

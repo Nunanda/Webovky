@@ -10,9 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class VerificationComponent implements OnInit {
 
-  verified: boolean = false;
-
-  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router, private tokenService: TokenService) { }
+  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -20,18 +18,52 @@ export class VerificationComponent implements OnInit {
       if (token) {
         this.publicService.verifyEmail(token).subscribe(
           response => {
-            Swal.fire('Hi', 'Email verified', 'success');
-            this.verified = true;
-            this.tokenService.signOut();
-            this.router.navigate(["prihlaseni"]);
+            const verificationSuccess = response.data;
+            if (verificationSuccess) {
+              Swal.fire({
+                title: 'Email Verification Successful',
+                text: 'Your email has been verified!',
+                icon: 'success',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.router.navigate(['/prihlaseni']);
+                }
+              });
+            } else {
+              Swal.fire({
+                title: 'Email Verification Failed',
+                text: 'Invalid or expired token. Please try again.',
+                icon: 'error',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.router.navigate(['/home']);
+                }
+              });
+            }
           },
           error => {
-            console.log(error.error.error.message);
+            Swal.fire({
+              title: 'Email Verification Failed',
+              text: 'Invalid or expired token. Please try again.',
+              icon: 'error',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/home']);
+              }
+            });
             //error
           }
         );
       } else {
-        //no token
+        Swal.fire({
+          title: 'Email Verification Failed',
+          text: 'No token included. Please try again.',
+          icon: 'error',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['/home']);
+          }
+        });
       }
     });
   }

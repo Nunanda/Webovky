@@ -5,7 +5,7 @@ import { KmsService, PublicService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
 import { Language } from 'src/app/types';
 import Swal from 'sweetalert2';
- 
+
 @Component({
   selector: 'app-registrace',
   templateUrl: './registrace.component.html',
@@ -24,9 +24,6 @@ export class RegistraceComponent implements OnInit {
   constructor(private router: Router, private publicService: PublicService, private validationService: ValidationService, private tokenStorage: TokenService, private translate: TranslateService, private kmsService: KmsService) { }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.router.navigate(["profile"]);
-    }
   }
 
   async register(): Promise<void> {

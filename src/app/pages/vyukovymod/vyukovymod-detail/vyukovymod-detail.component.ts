@@ -11,7 +11,7 @@ export class VyukovymodDetailComponent implements OnInit {
 
   nazev: string;
   title: string;
-  infoVyuky: InfoVyuky[] = [];
+  infoVyuky: InfoVyuky[] | undefined;
   index: number = 0;
 
   constructor(private vyukaService: VyukaService) {
@@ -32,10 +32,14 @@ export class VyukovymodDetailComponent implements OnInit {
   }
 
   nextIndex(): void {
-    this.index = (this.index + 1) % this.infoVyuky.length;
+    if (this.infoVyuky) {
+      this.index = (this.index + 1) % this.infoVyuky.length;
+    }
   }
 
   previousIndex(): void {
-    this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
+    if (this.infoVyuky) {
+      this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
+    }
   }
 }

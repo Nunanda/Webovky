@@ -12,6 +12,7 @@ import { RegistraceComponent } from './pages/registrace/registrace.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
+import { AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,9 +23,9 @@ const routes: Routes = [
   { path: 'vyukovymod', component: VyukaComponent },
   { path: 'vyukovymod/vyukovymod-detail', component: VyukovymodDetailComponent },
   { path: 'navody/:nazevNavodu', component: NavodyDetailComponent },
-  { path: 'prihlaseni', component: PrihlaseniComponent },
-  { path: 'registrace', component: RegistraceComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'prihlaseni', component: PrihlaseniComponent, canActivate: [AuthGuard] },
+  { path: 'registrace', component: RegistraceComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'verification', component: VerificationComponent },
   { path: 'passwdchange', component: PasswdchangeComponent },
   { path: '**', component: HomeComponent },

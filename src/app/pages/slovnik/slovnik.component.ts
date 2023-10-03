@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SlovnikService } from 'src/app/service';
 import { Router } from '@angular/router';
+import { Styl } from 'src/app/types';
 
 @Component({
   selector: 'app-slovnik',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SlovnikComponent implements OnInit {
 
-  styl: any;
+  styl: Styl | undefined | void;
 
   constructor(private slovnikService: SlovnikService, private router: Router) { }
 

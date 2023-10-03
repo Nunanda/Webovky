@@ -10,7 +10,7 @@ import { Vyuka } from 'src/app/types';
 })
 export class VyukaComponent implements OnInit {
 
-  vyuka: Vyuka[] = [];
+  vyuka: Vyuka[] | undefined;
 
   constructor(private vyukaService: VyukaService, private router: Router) { }
 

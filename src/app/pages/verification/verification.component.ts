@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PublicService, TokenService } from 'src/app/service';
 import Swal from 'sweetalert2';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-verification',
@@ -10,12 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class VerificationComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       const token = params['token'];
       if (token) {
+        this.router.navigate(['/home']);
         this.publicService.verifyEmail(token).subscribe(
           response => {
             const verificationSuccess = response.data;
@@ -24,20 +26,13 @@ export class VerificationComponent implements OnInit {
                 title: 'Email Verification Successful',
                 text: 'Your email has been verified!',
                 icon: 'success',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  this.router.navigate(['/prihlaseni']);
-                }
               });
+              this.router.navigate(['/prihlaseni']);
             } else {
               Swal.fire({
                 title: 'Email Verification Failed',
                 text: 'Invalid or expired token. Please try again.',
                 icon: 'error',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  this.router.navigate(['/home']);
-                }
               });
             }
           },
@@ -46,10 +41,6 @@ export class VerificationComponent implements OnInit {
               title: 'Email Verification Failed',
               text: 'Invalid or expired token. Please try again.',
               icon: 'error',
-            }).then((result) => {
-              if (result.isConfirmed) {
-                this.router.navigate(['/home']);
-              }
             });
             //error
           }
@@ -59,10 +50,6 @@ export class VerificationComponent implements OnInit {
           title: 'Email Verification Failed',
           text: 'No token included. Please try again.',
           icon: 'error',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.router.navigate(['/home']);
-          }
         });
       }
     });

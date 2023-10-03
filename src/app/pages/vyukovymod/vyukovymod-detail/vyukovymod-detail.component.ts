@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VyukaService } from 'src/app/service';
 import { InfoVyuky } from 'src/app/types';
 
@@ -9,15 +10,12 @@ import { InfoVyuky } from 'src/app/types';
 })
 export class VyukovymodDetailComponent implements OnInit {
 
-  nazev: string;
-  title: string;
+  nazev: string | undefined;
+  title: string | undefined;
   infoVyuky: InfoVyuky[] | undefined;
   index: number = 0;
 
-  constructor(private vyukaService: VyukaService) {
-    this.nazev = localStorage.getItem("vyukovymod") || "";
-    this.title = this.vyukaService.getTitle(this.nazev);
-  }
+  constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadVyukaData();
@@ -28,18 +26,18 @@ export class VyukovymodDetailComponent implements OnInit {
   }
 
   private loadVyukaData(): void {
+    this.nazev = this.router.url.split('/')[3];
+    this.title = this.vyukaService.getTitle(this.nazev);
     this.infoVyuky = this.vyukaService.getKroky(this.nazev);
   }
 
-  nextIndex(): void {
+  changeIndex(isNext: boolean): void {
     if (this.infoVyuky) {
-      this.index = (this.index + 1) % this.infoVyuky.length;
-    }
-  }
-
-  previousIndex(): void {
-    if (this.infoVyuky) {
-      this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
+      if (isNext) {
+        this.index = (this.index + 1) % this.infoVyuky.length;
+      } else {
+        this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
+      }
     }
   }
 }

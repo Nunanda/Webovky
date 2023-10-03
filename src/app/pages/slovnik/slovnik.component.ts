@@ -10,6 +10,7 @@ import { Styl } from 'src/app/types';
 })
 export class SlovnikComponent implements OnInit {
 
+  nazev: string | undefined;
   styl: Styl | undefined | void;
 
   constructor(private slovnikService: SlovnikService, private router: Router) { }
@@ -23,12 +24,7 @@ export class SlovnikComponent implements OnInit {
   }
 
   updateStyl(): void {
-    const nazev = this.extractNazevFromUrl();
-    this.styl = this.slovnikService.getStylByName(nazev);
-  }
-
-  extractNazevFromUrl(): string {
-    const urlSegments = this.router.url.split('/');
-    return urlSegments[2];
+    this.nazev = this.router.url.split('/')[2];
+    this.styl = this.slovnikService.getStylByName(this.nazev);
   }
 }

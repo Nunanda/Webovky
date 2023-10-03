@@ -23,7 +23,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { FilterPipe } from './filter.pipe';
 import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -51,7 +50,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FormsModule,
     HttpClientModule,
     FormsModule,
-    NgxSpinnerModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

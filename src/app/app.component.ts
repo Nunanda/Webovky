@@ -21,7 +21,7 @@ export class AppComponent {
   menuVisible: boolean = false;
   menuPomuckyVisible: boolean = false;
   menuSlovnikVisible: boolean = false;
-  items: string[] = [];
+  items: string[] | undefined;
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
   slovnik: Styl[] | undefined;

@@ -23,8 +23,7 @@ export class VyukaComponent implements OnInit {
   }
 
   goKroky(nazev: string): void {
-    localStorage.setItem("vyukovymod", nazev);
-    this.router.navigate(["vyukovymod/vyukovymod-detail"]);
+    this.router.navigate(["vyukovymod/vyukovymod-detail/" + nazev]);
   }
 
   loadVyuka(): void {

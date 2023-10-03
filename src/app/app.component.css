@@ -137,6 +137,7 @@
     gap: 5%;
     font-size: calc(.9rem + .1vw);
     margin: 0;
+    text-align: center;
 }
 
 #blok2_container,

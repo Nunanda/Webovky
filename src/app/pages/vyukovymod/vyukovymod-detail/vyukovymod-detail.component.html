@@ -1,4 +1,4 @@
-<div id="container" *ngIf="infoVyuky">
+<div id="container" *ngIf="infoVyuky && title">
     <h2>
         {{title}}
     </h2>
@@ -24,8 +24,8 @@
         </iframe>
     </div>
     <div id="buttons">
-        <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">
+        <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="changeIndex(false)">
         {{index+1}}/{{infoVyuky.length}}
-        <img id="button_2"  src="assets/icon/svg/Vpravo.svg" (click)="nextIndex()">
+        <img id="button_2"  src="assets/icon/svg/Vpravo.svg" (click)="changeIndex(true)">
     </div>
 </div>

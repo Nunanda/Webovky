@@ -1,8 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { PublicService, TokenService } from 'src/app/service';
+import { PublicService } from 'src/app/service';
 import Swal from 'sweetalert2';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-verification',
@@ -11,7 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class VerificationComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router, private spinner: NgxSpinnerService) { }
+  constructor(private route: ActivatedRoute, private publicService: PublicService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

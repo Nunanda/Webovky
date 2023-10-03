@@ -5,6 +5,8 @@ import { KmsService, PublicService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
 import { Language } from 'src/app/types';
 import Swal from 'sweetalert2';
+import { v4 as uuidv4 } from 'uuid';
+const myUuid = uuidv4();
 
 @Component({
   selector: 'app-registrace',
@@ -28,10 +30,10 @@ export class RegistraceComponent implements OnInit {
 
   async register(): Promise<void> {
     if (this.validationService.validateRegister(this.email, this.password0, this.password1, this.username)) {
-      const kekSalt = "c";
-      const initializationVector = "c";
-      const DEK = "c";
-      this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, kekSalt, initializationVector).subscribe(
+      const kekSalt = uuidv4().replace(/-/g, '');
+      const initializationVector = uuidv4().replace(/-/g, '');
+      const DEK = uuidv4().replace(/-/g, '');
+      /*this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, kekSalt, initializationVector).subscribe(
         response => {
           Swal.fire('Welcome', 'Verify your email within 1 hour', 'success');
           this.router.navigate(["prihlaseni"]);
@@ -49,7 +51,7 @@ export class RegistraceComponent implements OnInit {
           this.errorMessage = error.error.error.message;
           //error
         }
-      )
+      )*/
     }
   }
 }

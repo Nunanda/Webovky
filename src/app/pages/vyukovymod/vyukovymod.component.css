@@ -12,6 +12,7 @@
 #bunka {
     border-radius: 20px;
     background-color: #f7e4ea;
+    box-shadow: 0 3px 8px #0003;
     min-height: 180px;
 }
 

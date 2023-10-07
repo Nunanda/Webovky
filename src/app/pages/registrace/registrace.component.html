@@ -3,13 +3,13 @@
         Registrace
     </h2>
     <div id="blok">
-        <form name="form" (ngSubmit)="f.valid && register()" #f="ngForm" novalidate>
+        <form name="form" (ngSubmit)="f.valid && signup()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="email">
                     Email
                 </label>
                 <input type="email" class="form-control" required email [(ngModel)]="email" name="email"
-                    #emailInput="ngModel" (ngModelChange)="errorMessage = ''">
+                    #emailInput="ngModel">
             </div>
             <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
                 <div *ngIf="emailInput.errors?.['required']">
@@ -19,15 +19,12 @@
                     Email není platný.
                 </div>
             </div>
-            <div *ngIf="errorMessage === 'email already exist'" class="alert alert-danger">
-                {{errorMessage}}
-            </div>
             <div class="form-group">
                 <label for="username">
                     Username
                 </label>
                 <input type="username" class="form-control" required [(ngModel)]="username"
-                    name="username" minlength="4" #usernameInput="ngModel" (ngModelChange)="errorMessage = ''">
+                    name="username" minlength="4" #usernameInput="ngModel">
             </div>
             <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)"
                 class="alert alert-danger">
@@ -37,9 +34,6 @@
                 <div *ngIf="usernameInput.errors?.['minlength']">
                     Username musí mít alespoň 4 znaků.
                 </div>
-            </div>
-            <div *ngIf="errorMessage === 'username already exist'" class="alert alert-danger">
-                {{errorMessage}}
             </div>
             <div class="form-group">
                 <label for="password">
@@ -90,9 +84,6 @@
             <button type="submit" class="btn btn-primary">
                 Registrovat se
             </button>
-            <div *ngIf="errorMessage !== 'username already exist' && errorMessage !== 'email already exist' && errorMessage" class="alert alert-danger">
-                Apologies, but the service is currently unavailable.
-            </div>
         </form>
     </div>
 </div>

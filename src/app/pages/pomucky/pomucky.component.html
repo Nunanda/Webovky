@@ -1,19 +1,14 @@
-<div id="container">
+<div id="container" *ngIf="pomucka && kroky">
   <h2>
     {{pomucka.title}}
   </h2>
-  <div class="bubliny">
-    <div *ngFor="let krok of kroky" class="bublina">
+  <div id="bubliny">
+    <div *ngFor="let krok of kroky" id="bublina">
       {{krok.popis}}
-      <img *ngIf="krok.obrazek != null" class="pomucka" src="assets/icon/jpg/{{krok.obrazek}}.jpg">
+      <img id="pomucka" *ngIf="krok.obrazek" src="assets/icon/jpg/{{krok.obrazek}}.jpg">
     </div>
-  </div>
-  <div *ngIf="pomucka.videoURL != null" class="bublina-spodni">
-    <div class="video">
-      <iframe [src]="pomucka.videoURL | safe" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <iframe id="video" *ngIf="pomucka.videoURL" [src]="pomucka.videoURL | safe" width="1120" height="630" frameborder="0"
+      allowfullscreen>
+    </iframe>
   </div>
 </div>

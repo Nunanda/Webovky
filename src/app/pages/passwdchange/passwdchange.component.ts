@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService, TokenService, ValidationService } from 'src/app/service';
+import { PublicService, ValidationService } from 'src/app/service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,28 +15,41 @@ export class PasswdchangeComponent implements OnInit {
   password0: string = "";
   password1: string = "";
 
-  constructor(private validationService: ValidationService, private route: ActivatedRoute, private publicService: PublicService, private router: Router, private tokenService: TokenService) { }
+  constructor(private validationService: ValidationService, private route: ActivatedRoute, private publicService: PublicService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  passwdchange(): void {
+  changePassword(): void {
     if (this.validationService.validatePassword(this.password0, this.password1)) {
       const token = this.route.snapshot.queryParamMap.get('token');
       if (token) {
         this.publicService.changePassword(token, this.password0, this.password1).subscribe(
-          response => {
-            Swal.fire('Hi', 'Password changed', 'success');
-            this.tokenService.signOut();
-            this.router.navigate(["prihlaseni"]);
+          _response => {
+            Swal.fire({
+              title: 'Password Change Successful',
+              text: 'Your password has been updated!',
+              icon: 'success',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/prihlaseni']);
+              }
+            });
           },
           error => {
-            console.log(error.error.error.message);
-            //error
+            Swal.fire({
+              title: 'Change Password Failed',
+              text: error.error.error.message + '. Please try again later.',
+              icon: 'error',
+            });
           }
         )
       } else {
-        //no token
+        Swal.fire({
+          title: 'Change Password Failed',
+          text: 'No token included. Please try again later.',
+          icon: 'error',
+        });
       }
     }
   }

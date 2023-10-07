@@ -7,13 +7,8 @@
     border-radius: 20px;
     text-align: center;
     padding: 15px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
-
-h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: calc(1rem + 1vw);
+    box-shadow: 0 3px 8px #0003;
+    font-size: calc(.6rem + .5vw);
 }
 
 #obrazky {
@@ -21,88 +16,60 @@ h2 {
     text-align: center;
 }
 
-.obrazek {
+#obrazek_1,
+#obrazek_2,
+#obrazek_3 {
     padding: 20px;
     max-width: 300px;
+    width: 100%;
+    height: auto;
 }
 
 #soc_site {
     display: flex;
+    margin-top: 20px;
+    gap: 10px;
 }
 
-.card {
-    margin-left: 20px;
-    padding: 20px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+#card_1,
+#card_2,
+#card_3 {
+    padding: 10px;
+    box-shadow: 0 3px 8px #0003;
     display: flex;
-    align-items: center;
-    border: none;
     flex: 1;
-    position: inherit;
+    justify-content: center;
 }
 
-.socials_logo {
-    width: 100%;
+#socials_logo_1,
+#socials_logo_2,
+#socials_logo_3 {
     max-width: 50px;
-    min-width: 50px;
-    height: auto;
 }
 
-@media screen and (max-width: 808px) {
-    #container {
-        padding: 20px;
-    }
-
+h2 {
+    text-align: center;
+    font-size: calc(1rem + 1vw);
 }
 
-@media screen and (max-width: 991px) {
-    #container {
-        padding: 20px;
+@media screen and (max-width: 1100px) {
+    #obrazek_1,
+    #obrazek_2,
+    #obrazek_3 {
+        max-width: 250px;
     }
 
-    .obrazek {
-        max-width: 230px;
+    #socials_logo_1,
+#socials_logo_2,
+#socials_logo_3 {
+        padding: 4px;
     }
-
-    .socials_logo {
-        max-width: 30px;
-        min-width: 30px;
-    }
-
-    .novinky {
-        margin-top: 10px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .novinky {
-        padding: 10px;
-    }
-
 }
 
-@media screen and (max-width: 767px) {
-    .obrazek {
-        max-width: 200px;
-    }
-
-}
-
-@media screen and (max-width: 479px) {
-    .obrazek {
+@media screen and (max-width: 800px) {
+    #obrazek_1,
+    #obrazek_2,
+    #obrazek_3 {
         max-width: 140px;
-        padding: 8px;
     }
-
-    .socials_logo {
-        max-width: 25px;
-        min-width: 25px;
-    }
-
-    .card {
-        padding: 10px;
-    }
-
 }

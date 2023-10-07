@@ -1,32 +1,34 @@
 <div id="container">
-        <div id="novinky">
-            <h2>
+    <div id="novinky">
+        <h2>
+            <strong>
                 {{ 'HOME.uvitani' | translate }}
-            </h2>
-            <p>
-                {{ 'HOME.webovaAplikace' | translate }}
-            </p>
-            <p>
-                {{ 'HOME.mobilniAplikace' | translate }}
-            </p>
-        </div>
+            </strong>
+        </h2>
+        {{ 'HOME.webovaAplikace' | translate }}
+        <br>
+        <br>
+        {{ 'HOME.mobilniAplikace' | translate }}
+    </div>
     <div id="obrazky">
-        <img class="obrazek" src="assets/icon/jpg/slon.jpg">
-        <img class="obrazek" src="assets/icon/jpg/chobotnicka.jpg">
-        <img class="obrazek" src="assets/icon/jpg/medved.jpg">
+        <img id="obrazek_1" src="assets/icon/jpg/slon.jpg">
+        <img id="obrazek_2" src="assets/icon/jpg/chobotnicka.jpg">
+        <img id="obrazek_3" src="assets/icon/jpg/medved.jpg">
     </div>
     <h2>
-        {{ 'HOME.socialniSite' | translate }}
+        <strong>
+            {{ 'HOME.socialniSite' | translate }}
+        </strong>
     </h2>
     <div id="soc_site">
-        <a class="card" href="mailto:info@selecro.cz">
-            <img class="socials_logo" src="assets/icon/svg/mail.svg">
+        <a id="card_1" href="mailto:info@selecro.cz">
+            <img id="socials_logo_1" src="assets/icon/svg/mail.svg">
         </a>
-        <a class="card" href="https://www.instagram.com/_selecro_/" target="_blank">
-            <img class="socials_logo" src="assets/icon/svg/instagram.svg">
+        <a id="card_2" href="https://www.instagram.com/_selecro_/" target="_blank">
+            <img id="socials_logo_2" src="assets/icon/svg/instagram.svg">
         </a>
-        <a class="card" href="https://www.pinterest.com/selecro/" target="_blank">
-            <img class="socials_logo" src="assets/icon/svg/pin.svg">
+        <a id="card_3" href="https://www.pinterest.com/selecro/" target="_blank">
+            <img id="socials_logo_3" src="assets/icon/svg/pin.svg">
         </a>
     </div>
 </div>

@@ -24,7 +24,7 @@
       <img id="hamburger" (click)="opencloseNav()" src="assets/icon/svg/hamburger-menu.svg">
     </div>
     <div id="menu" #menu>
-      <div id="blok1" routerLink="/home">
+      <div id="blok1" routerLink="/home" (click)="toggleMenuVisibility()">
         <img src="assets/icon/svg/info.svg">
         Selecro
       </div>
@@ -56,12 +56,12 @@
           </ng-container>
         </div>
       </div>
-      <div id="blok4" routerLink="/vyukovymod">
+      <div id="blok4" routerLink="/vyukovymod" (click)="toggleMenuVisibility()">
         <img src="assets/icon/svg/school.svg">
         {{ 'APP.vyukovyMod' | translate }}
       </div>
       <div id="blok5" routerLink="/navody">
-        <img src="assets/icon/svg/view.svg">
+        <img src="assets/icon/svg/view.svg" (click)="toggleMenuVisibility()">
         {{ 'APP.navody' | translate }}
       </div>
     </div>

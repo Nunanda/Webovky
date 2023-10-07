@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://192.168.0.4:3002',
-  kmsUrl: 'https://kms-dev.selecro.cz',
+  kmsUrl: 'http://192.168.0.4:8202',
 };
 
 /*

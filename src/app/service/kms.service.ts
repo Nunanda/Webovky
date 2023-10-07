@@ -24,30 +24,41 @@ export class KmsService {
   }
 
   userpassLogin(id: string, password: string): Observable<any> {
-    const httpOption = {
+    const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post(`${this.kmsUrl}/auth/userpass/login/${id}`, {
+    return this.http.post(`${this.kmsUrl}/v1/auth/userpass/login/${id}`, {
       password: password,
-    }, httpOption);
+    }, httpOptions);
   }
 
   renewToken(): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/auth/token/renew-self`,
+    return this.http.post(`${this.kmsUrl}/v1/auth/token/renew-self`,
       this.httpOptions);
   }
 
   decryptData(id: string, encryptedData: string): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/transit/decrypt/${id}`, {
+    return this.http.post(`${this.kmsUrl}/v1/transit/decrypt/${id}`, {
       ciphertext: encryptedData,
     }, this.httpOptions);
   }
 
   encryptData(id: string, dataToEncrypt: string): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/transit/encrypt/${id}`, {
+    return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
       plaintext: dataToEncrypt,
     }, this.httpOptions);
+  }
+
+  encryptSignup(id: string, token: string, dataToEncrypt: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'X-Vault-Token': `${token}`
+      })
+    };
+    return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
+      plaintext: dataToEncrypt,
+    }, httpOptions);
   }
 }

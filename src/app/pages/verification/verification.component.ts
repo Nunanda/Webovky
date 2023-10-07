@@ -18,30 +18,23 @@ export class VerificationComponent implements OnInit {
       if (token) {
         this.router.navigate(['/home']);
         this.publicService.verifyEmail(token).subscribe(
-          response => {
-            const verificationSuccess = response.data;
-            if (verificationSuccess) {
-              Swal.fire({
-                title: 'Email Verification Successful',
-                text: 'Your email has been verified!',
-                icon: 'success',
-              });
-              this.router.navigate(['/prihlaseni']);
-            } else {
-              Swal.fire({
-                title: 'Email Verification Failed',
-                text: 'Invalid or expired token. Please try again.',
-                icon: 'error',
-              });
-            }
+          _response => {
+            Swal.fire({
+              title: 'Email Verification Successful',
+              text: 'Your email has been verified!',
+              icon: 'success',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/prihlaseni']);
+              }
+            });
           },
           error => {
             Swal.fire({
               title: 'Email Verification Failed',
-              text: 'Invalid or expired token. Please try again.',
+              text: error.error.error.message + '. Please try again later.',
               icon: 'error',
             });
-            //error
           }
         );
       } else {

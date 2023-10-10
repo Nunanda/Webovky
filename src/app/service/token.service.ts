@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
-  private readonly TOKEN_KEY = 'auth_token';
-  private readonly TOKEN_KEY_KMS = 'auth_token_kms';
+  private readonly TOKEN_KEY = 'fdf845fe-67ae-11ee-8c99-0242ac120002';
+  private readonly TOKEN_KEY_KMS = '05a6a872-67af-11ee-8c99-0242ac120002';
 
-  constructor() { }
+  constructor(private cookieService: CookieService) { }
 
   signOut(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-    localStorage.removeItem(this.TOKEN_KEY_KMS);
+    this.cookieService.delete(this.TOKEN_KEY);
+    this.cookieService.delete(this.TOKEN_KEY_KMS);
   }
 
   saveToken(token: string): void {
-    localStorage.setItem(this.TOKEN_KEY, token);
+    this.cookieService.set(this.TOKEN_KEY, token);
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY);
+    return this.cookieService.get(this.TOKEN_KEY) || null;
   }
 
   saveKmsToken(token: string): void {
-    localStorage.setItem(this.TOKEN_KEY_KMS, token);
+    this.cookieService.set(this.TOKEN_KEY_KMS, token);
   }
 
   getKmsToken(): string | null {
-    return localStorage.getItem(this.TOKEN_KEY_KMS);
+    return this.cookieService.get(this.TOKEN_KEY_KMS) || null;
   }
 }

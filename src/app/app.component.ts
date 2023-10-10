@@ -30,6 +30,7 @@ export class AppComponent {
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
     this.loadResources();
     this.initializeLanguage();
+    this.initializeDarkMode();
     if (window.innerWidth > 1100) {
       this.menuVisible = true;
     }
@@ -90,10 +91,34 @@ export class AppComponent {
   initializeLanguage(): void {
     this.translate.addLangs(['CZ', 'EN']);
     const selectedLanguage = localStorage.getItem("language");
+    const browserLanguage = navigator.language.substr(0, 2).toUpperCase();
     const defaultLanguage = selectedLanguage === "EN" ? 'EN' : 'CZ';
-    this.translate.currentLang = defaultLanguage;
-    this.translate.setDefaultLang(defaultLanguage);
-    this.translate.use(defaultLanguage);
+    if (selectedLanguage && (selectedLanguage === "EN" || selectedLanguage === "CZ")) {
+      this.translate.currentLang = selectedLanguage;
+    } else {
+      if (browserLanguage == 'CZ') {
+        this.translate.currentLang = 'CZ';
+      } else {
+        this.translate.currentLang = 'EN';
+      }
+    }
+    this.translate.setDefaultLang(this.translate.currentLang);
+    this.translate.use(this.translate.currentLang);
+    localStorage.setItem("language", this.translate.currentLang);
+  }
+
+  initializeDarkMode(): void {
+    const userDarkModePreference = localStorage.getItem("darkMode");
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (userDarkModePreference === "dark" || userDarkModePreference === "light") {
+      document.body.classList.toggle('dark-mode', userDarkModePreference === 'dark');
+    } else if (prefersDarkMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem("darkMode", "dark");
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem("darkMode", "light");
+    }
   }
 
   loadResources(): void {

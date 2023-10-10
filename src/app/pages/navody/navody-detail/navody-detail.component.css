@@ -1,167 +1,129 @@
- #container {
-   padding: 40px;
- }
+#container {
+  padding: 40px;
+}
 
- #bunky {
-   display: flex;
-   gap: 5%;
-   justify-content: center;
-   flex-wrap: wrap;
- }
+#columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3%;
+  padding-top: 10px;
+  height: 23vw;
+}
 
- h2 {
-   text-align: center;
-   padding-bottom: 20px;
- }
+#column_1,
+#column_2 {
+  background-color: #C8E7F4;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 3px 8px #0003;
+  font-size: calc(.7rem + .5vw);
+  text-align: center;
+  display: inherit;
+}
 
- .bold {
-   font-weight: bold;
- }
+#blok_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- .bunka {
-   background-color: #C8E7F4;
-   padding: 20px;
-   border-radius: 15px;
-   box-shadow: 0px 3px 8px rgba(0, 0, 0, .2);
-   width: 45%;
-   min-width: 300px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
+#obrazek_navodu {
+  width: 100%;
+  max-width: 150px;
+  max-height: 180px;
+  border-radius: 10px;
+  margin: 20px;
+}
 
- button {
-   display: inline-block;
-   padding: 15px 25px;
-   font-size: 20px;
-   cursor: pointer;
-   text-align: center;
-   text-decoration: none;
-   outline: none;
-   color: #000;
-   background-color: #eaeaf4;
-   border: none;
-   border-radius: 15px;
-   box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
- }
+#blok_2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 50px;
+  margin-bottom: 10px;
+}
 
- button:hover {
-   background-color: rgb(208, 208, 208);
- }
+#button {
+  border-radius: 20px;
+  background-color: #f2d4de;
+  box-shadow: 0 3px 8px #0003;
+  min-width: 230px;
+  margin: 5px;
+  padding: 15px 25px;
+  align-content: center;
+}
 
- button:active {
-   background-color: rgb(208, 208, 208);
-   box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-   transform: translateY(4px);
- }
+#items {
+  font-size: calc(.7rem + .2vw);
+}
 
- .buttons {
-   display: flex;
-   gap: 30px;
-   margin-top: 20px;
-   margin-bottom: 20px;
- }
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  margin-bottom: 10px;
+}
 
- #blok {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
- }
+#button_1,
+#button_2,
+#button_3,
+#button_4 {
+  border-radius: 20px;
+  background-color: #eaeaf4;
+  box-shadow: 0 3px 8px #0003;
+  padding: 15px 25px;
+  max-height: 60px;
+}
 
- #blok0 {
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
- }
+h2 {
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+}
 
- #button0 {
-   min-width: 230px;
-   margin: 5px;
- }
+@media screen and (max-width: 1100px) {
+  #columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    height: 100%;
+  }
 
- .content {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   align-items: center;
- }
+  #column_1,
+  #column_2 {
+    width: 80%;
+    justify-self: center;
+  }
+}
 
- #obrazek_navodu {
-   height: 150px;
-   border-radius: 10px;
-   margin: 20px;
- }
+@media screen and (max-width: 800px) {
+  #column_1,
+  #column_2 {
+    width: 100%;
+  }
+}
 
- .timeFinish {
-   display: flex;
-   gap: 10%;
-   justify-content: center;
- }
+@media screen and (max-width: 600px) {
+  #button {
+    min-width: 100px;
+    max-width: fit-content;
+  }
+}
 
- .buttons0 {
-   display: none;
- }
+@media screen and (max-width: 500px) {
+  #buttons {
+    display: inline;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 10px;
+  }
 
- @media screen and (max-width: 808px) {
-   #container {
-     padding: 20px;
-   }
-
- }
-
- @media screen and (max-width: 767px) {
-   button {
-     font-size: 18px;
-     padding: 13px 23px;
-   }
-
- }
-
- @media screen and (max-width: 479px) {
-   button {
-     font-size: 15px;
-     padding: 10px 20px;
-   }
-
- }
-
- @media screen and (max-width: 671px) {
-   .bunka {
-     width: 100%;
-     margin-bottom: 40px;
-   }
-
- }
-
- @media screen and (max-width: 1453px) {
-    .buttons0 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .buttons {
-      display: none;
-    }
-
-    .buttons1 {
-      margin-top: 20px;
-      display: flex;
-      gap: 30px;
-      flex-direction: column;
-    }
-
- }
-
-
- .unfinished {
-   background-color: #f2d4de;
- }
-
- .finished {
-   background-color: #f5a3be;
- }
+  #button_1,
+  #button_2,
+  #button_3,
+  #button_4 {
+    margin: 5px;
+    width: 70px;
+    max-height: 30px;
+    padding: 3px;
+  }
+}

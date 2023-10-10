@@ -1,13 +1,13 @@
 import { Instruction, Language, PremiumInstruction } from ".";
 
 export type UserPublic = {
-  id: number,
+  id: string,
   username: string,
   link: string,
 }
 
 export type UserPublicDetail = {
-  id: number,
+  id: string,
   username: string,
   nick: string,
   bio: string,
@@ -18,7 +18,7 @@ export type UserPublicDetail = {
 }
 
 export type User = {
-  id: number,
+  id: string,
   email: string,
   username: string,
   wrappedDEK: string,
@@ -34,7 +34,7 @@ export type User = {
 }
 
 export type UserLink = {
-  id: number,
-  followerId: number,
-  followeeId: number,
+  id: string,
+  followerId: string,
+  followeeId: string,
 }

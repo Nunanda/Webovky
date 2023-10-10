@@ -2,48 +2,25 @@
     <h2>
         {{ 'NAVODY.navody' | translate }}
     </h2>
-    <!--
-    <div>
-        <button (click)="lehkeNavody()">
-            Lehké
-        </button>
-        <button (click)="stredniNavody()">
-            Střední
-        </button>
-        <button (click)="tezkeNavody()">
-            Těžké
-        </button>
-    </div> -->
     <div id="sloupce">
-        <ng-container *ngFor="let item of navod">
-            <div class="bunka {{item.difficulty}}" (click)="getPopisy(item.titleCz)">
-                <div class="Nazev_navodu {{item.difficulty}}_name">
-                    {{item.titleCz}}
-                </div>
-                <div class="obsah">
-                    <img id="obrazek_navodu" src="{{api}}/{{item.link}}.jpg">
-                    <div class="text">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        {{ 'NAVODY.pocetCasti' | translate }}
-                                    </strong>
-                                    {{item.steps.length-1}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        {{ 'NAVODY.stylyZkratky' | translate }}
-                                    </strong>
-                                    {{item.titleCz}}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+        <div id="bunka_{{item.difficulty}}" *ngFor="let item of navod" (click)="goKroky(item.id)">
+            <div id="okraj_{{item.difficulty}}">
+                {{ item.titleCz }}
+            </div>
+            <div id="obsah">
+                <img id="obrazek_navodu" src="{{item.link || 'assets/icon/jpg/chobotnicka.jpg'}}">
+                <div id="text">
+                    <strong>
+                        {{ 'NAVODY.pocetCasti' | translate }}
+                    </strong>
+                    {{ item.steps.length-1 }}
+                    <br>
+                    <strong>
+                        {{ 'NAVODY.stylyZkratky' | translate }}
+                    </strong>
+                    {{ item.shortcutsCz }}
                 </div>
             </div>
-        </ng-container>
+        </div>
     </div>
 </div>

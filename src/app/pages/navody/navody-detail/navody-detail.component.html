@@ -1,49 +1,38 @@
-<div id="container">
+<div id="container" *ngIf="navod && krokyNavodu">
     <h2>
-        {{navod.title}}
+        {{navod.titleCz}}
     </h2>
-    <div id="bunky">
-        <div class="bunka">
-            <div id="blok">
-                <div class="bold">
+    <div id="columns">
+        <div id="column_1">
+            <div id="blok_1">
+                <strong>
                     {{ 'NAVODYDETAIL.pouzitiStylu' | translate }}
-                </div>
-                <div innerHTML="{{navod.shortcuts}}">
-                </div>
-                <img id="obrazek_navodu" *ngIf="popis[index].link !== 'string'" src="{{api}}/{{popis[index].link}}.jpg">
+                </strong>
+                {{navod.shortcutsCz}}
+                <img id="obrazek_navodu" src="{{navod.link || 'assets/icon/jpg/chobotnicka.jpg'}}">
             </div>
-            <div id="blok0">
-                <div *ngFor="let item of popis">
-                    <button class="unfinished" id="button0" name="button0" (click)="setindex(item)"
-                        (click)="setindex(item)">
-                        {{item.titleCz}}
-                    </button>
+            <div id="blok_2">
+                <div id="button" *ngFor="let item of krokyNavodu" (click)="setIndex(item.id, navod.id)">
+                    {{item.titleCz}}
                 </div>
             </div>
         </div>
-        <div class="bunka">
-            <div class="content">
-                <div class="bold">
-                    {{popis[index].titleCz}}:
+        <div id="column_2">
+            <strong>
+                {{krokyNavodu[index].titleCz}}:
+            </strong>
+            <div id="items" *ngFor="let item of krokyNavodu[index].descriptionCz">
+                {{item}}
+            </div>
+            <div id="buttons">
+                <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">
+                <div id="button_2" (click)="startStopTimer()">
+                    {{ minutes }}:{{ seconds }}
                 </div>
-                <div name="element0" *ngFor="let item0 of popisy">
-                    {{item0}}
-                    <br>
+                <div id="button_3" (click)="finished()">
+                    {{ 'NAVODYDETAIL.hotovo' | translate }}
                 </div>
-                <div class="buttons">
-                    <button (click)="previousIndex()" type="button">
-                        <img src="assets/icon/Vlevo.svg">
-                    </button>
-                    <button (click)="time()">
-                        {{ minutes }}:{{ seconds }}
-                    </button>
-                    <button (click)="finished()">
-                        {{ 'NAVODYDETAIL.hotovo' | translate }}
-                    </button>
-                    <button (click)="nextIndex()" type="button">
-                        <img src="assets/icon/Vpravo.svg">
-                    </button>
-                </div>
+                <img id="button_4" src="assets/icon/svg/Vpravo.svg" (click)="nextIndex()">
             </div>
         </div>
     </div>

@@ -7,6 +7,8 @@
     gap: 25px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #bunka {
@@ -16,7 +18,7 @@
     min-height: 180px;
 }
 
-#ruzovy_okraj {
+#okraj {
     padding: 5px;
     background: #EA749B;
     border-radius: 20px 20px 0px 0px;
@@ -33,8 +35,8 @@
 #obrazek_navodu {
     width: 100%;
     height: 100%;
-    max-width: 100px;
-    max-height: 130px;
+    max-width: 150px;
+    max-height: 180px;
     border-radius: 10px;
 }
 
@@ -53,6 +55,11 @@ h2 {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    #obrazek_navodu {
+        max-width: 100px;
+        max-height: 130px;
+    }
+
     #text {
         font-size: calc(.7rem + .5vw);
     }
@@ -61,6 +68,8 @@ h2 {
 @media screen and (max-width: 800px) {
     #sloupce {
         grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
     }
 
     #text {

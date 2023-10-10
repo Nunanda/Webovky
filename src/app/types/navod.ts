@@ -1,5 +1,5 @@
 export type PremiumInstruction = {
-  id: number,
+  id: string,
   titleCz: string,
   titleEn: string,
   difficulty: Difficulty,
@@ -7,11 +7,13 @@ export type PremiumInstruction = {
   private: boolean,
   premium: boolean,
   date: Date,
-  userId: number,
+  userId: string,
+  shortcutsCz?: string | null;
+  shortcutsEn?: string | null;
 }
 
 export type Instruction = {
-  id: number,
+  id: string,
   titleCz: string,
   titleEn: string,
   difficulty: Difficulty,
@@ -19,18 +21,20 @@ export type Instruction = {
   private: boolean,
   premium: boolean,
   date: Date,
-  userId: number,
+  userId: string,
   steps: Step[],
+  shortcutsCz?: string | null;
+  shortcutsEn?: string | null;
 }
 
 export type Step = {
-  id: number,
+  id: string,
   titleCz: string,
   titleEn: string,
   descriptionCz: string[],
   descriptionEn: string[],
   link?: string | null,
-  instructionId: number,
+  instructionId: string,
 }
 
 export enum Difficulty {

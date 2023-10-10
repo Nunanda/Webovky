@@ -1,8 +1,8 @@
 export type Progress = {
-  id: number,
-  instructionId: number,
-  stepId: number,
-  descriptionId: number,
+  id: string,
+  instructionId: string,
+  stepId: string,
+  descriptionId: string,
   time: number,
-  userId: number,
+  userId: string,
 }

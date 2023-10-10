@@ -253,7 +253,6 @@
 
     #hledaci_bunka {
         min-width: calc(1rem + 30vw);
-        max-width: calc(1rem + 30vw);
     }
 
     #account,

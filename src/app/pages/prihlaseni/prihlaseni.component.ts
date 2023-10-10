@@ -23,7 +23,7 @@ export class PrihlaseniComponent implements OnInit {
 
   login(): void {
     if (this.validationService.validateLogin(this.email, this.password)) {
-      console.log(this.email + this.password)
+      console.log(this.email + this.password);
       this.publicService.login(this.email, this.password).subscribe(
         response => {
           console.log(response);

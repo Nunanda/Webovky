@@ -3,124 +3,108 @@
 }
 
 #sloupce {
-    display: flex;
     margin-top: 2%;
     gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.bunka {
+#bunka_easy {
     border-radius: 20px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    width: 30%;
-    min-width: 364px;
+    background-color: #E2FAE3;
+    box-shadow: 0 3px 8px #0003;
+    min-height: 180px;
 }
 
-.Nazev_navodu {
+#bunka_medium {
+    border-radius: 20px;
+    background-color: #F9FAE1;
+    box-shadow: 0 3px 8px #0003;
+    min-height: 180px;
+}
+
+#bunka_hard {
+    border-radius: 20px;
+    background-color: #FDE6E6;
+    box-shadow: 0 3px 8px #0003;
+    min-height: 180px;
+}
+
+#okraj_easy {
     padding: 5px;
+    background: #3EDE44;
     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: #fff;
 }
 
-.easy {
-    background-color: #E2FAE3;
-}
-
-.medium {
-    background-color: #F9FAE1;
-}
-
-.hard {
-    background-color: #FDE6E6;
-}
-
-.easy_name {
-    background: #3EDE44;
-}
-
-.medium_name {
+#okraj_medium {
+    padding: 5px;
     background: #D6DA34;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
 }
 
-.hard_name {
+#okraj_hard {
+    padding: 5px;
     background: #f73636;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
 }
 
-.obsah {
+#obsah {
     display: flex;
     padding: 15px;
 }
 
 #obrazek_navodu {
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 180px;
     border-radius: 10px;
+}
+
+#text {
+    padding-left: 15px;
+    font-size: calc(.7rem + .2vw);
 }
 
 h2 {
     text-align: center;
+    font-size: calc(1rem + 1vw);
 }
 
-.text {
-    padding-left: 15px;
-}
-
-@media screen and (max-width: 808px) {
-    #container {
-        padding: 20px;
-    }
-
-}
-
-@media screen and (max-width: 991px) {
-    .bunka {
-        min-width: 330px;
+@media screen and (max-width: 1100px) {
+    #sloupce {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #obrazek_navodu {
-        height: 95px;
+        max-width: 100px;
+        max-height: 130px;
     }
 
-    .obsah {
-        padding: 10px;
+    #text {
+        font-size: calc(.7rem + .5vw);
     }
-
-    .text {
-        font-size: .8rem;
-    }
-
 }
 
-@media screen and (max-width: 767px) {
-    .bunka {
-        min-width: 320px;
+@media screen and (max-width: 800px) {
+    #sloupce {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    #obrazek_navodu {
-        height: 80px;
+    #text {
+        font-size: calc(.8rem + .6vw);
     }
-
-    .obsah {
-        padding: 8px;
-    }
-
-    .text {
-        font-size: .75rem;
-    }
-
-    .Nazev_navodu {
-        padding: 2px;
-        font-size: .9rem;
-    }
-
-}
-
-@media screen and (max-width: 479px) {
-    #obrazek_navodu {
-        height: 70px;
-    }
-
 }

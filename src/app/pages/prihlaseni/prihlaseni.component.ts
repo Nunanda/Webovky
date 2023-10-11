@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { PublicService } from 'src/app/service';
+import { PublicService, TokenService } from 'src/app/service';
 import { ValidationService } from 'src/app/service';
 import Swal from 'sweetalert2';
 
@@ -16,7 +17,7 @@ export class PrihlaseniComponent implements OnInit {
   email: string = "";
   email1: string = "";
 
-  constructor(private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService) { }
+  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
   }
@@ -24,10 +25,10 @@ export class PrihlaseniComponent implements OnInit {
   login(): void {
     this.publicService.login(this.email, this.password).subscribe(
       response => {
-        console.log(response);
+        this.tokenService.saveToken(response.token);
+        this.router.navigate(['/home']);
       },
       error => {
-        console.log(error);
         Swal.fire({
           title: 'Login Failed',
           text: error.error.error.message + '. Please try again later.',

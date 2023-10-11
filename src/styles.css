@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --background-color: #fff;
+    --cell-color-first: #C8E7F4;
+    --shadow-color: #0003;
+    --box-color: #E9E9ED;
+    --border-color-first: #c0a8b0;
+    --border-color-second: #ced4da;
+    --pink-backgroud: #F4B9CD;
+    --text-color: #333;
+    --light-background: #f2d4de;
+    --cell-color-second: #f7e4ea;
+    --cell-header: #EA749B;
+    --easy-instruction: #3EDE44;
+    --medium-instruction: #D6DA34;
+    --hard-instruction: #f73636;
+    --easy-color: #E2FAE3;
+    --medium-color: #F9FAE1;
+    --hard-color: #FDE6E6;
+}
 
 html,
 body {
@@ -38,4 +57,10 @@ button {
 
 #container {
     padding: 40px;
+}
+
+@media screen and (max-width: 800px) {
+    input {
+        width: 250px;
+    }
 }

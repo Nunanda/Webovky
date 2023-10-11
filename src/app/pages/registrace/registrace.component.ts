@@ -44,12 +44,12 @@ export class RegistraceComponent implements OnInit {
           switchMap(response1 => {
             console.log(response1)
             const KEK = pbkdf2.pbkdf2Sync(this.password0, kekSalt, 10000, 256 / 8, 'sha512');
-            return this.kmsService.encryptSignup(userId, response1.auth.client_token, KEK.toString());
+            return this.kmsService.encryptSignup(userId, response1.auth.client_token, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
           }),
           switchMap(response2 => {
             console.log(response2)
             const DEK = CryptoJS.lib.WordArray.random(16).toString(CryptoJS.enc.Hex);
-            const wrappedDEK = CryptoJS.AES.encrypt(DEK, response2, {
+            const wrappedDEK = CryptoJS.AES.encrypt(DEK, response2.data.ciphertext, {
               mode: CryptoJS.mode.CFB,
               padding: CryptoJS.pad.Pkcs7,
             });
@@ -57,30 +57,28 @@ export class RegistraceComponent implements OnInit {
           })
         )
         .subscribe(_response3 => {
-          console.log(_response3)
-          this.password0 = "";
-          this.password1 = "";
           Swal.fire({
             title: 'Successful Registration',
             text: 'Verify your email within 1 hour',
             icon: 'success',
           }).then((result) => {
+            this.password0 = "";
+            this.password1 = "";
             if (result.isConfirmed) {
               this.router.navigate(['/prihlaseni']);
             }
           });
         },
           error => {
-            console.log(error)
             this.password0 = "";
             this.password1 = "";
-            if (error.error.error != undefined) {
+            try {
               Swal.fire({
                 title: 'Registration Failed',
                 text: error.error.error.message + '. Please try again later.',
                 icon: 'error',
               });
-            } else {
+            } catch(_error) {
               Swal.fire({
                 title: 'Registration Failed',
                 text: 'An error occurred. Please try again later.',

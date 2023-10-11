@@ -58,7 +58,7 @@ export class KmsService {
       })
     };
     return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
-      plaintext: dataToEncrypt,
+      plaintext: btoa(dataToEncrypt),
     }, httpOptions);
   }
 }

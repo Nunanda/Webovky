@@ -8,13 +8,7 @@
         <label for="email">
           Email nebo username
         </label>
-        <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email"
-          #emailInput="ngModel">
-        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
-          <div *ngIf="emailInput.errors?.['required']">
-            Toto pole je povinné.
-          </div>
-        </div>
+        <input type="text" class="form-control" required [(ngModel)]="email" name="email">
       </div>
       <div class="form-group">
         <label for="password">
@@ -22,18 +16,10 @@
         </label>
         <div id="password_container">
           <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" required
-            [(ngModel)]="password" name="password" minlength="9" #passwordInput="ngModel">
+            [(ngModel)]="password" name="password">
           <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
             {{ showPassword ? 'visibility' : 'visibility_off' }}
           </i>
-        </div>
-        <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">
-          <div *ngIf="passwordInput.errors?.['required']">
-            Heslo je povinné.
-          </div>
-          <div *ngIf="passwordInput.errors?.['minlength']">
-            Heslo musí mít alespoň 9 znaků.
-          </div>
         </div>
       </div>
       <br>
@@ -54,13 +40,10 @@
         <label for="email1">
           Zadejte email pro obnovení hesla.
         </label>
-        <input type="email" class="form-control" id="email1" required email [(ngModel)]="email1" name="email1"
+        <input type="email" class="form-control" id="email1" email [(ngModel)]="email1" name="email1"
           #emailInput1="ngModel">
       </div>
       <div *ngIf="emailInput1.invalid && (emailInput1.dirty || emailInput1.touched)" class="alert alert-danger">
-        <div *ngIf="emailInput1.errors?.['required']">
-          Email je povinný.
-        </div>
         <div *ngIf="emailInput1.errors?.['email']">
           Email není platný.
         </div>

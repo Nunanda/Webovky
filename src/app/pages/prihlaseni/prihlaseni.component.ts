@@ -22,22 +22,19 @@ export class PrihlaseniComponent implements OnInit {
   }
 
   login(): void {
-    if (this.validationService.validateLogin(this.email, this.password)) {
-      console.log(this.email + this.password);
-      this.publicService.login(this.email, this.password).subscribe(
-        response => {
-          console.log(response);
-        },
-        error => {
-          console.log(error);
-          Swal.fire({
-            title: 'Login Failed',
-            text: error.error.error.message + '. Please try again later.',
-            icon: 'error',
-          });
-        }
-      );
-    }
+    this.publicService.login(this.email, this.password).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+        Swal.fire({
+          title: 'Login Failed',
+          text: error.error.error.message + '. Please try again later.',
+          icon: 'error',
+        });
+      }
+    );
   }
 
   sendPasswordChange(): void {

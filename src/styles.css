@@ -1,5 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url("src/assets/icon/jpg/pozadi.jpg") center/cover no-repeat fixed;
+}
+
+h2 {
+    text-align: center;
+    font-size: calc(1rem + 1vw);
+}
+
+h4 {
+    text-align: center;
+    font-size: calc(1rem + .5vw);
+}
+
+h5 {
+    text-align: center;
+    font-size: calc(1rem + .3vw);
+}
+
+input {
+    width: 300px;
+}
+
+button {
+    width: 100%;
+    opacity: .65;
+}
+
+#container {
+    padding: 40px;
+}

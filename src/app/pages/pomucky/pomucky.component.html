@@ -1,11 +1,11 @@
 <div id="container" *ngIf="pomucka && kroky">
   <h2>
-    {{pomucka.title}}
+    {{ pomucka.title }}
   </h2>
   <div id="bubliny">
     <div *ngFor="let krok of kroky" id="bublina">
-      {{krok.popis}}
-      <img id="pomucka" *ngIf="krok.obrazek" src="assets/icon/jpg/{{krok.obrazek}}.jpg">
+      {{ krok.popis }}
+      <img id="pomucka" *ngIf="krok.obrazek" src="assets/icon/jpg/{{ krok.obrazek }}.jpg">
     </div>
     <iframe id="video" *ngIf="pomucka.videoURL" [src]="pomucka.videoURL | safe" width="1120" height="630" frameborder="0"
       allowfullscreen>

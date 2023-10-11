@@ -3,12 +3,12 @@
         {{ 'NAVODY.navody' | translate }}
     </h2>
     <div id="sloupce">
-        <div id="bunka_{{item.difficulty}}" *ngFor="let item of navod" (click)="goKroky(item.id)">
-            <div id="okraj_{{item.difficulty}}">
-                {{ item.titleCz }}
+        <div id="bunka_{{ item.difficulty }}" *ngFor="let item of navod" (click)="goKroky(item.id)">
+            <div id="okraj_{{ item.difficulty }}">
+                {{ getTitle(item) }}
             </div>
             <div id="obsah">
-                <img id="obrazek_navodu" src="{{item.link || 'assets/icon/jpg/chobotnicka.jpg'}}">
+                <img id="obrazek_navodu" src="{{ item.link || 'assets/icon/jpg/chobotnicka.jpg' }}">
                 <div id="text">
                     <strong>
                         {{ 'NAVODY.pocetCasti' | translate }}
@@ -18,7 +18,7 @@
                     <strong>
                         {{ 'NAVODY.stylyZkratky' | translate }}
                     </strong>
-                    {{ item.shortcutsCz }}
+                    {{ getShortcuts(item) }}
                 </div>
             </div>
         </div>

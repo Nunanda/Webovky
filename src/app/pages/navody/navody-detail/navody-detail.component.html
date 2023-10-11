@@ -1,6 +1,6 @@
 <div id="container" *ngIf="navod && krokyNavodu">
     <h2>
-        {{navod.titleCz}}
+        {{ getTitle(navod) }}
     </h2>
     <div id="columns">
         <div id="column_1">
@@ -8,21 +8,21 @@
                 <strong>
                     {{ 'NAVODYDETAIL.pouzitiStylu' | translate }}
                 </strong>
-                {{navod.shortcutsCz}}
-                <img id="obrazek_navodu" src="{{navod.link || 'assets/icon/jpg/chobotnicka.jpg'}}">
+                {{ getShortcuts(navod) }}
+                <img id="obrazek_navodu" src="{{ navod.link || 'assets/icon/jpg/chobotnicka.jpg' }}">
             </div>
             <div id="blok_2">
                 <div id="button" *ngFor="let item of krokyNavodu" (click)="setIndex(item.id, navod.id)">
-                    {{item.titleCz}}
+                    {{ getTitle(item) }}
                 </div>
             </div>
         </div>
         <div id="column_2">
             <strong>
-                {{krokyNavodu[index].titleCz}}:
+                {{ getTitle(krokyNavodu[index]) }}:
             </strong>
-            <div id="items" *ngFor="let item of krokyNavodu[index].descriptionCz">
-                {{item}}
+            <div id="items" *ngFor="let item of getStepsDescription(krokyNavodu[index])">
+                {{ item }}
             </div>
             <div id="buttons">
                 <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">

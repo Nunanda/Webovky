@@ -136,12 +136,10 @@ export class AppComponent {
 
   getRoute(item: string): void {
     if (this.vyukaService.getTitles().includes(item)) {
-      localStorage.setItem("nazev", this.vyukaService.getVsechnyVyrobky().find(item0 => item0.title == item)?.nazev!);
-      this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
+      this.router.navigate(["vyukovymod/vyukovymod-detail/" + this.vyukaService.getVsechnyVyrobky().find(item0 => item0.title == item)?.nazev!]);
     }
     else if (this.instructionService.getAllTitles().includes(item)) {
-      localStorage.setItem("nazev", this.instructionService.getAllInstructions().find(item0 => item0.titleCz == item)?.titleCz!);
-      this.router.navigate(["navody/navody-detail/"]);
+      this.router.navigate(["navody/navody-detail/" + (this.instructionService.getAllInstructions().find(item0 => item0.titleEn === item) || this.instructionService.getAllInstructions().find(item0 => item0.titleCz === item))?.id]);
     }
     else if (this.slovnikService.getTitles().includes(item)) {
       this.router.navigate(["slovnik/" + this.slovnikService.getVsechnyStyly().find(item0 => item0.title == item)?.nazev!]);

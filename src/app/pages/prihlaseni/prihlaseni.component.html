@@ -24,7 +24,7 @@
           <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" required
             [(ngModel)]="password" name="password" minlength="9" #passwordInput="ngModel">
           <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
-            {{showPassword ? 'visibility' : 'visibility_off'}}
+            {{ showPassword ? 'visibility' : 'visibility_off' }}
           </i>
         </div>
         <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">

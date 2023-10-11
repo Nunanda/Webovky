@@ -1,6 +1,6 @@
 <div id="container" *ngIf="infoVyuky && title">
     <h2>
-        {{title}}
+        {{ title }}
     </h2>
     <div id="columns">
         <div id="column_1">
@@ -12,8 +12,8 @@
             <strong>
                 {{ 'VYUKOVYMODDETAIL.pomucky' | translate }}
             </strong>
-            {{infoVyuky[index].pouzijeme}}
-            <div id="popis" innerHTML="{{infoVyuky[index].popis}}">
+            {{ infoVyuky[index].pouzijeme }}
+            <div id="popis" innerHTML="{{ infoVyuky[index].popis }}">
                 <strong>
                     {{ 'VYUKOVYMODDETAIL.popis' | translate }}
                 </strong>
@@ -25,7 +25,7 @@
     </div>
     <div id="buttons">
         <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="changeIndex(false)">
-        {{index+1}}/{{infoVyuky.length}}
+        {{ index+1 }}/{{ infoVyuky.length }}
         <img id="button_2" src="assets/icon/svg/Vpravo.svg" (click)="changeIndex(true)">
     </div>
 </div>

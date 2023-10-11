@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { InstructionService } from 'src/app/service';
 import { Instruction, Step } from 'src/app/types';
 
@@ -14,11 +15,10 @@ export class NavodyDetailComponent implements OnInit {
   navod: Instruction | undefined | void;
   krokyNavodu: Step[] | undefined;
   index: number = 0;
-
-  isRunning: boolean = false;
   timer: number = 0;
+  isRunning: boolean = false;
 
-  constructor(private instructionService: InstructionService, private router: Router) { }
+  constructor(private instructionService: InstructionService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.loadNavodData();
@@ -26,6 +26,24 @@ export class NavodyDetailComponent implements OnInit {
 
   ngDoCheck(): void {
     this.loadNavodData();
+  }
+
+  loadNavodData(): void {
+    this.nazev = this.router.url.split('/')[3];
+    this.navod = this.instructionService.getInstructionsById(this.nazev);
+    this.krokyNavodu = this.instructionService.getStepsById(this.nazev);
+  }
+
+  getTitle(navod: Instruction | Step): string {
+    return this.translate.currentLang === 'CZ' ? navod.titleCz : navod.titleEn;
+  }
+
+  getShortcuts(navod: Instruction): string | null | undefined {
+    return this.translate.currentLang === 'CZ' ? navod.shortcutsCz : navod.shortcutsEn;
+  }
+
+  getStepsDescription(step: Step): string[] {
+    return this.translate.currentLang === 'CZ' ? step.descriptionCz : step.descriptionEn;
   }
 
   setIndex(id: string, instructionId: string): void {
@@ -48,20 +66,16 @@ export class NavodyDetailComponent implements OnInit {
       this.isRunning = false;
     } else {
       this.isRunning = true;
-      this.time();
+      const timerInterval = setInterval(() => {
+        if (this.isRunning) {
+          this.timer++;
+        } else {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
     }
   }
 
-  time(): void {
-    const timerInterval = setInterval(() => {
-      if (this.isRunning) {
-        this.timer++;
-      } else {
-        clearInterval(timerInterval);
-      }
-    }, 1000);
-  }
-  
   finished(): void {
   }
 
@@ -69,11 +83,5 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   nextIndex(): void {
-  }
-
-  private loadNavodData(): void {
-    this.nazev = this.router.url.split('/')[3];
-    this.navod = this.instructionService.getInstructionsById(this.nazev);
-    this.krokyNavodu = this.instructionService.getStepsById(this.nazev);
   }
 }

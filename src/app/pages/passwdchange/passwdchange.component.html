@@ -12,7 +12,7 @@
                     <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" required
                         [(ngModel)]="password0" name="password0" minlength="8" #passwordInput0="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
-                        {{showPassword0 ? 'visibility' : 'visibility_off'}}
+                        {{ showPassword0 ? 'visibility' : 'visibility_off' }}
                     </i>
                 </div>
                 <div *ngIf="passwordInput0.invalid && (passwordInput0.dirty || passwordInput0.touched)"
@@ -33,7 +33,7 @@
                     <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" required
                         [(ngModel)]="password1" name="password1" minlength="8" #passwordInput1="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
-                        {{showPassword1 ? 'visibility' : 'visibility_off'}}
+                        {{ showPassword1 ? 'visibility' : 'visibility_off' }}
                     </i>
                 </div>
                 <div *ngIf="passwordInput1.invalid && (passwordInput1.dirty || passwordInput1.touched)"

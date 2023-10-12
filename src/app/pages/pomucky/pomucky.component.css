@@ -6,7 +6,7 @@
 
 #bublina {
     border-radius: 15px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     font-size: calc(.7rem + .5vw);
     width: 72%;
     margin-top: 20px;
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #C8E7F4;
+    background-color: var(--cell-color-first);
 }
 
 #pomucka {
@@ -25,11 +25,11 @@
     height: 100%;
     border-radius: 20px;
     margin: 20px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
 }
 
 #video {
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     margin-top: 50px;
     width: 59vw;
     height: 33.3vw;

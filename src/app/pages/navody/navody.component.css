@@ -9,50 +9,50 @@
 
 #bunka_easy {
     border-radius: 20px;
-    background-color: #E2FAE3;
-    box-shadow: 0 3px 8px #0003;
+    background-color: var(--easy-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
 }
 
 #bunka_medium {
     border-radius: 20px;
-    background-color: #F9FAE1;
-    box-shadow: 0 3px 8px #0003;
+    background-color: var(--medium-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
 }
 
 #bunka_hard {
     border-radius: 20px;
-    background-color: #FDE6E6;
-    box-shadow: 0 3px 8px #0003;
+    background-color: var(--hard-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
 }
 
 #okraj_easy {
     padding: 5px;
-    background: #3EDE44;
+    background: var(--easy-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: var(--background-color);
 }
 
 #okraj_medium {
     padding: 5px;
-    background: #D6DA34;
+    background: var(--medium-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: var(--background-color);
 }
 
 #okraj_hard {
     padding: 5px;
-    background: #f73636;
+    background: var(--hard-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: var(--background-color);
 }
 
 #obsah {

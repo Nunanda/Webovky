@@ -9,18 +9,18 @@
 
 #bunka {
     border-radius: 20px;
-    background-color: #f7e4ea;
-    box-shadow: 0 3px 8px #0003;
+    background-color: var(--cell-color-second);
+    box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
 }
 
 #okraj {
     padding: 5px;
-    background: #EA749B;
+    background: var(--cell-header);
     border-radius: 20px 20px 0px 0px;
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: var(--background-color);
 }
 
 #obsah {

@@ -6,10 +6,10 @@
 }
 
 #first_column {
-    background-color: #C8E7F4;
+    background-color: var(--cell-color-first);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     font-size: calc(.7rem + .5vw);
     max-width: 30vw;
 }
@@ -33,11 +33,11 @@
     width: 150px;
     height: 150px;
     border-radius: 20px;
-    background-color: #fff;
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     font-size: 72px;
 }
 
@@ -50,7 +50,7 @@
 #size_1,
 #size_2 {
     max-width: 445px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     border-radius: 15px;
     margin: 8px 0;
 }

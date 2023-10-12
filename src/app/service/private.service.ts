@@ -10,152 +10,149 @@ import { Instruction, Progress, Step, User } from '../types';
 })
 export class PrivateService {
   private readonly apiUrl = environment.apiUrl;
-  private readonly httpOptions = {
-    headers: new HttpHeaders()
-  };
-  private readonly token: string | null;
 
-  constructor(private http: HttpClient, private tokenService: TokenService) {
-    this.token = this.tokenService.getToken();
-    this.httpOptions = {
+  constructor(private http: HttpClient, private tokenService: TokenService) { }
+
+  getHttpOptions(): {headers: HttpHeaders} {
+    return {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`,
+        'Authorization': `Bearer ${this.tokenService.getToken()}`,
         'Content-Type': 'application/json'
       })
-    };
+    }
   }
 
   getUser(): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/{id}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   patchUser(user: Omit<User, 'id' | 'wrappedDEK' | 'initializationVector' | 'kekSalt' | 'data' | 'link'>): Observable<any> {
     return this.http.patch(`${this.apiUrl}/users/{id}`, user,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteUser(password: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/${password}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   uploadProfilePicture(formData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/profile-picture`, formData,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteProfilePicture(): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/profile-picture`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   createProgress(progress: Omit<Progress, 'id'>): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/progresses/{progressId}`, progress,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   patchProgress(instructionId: number, progress: Omit<Progress, 'id' | 'instructionId' | 'userId'>): Observable<any> {
     return this.http.patch(`${this.apiUrl}/users/{id}/progresses/${instructionId}`, progress,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteProgress(instructionId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/progresses/${instructionId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   getProgress(instructionId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/{id}/progresses/${instructionId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   followUser(followeeId: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/follow/${followeeId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   unfollowUser(followeeId: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/unfollow/${followeeId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   createInstruction(instruction: Omit<Instruction, 'id' | 'userId' | 'date' | 'link' | 'deleteHash'>, key?: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/instructions/{instructionId}`, {
       instruction,
       key
-    }, this.httpOptions);
+    }, this.getHttpOptions());
   }
 
   patchInstruction(instruction: Omit<Instruction, 'id' | 'link' | 'premium' | 'date' | 'user' | 'steps'>, instructionId: number): Observable<any> {
     return this.http.patch(`${this.apiUrl}/users/{id}/instructions/${instructionId}`, instruction,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteInstruction(instructionId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/instructions/${instructionId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   getUsersInstructions(): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/{id}/user-instructions`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   uploadInstructionPicture(instructionId: number, formData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/instructions/${instructionId}/picture`, formData,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteInstructionPicture(instructionId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/instructions/${instructionId}/picture`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   setPremiumInstruction(instructionId: number, key: string, premium: boolean): Observable<any> {
     return this.http.patch(`${this.apiUrl}/users/{id}/instructions/${instructionId}`, {
       key,
       premium,
-    }, this.httpOptions);
+    }, this.getHttpOptions());
   }
 
   setPremium(instructionId: number, userId: number, key: string): Observable<any> {
     return this.http.patch(`${this.apiUrl}/authorizate-for-premium-instruction/${instructionId}/${userId}`, key,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   createStep(instructionId: number, step: Omit<Step, 'id' | 'link' | 'instructionId'>): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/instructions/${instructionId}/steps/{stepId}`, step,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   patchStep(instructionId: number, stepId: number, step: Omit<Step, 'id' | 'link' | 'instructionId'>): Observable<any> {
     return this.http.patch(`${this.apiUrl}/users/{id}/instructions/${instructionId}/steps/${stepId}`, step,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteStep(instructionId: number, stepId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/instructions/${instructionId}/steps/${stepId}`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   getSteps(instructionId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/{id}/instructions/${instructionId}/instruction-steps`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   uploadStepsPicture(instructionId: number, stepId: number, formData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}/users/{id}/instructions/${instructionId}/steps/${stepId}/picture`, formData,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   deleteStepPicture(instructionId: number, stepId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/{id}/instructions/${instructionId}/steps/${stepId}/picture`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   getPremiumInstructionDetail(instructionId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/premium-instructions/${instructionId}/detail`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 }

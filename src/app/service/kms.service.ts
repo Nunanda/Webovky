@@ -9,18 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class KmsService {
   private readonly kmsUrl = environment.kmsUrl;
-  private readonly httpOptions = {
-    headers: new HttpHeaders()
-  };
-  private readonly token: string | null;
 
-  constructor(private http: HttpClient, private tokenService: TokenService) {
-    this.token = this.tokenService.getKmsToken();
-    this.httpOptions = {
+  constructor(private http: HttpClient, private tokenService: TokenService) { }
+
+  getHttpOptions(): {headers: HttpHeaders} {
+    return {
       headers: new HttpHeaders({
-        'X-Vault-Token': `${this.token}`
+        'X-Vault-Token': `${this.tokenService.getKmsToken()}`
       })
-    };
+    }
   }
 
   userpassLogin(id: string, password: string): Observable<any> {
@@ -36,19 +33,19 @@ export class KmsService {
 
   renewToken(): Observable<any> {
     return this.http.post(`${this.kmsUrl}/v1/auth/token/renew-self`,
-      this.httpOptions);
+      this.getHttpOptions());
   }
 
   decryptData(id: string, encryptedData: string): Observable<any> {
     return this.http.post(`${this.kmsUrl}/v1/transit/decrypt/${id}`, {
       ciphertext: encryptedData,
-    }, this.httpOptions);
+    }, this.getHttpOptions());
   }
 
   encryptData(id: string, dataToEncrypt: string): Observable<any> {
     return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
       plaintext: dataToEncrypt,
-    }, this.httpOptions);
+    }, this.getHttpOptions());
   }
 
   encryptSignup(id: string, token: string, dataToEncrypt: string): Observable<any> {

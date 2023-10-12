@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { PublicService, TokenService } from 'src/app/service';
-import { ValidationService } from 'src/app/service';
+import { switchMap } from 'rxjs';
+import { PublicService, PrivateService, TokenService, ValidationService, KmsService } from 'src/app/service';
 import Swal from 'sweetalert2';
+import * as pbkdf2 from 'pbkdf2';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -17,25 +19,69 @@ export class PrihlaseniComponent implements OnInit {
   email: string = "";
   email1: string = "";
 
-  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private tokenService: TokenService) { }
+  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService, private tokenService: TokenService, private kmsService: KmsService) { }
 
   ngOnInit(): void {
   }
 
   login(): void {
-    this.publicService.login(this.email, this.password).subscribe(
-      response => {
-        this.tokenService.saveToken(response.token);
-        this.router.navigate(['/home']);
-      },
-      error => {
-        Swal.fire({
-          title: 'Login Failed',
-          text: error.error.error.message + '. Please try again later.',
-          icon: 'error',
-        });
-      }
-    );
+    let userId: string;
+    let kekSalt: string;
+    let wrappedDEK: string;
+    this.publicService.login(this.email, this.password)
+      .pipe(
+        switchMap(response => {
+          this.tokenService.saveToken(response.token);
+          return this.privateService.getUser();
+        }),
+        switchMap(response1 => {
+          userId = response1.id;
+          kekSalt = response1.kekSalt;
+          wrappedDEK = response1.wrappedDEK;
+          return this.kmsService.userpassLogin(response1.id, this.password);
+        }),
+        switchMap(response2 => {
+          const KEK = pbkdf2.pbkdf2Sync(this.password, kekSalt, 10000, 256 / 8, 'sha512');
+          this.tokenService.saveKmsToken(response2.auth.client_token);
+          return this.kmsService.encryptData(userId, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
+        }),
+        switchMap(response3 => {
+          const wrappedDEKBase64 = wrappedDEK;
+          const wrappedDEKWordArray = CryptoJS.enc.Base64.parse(wrappedDEKBase64);
+          const decryptedDEKWordArray = CryptoJS.AES.decrypt(
+            CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(wrappedDEKWordArray.toString())),
+            response3.data.ciphertext,
+            {
+              mode: CryptoJS.mode.CFB,
+              padding: CryptoJS.pad.Pkcs7
+            }
+          );
+          const decryptedDEKHex = decryptedDEKWordArray.toString(CryptoJS.enc.Hex);
+          console.log("Decrypted DEK:", decryptedDEKHex);
+          return "";
+        })
+      )
+      .subscribe(
+        response1 => {
+          this.router.navigate(['/home']);
+        },
+        error => {
+          console.log(error);
+          try {
+            Swal.fire({
+              title: 'Login Failed',
+              text: error.error.error.message + '. Please try again later.',
+              icon: 'error',
+            });
+          } catch (_error) {
+            Swal.fire({
+              title: 'Registration Failed',
+              text: 'An error occurred. Please try again later.',
+              icon: 'error',
+            });
+          }
+        }
+      );
   }
 
   sendPasswordChange(): void {

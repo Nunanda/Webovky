@@ -1,9 +1,9 @@
 #novinky {
-    background: #C8E7F4;
+    background: var(--cell-color-first);
     border-radius: 20px;
     text-align: center;
     padding: 15px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     font-size: calc(.6rem + .5vw);
 }
 
@@ -31,7 +31,7 @@
 #card_2,
 #card_3 {
     padding: 10px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     display: flex;
     flex: 1;
     justify-content: center;

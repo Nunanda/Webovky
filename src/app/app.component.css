@@ -1,6 +1,6 @@
 
 #page {
-    background-color: #fff;
+    background-color: var(--background-color);
     width: 85%;
     margin: auto;
     overflow: auto;
@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: center;
     column-gap: 8vw;
-    background-color: #C8E7F4;
-    box-shadow: 0 3px 8px #0003;
+    background-color: var(--cell-color-first);
+    box-shadow: 0 3px 8px var(--shadow-color);
 }
 
 #logo {
@@ -29,7 +29,7 @@
 #hledaci_bunka {
     order: 3;
     border-radius: 30px;
-    background-color: #FFF;
+    background-color: var(--background-color);
     min-width: 30vw;
 }
 
@@ -53,18 +53,18 @@
     position: absolute;
     z-index: 6;
     padding: 0;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     text-align: center;
     border-radius: 20px;
 }
 
 #search_result_li {
     padding: 14px;
-    background: #E9E9ED;
+    background: var(--box-color);
     display: block;
     border-bottom: solid;
     border-width: 1px;
-    border-color: #0003;
+    border-color: var(--shadow-color);
 }
 
 #search_result_li:last-child {
@@ -79,14 +79,14 @@
 #translation {
     order: 4;
     padding: .375em .75em;
-    background-color: #fff;
-    border: 1px solid #ced4da;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color-second);
     appearance: none;
 }
 
 #account {
     order: 5;
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 5px;
     border-radius: 15px;
     max-width: 50px;
@@ -94,7 +94,7 @@
 
 #hamburger {
     order: 6;
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 5px;
     border-radius: 15px;
     max-width: 50px;
@@ -123,9 +123,9 @@
 #blok2_div,
 #blok3_div {
     padding: 15px;
-    background: #F4B9CD;
+    background: var(--pink-backgroud);
     border-radius: 20px;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     min-width: 200px;
     display: flex;
     justify-content: center;
@@ -140,10 +140,10 @@
 #blok3_container {
     min-width: 200px;
     max-width: 100px;
-    background-color: #E9E9ED;
+    background-color: var(--box-color);
     display: none;
     position: absolute;
-    box-shadow: 0 3px 8px #0003;
+    box-shadow: 0 3px 8px var(--shadow-color);
     text-align: center;
     border-radius: 20px;
 }
@@ -151,14 +151,14 @@
 #pomucky,
 #slovnik {
     min-width: 8vw;
-    color: #333;
+    color: var(--text-color);
     padding: 14px 18px;
     text-decoration: none;
-    background: #f2d4de;
+    background: var(--light-background);
     display: block;
     border-bottom: solid;
     border-width: 1px;
-    border-color: #c0a8b0;
+    border-color: var(--border-color-first);
 }
 
 #pomucky:last-child,
@@ -206,7 +206,7 @@
         flex-direction: column;
         margin-top: 0;
         right: 0;
-        background-color: #fff;
+        background-color: var(--background-color);
         height: 100%;
         gap: 1%;
         justify-content: start;

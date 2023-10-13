@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { InstructionService } from 'src/app/service';
@@ -11,6 +11,8 @@ import { Instruction, Step } from 'src/app/types';
 })
 export class NavodyDetailComponent implements OnInit {
 
+  @ViewChildren('items') elements: QueryList<ElementRef> | undefined;
+  highlightIndex: number = -1;
   nazev: string | undefined;
   navod: Instruction | undefined | void;
   krokyNavodu: Step[] | undefined;
@@ -47,6 +49,13 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   setIndex(id: string, instructionId: string): void {
+    if (this.elements) {
+      this.elements.toArray().forEach((element) => {
+        element.nativeElement.style.textDecoration = '';
+        element.nativeElement.style.color = '';
+      });
+    }
+    this.highlightIndex = -1;
     const index = this.instructionService.getIndexById(id, instructionId);
     if (index !== undefined) {
       this.index = index;
@@ -76,12 +85,41 @@ export class NavodyDetailComponent implements OnInit {
     }
   }
 
-  finished(): void {
+  nextIndex(): void {
+    if (this.elements) {
+      if (this.highlightIndex !== this.elements.length-1) {
+        this.highlightIndex++;
+        this.elements.toArray()[this.highlightIndex].nativeElement.style.textDecoration = 'line-through';
+        this.elements.toArray()[this.highlightIndex].nativeElement.style.color = 'gray';
+      }
+    }
   }
 
   previousIndex(): void {
+    if (this.elements) {
+      if (this.highlightIndex !== -1) {
+        this.elements.toArray()[this.highlightIndex].nativeElement.style.textDecoration = '';
+        this.elements.toArray()[this.highlightIndex].nativeElement.style.color = '';
+        this.highlightIndex--;
+      }
+    }
   }
 
-  nextIndex(): void {
+  finished(): void {
+    if (this.elements) {
+      if (this.highlightIndex < this.elements.length-1) {
+        this.elements.toArray().forEach((element) => {
+          element.nativeElement.style.textDecoration = 'line-through';
+          element.nativeElement.style.color = 'gray';
+        });
+        this.highlightIndex = this.elements.length-1;
+      } else {
+        this.elements.toArray().forEach((element) => {
+          element.nativeElement.style.textDecoration = '';
+          element.nativeElement.style.color = '';
+        });
+        this.highlightIndex = -1;
+      }
+    }
   }
 }

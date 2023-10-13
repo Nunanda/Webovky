@@ -21,7 +21,7 @@
             <strong>
                 {{ getTitle(krokyNavodu[index]) }}:
             </strong>
-            <div id="items" *ngFor="let item of getStepsDescription(krokyNavodu[index])">
+            <div id="items" *ngFor="let item of getStepsDescription(krokyNavodu[index])" #items>
                 {{ item }}
             </div>
             <div id="buttons">

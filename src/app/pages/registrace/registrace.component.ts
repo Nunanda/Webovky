@@ -34,7 +34,7 @@ export class RegistraceComponent implements OnInit {
       const initializationVector = CryptoJS.lib.WordArray.random(16);
       let token: string;
       let userId: string;
-      this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, kekSalt, initializationVector.toString(CryptoJS.enc.Hex))
+      this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, window.matchMedia('(prefers-color-scheme: dark)').matches, kekSalt, initializationVector.toString(CryptoJS.enc.Hex))
         .pipe(
           switchMap(response => {
             token = response.token;

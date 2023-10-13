@@ -30,13 +30,14 @@ export class PublicService {
     }, this.httpOptions);
   }
 
-  signup(email: string, username: string, password0: string, password1: string, language: Language, kekSalt: string, initializationVector: string): Observable<any> {
+  signup(email: string, username: string, password0: string, password1: string, language: Language, darkmode: boolean, kekSalt: string, initializationVector: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/signup`, {
       email,
       username,
       password0,
       password1,
       language,
+      darkmode,
       kekSalt,
       initializationVector
     }, this.httpOptions);

@@ -155,6 +155,16 @@ export class AppComponent {
     return this.translate.use(lang);
   }
 
+  switchDarkmode(darkMode: string): void {
+    if (darkMode == "dark") {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem("darkMode", "dark");
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem("darkMode", "light");
+    }
+  }
+
   opencloseNav(): void {
     if (this.menu) {
       if (this.menuVisible && window.innerWidth < 1100) {

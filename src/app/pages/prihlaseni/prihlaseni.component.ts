@@ -28,6 +28,7 @@ export class PrihlaseniComponent implements OnInit {
     let userId: string;
     let kekSalt: string;
     let wrappedDEK: string;
+    let initializationVector: string;
     this.publicService.login(this.email, this.password)
       .pipe(
         switchMap(response => {
@@ -38,35 +39,39 @@ export class PrihlaseniComponent implements OnInit {
           userId = response1.id;
           kekSalt = response1.kekSalt;
           wrappedDEK = response1.wrappedDEK;
+          initializationVector = response1.initializationVector;
           return this.kmsService.userpassLogin(response1.id, this.password);
         }),
         switchMap(response2 => {
           const KEK = pbkdf2.pbkdf2Sync(this.password, kekSalt, 10000, 256 / 8, 'sha512');
           this.tokenService.saveKmsToken(response2.auth.client_token);
           return this.kmsService.encryptData(userId, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
-        }),
-        switchMap(response3 => {
-          const wrappedDEKBase64 = wrappedDEK;
-          const wrappedDEKWordArray = CryptoJS.enc.Base64.parse(wrappedDEKBase64);
-          const decryptedDEKWordArray = CryptoJS.AES.decrypt(
-            CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(wrappedDEKWordArray.toString())),
-            response3.data.ciphertext,
-            {
-              mode: CryptoJS.mode.CFB,
-              padding: CryptoJS.pad.Pkcs7
-            }
-          );
-          const decryptedDEKHex = decryptedDEKWordArray.toString(CryptoJS.enc.Hex);
-          console.log("Decrypted DEK:", decryptedDEKHex);
-          return "";
         })
       )
-      .subscribe(
-        response1 => {
-          this.router.navigate(['/home']);
-        },
+      .subscribe(response3 => {
+        const wrappedDEKBase64 = wrappedDEK;
+        const wrappedDEKWordArray = CryptoJS.enc.Base64.parse(wrappedDEKBase64);
+        const decryptedDEKWordArray = CryptoJS.AES.decrypt(
+          CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(wrappedDEKWordArray.toString())),
+          response3.data.ciphertext,
+          {
+            mode: CryptoJS.mode.CFB,
+            padding: CryptoJS.pad.Pkcs7,
+            iv: CryptoJS.enc.Hex.parse(initializationVector.toString()),
+          }
+        );
+        const decryptedDEKHex = CryptoJS.enc.Hex.stringify(decryptedDEKWordArray);
+        userId = "";
+        kekSalt = "";
+        wrappedDEK = "";
+        this.password = "";
+        this.router.navigate(['/home']);
+      },
         error => {
-          console.log(error);
+          userId = "";
+          kekSalt = "";
+          wrappedDEK = "";
+          this.password = "";
           try {
             Swal.fire({
               title: 'Login Failed',

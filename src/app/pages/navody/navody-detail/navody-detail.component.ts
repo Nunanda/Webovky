@@ -11,7 +11,8 @@ import { Instruction, Step } from 'src/app/types';
 })
 export class NavodyDetailComponent implements OnInit {
 
-  @ViewChildren('items') elements: QueryList<ElementRef> | undefined;
+  @ViewChildren('items') items: QueryList<ElementRef> | undefined;
+  @ViewChildren('krokyElement') krokyElement: QueryList<ElementRef> | undefined;
   highlightIndex: number = -1;
   nazev: string | undefined;
   navod: Instruction | undefined | void;
@@ -49,8 +50,8 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   setIndex(id: string, instructionId: string): void {
-    if (this.elements) {
-      this.elements.toArray().forEach((element) => {
+    if (this.items) {
+      this.items.toArray().forEach((element) => {
         element.nativeElement.style.textDecoration = '';
         element.nativeElement.style.color = '';
       });
@@ -86,39 +87,51 @@ export class NavodyDetailComponent implements OnInit {
   }
 
   nextIndex(): void {
-    if (this.elements) {
-      if (this.highlightIndex !== this.elements.length-1) {
+    if (this.items) {
+      if (this.highlightIndex !== this.items.length-1) {
         this.highlightIndex++;
-        this.elements.toArray()[this.highlightIndex].nativeElement.style.textDecoration = 'line-through';
-        this.elements.toArray()[this.highlightIndex].nativeElement.style.color = 'gray';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.textDecoration = 'line-through';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.color = 'gray';
+        if ((this.highlightIndex === this.items.length-1) && this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
+        }
       }
     }
   }
 
   previousIndex(): void {
-    if (this.elements) {
+    if (this.items) {
       if (this.highlightIndex !== -1) {
-        this.elements.toArray()[this.highlightIndex].nativeElement.style.textDecoration = '';
-        this.elements.toArray()[this.highlightIndex].nativeElement.style.color = '';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.textDecoration = '';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.color = '';
         this.highlightIndex--;
+        if ((this.highlightIndex < this.items.length) && this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '';
+        }
       }
     }
   }
 
   finished(): void {
-    if (this.elements) {
-      if (this.highlightIndex < this.elements.length-1) {
-        this.elements.toArray().forEach((element) => {
+    if (this.items) {
+      if (this.highlightIndex < this.items.length-1) {
+        this.items.toArray().forEach((element) => {
           element.nativeElement.style.textDecoration = 'line-through';
           element.nativeElement.style.color = 'gray';
         });
-        this.highlightIndex = this.elements.length-1;
+        this.highlightIndex = this.items.length-1;
+        if (this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
+        }
       } else {
-        this.elements.toArray().forEach((element) => {
+        this.items.toArray().forEach((element) => {
           element.nativeElement.style.textDecoration = '';
           element.nativeElement.style.color = '';
         });
         this.highlightIndex = -1;
+        if (this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '';
+        }
       }
     }
   }

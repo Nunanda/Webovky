@@ -12,7 +12,7 @@
                 <img id="obrazek_navodu" src="{{ navod.link || 'assets/icon/jpg/chobotnicka.jpg' }}">
             </div>
             <div id="blok_2">
-                <div id="button" *ngFor="let item of krokyNavodu" (click)="setIndex(item.id, navod.id)">
+                <div id="button" *ngFor="let item of krokyNavodu" (click)="setIndex(item.id, navod.id)" #krokyElement>
                     {{ getTitle(item) }}
                 </div>
             </div>

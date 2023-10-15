@@ -49,7 +49,7 @@
 }
 
 #search_result_ul {
-    min-width: 30vw;
+    min-width: 100%;
     max-width: 34vw;
     position: absolute;
     z-index: 6;
@@ -232,7 +232,6 @@
     #slovnik {
         padding: 0;
     }
-
 }
 
 @media screen and (max-width: 810px) {

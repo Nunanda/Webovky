@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 8vw;
+    column-gap: 7vw;
     background-color: var(--cell-color-first);
     box-shadow: 0 3px 8px var(--shadow-color);
 }

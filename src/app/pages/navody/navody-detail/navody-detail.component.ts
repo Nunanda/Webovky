@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { InstructionService } from 'src/app/service';
@@ -29,6 +30,10 @@ export class NavodyDetailComponent implements OnInit {
 
   ngDoCheck(): void {
     this.loadNavodData();
+  }
+
+  ngAfterViewChecked() {
+    this.checkFinished();
   }
 
   loadNavodData(): void {
@@ -88,11 +93,11 @@ export class NavodyDetailComponent implements OnInit {
 
   nextIndex(): void {
     if (this.items) {
-      if (this.highlightIndex !== this.items.length-1) {
+      if (this.highlightIndex !== this.items.length - 1) {
         this.highlightIndex++;
         this.items.toArray()[this.highlightIndex].nativeElement.style.textDecoration = 'line-through';
         this.items.toArray()[this.highlightIndex].nativeElement.style.color = 'gray';
-        if ((this.highlightIndex === this.items.length-1) && this.krokyElement) {
+        if ((this.highlightIndex === this.items.length - 1) && this.krokyElement) {
           this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
         }
       }
@@ -114,12 +119,12 @@ export class NavodyDetailComponent implements OnInit {
 
   finished(): void {
     if (this.items) {
-      if (this.highlightIndex < this.items.length-1) {
+      if (this.highlightIndex < this.items.length - 1) {
         this.items.toArray().forEach((element) => {
           element.nativeElement.style.textDecoration = 'line-through';
           element.nativeElement.style.color = 'gray';
         });
-        this.highlightIndex = this.items.length-1;
+        this.highlightIndex = this.items.length - 1;
         if (this.krokyElement) {
           this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
         }
@@ -134,5 +139,15 @@ export class NavodyDetailComponent implements OnInit {
         }
       }
     }
+  }
+
+  checkFinished(): void {
+    if (this.krokyElement && this.items && this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor === 'rgb(245, 163, 190)') {
+        this.items.toArray().forEach((element) => {
+          element.nativeElement.style.textDecoration = 'line-through';
+          element.nativeElement.style.color = 'gray';
+        });
+    }
+    console.log("S")
   }
 }

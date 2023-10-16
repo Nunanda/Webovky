@@ -143,11 +143,11 @@ export class NavodyDetailComponent implements OnInit {
 
   checkFinished(): void {
     if (this.krokyElement && this.items && this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor === 'rgb(245, 163, 190)') {
-        this.items.toArray().forEach((element) => {
-          element.nativeElement.style.textDecoration = 'line-through';
-          element.nativeElement.style.color = 'gray';
-        });
+      this.items.toArray().forEach((element) => {
+        element.nativeElement.style.textDecoration = 'line-through';
+        element.nativeElement.style.color = 'gray';
+      });
+      this.highlightIndex = this.items.length - 1;
     }
-    console.log("S")
   }
 }

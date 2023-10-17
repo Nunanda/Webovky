@@ -2,26 +2,33 @@
 
 :root {
     --background-color: #fff;
-    --cell-color-first: #C8E7F4;
+    --background-color-invert: #fff;
+    --cell-color-first: #c8e7f4;
     --shadow-color: #0003;
-    --box-color: #E9E9ED;
+    --box-color: #e9e9ed;
     --border-color-first: #c0a8b0;
     --border-color-second: #ced4da;
-    --pink-backgroud: #F4B9CD;
+    --pink-backgroud: #f4B9cd;
     --text-color: #333;
+    --text-color-black-and-white: #333;
     --light-background: #f2d4de;
     --cell-color-second: #f7e4ea;
-    --cell-header: #EA749B;
-    --easy-instruction: #3EDE44;
-    --medium-instruction: #D6DA34;
+    --cell-header: #ea749b;
+    --easy-instruction: #3ede44;
+    --medium-instruction: #d6da34;
     --hard-instruction: #f73636;
-    --easy-color: #E2FAE3;
-    --medium-color: #F9FAE1;
-    --hard-color: #FDE6E6;
+    --easy-color: #e2fae3;
+    --medium-color: #f9fae1;
+    --hard-color: #fde6e6;
+    --invert: 0%;
 }
 
 .dark-mode {
-    --background-color: #35363A;
+    --background-color: #35363a;
+    --background-color-invert: #cac9c5;
+    --text-color-black-and-white: #fff;
+    --shadow-color: #808080;
+    --invert: 100%;
 }
 
 html,
@@ -37,6 +44,7 @@ body {
 
 h2 {
     text-align: center;
+    color: var(--text-color-black-and-white);
     font-size: calc(1rem + 1vw);
 }
 
@@ -52,11 +60,26 @@ h5 {
 
 input {
     width: 300px;
+    color: var(--text-color-black-and-white);
 }
 
 button {
     width: 100%;
     opacity: .65;
+}
+
+i {
+    color: var(--background-color-invert);
+}
+
+.form-control {
+    background-color: var(--background-color);
+    color: var(--background-color-invert);
+}
+
+.form-control:focus {
+    background-color: var(--background-color);
+    color: var(--background-color-invert);
 }
 
 #container {

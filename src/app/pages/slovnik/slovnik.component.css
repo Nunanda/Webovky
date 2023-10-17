@@ -33,12 +33,13 @@
     width: 150px;
     height: 150px;
     border-radius: 20px;
-    background-color: var(--background-color);
+    background-color: var(--background-color-invert);
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 3px 8px var(--shadow-color);
     font-size: 72px;
+    filter: invert(var(--invert));
 }
 
 #second_column {

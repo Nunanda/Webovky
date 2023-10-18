@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
-    "@angular/youtube-player": "^16.2.3",
+    "@angular/youtube-player": "^16.2.5",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "crypto-js": "^4.1.1",
@@ -28,7 +28,7 @@
     "sweetalert2": "^10.16.11",
     "tslib": "^2.3.0",
     "uuid": "^9.0.1",
-    "zone.js": "~0.13.2"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",

@@ -15,6 +15,10 @@
           </li>
         </ul>
       </div>
+      <label id="darkmode">
+        <input id="checkbox" type="checkbox" (change)="switchDarkmode()" [checked]="darkmode === false">
+        <span id="slider"></span>
+      </label>
       <select id="translation" #selectedlang (change)="switchLanguage(selectedlang.value)">
         <option id="options" *ngFor="let language of translate.getLangs()" [value]="language"
           [selected]="language === translate.currentLang">

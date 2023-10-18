@@ -12,6 +12,7 @@
     background-color: var(--cell-color-second);
     box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
+    cursor: pointer;
 }
 
 #okraj {

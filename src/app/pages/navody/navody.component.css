@@ -12,6 +12,7 @@
     background-color: var(--easy-color);
     box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
+    cursor: pointer;
 }
 
 #bunka_medium {
@@ -19,6 +20,7 @@
     background-color: var(--medium-color);
     box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
+    cursor: pointer;
 }
 
 #bunka_hard {
@@ -26,6 +28,7 @@
     background-color: var(--hard-color);
     box-shadow: 0 3px 8px var(--shadow-color);
     min-height: 180px;
+    cursor: pointer;
 }
 
 #okraj_easy {

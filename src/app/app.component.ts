@@ -26,6 +26,7 @@ export class AppComponent {
   imageURL: string = "assets/icon/svg/account.svg";
   slovnik: Styl[] | undefined;
   pomucky: Pomucka[] | undefined;
+  darkmode: boolean = false;
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
     this.loadResources();
@@ -112,9 +113,13 @@ export class AppComponent {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (userDarkModePreference === "dark" || userDarkModePreference === "light") {
       document.body.classList.toggle('dark-mode', userDarkModePreference === 'dark');
+      if (userDarkModePreference === "dark") {
+        this.darkmode = !this.darkmode;
+      }
     } else if (prefersDarkMode) {
       document.body.classList.add('dark-mode');
       localStorage.setItem("darkMode", "dark");
+      this.darkmode = !this.darkmode;
     } else {
       document.body.classList.remove('dark-mode');
       localStorage.setItem("darkMode", "light");
@@ -155,14 +160,16 @@ export class AppComponent {
     return this.translate.use(lang);
   }
 
-  switchDarkmode(darkMode: string): void {
-    if (darkMode == "dark") {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem("darkMode", "dark");
-    } else {
+  switchDarkmode(): void {
+    const userDarkModePreference = localStorage.getItem("darkMode");
+    if (userDarkModePreference === "dark") {
       document.body.classList.remove('dark-mode');
       localStorage.setItem("darkMode", "light");
+    } else {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem("darkMode", "dark");
     }
+    this.darkmode = !this.darkmode;
   }
 
   opencloseNav(): void {

@@ -21,6 +21,7 @@
     --medium-color: #f9fae1;
     --hard-color: #fde6e6;
     --invert: 0%;
+    --darkmode-input: #00c3ff;
 }
 
 .dark-mode {
@@ -29,6 +30,7 @@
     --text-color-black-and-white: #fff;
     --shadow-color: #808080;
     --invert: 100%;
+    --darkmode-input: #28096b;
 }
 
 html,

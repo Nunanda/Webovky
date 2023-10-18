@@ -68,4 +68,8 @@
         max-width: 160px;
         margin: 10px;
     }
+
+    #soc_site {
+        gap: 33px;
+    }
 }

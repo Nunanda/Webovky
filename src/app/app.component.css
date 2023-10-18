@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 7vw;
+    column-gap: 5vw;
     background-color: var(--cell-color-first);
     box-shadow: 0 3px 8px var(--shadow-color);
 }
@@ -52,6 +52,7 @@
     margin: 10px;
     right: 10px;
     filter: invert(var(--invert));
+    cursor: pointer;
 }
 
 #search_result_ul {
@@ -83,8 +84,51 @@
     border-radius: 10px 10px 0px 0px;
 }
 
-#translation {
+#darkmode {
     order: 4;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+#checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#checkbox:checked + #slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+#slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--darkmode-input);
+    border-radius: 30px;
+}
+
+#slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--darkmode-input);
+}
+
+#translation {
+    order: 5;
     background-color: var(--background-color);
     border: 0px solid var(--border-color-second);
     color: var(--text-color-black-and-white);
@@ -93,19 +137,22 @@
     height: 50px;
     width: 50px;
     text-align: center;
+    font-size: calc(.9rem + .3vw);
+    cursor: pointer;
 }
 
 #account {
-    order: 5;
+    order: 6;
     background-color: var(--background-color-invert);
     padding: 5px;
     border-radius: 15px;
     max-width: 50px;
     filter: invert(var(--invert));
+    cursor: pointer;
 }
 
 #hamburger {
-    order: 6;
+    order: 7;
     background-color: var(--background-color-invert);
     padding: 5px;
     border-radius: 15px;
@@ -119,6 +166,7 @@
     padding: 0;
     border: 0;
     filter: invert(var(--invert));
+    cursor: pointer;
 }
 
 #menu {
@@ -147,6 +195,7 @@
     font-size: calc(.9rem + .1vw);
     margin: 0;
     text-align: center;
+    cursor: pointer;
 }
 
 #blok2_container,
@@ -159,6 +208,7 @@
     box-shadow: 0 3px 8px var(--shadow-color);
     text-align: center;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 #pomucky,
@@ -172,6 +222,7 @@
     border-bottom: solid;
     border-width: 1px;
     border-color: var(--border-color-first);
+    cursor: pointer;
 }
 
 #pomucky:last-child,
@@ -195,13 +246,13 @@
     }
 
     #lista {
-        column-gap: 10vw;
+        column-gap: 7vw;
     }
 }
 
 @media screen and (max-width: 1100px) {
     #lista {
-        column-gap: 4vw;
+        column-gap: 3vw;
     }
 
     #account,
@@ -248,7 +299,7 @@
 
 @media screen and (max-width: 810px) {
     #lista {
-        column-gap: 5vw;
+        column-gap: 3vw;
     }
 
     #logo {
@@ -268,6 +319,11 @@
         margin: 7px;
     }
 
+    #translation {
+        max-width: calc(1rem + 5vw);
+        max-height: calc(1rem + 5vw);
+    }
+
     #account,
     #hamburger {
         max-width: calc(1rem + 5vw);
@@ -284,6 +340,10 @@
 @media screen and (max-width: 500px) {
     #lista {
         padding: 10px;
+    }
+
+    #hledaci_bunka {
+        width: calc(1rem + 20vw);
     }
 
     #logo {

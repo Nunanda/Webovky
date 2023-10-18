@@ -172,7 +172,7 @@ export class AppComponent {
     this.darkmode = !this.darkmode;
   }
 
-  opencloseNav(): void {
+  openCloseNav(): void {
     if (this.menu) {
       if (this.menuVisible && window.innerWidth < 1100) {
         this.menu.nativeElement.style.width = 0;
@@ -185,7 +185,7 @@ export class AppComponent {
     }
   }
 
-  showHidePomucky(): void {
+  howHidePomucky(): void {
     if (this.menuPomucky && this.imgPomucky) {
       if (this.menuPomuckyVisible) {
         this.menuPomucky.nativeElement.style.display = 'none';
@@ -197,6 +197,23 @@ export class AppComponent {
         this.imgPomucky.nativeElement.src = "assets/icon/svg/up.svg";
         this.menuPomuckyVisible = true;
       }
+    }
+  }
+
+  showPomucky(): void {
+    if (this.menuPomucky && this.imgPomucky) {
+      this.menuPomucky.nativeElement.style.display = 'grid';
+      this.imgPomucky.nativeElement.src = "assets/icon/svg/up.svg";
+      this.menuPomuckyVisible = true;
+
+    }
+  }
+
+  hidePomucky(): void {
+    if (this.menuPomucky && this.imgPomucky) {
+      this.menuPomucky.nativeElement.style.display = 'none';
+      this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+      this.menuPomuckyVisible = false;
     }
   }
 
@@ -212,6 +229,22 @@ export class AppComponent {
         this.imgSlovnik.nativeElement.src = "assets/icon/svg/up.svg";
         this.menuSlovnikVisible = true;
       }
+    }
+  }
+
+  showSlovnik(): void {
+    if (this.menuSlovnik && this.imgSlovnik) {
+      this.menuSlovnik.nativeElement.style.display = 'grid';
+      this.imgSlovnik.nativeElement.src = "assets/icon/svg/up.svg";
+      this.menuSlovnikVisible = true;
+    }
+  }
+
+  hideSlovnik(): void {
+    if (this.menuSlovnik && this.imgSlovnik) {
+      this.menuSlovnik.nativeElement.style.display = 'none';
+      this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+      this.menuSlovnikVisible = false;
     }
   }
 }

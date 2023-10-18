@@ -4,27 +4,17 @@ export type PremiumInstruction = {
   titleEn: string,
   difficulty: Difficulty,
   link?: string | null,
-  private: boolean,
   premium: boolean,
+  finished?: boolean,
   date: Date,
   userId: string,
   shortcutsCz?: string | null;
   shortcutsEn?: string | null;
 }
 
-export type Instruction = {
-  id: string,
-  titleCz: string,
-  titleEn: string,
-  difficulty: Difficulty,
-  link?: string | null,
-  private: boolean,
-  premium: boolean,
-  date: Date,
-  userId: string,
+export type Instruction = PremiumInstruction & {
+  premium?: boolean,
   steps: Step[],
-  shortcutsCz?: string | null;
-  shortcutsEn?: string | null;
 }
 
 export type Step = {

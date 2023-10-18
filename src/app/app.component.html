@@ -26,28 +26,28 @@
         </option>
       </select>
       <img id="account" routerLink="/prihlaseni" src="{{ imageURL }}">
-      <img id="hamburger" (click)="opencloseNav()" src="assets/icon/svg/hamburger-menu.svg">
+      <img id="hamburger" (click)="openCloseNav()" src="assets/icon/svg/hamburger-menu.svg">
     </div>
     <div id="menu" #menu>
       <div id="blok1" routerLink="/home" (click)="toggleMenuVisibility()">
         <img src="assets/icon/svg/info.svg">
         Selecro
       </div>
-      <div (click)="showHidePomucky()">
-        <div id="blok2_div">
+      <div (mouseenter)="showPomucky()" (mouseleave)="hidePomucky()" (click)="howHidePomucky()">
+        <div id="blok2_div" >
           <img src="assets/icon/svg/style.svg">
           {{ 'APP.pomucky' | translate }}
           <img src="assets/icon/svg/down.svg" #img_pomucky>
         </div>
-        <div id="blok2_container" #menu_pomucky>
+        <div id="blok2_container"  #menu_pomucky>
           <ng-container *ngFor="let term of pomucky">
-            <a id="pomucky" (click)="opencloseNav()" [routerLink]="'/pomucky/' + term.nazev">
+            <a id="pomucky" (click)="openCloseNav();hidePomucky()" [routerLink]="'/pomucky/' + term.nazev">
               {{ term.title | translate }}
             </a>
           </ng-container>
         </div>
       </div>
-      <div (click)="showHideSlovnik()">
+      <div (mouseenter)="showSlovnik()" (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
         <div id="blok3_div">
           <img src="assets/icon/svg/book.svg">
           {{ 'APP.slovnik' | translate }}
@@ -55,7 +55,7 @@
         </div>
         <div id="blok3_container" #menu_slovnik>
           <ng-container *ngFor="let term of slovnik">
-            <a id="slovnik" (click)="opencloseNav()" [routerLink]="'/slovnik/' + term.nazev">
+            <a id="slovnik" (click)="openCloseNav();hidePomucky()" [routerLink]="'/slovnik/' + term.nazev">
               {{ term.title | translate }}
             </a>
           </ng-container>

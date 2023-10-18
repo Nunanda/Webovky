@@ -9,7 +9,7 @@
                     {{ 'NAVODYDETAIL.pouzitiStylu' | translate }}
                 </strong>
                 {{ getShortcuts(navod) }}
-                <img id="obrazek_navodu" src="{{ navod.link || 'assets/icon/jpg/chobotnicka.jpg' }}">
+                <img id="obrazek_navodu" src="{{ navod.link || 'assets/icon/svg/picture.svg' }}">
             </div>
             <div id="blok_2">
                 <div id="button" *ngFor="let item of krokyNavodu" (click)="setIndex(item.id, navod.id)" #krokyElement>
@@ -27,7 +27,10 @@
             <div id="buttons">
                 <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">
                 <div id="button_2" (click)="startStopTimer()">
-                    {{ minutes }}:{{ seconds }}
+                    <div id="play">
+                        <img [src]="isRunning ? 'assets/icon/svg/pause.svg' : 'assets/icon/svg/play.svg'">
+                        {{ minutes }}:{{ seconds }}
+                    </div>
                 </div>
                 <div id="button_3" (click)="finished()">
                     {{ 'NAVODYDETAIL.hotovo' | translate }}

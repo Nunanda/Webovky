@@ -8,8 +8,8 @@ const poleInstructiony: Array<Instruction> = [
     titleCz: "HaroldCz",
     titleEn: "HaroldEn",
     difficulty: Difficulty.hard,
-    private: false,
-    premium: false,
+    premium: true,
+    finished: true,
     date: new Date(),
     userId: "eg8eb8",
     steps: [

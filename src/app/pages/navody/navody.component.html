@@ -6,10 +6,10 @@
         <div id="bunka_{{ item.difficulty }}" *ngFor="let item of navod" (click)="goKroky(item.id)">
             <div id="okraj_{{ item.difficulty }}">
                 {{ getTitle(item) }}
-                <div>
-                <img *ngIf="item.premium" src="assets/icon/svg/premium.svg">
-                <img *ngIf="item.finished" src="assets/icon/svg/finished.svg">
-            </div>
+                <div id="svgs" *ngIf="item.premium || item.finished">
+                    <img *ngIf="item.premium" src="assets/icon/svg/premium.svg">
+                    <img *ngIf="item.finished" src="assets/icon/svg/finished.svg">
+                </div>
             </div>
             <div id="obsah">
                 <img id="obrazek_navodu" src="{{ item.link || 'assets/icon/svg/picture.svg' }}">

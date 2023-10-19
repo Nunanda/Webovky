@@ -3,6 +3,7 @@
 :root {
     --background-color: #fff;
     --background-color-invert: #fff;
+    --background-color-third: #DCDCDC;
     --cell-color-first: #c8e7f4;
     --shadow-color: #0003;
     --box-color: #e9e9ed;
@@ -31,6 +32,7 @@
     --shadow-color: #808080;
     --invert: 100%;
     --darkmode-input: #28096b;
+    --background-color-third: #68696A;
 }
 
 html,

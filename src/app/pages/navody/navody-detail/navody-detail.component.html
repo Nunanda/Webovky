@@ -27,8 +27,8 @@
             <div id="buttons">
                 <img id="button_1" src="assets/icon/svg/Vlevo.svg" (click)="previousIndex()">
                 <div id="button_2" (click)="startStopTimer()">
-                    <div id="play">
-                        <img [src]="isRunning ? 'assets/icon/svg/pause.svg' : 'assets/icon/svg/play.svg'">
+                    <img id="play" [src]="isRunning ? 'assets/icon/svg/pause.svg' : 'assets/icon/svg/play.svg'">
+                    <div id="time">
                         {{ minutes }}:{{ seconds }}
                     </div>
                 </div>

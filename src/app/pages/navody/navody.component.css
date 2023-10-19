@@ -36,8 +36,11 @@
     background: var(--easy-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
-    justify-content: center;
     color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
 #okraj_medium {
@@ -45,8 +48,11 @@
     background: var(--medium-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
-    justify-content: center;
     color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
 #okraj_hard {
@@ -54,8 +60,17 @@
     background: var(--hard-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
-    justify-content: center;
     color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
+}
+
+#svgs {
+    display: flex;
+    gap: 30%;
+    margin-bottom: 5px;
 }
 
 #obsah {

@@ -179,7 +179,7 @@ export class AppComponent {
         this.menuVisible = false;
       }
       else if (window.innerWidth < 1100) {
-        this.menu.nativeElement.style.width = "250px";
+        this.menu.nativeElement.style.width = "300px";
         this.menuVisible = true;
       }
     }

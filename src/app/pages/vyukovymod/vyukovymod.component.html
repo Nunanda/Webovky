@@ -1,36 +1,26 @@
-<div id="container">
+<div id="container" *ngIf="vyuka">
     <h2>
         {{ 'VYUKOVYMOD.vyukovyMod' | translate }}
     </h2>
-    <router-outlet></router-outlet>
     <div id="sloupce">
-        <span class="bunka" *ngFor="let item of vyuka" (click)="goKroky(item.nazev)">
-            <div class="ruzovy_okraj">
-                {{item.title}}
+        <div id="bunka" *ngFor="let item of vyuka" (click)="goKroky(item.nazev)">
+            <div id="okraj">
+                {{ item.title }}
             </div>
             <div id="obsah">
-                <img id="obrazek_navodu" src="assets/icon/jpg/{{item.nazev}}.jpg">
-                <div class="text">
-                    <table>
-                        <tr>
-                            <td>
-                                <strong>
-                                    {{ 'VYUKOVYMOD.pocetKroku' | translate }}
-                                </strong>
-                                {{item.pocet}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>
-                                    {{ 'VYUKOVYMOD.popis' | translate }}
-                                </strong>
-                                {{item.popis}}
-                            </td>
-                        </tr>
-                    </table>
+                <img id="obrazek_navodu" [src]="'assets/icon/jpg/' + item.nazev + '.jpg'">
+                <div id="text">
+                    <strong>
+                        {{ 'VYUKOVYMOD.pocetKroku' | translate }}
+                    </strong>
+                    {{ item.pocet }}
+                    <br>
+                    <strong>
+                        {{ 'VYUKOVYMOD.popis' | translate }}
+                    </strong>
+                    {{ item.popis }}
                 </div>
             </div>
-        </span>
+        </div>
     </div>
 </div>

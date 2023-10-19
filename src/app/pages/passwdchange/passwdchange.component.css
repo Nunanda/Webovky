@@ -1,31 +1,33 @@
-#container {
-    padding: 40px;
+#blok {
+    background-color: var(--cell-color-first);
+    border-radius: 20px;
+    max-width: 40%;
+    min-height: 25vw;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 8px var(--shadow-color);
 }
 
-input {
-    max-width: 200px;
+#password_container_1,
+#password_container_2 {
+    position: relative;
 }
 
-h2 {
-    text-align: center;
+#password_container_1 i,
+#password_container_2 i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
-@media screen and (max-width: 808px) {
-
-    #container {
-        padding: 20px;
+@media screen and (max-width: 1100px) {
+    #blok {
+        min-width: fit-content;
+        min-height: fit-content;
     }
-
-}
-
-@media screen and (max-width: 991px) {
-
-}
-
-@media screen and (max-width: 767px) {
-
-}
-
-@media screen and (max-width: 479px) {
-
 }

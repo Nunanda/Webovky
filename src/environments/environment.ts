@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://backend.selecro.cz:8443',
-  socketUrl: 'https://backend.selecro.cz:8880',
+  apiUrl: 'http://192.168.0.4:3002',
+  kmsUrl: 'http://192.168.0.4:8202',
 };
 
 /*

@@ -1,17 +1,17 @@
-<div id="container">
-    <h2 class="margin_bottom">
-        {{styl.title}}
+<div id="container" *ngIf="styl">
+    <h2>
+        {{ styl.title }}
     </h2>
-    <div id="sloupce">
-        <div id="slovnik_popis">
+    <div id="columns">
+        <div id="first_column">
             <div id="direction_row">
-                <div class="direction_column">
+                <div id="direction_column">
                     <h4>
                         {{ 'SLOVNIK.slovnikZkratka' | translate }}
                     </h4>
-                    <div class="pole_zkratka">
+                    <div id="pole_zkratka">
                         <div id="zkratka">
-                            {{styl.zkratka}}
+                            {{ styl.zkratka }}
                         </div>
                     </div>
                 </div>
@@ -19,25 +19,25 @@
                     <h4>
                         {{ 'SLOVNIK.image' | translate }}
                     </h4>
-                    <img class="znacka" src="assets/icon/svg/{{styl.nazev}}.svg">
+                    <img id="znacka" src="assets/icon/svg/{{ styl.nazev }}.svg">
                 </div>
             </div>
-            <div id="popis_obsah">
-                <h5 class="bold">
+            <h5>
+                <strong>
                     {{ 'SLOVNIK.animace' | translate }}
-                </h5>
-                <p innerHTML="{{styl.popis}}"></p>
-            </div>
+                </strong>
+            </h5>
+            {{ styl.popis }}
         </div>
-        <div id="direction_column">
-            <h2 class="margin_top">
+        <div id="second_column">
+            <h2>
                 {{ 'SLOVNIK.animace' | translate }}
             </h2>
-            <img class="size" src="assets/icon/gif/{{styl.nazev}}.gif">
-            <h2 class="margin_top">
+            <img id="size_1" src="assets/icon/gif/{{ styl.nazev }}.gif">
+            <h2>
                 {{ 'SLOVNIK.veSkutecnosti' | translate }}
             </h2>
-            <img class="size" src="assets/icon/jpg/{{styl.nazev}}-real.jpg">
+            <img id="size_2" src="assets/icon/jpg/{{ styl.nazev }}-real.jpg">
         </div>
     </div>
 </div>

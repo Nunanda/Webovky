@@ -1,31 +1,27 @@
-#container {
-    padding: 40px;
-}
-
 #sloupce {
-    display: flex;
     margin-top: 2%;
     gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.bunka {
+#bunka {
     border-radius: 20px;
-    background-color: #f7e4ea;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    width: 30%;
-    min-width: 364px;
+    background-color: var(--cell-color-second);
+    box-shadow: 0 3px 8px var(--shadow-color);
+    min-height: 180px;
+    cursor: pointer;
 }
 
-.ruzovy_okraj {
+#okraj {
     padding: 5px;
-    background: #EA749B;
+    background: var(--cell-header);
     border-radius: 20px 20px 0px 0px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--background-color);
 }
 
 #obsah {
@@ -34,72 +30,41 @@
 }
 
 #obrazek_navodu {
-    width: 120px;
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 180px;
     border-radius: 10px;
 }
 
-h2 {
-    text-align: center;
-}
-
-.text {
+#text {
     padding-left: 15px;
+    font-size: calc(.7rem + .2vw);
 }
 
-@media screen and (max-width: 808px) {
-    #container {
-        padding: 20px;
-    }
-
-}
-
-@media screen and (max-width: 991px) {
-    .bunka {
-        min-width: 330px;
-    }
-
-    #obsah {
-        padding: 10px;
+@media screen and (max-width: 1100px) {
+    #sloupce {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #obrazek_navodu {
-        width: 90px;
+        max-width: 100px;
+        max-height: 130px;
     }
 
-    .text {
-        font-size: .8rem;
+    #text {
+        font-size: calc(.7rem + .5vw);
     }
-
 }
 
-@media screen and (max-width: 767px) {
-    .bunka {
-        min-width: 320px;
+@media screen and (max-width: 800px) {
+    #sloupce {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    #obsah {
-        padding: 8px;
+    #text {
+        font-size: calc(.8rem + .6vw);
     }
-
-    #obrazek_navodu {
-        width: 80px;
-    }
-
-    .text {
-        font-size: .75rem;
-    }
-
-    .ruzovy_okraj {
-        padding: 2px;
-        font-size: .9rem;
-    }
-
-}
-
-
-@media screen and (max-width: 479px) {
-    #obrazek_navodu {
-        width: 70px;
-    }
-
 }

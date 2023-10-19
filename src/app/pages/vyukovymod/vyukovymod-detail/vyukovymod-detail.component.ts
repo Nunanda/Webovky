@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VyukaService } from 'src/app/service';
-import { InfoVyuky, Vyuka } from 'src/app/types';
+import { InfoVyuky } from 'src/app/types';
 
 @Component({
   selector: 'app-vyukovymod-detail',
@@ -9,43 +10,34 @@ import { InfoVyuky, Vyuka } from 'src/app/types';
 })
 export class VyukovymodDetailComponent implements OnInit {
 
-  nazev: any;
-  vyuka: any;
-  InfoVyuky: Array<InfoVyuky>;
-  index: number;
+  nazev: string | undefined;
+  title: string | undefined;
+  infoVyuky: InfoVyuky[] | undefined;
+  index: number = 0;
 
-  constructor(private vyukaService: VyukaService) {
-    this.nazev = localStorage.getItem("nazev");
-    this.InfoVyuky = new Array<InfoVyuky>;
-    this.vyuka = new Array<Vyuka>();
-    this.index = 0;
-  }
+  constructor(private vyukaService: VyukaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
-    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
+    this.loadVyukaData();
   }
 
   ngDoCheck(): void {
-    this.vyuka = this.vyukaService.getVyrobekByName(this.nazev);
-    this.InfoVyuky = this.vyukaService.getKroky(this.nazev);
+    this.loadVyukaData();
   }
 
-  nextIndex(): void {
-    if (this.index + 1 >= this.InfoVyuky.length) {
-      this.index = 0;
-    }
-    else {
-      this.index++;
-    }
+  private loadVyukaData(): void {
+    this.nazev = this.router.url.split('/')[3];
+    this.title = this.vyukaService.getTitle(this.nazev);
+    this.infoVyuky = this.vyukaService.getKroky(this.nazev);
   }
 
-  previousIndex(): void {
-    if (this.index - 1 < 0) {
-      this.index = this.InfoVyuky.length - 1;
-    }
-    else {
-      this.index--;
+  changeIndex(isNext: boolean): void {
+    if (this.infoVyuky) {
+      if (isNext) {
+        this.index = (this.index + 1) % this.infoVyuky.length;
+      } else {
+        this.index = (this.index - 1 + this.infoVyuky.length) % this.infoVyuky.length;
+      }
     }
   }
 }

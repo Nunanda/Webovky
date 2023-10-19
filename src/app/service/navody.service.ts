@@ -1,13 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Instruction, Step } from 'src/app/types';
 import { TranslateService } from '@ngx-translate/core';
-import { Socket, io } from 'socket.io-client';
-import { environment } from 'src/environments/environment';
+import { Difficulty, Instruction, Step } from 'src/app/types';
 
-const poleInstructionyCZ: Array<Instruction> = [
-];
-
-const poleInstructionyEN: Array<Instruction> = [
+const poleInstructiony: Array<Instruction> = [
+  {
+    id: "sf45",
+    titleCz: "HaroldCz",
+    titleEn: "HaroldEn",
+    difficulty: Difficulty.hard,
+    premium: true,
+    finished: true,
+    date: new Date(),
+    userId: "eg8eb8",
+    steps: [
+      {
+        id: "rbsdb64",
+        titleCz: "Hlava",
+        titleEn: "Head",
+        descriptionCz: ["Mk (8)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "ks (6 řad)", "4 ks, A", "3 ks, A", "2 ks, A", "ks, A", "Po"],
+        descriptionEn: ["Mr (8)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "Sc (6 rows)", "4Sc, Dec", "3Sc, Dec", "2Sc, Dec", "Sc, Dec", "SlSt"],
+        instructionId: "sf45"
+      },
+      {
+        id: "erb5",
+        titleCz: "Spodní část krunýře",
+        titleEn: "Bottom part of shell",
+        descriptionCz: ["Mk (6)", "V", "ks, V", "2 ks, V", "3 ks, V", "4 ks, V", "5 ks, V", "6ks, V", "Po"],
+        descriptionEn: ["Mr (6)", "Inc", "Sc, Inc", "2Sc, Inc", "3Sc, Inc", "4Sc, Inc", "5Sc, Inc", "6Sc, Inc", "SlSt"],
+        instructionId: "sf45"
+      }
+    ]
+  }
 ];
 
 enum ShortcutEnumCZ {
@@ -43,88 +66,60 @@ const difficultyOrder = {
 })
 export class InstructionService {
 
-  private socket!: Socket;
-
   constructor(private translate: TranslateService) {
-    this.socket = io(environment.socketUrl);
-    let serverResponded = false;
-    const timeout = setTimeout(() => {
-      if (!serverResponded) {
-        this.destroy();
-      }
-    }, 5000);
-    this.socket.on('message', (message: Instruction) => {
-      serverResponded = true;
-      clearTimeout(timeout);
-      if (message) {
-        poleInstructionyCZ.push(message);
-        poleInstructionyCZ.forEach(instruction => {
-          const matchedShortcuts: Set<string> = new Set();
-          instruction.shortcuts = "";
-          instruction.steps.forEach(step => {
-            step.description.forEach(description => {
-              Object.values(ShortcutEnumCZ).forEach(shortcut => {
-                if (description.includes(shortcut)) {
-                  matchedShortcuts.add(shortcut);
-                }
-              });
-            })
+    poleInstructiony.forEach(instruction => {
+      const matchedShortcutsCz: Set<string> = new Set();
+      const matchedShortcutsEn: Set<string> = new Set();
+      instruction.steps.forEach(step => {
+        step.descriptionCz.forEach(description => {
+          Object.values(ShortcutEnumCZ).forEach(shortcut => {
+            if (description.includes(shortcut)) {
+              matchedShortcutsCz.add(shortcut);
+            }
           });
-          instruction.shortcuts = Array.from(matchedShortcuts).join(', ');
         });
-        poleInstructionyCZ.sort((a, b) => {
-          const difficultyA = difficultyOrder[a.difficulty];
-          const difficultyB = difficultyOrder[b.difficulty];
-          return difficultyA - difficultyB;
-        });
-      } else {
-        this.destroy();
-      }
-    }
-    );
+        step.descriptionEn.forEach(description => {
+          Object.values(ShortcutEnumEN).forEach(shortcut => {
+            if (description.includes(shortcut)) {
+              matchedShortcutsEn.add(shortcut);
+            }
+          });
+        })
+      });
+      instruction.shortcutsCz = Array.from(matchedShortcutsCz).join(', ');
+      instruction.shortcutsEn = Array.from(matchedShortcutsEn).join(', ');
+    });
+    poleInstructiony.sort((a, b) => {
+      const difficultyA = difficultyOrder[a.difficulty];
+      const difficultyB = difficultyOrder[b.difficulty];
+      return difficultyA - difficultyB;
+    });
   }
 
-  public destroy(): void {
-    if (this.socket) {
-      this.socket.disconnect();
-    }
-  }
-
-  public getInstructionsByTitle(title: string): Instruction | void {
-    if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN.find(element => element.title == title);
-    }
-    else {
-      return poleInstructionyCZ.find(element => element.title == title);
-    }
+  public getInstructionsById(id: string): Instruction | void {
+    return poleInstructiony.find(element => element.id == id);
   }
 
   public getAllInstructions(): Array<Instruction> {
-    if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN;
-    }
-    else {
-      return poleInstructionyCZ;
-    }
+    return poleInstructiony;
   }
 
-  public getStepsByTitle(title: string): Array<Step> {
-    if (this.translate.currentLang === "EN") {
-      let index = poleInstructionyEN.findIndex(x => x.title == title);
-      return poleInstructionyEN[index].steps;
-    }
-    else {
-      const index = poleInstructionyCZ.findIndex(x => x.title == title);
-      return poleInstructionyCZ[index].steps;
-    }
+  public getStepsById(id: string): Array<Step> {
+    const index = poleInstructiony.findIndex(x => x.id == id);
+    return poleInstructiony[index].steps;
+  }
+
+  public getIndexById(id: string, instructionId: string): number | undefined {
+    const x = poleInstructiony.find((item) => item.id == instructionId);
+    return x?.steps.findIndex((item) => item.id == id);
   }
 
   public getAllTitles(): Array<string> {
     if (this.translate.currentLang === "EN") {
-      return poleInstructionyEN.map((item) => item.title);
+      return poleInstructiony.map((item) => item.titleEn);
     }
     else {
-      return poleInstructionyCZ.map((item) => item.title);
+      return poleInstructiony.map((item) => item.titleCz);
     }
   }
 

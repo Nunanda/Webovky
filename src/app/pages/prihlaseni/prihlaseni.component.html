@@ -8,87 +8,50 @@
         <label for="email">
           Email nebo username
         </label>
-        <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email"
-          #emailInput="ngModel" (ngModelChange)="errorMessage = ''">
-        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
-          <div *ngIf="emailInput.errors?.['required']">
-            Toto pole je povinné.
-          </div>
-        </div>
-        <div *ngIf="errorMessage === 'user not found'" class="alert alert-danger">
-          {{errorMessage}}
-        </div>
-        <div *ngIf="errorMessage === 'email is not verified'" class="alert alert-danger">
-          {{errorMessage}}
-        </div>
+        <input type="text" class="form-control" required [(ngModel)]="email" name="email">
       </div>
       <div class="form-group">
         <label for="password">
           Heslo
         </label>
-        <div class="password-container">
+        <div id="password_container">
           <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" id="password" required
-            [(ngModel)]="password" name="password" minlength="8" #passwordInput="ngModel" (ngModelChange)="errorMessage = ''">
+            [(ngModel)]="password" name="password">
           <i class="material-icons" matSuffix (click)="showPassword = !showPassword">
-            {{showPassword ? 'visibility' : 'visibility_off'}}
+            {{ showPassword ? 'visibility' : 'visibility_off' }}
           </i>
-        </div>
-        <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="alert alert-danger">
-          <div *ngIf="passwordInput.errors?.['required']">
-            Heslo je povinné.
-          </div>
-          <div *ngIf="passwordInput.errors?.['minlength']">
-            Heslo musí mít alespoň 8 znaků.
-          </div>
-        </div>
-        <div *ngIf="errorMessage === 'password is not valid'" class="alert alert-danger">
-          {{errorMessage}}
         </div>
       </div>
       <br>
       <button type="submit" class="btn btn-primary">
         Přihlásit
       </button>
-      <div *ngIf="errorMessage !== 'user not found' && errorMessage !== 'email is not verified' && errorMessage !== 'password is not valid' && errorMessage" class="alert alert-danger">
-        Apologies, but the service is currently unavailable.
-      </div>
     </form>
-    <div>
-      Ještě nemáte účet?
-      <a routerLink="/registrace">
-        Zaregistruj se!
-      </a>
-    </div>
+    Ještě nemáte účet?
+    <a routerLink="/registrace">
+      Zaregistruj se!
+    </a>
     <br>
     <strong>
       Zapomněli jste heslo?
     </strong>
-    <form name="form1" (ngSubmit)="f1.valid && passwordReset()" #f1="ngForm" novalidate>
+    <form name="form1" (ngSubmit)="f1.valid && sendPasswordChange()" #f1="ngForm" novalidate>
       <div class="form-group">
         <label for="email1">
           Zadejte email pro obnovení hesla.
         </label>
-        <input type="email" class="form-control" id="email1" required email [(ngModel)]="email1" name="email1"
-          #emailInput1="ngModel" (ngModelChange)="errorMessage1 = ''">
+        <input type="email" class="form-control" id="email1" email [(ngModel)]="email1" name="email1"
+          #emailInput1="ngModel">
       </div>
       <div *ngIf="emailInput1.invalid && (emailInput1.dirty || emailInput1.touched)" class="alert alert-danger">
-        <div *ngIf="emailInput1.errors?.['required']">
-          Email je povinný.
-        </div>
         <div *ngIf="emailInput1.errors?.['email']">
           Email není platný.
         </div>
-      </div>
-      <div *ngIf="errorMessage1 === 'email not recognized'" class="alert alert-danger">
-        {{errorMessage1}}
       </div>
       <br>
       <button type="submit" class="btn btn-primary">
         Reset hesla
       </button>
-      <div *ngIf="errorMessage1 !== 'email not recognized' && errorMessage1" class="alert alert-danger">
-        Apologies, but the service is currently unavailable.
-      </div>
     </form>
   </div>
 </div>

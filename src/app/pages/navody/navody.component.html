@@ -1,49 +1,30 @@
-<div id="container">
+<div id="container" *ngIf="navod">
     <h2>
         {{ 'NAVODY.navody' | translate }}
     </h2>
-    <!--
-    <div>
-        <button (click)="lehkeNavody()">
-            Lehké
-        </button>
-        <button (click)="stredniNavody()">
-            Střední
-        </button>
-        <button (click)="tezkeNavody()">
-            Těžké
-        </button>
-    </div> -->
     <div id="sloupce">
-        <ng-container *ngFor="let item of navod">
-            <div class="bunka {{item.difficulty}}" (click)="getPopisy(item.title)">
-                <div class="Nazev_navodu {{item.difficulty}}_name">
-                    {{item.title}}
-                </div>
-                <div class="obsah">
-                    <img id="obrazek_navodu" src="{{api}}/{{item.link}}.jpg">
-                    <div class="text">
-                        <table>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        {{ 'NAVODY.pocetCasti' | translate }}
-                                    </strong>
-                                    {{item.steps.length-1}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        {{ 'NAVODY.stylyZkratky' | translate }}
-                                    </strong>
-                                    {{item.shortcuts}}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+        <div id="bunka_{{ item.difficulty }}" *ngFor="let item of navod" (click)="goKroky(item.id)">
+            <div id="okraj_{{ item.difficulty }}">
+                {{ getTitle(item) }}
+                <div id="svgs" *ngIf="item.premium || item.finished">
+                    <img *ngIf="item.premium" src="assets/icon/svg/premium.svg">
+                    <img *ngIf="item.finished" src="assets/icon/svg/finished.svg">
                 </div>
             </div>
-        </ng-container>
+            <div id="obsah">
+                <img id="obrazek_navodu" src="{{ item.link || 'assets/icon/svg/picture.svg' }}">
+                <div id="text">
+                    <strong>
+                        {{ 'NAVODY.pocetCasti' | translate }}
+                    </strong>
+                    {{ item.steps.length-1 }}
+                    <br>
+                    <strong>
+                        {{ 'NAVODY.stylyZkratky' | translate }}
+                    </strong>
+                    {{ getShortcuts(item) }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

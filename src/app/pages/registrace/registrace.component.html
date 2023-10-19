@@ -3,13 +3,13 @@
         Registrace
     </h2>
     <div id="blok">
-        <form name="form" (ngSubmit)="f.valid && register()" #f="ngForm" novalidate>
+        <form name="form" (ngSubmit)="f.valid && signup()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="email">
                     Email
                 </label>
-                <input type="email" class="form-control" id="email" required email [(ngModel)]="email" name="email"
-                    #emailInput="ngModel" (ngModelChange)="errorMessage = ''">
+                <input type="email" class="form-control" required email [(ngModel)]="email" name="email"
+                    #emailInput="ngModel">
             </div>
             <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert alert-danger">
                 <div *ngIf="emailInput.errors?.['required']">
@@ -19,15 +19,12 @@
                     Email není platný.
                 </div>
             </div>
-            <div *ngIf="errorMessage === 'email already exist'" class="alert alert-danger">
-                {{errorMessage}}
-            </div>
             <div class="form-group">
                 <label for="username">
                     Username
                 </label>
-                <input type="username" class="form-control" id="username" required [(ngModel)]="username"
-                    name="username" minlength="4" #usernameInput="ngModel" (ngModelChange)="errorMessage = ''">
+                <input type="username" class="form-control" required [(ngModel)]="username"
+                    name="username" minlength="5" #usernameInput="ngModel">
             </div>
             <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)"
                 class="alert alert-danger">
@@ -35,21 +32,18 @@
                     Username je povinné.
                 </div>
                 <div *ngIf="usernameInput.errors?.['minlength']">
-                    Username musí mít alespoň 4 znaků.
+                    Username musí mít více než 4 znaky.
                 </div>
-            </div>
-            <div *ngIf="errorMessage === 'username already exist'" class="alert alert-danger">
-                {{errorMessage}}
             </div>
             <div class="form-group">
                 <label for="password">
                     Heslo
                 </label>
-                <div class="password-container">
-                    <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" id="password0" required
-                        [(ngModel)]="password0" name="password0" minlength="8" #passwordInput0="ngModel">
+                <div id="password_container_1">
+                    <input type="{{ showPassword0 ? 'text' : 'password' }}" class="form-control" required
+                        [(ngModel)]="password0" name="password0" minlength="9" #passwordInput0="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword0 = !showPassword0">
-                        {{showPassword0 ? 'visibility' : 'visibility_off'}}
+                        {{ showPassword0 ? 'visibility' : 'visibility_off' }}
                     </i>
                 </div>
                 <div *ngIf="passwordInput0.invalid && (passwordInput0.dirty || passwordInput0.touched)"
@@ -58,7 +52,7 @@
                         Heslo je povinné.
                     </div>
                     <div *ngIf="passwordInput0.errors?.['minlength']">
-                        Heslo musí mít alespoň 8 znaků.
+                        Heslo musí mít více než 8 znaků.
                     </div>
                 </div>
             </div>
@@ -66,11 +60,11 @@
                 <label for="password1">
                     Zopakujte heslo
                 </label>
-                <div class="password-container">
-                    <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" id="password1" required
-                        [(ngModel)]="password1" name="password1" minlength="8" #passwordInput1="ngModel">
+                <div id="password_container_2">
+                    <input type="{{ showPassword1 ? 'text' : 'password' }}" class="form-control" required
+                        [(ngModel)]="password1" name="password1" minlength="9" #passwordInput1="ngModel">
                     <i class="material-icons" matSuffix (click)="showPassword1 = !showPassword1">
-                        {{showPassword1 ? 'visibility' : 'visibility_off'}}
+                        {{ showPassword1 ? 'visibility' : 'visibility_off' }}
                     </i>
                 </div>
                 <div *ngIf="passwordInput1.invalid && (passwordInput1.dirty || passwordInput1.touched)"
@@ -79,10 +73,10 @@
                         Heslo je povinné.
                     </div>
                     <div *ngIf="passwordInput1.errors?.['minlength']">
-                        Heslo musí mít alespoň 8 znaků.
+                        Heslo musí mít více než 8 znaků.
                     </div>
                 </div>
-                <div *ngIf="!passwordInput1.errors?.['minlength'] && (password0 !== password1)" class="alert alert-danger">
+                <div *ngIf="(!passwordInput1.errors?.['minlength'] && (password0 !== password1)) && password1" class="alert alert-danger">
                     Hesla se neshodují.
                 </div>
             </div>
@@ -90,9 +84,6 @@
             <button type="submit" class="btn btn-primary">
                 Registrovat se
             </button>
-            <div *ngIf="errorMessage !== 'username already exist' && errorMessage !== 'email already exist' && errorMessage" class="alert alert-danger">
-                Apologies, but the service is currently unavailable.
-            </div>
         </form>
     </div>
 </div>

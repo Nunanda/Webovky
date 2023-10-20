@@ -40,6 +40,12 @@
     border-radius: 30px;
 }
 
+#card_1:hover,
+#card_2:hover,
+#card_3:hover {
+    transform: scale(1.03, 1.03);
+}
+
 #socials_logo_1,
 #socials_logo_2,
 #socials_logo_3 {

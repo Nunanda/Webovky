@@ -33,8 +33,8 @@
         <img src="assets/icon/svg/info.svg">
         Selecro
       </div>
-      <div (mouseenter)="showPomucky()" (mouseleave)="hidePomucky()" (click)="howHidePomucky()">
-        <div id="blok2_div" >
+      <div (mouseleave)="hidePomucky()" (click)="showHidePomucky()">
+        <div id="blok2_div">
           <img src="assets/icon/svg/style.svg">
           {{ 'APP.pomucky' | translate }}
           <img src="assets/icon/svg/down.svg" #img_pomucky>
@@ -47,7 +47,7 @@
           </ng-container>
         </div>
       </div>
-      <div (mouseenter)="showSlovnik()" (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
+      <div (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
         <div id="blok3_div">
           <img src="assets/icon/svg/book.svg">
           {{ 'APP.slovnik' | translate }}

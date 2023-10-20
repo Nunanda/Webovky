@@ -76,6 +76,11 @@
     cursor: pointer;
 }
 
+#search_result_li:hover {
+    border-width: 5px;
+    background: var(--border-color-second);
+}
+
 #search_result_li:last-child {
     border-radius: 0px 0px 10px 10px;
     border-style: none;
@@ -200,6 +205,15 @@
     cursor: pointer;
 }
 
+#blok1:hover,
+#blok4:hover,
+#blok5:hover,
+#blok2_div:hover,
+#blok3_div:hover {
+    background-color: var(--cell-header);
+    transform: scale(1.03, 1.03);
+}
+
 #blok2_container,
 #blok3_container {
     min-width: 200px;
@@ -225,6 +239,11 @@
     border-width: 1px;
     border-color: var(--border-color-first);
     cursor: pointer;
+}
+
+#pomucky:hover,
+#slovnik:hover {
+    background-color: var(--cell-header);
 }
 
 #pomucky:last-child,

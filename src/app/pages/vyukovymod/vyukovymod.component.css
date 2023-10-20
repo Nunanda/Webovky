@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+#bunka:hover {
+    transform: scale(1.03, 1.03);
+}
+
 #okraj {
     padding: 5px;
     background: var(--cell-header);

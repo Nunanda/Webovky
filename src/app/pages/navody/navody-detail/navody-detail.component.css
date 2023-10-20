@@ -50,6 +50,11 @@
   cursor: pointer;
 }
 
+#button:hover {
+  background-color: var(--cell-header);
+  transform: scale(1.03, 1.03);
+}
+
 #items {
   font-size: calc(.7rem + .2vw);
 }
@@ -79,6 +84,13 @@
   align-items: center;
   justify-content: center;
   gap: 5%;
+}
+
+#button_1:hover,
+#button_2:hover,
+#button_3:hover,
+#button_4:hover {
+  transform: scale(1.03, 1.03);
 }
 
 #play {

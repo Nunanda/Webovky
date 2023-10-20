@@ -31,6 +31,10 @@
     cursor: pointer;
 }
 
+#bunka_hard:hover {
+    transform: scale(1.03, 1.03);
+}
+
 #okraj_easy {
     padding: 5px;
     background: var(--easy-instruction);

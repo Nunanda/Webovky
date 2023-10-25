@@ -3,6 +3,7 @@
     Přihlášení
   </h2>
   <div id="blok">
+    <app-loading *ngIf="isLoading"></app-loading>
     <form name="form" (ngSubmit)="f.valid && login()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="email">

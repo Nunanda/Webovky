@@ -7,9 +7,9 @@
       </div>
       <div id="hledaci_bunka">
         <input id="hledat" type="text" name="search" [(ngModel)]="search" autocomplete="off"
-          placeholder="{{ 'APP.hledat' | translate }}">
+          placeholder="{{ 'APP.hledat' | translate }}" (focus)="focus()" (blur)="blur()">
         <img id="lupa" src="assets/icon/svg/search.svg">
-        <ul id="search_result_ul" *ngIf="search && search.length >= 1">
+        <ul id="search_result_ul" *ngIf="search && search.length >= 1 && isFocused">
           <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" (click)="getRoute(item)">
             {{ item }}
           </li>

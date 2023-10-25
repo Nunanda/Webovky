@@ -22,6 +22,7 @@ export class RegistraceComponent implements OnInit {
   username: string = "";
   password0: string = "";
   password1: string = "";
+  isLoading: boolean = false;
 
   constructor(private router: Router, private publicService: PublicService, private validationService: ValidationService, private translate: TranslateService, private kmsService: KmsService) { }
 
@@ -34,6 +35,7 @@ export class RegistraceComponent implements OnInit {
       const initializationVector = CryptoJS.lib.WordArray.random(16);
       let token: string;
       let userId: string;
+      this.isLoading = true;
       this.publicService.signup(this.email, this.username, this.password0, this.password1, this.translate.currentLang as Language, window.matchMedia('(prefers-color-scheme: dark)').matches, kekSalt, initializationVector.toString(CryptoJS.enc.Hex))
         .pipe(
           switchMap(response => {
@@ -58,6 +60,7 @@ export class RegistraceComponent implements OnInit {
         .subscribe(_response3 => {
           token = "";
           userId = "";
+          this.isLoading = false;
           Swal.fire({
             title: 'Successful Registration',
             text: 'Verify your email within 1 hour',
@@ -75,6 +78,7 @@ export class RegistraceComponent implements OnInit {
             userId = "";
             this.password0 = "";
             this.password1 = "";
+            this.isLoading = false;
             try {
               Swal.fire({
                 title: 'Registration Failed',

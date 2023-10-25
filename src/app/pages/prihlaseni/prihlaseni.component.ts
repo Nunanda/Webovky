@@ -18,6 +18,7 @@ export class PrihlaseniComponent implements OnInit {
   password: string = "";
   email: string = "";
   email1: string = "";
+  isLoading: boolean = false;
 
   constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService, private tokenService: TokenService, private kmsService: KmsService) { }
 
@@ -29,6 +30,7 @@ export class PrihlaseniComponent implements OnInit {
     let kekSalt: string;
     let wrappedDEK: string;
     let initializationVector: string;
+    this.isLoading = true;
     this.publicService.login(this.email, this.password)
       .pipe(
         switchMap(response => {
@@ -44,6 +46,7 @@ export class PrihlaseniComponent implements OnInit {
         }),
         switchMap(response2 => {
           const KEK = pbkdf2.pbkdf2Sync(this.password, kekSalt, 10000, 256 / 8, 'sha512');
+          this.tokenService.saveKEK(CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
           this.tokenService.saveKmsToken(response2.auth.client_token);
           return this.kmsService.encryptData(userId, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
         })
@@ -65,20 +68,30 @@ export class PrihlaseniComponent implements OnInit {
         kekSalt = "";
         wrappedDEK = "";
         this.password = "";
+        this.isLoading = false;
         this.router.navigate(['/home']);
       },
-        error => {
+        error0 => {
           userId = "";
           kekSalt = "";
           wrappedDEK = "";
           this.password = "";
+          this.isLoading = false;
           try {
-            Swal.fire({
-              title: 'Login Failed',
-              text: error.error.error.message + '. Please try again later.',
-              icon: 'error',
-            });
-          } catch (_error) {
+            if (error0.name === 'TimeoutError') {
+              Swal.fire({
+                title: 'Login Failed',
+                text: 'Request timed out. Please try again later.',
+                icon: 'error',
+              });
+            } else {
+              Swal.fire({
+                title: 'Login Failed',
+                text: error0.error.error.message + '. Please try again later.',
+                icon: 'error',
+              });
+            }
+          } catch (_error1) {
             Swal.fire({
               title: 'Registration Failed',
               text: 'An error occurred. Please try again later.',
@@ -91,12 +104,40 @@ export class PrihlaseniComponent implements OnInit {
 
   sendPasswordChange(): void {
     if (this.validationService.validateEmail(this.email1)) {
-      this.publicService.sendPasswordChange(this.email1).subscribe();
-      Swal.fire({
-        title: 'Password Reset',
-        text: 'If you are registered, you should check your mailbox.',
-        icon: 'info',
-      });
+      this.isLoading = true;
+      this.publicService.sendPasswordChange(this.email1).subscribe(_response4 => {
+        this.isLoading = false;
+        Swal.fire({
+          title: 'Password Reset',
+          text: 'If you are registered, you should check your mailbox.',
+          icon: 'info',
+        });
+      },
+        error2 => {
+          this.isLoading = false;
+          try {
+            if (error2.name === 'TimeoutError') {
+              Swal.fire({
+                title: 'Login Failed',
+                text: 'Request timed out. Please try again later.',
+                icon: 'error',
+              });
+            } else {
+              Swal.fire({
+                title: 'Login Failed',
+                text: error2.error.error.message + '. Please try again later.',
+                icon: 'error',
+              });
+            }
+          } catch (_error3) {
+            Swal.fire({
+              title: 'Registration Failed',
+              text: 'An error occurred. Please try again later.',
+              icon: 'error',
+            });
+          }
+        }
+      );
     }
   }
 }

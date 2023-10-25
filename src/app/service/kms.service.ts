@@ -2,17 +2,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { TokenService } from './token.service';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError, timeout } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KmsService {
   private readonly kmsUrl = environment.kmsUrl;
+  private readonly timeoutDuration = 10000;
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  getHttpOptions(): {headers: HttpHeaders} {
+  getHttpOptions(): { headers: HttpHeaders } {
     return {
       headers: new HttpHeaders({
         'X-Vault-Token': `${this.tokenService.getKmsToken()}`
@@ -26,26 +27,50 @@ export class KmsService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post(`${this.kmsUrl}/v1/auth/userpass/login/${id}`, {
+    const request = this.http.post(`${this.kmsUrl}/v1/auth/userpass/login/${id}`, {
       password: password,
     }, httpOptions);
+    return request.pipe(
+      timeout(this.timeoutDuration),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   renewToken(): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/v1/auth/token/renew-self`,
+    const request = this.http.post(`${this.kmsUrl}/v1/auth/token/renew-self`,
       this.getHttpOptions());
+    return request.pipe(
+      timeout(this.timeoutDuration),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   decryptData(id: string, encryptedData: string): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/v1/transit/decrypt/${id}`, {
+    const request = this.http.post(`${this.kmsUrl}/v1/transit/decrypt/${id}`, {
       ciphertext: encryptedData,
     }, this.getHttpOptions());
+    return request.pipe(
+      timeout(this.timeoutDuration),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   encryptData(id: string, dataToEncrypt: string): Observable<any> {
-    return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
+    const request = this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
       plaintext: dataToEncrypt,
     }, this.getHttpOptions());
+    return request.pipe(
+      timeout(this.timeoutDuration),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   encryptSignup(id: string, token: string, dataToEncrypt: string): Observable<any> {
@@ -54,8 +79,14 @@ export class KmsService {
         'X-Vault-Token': `${token}`
       })
     };
-    return this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
+    const request = this.http.post(`${this.kmsUrl}/v1/transit/encrypt/${id}`, {
       plaintext: btoa(dataToEncrypt),
     }, httpOptions);
+    return request.pipe(
+      timeout(this.timeoutDuration),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 }

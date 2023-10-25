@@ -27,6 +27,7 @@ export class AppComponent {
   slovnik: Styl[] | undefined;
   pomucky: Pomucka[] | undefined;
   darkmode: boolean = false;
+  isFocused: boolean = false;
 
   constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
     this.loadResources();
@@ -153,6 +154,14 @@ export class AppComponent {
       this.router.navigate(["pomucky/" + this.pomuckyService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!]);
     }
     this.search = "";
+  }
+
+  focus(): void {
+    this.isFocused = true;
+  }
+
+  blur(): void {
+    this.isFocused = false;
   }
 
   switchLanguage(lang: string): Observable<any> {

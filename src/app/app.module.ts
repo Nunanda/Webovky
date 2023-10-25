@@ -23,6 +23,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VerificationComponent } from './pages/verification/verification.component';
 import { FilterPipe } from './filter.pipe';
 import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.component';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { PasswdchangeComponent } from './pages/passwdchange/passwdchange.compone
     VerificationComponent,
     FilterPipe,
     PasswdchangeComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

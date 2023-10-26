@@ -161,7 +161,13 @@ export class AppComponent {
   }
 
   blur(): void {
-    this.isFocused = false;
+    setTimeout(() => {
+      this.isFocused = false;
+    }, 200);
+  }
+
+  onDivClick(event: MouseEvent) {
+    event.stopPropagation();
   }
 
   switchLanguage(lang: string): Observable<any> {

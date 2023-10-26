@@ -272,8 +272,15 @@
 }
 
 @media screen and (max-width: 1100px) {
+    #main {
+        position: fixed;
+        z-index: 10;
+    }
+
     #lista {
         column-gap: 3vw;
+        position: fixed;
+        width: 100vw;
     }
 
     #account,
@@ -301,6 +308,7 @@
         border-top-style: solid;
         align-items: start;
         padding-left: 5px;
+        top: 90px;
     }
 
     #blok1,
@@ -327,6 +335,10 @@
 @media screen and (max-width: 810px) {
     #lista {
         column-gap: 3vw;
+    }
+
+    #menu {
+        top: 80px;
     }
 
     #logo {
@@ -375,5 +387,9 @@
 
     #logo {
         display: none;
+    }
+
+    #menu {
+        top: 70px;
     }
 }

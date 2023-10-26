@@ -1,73 +1,75 @@
 <div id="body">
   <div id="page">
-    <div id="lista">
-      <img id="logo" routerLink="/home" src="assets/icon/svg/logo.svg">
-      <div id="selecro">
-        SELECRO
-      </div>
-      <div id="hledaci_bunka">
-        <input id="hledat" type="text" name="search" [(ngModel)]="search" autocomplete="off"
-          placeholder="{{ 'APP.hledat' | translate }}" (focus)="focus()" (blur)="blur()">
-        <img id="lupa" src="assets/icon/svg/search.svg">
-        <ul id="search_result_ul" *ngIf="search && search.length >= 1 && isFocused">
-          <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" (click)="getRoute(item)">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-      <label id="darkmode">
-        <input id="checkbox" type="checkbox" (change)="switchDarkmode()" [checked]="darkmode === false">
-        <span id="slider"></span>
-      </label>
-      <select id="translation" #selectedlang (change)="switchLanguage(selectedlang.value)">
-        <option *ngFor="let language of translate.getLangs()" [value]="language"
-          [selected]="language === translate.currentLang">
-          {{ language }}
-        </option>
-      </select>
-      <img id="account" routerLink="/prihlaseni" src="{{ imageURL }}">
-      <img id="hamburger" (click)="openCloseNav()" src="assets/icon/svg/hamburger-menu.svg">
-    </div>
-    <div id="menu" #menu>
-      <div id="blok1" routerLink="/home" (click)="toggleMenuVisibility()">
-        <img src="assets/icon/svg/info.svg">
-        Selecro
-      </div>
-      <div (mouseleave)="hidePomucky()" (click)="showHidePomucky()">
-        <div id="blok2_div">
-          <img src="assets/icon/svg/style.svg">
-          {{ 'APP.pomucky' | translate }}
-          <img src="assets/icon/svg/down.svg" #img_pomucky>
+    <div id="main">
+      <div id="lista">
+        <img id="logo" routerLink="/home" src="assets/icon/svg/logo.svg">
+        <div id="selecro">
+          SELECRO
         </div>
-        <div id="blok2_container"  #menu_pomucky>
-          <ng-container *ngFor="let term of pomucky">
-            <a id="pomucky" (click)="openCloseNav();hidePomucky()" [routerLink]="'/pomucky/' + term.nazev">
-              {{ term.title | translate }}
-            </a>
-          </ng-container>
+        <div id="hledaci_bunka">
+          <input id="hledat" type="text" name="search" [(ngModel)]="search" autocomplete="off"
+            placeholder="{{ 'APP.hledat' | translate }}" (focus)="focus()" (blur)="blur()">
+          <img id="lupa" src="assets/icon/svg/search.svg">
+          <ul id="search_result_ul" *ngIf="search && search.length >= 1 && isFocused">
+            <li id="search_result_li" *ngFor="let item of items ?? [] | filter: search" (click)="getRoute(item)">
+              {{ item }}
+            </li>
+          </ul>
         </div>
+        <label id="darkmode">
+          <input id="checkbox" type="checkbox" (change)="switchDarkmode()" [checked]="darkmode === false">
+          <span id="slider"></span>
+        </label>
+        <select id="translation" #selectedlang (change)="switchLanguage(selectedlang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language"
+            [selected]="language === translate.currentLang">
+            {{ language }}
+          </option>
+        </select>
+        <img id="account" routerLink="/prihlaseni" src="{{ imageURL }}">
+        <img id="hamburger" (click)="openCloseNav()" src="assets/icon/svg/hamburger-menu.svg">
       </div>
-      <div (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
-        <div id="blok3_div">
-          <img src="assets/icon/svg/book.svg">
-          {{ 'APP.slovnik' | translate }}
-          <img src="assets/icon/svg/down.svg" #img_slovnik>
+      <div id="menu" #menu>
+        <div id="blok1" routerLink="/home" (click)="toggleMenuVisibility()">
+          <img src="assets/icon/svg/info.svg">
+          Selecro
         </div>
-        <div id="blok3_container" #menu_slovnik>
-          <ng-container *ngFor="let term of slovnik">
-            <a id="slovnik" (click)="openCloseNav();hidePomucky()" [routerLink]="'/slovnik/' + term.nazev">
-              {{ term.title | translate }}
-            </a>
-          </ng-container>
+        <div (mouseleave)="hidePomucky()" (click)="showHidePomucky()">
+          <div id="blok2_div">
+            <img src="assets/icon/svg/style.svg">
+            {{ 'APP.pomucky' | translate }}
+            <img src="assets/icon/svg/down.svg" #img_pomucky>
+          </div>
+          <div id="blok2_container" #menu_pomucky>
+            <ng-container *ngFor="let term of pomucky">
+              <a id="pomucky" (click)="openCloseNav();hidePomucky()" [routerLink]="'/pomucky/' + term.nazev">
+                {{ term.title | translate }}
+              </a>
+            </ng-container>
+          </div>
         </div>
-      </div>
-      <div id="blok4" routerLink="/vyukovymod" (click)="toggleMenuVisibility()">
-        <img src="assets/icon/svg/school.svg">
-        {{ 'APP.vyukovyMod' | translate }}
-      </div>
-      <div id="blok5" routerLink="/navody" (click)="toggleMenuVisibility()">
-        <img src="assets/icon/svg/view.svg">
-        {{ 'APP.navody' | translate }}
+        <div (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
+          <div id="blok3_div">
+            <img src="assets/icon/svg/book.svg">
+            {{ 'APP.slovnik' | translate }}
+            <img src="assets/icon/svg/down.svg" #img_slovnik>
+          </div>
+          <div id="blok3_container" #menu_slovnik>
+            <ng-container *ngFor="let term of slovnik">
+              <a id="slovnik" (click)="openCloseNav();hidePomucky()" [routerLink]="'/slovnik/' + term.nazev">
+                {{ term.title | translate }}
+              </a>
+            </ng-container>
+          </div>
+        </div>
+        <div id="blok4" routerLink="/vyukovymod" (click)="toggleMenuVisibility()">
+          <img src="assets/icon/svg/school.svg">
+          {{ 'APP.vyukovyMod' | translate }}
+        </div>
+        <div id="blok5" routerLink="/navody" (click)="toggleMenuVisibility()">
+          <img src="assets/icon/svg/view.svg">
+          {{ 'APP.navody' | translate }}
+        </div>
       </div>
     </div>
     <router-outlet></router-outlet>

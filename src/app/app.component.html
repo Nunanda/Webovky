@@ -34,7 +34,7 @@
           <img src="assets/icon/svg/info.svg">
           Selecro
         </div>
-        <div (mouseleave)="hidePomucky()" (click)="showHidePomucky()">
+        <div (click)="showHidePomucky()">
           <div id="blok2_div">
             <img src="assets/icon/svg/style.svg">
             {{ 'APP.pomucky' | translate }}
@@ -42,13 +42,13 @@
           </div>
           <div id="blok2_container" #menu_pomucky>
             <ng-container *ngFor="let term of pomucky">
-              <a id="pomucky" (click)="openCloseNav();hidePomucky()" [routerLink]="'/pomucky/' + term.nazev">
+              <a id="pomucky" (click)="openCloseNav()" [routerLink]="'/pomucky/' + term.nazev">
                 {{ term.title | translate }}
               </a>
             </ng-container>
           </div>
         </div>
-        <div (mouseleave)="hideSlovnik()" (click)="showHideSlovnik()">
+        <div (click)="showHideSlovnik()">
           <div id="blok3_div">
             <img src="assets/icon/svg/book.svg">
             {{ 'APP.slovnik' | translate }}
@@ -56,7 +56,7 @@
           </div>
           <div id="blok3_container" #menu_slovnik>
             <ng-container *ngFor="let term of slovnik">
-              <a id="slovnik" (click)="openCloseNav();hidePomucky()" [routerLink]="'/slovnik/' + term.nazev">
+              <a id="slovnik" (click)="openCloseNav()" [routerLink]="'/slovnik/' + term.nazev">
                 {{ term.title | translate }}
               </a>
             </ng-container>

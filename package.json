@@ -25,7 +25,7 @@
     "socket.io-client": "^4.7.1",
     "sweetalert2": "^10.16.11",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.0"
+    "zone.js": "~0.14.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",

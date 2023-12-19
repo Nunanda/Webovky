@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { NavodyService } from 'src/app/service';
-import { Navod, PopisNavodu } from 'src/app/types';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { InstructionService } from 'src/app/service';
+import { Instruction, Step } from 'src/app/types';
 
 @Component({
   selector: 'app-navody-detail',
@@ -9,51 +11,59 @@ import { Navod, PopisNavodu } from 'src/app/types';
 })
 export class NavodyDetailComponent implements OnInit {
 
-  nazev: any;
-  popis: PopisNavodu[];
-  navod: any;
-  index: number;
-  index0: number;
-  popisy: string[];
-  intervalId: any;
+  @ViewChildren('items') items: QueryList<ElementRef> | undefined;
+  @ViewChildren('krokyElement') krokyElement: QueryList<ElementRef> | undefined;
+  highlightIndex: number = -1;
+  nazev: string | undefined;
+  navod: Instruction | undefined | void;
+  krokyNavodu: Step[] | undefined;
+  index: number = 0;
   timer: number = 0;
-  element: NodeListOf<HTMLElement> | undefined;
-  element0: NodeListOf<HTMLElement> | undefined;
+  isRunning: boolean = false;
 
-  constructor(private navodyService: NavodyService) {
-    this.nazev = localStorage.getItem("nazev");
-    this.popis = new Array<PopisNavodu>();
-    this.navod = new Array<Navod>();
-    this.index = 0;
-    this.index0 = 0;
-    this.popisy = new Array<string>();
-  }
+  constructor(private instructionService: InstructionService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit(): void {
-    this.navod = this.navodyService.getNavodyByName(this.nazev);
-    this.popis = this.navodyService.getPopisy(this.nazev);
-    this.popisy = this.popis[this.index].popis;
-    this.element = document.getElementsByName("button0");
-    this.element0 = document.getElementsByName("element0");
+    this.loadNavodData();
   }
 
   ngDoCheck(): void {
-    this.navod = this.navodyService.getNavodyByName(this.nazev);
-    this.popis = this.navodyService.getPopisy(this.nazev);
-    this.popisy = this.popis[this.index].popis;
+    this.loadNavodData();
   }
 
-  setindex(item: PopisNavodu): void {
-    this.index = this.popis.indexOf(item);
-    this.popisy = this.popis[this.index].popis;
-    this.index0 = 0;
-    if (this.element?.item(this.index).className === "finished") {
-      this.element0?.forEach(x => x.setAttribute("style", "text-decoration: line-through; color: gray"));
-      this.index0 = this.popisy.length;
+  ngAfterViewChecked() {
+    this.checkFinished();
+  }
+
+  loadNavodData(): void {
+    this.nazev = this.router.url.split('/')[3];
+    this.navod = this.instructionService.getInstructionsById(this.nazev);
+    this.krokyNavodu = this.instructionService.getStepsById(this.nazev);
+  }
+
+  getTitle(navod: Instruction | Step): string {
+    return this.translate.currentLang === 'CZ' ? navod.titleCz : navod.titleEn;
+  }
+
+  getShortcuts(navod: Instruction): string | null | undefined {
+    return this.translate.currentLang === 'CZ' ? navod.shortcutsCz : navod.shortcutsEn;
+  }
+
+  getStepsDescription(step: Step): string[] {
+    return this.translate.currentLang === 'CZ' ? step.descriptionCz : step.descriptionEn;
+  }
+
+  setIndex(id: string, instructionId: string): void {
+    if (this.items) {
+      this.items.toArray().forEach((element) => {
+        element.nativeElement.style.textDecoration = '';
+        element.nativeElement.style.color = '';
+      });
     }
-    else if (this.element?.item(this.index).className === "unfinished") {
-      this.element0?.forEach(x => x.removeAttribute("style"));
-      this.index0 = 0;
+    this.highlightIndex = -1;
+    const index = this.instructionService.getIndexById(id, instructionId);
+    if (index !== undefined) {
+      this.index = index;
     }
   }
 
@@ -65,55 +75,78 @@ export class NavodyDetailComponent implements OnInit {
     return ("00" + this.timer % 60).slice(-2);
   }
 
-  time(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = 0;
-    }
-    else if (!this.intervalId) {
-      this.intervalId = setInterval(() => this.timer++, 1000);
-    }
-  }
-
-  finished(): void {
-    if (this.element?.item(this.index).className === "finished") {
-      this.element?.item(this.index).classList.remove("finished");
-      this.element?.item(this.index).classList.add("unfinished");
-      this.element0?.forEach(x => x.removeAttribute("style"));
-      this.index0 = 0;
-    }
-    else if (this.element?.item(this.index).className === "unfinished") {
-      this.element?.item(this.index).classList.remove("unfinished");
-      this.element?.item(this.index).classList.add("finished");
-      this.element0?.forEach(x => x.setAttribute("style", "text-decoration: line-through; color: gray"));
-      this.index0 = this.popisy.length;
-    }
-  }
-
-  previousIndex(): void {
-    if (this.index0 - 1 >= 0) {
-      if (this.index0 >= this.popisy.length) {
-        this.element?.item(this.index).classList.remove("finished");
-        this.element?.item(this.index).classList.add("unfinished");
-        this.element0?.item(this.index0 - 1).removeAttribute("style");
-        this.index0--;
-      }
-      else if ((this.element0?.item(this.index0 - 1).getAttribute("style") != null)) {
-        this.element0?.item(this.index0 - 1).removeAttribute("style");
-        this.index0--;
-      }
+  startStopTimer(): void {
+    if (this.isRunning) {
+      this.isRunning = false;
+    } else {
+      this.isRunning = true;
+      const timerInterval = setInterval(() => {
+        if (this.isRunning) {
+          this.timer++;
+        } else {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
     }
   }
 
   nextIndex(): void {
-    if (this.index0 + 1 == this.popisy.length) {
-      this.finished();
-    }
-    else if (this.index0 < this.popisy.length) {
-      if ((this.element0?.item(this.index0).getAttribute("style") == null)) {
-        this.element0?.item(this.index0).setAttribute("style", "text-decoration: line-through; color: gray");
-        this.index0++;
+    if (this.items) {
+      if (this.highlightIndex !== this.items.length - 1) {
+        this.highlightIndex++;
+        this.items.toArray()[this.highlightIndex].nativeElement.style.textDecoration = 'line-through';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.color = 'gray';
+        if ((this.highlightIndex === this.items.length - 1) && this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
+        }
       }
+    }
+  }
+
+  previousIndex(): void {
+    if (this.items) {
+      if (this.highlightIndex !== -1) {
+        this.items.toArray()[this.highlightIndex].nativeElement.style.textDecoration = '';
+        this.items.toArray()[this.highlightIndex].nativeElement.style.color = '';
+        this.highlightIndex--;
+        if ((this.highlightIndex < this.items.length) && this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '';
+        }
+      }
+    }
+  }
+
+  finished(): void {
+    if (this.items) {
+      if (this.highlightIndex < this.items.length - 1) {
+        this.items.toArray().forEach((element) => {
+          element.nativeElement.style.textDecoration = 'line-through';
+          element.nativeElement.style.color = 'gray';
+        });
+        this.highlightIndex = this.items.length - 1;
+        if (this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '#f5a3be';
+        }
+      } else {
+        this.items.toArray().forEach((element) => {
+          element.nativeElement.style.textDecoration = '';
+          element.nativeElement.style.color = '';
+        });
+        this.highlightIndex = -1;
+        if (this.krokyElement) {
+          this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor = '';
+        }
+      }
+    }
+  }
+
+  checkFinished(): void {
+    if (this.krokyElement && this.items && this.krokyElement.toArray()[this.index].nativeElement.style.backgroundColor === 'rgb(245, 163, 190)') {
+      this.items.toArray().forEach((element) => {
+        element.nativeElement.style.textDecoration = 'line-through';
+        element.nativeElement.style.color = 'gray';
+      });
+      this.highlightIndex = this.items.length - 1;
     }
   }
 }

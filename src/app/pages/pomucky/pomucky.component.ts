@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PomuckyService } from 'src/app/service';
-import { PopisPomucek } from 'src/app/types';
+import { Pomucka, PopisPomucek } from 'src/app/types';
 
 @Component({
   selector: 'app-pomucky',
@@ -10,24 +10,23 @@ import { PopisPomucek } from 'src/app/types';
 })
 export class PomuckyComponent implements OnInit {
 
-  pomucka: any;
-  kroky: Array<PopisPomucek>;
+  nazev: string | undefined;
+  pomucka: Pomucka | undefined;
+  kroky: PopisPomucek[] | undefined;
 
-  constructor(private pomuckyService: PomuckyService, private router: Router) {
-    const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomucka.kroky;
-  }
+  constructor(private pomuckyService: PomuckyService, private router: Router) { }
 
   ngOnInit(): void {
-    const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomucka.kroky;
+    this.initializePomucka();
   }
 
   ngDoCheck(): void {
-    const nazev = (this.router.url.split('/'))[2];
-    this.pomucka = this.pomuckyService.getPomuckaByName(nazev);
-    this.kroky = this.pomucka.kroky;
+    this.initializePomucka();
+  }
+
+  private initializePomucka(): void {
+    this.nazev = this.router.url.split('/')[2];
+    this.pomucka = this.pomuckyService.getPomuckaByName(this.nazev);
+    this.kroky = this.pomucka?.kroky;
   }
 }

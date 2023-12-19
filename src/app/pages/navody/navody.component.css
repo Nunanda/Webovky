@@ -1,126 +1,123 @@
-#container {
-    padding: 40px;
-}
-
 #sloupce {
-    display: flex;
     margin-top: 2%;
     gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.bunka {
+#bunka_easy {
     border-radius: 20px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    width: 30%;
-    min-width: 364px;
+    background-color: var(--easy-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
+    min-height: 180px;
+    cursor: pointer;
 }
 
-.Nazev_navodu {
+#bunka_medium {
+    border-radius: 20px;
+    background-color: var(--medium-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
+    min-height: 180px;
+    cursor: pointer;
+}
+
+#bunka_hard {
+    border-radius: 20px;
+    background-color: var(--hard-color);
+    box-shadow: 0 3px 8px var(--shadow-color);
+    min-height: 180px;
+    cursor: pointer;
+}
+
+#bunka_hard:hover {
+    transform: scale(1.03, 1.03);
+}
+
+#okraj_easy {
     padding: 5px;
+    background: var(--easy-instruction);
     border-radius: 20px 20px 0px 0px;
     display: flex;
+    color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
     justify-content: center;
     align-items: center;
-    color: #fff;
 }
 
-.lehky {
-    background-color: #E2FAE3;
+#okraj_medium {
+    padding: 5px;
+    background: var(--medium-instruction);
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
-.stredni {
-    background-color: #F9FAE1;
+#okraj_hard {
+    padding: 5px;
+    background: var(--hard-instruction);
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    color: var(--background-color);
+    gap: 10%;
+    padding-bottom: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
-.tezky {
-    background-color: #FDE6E6;
+#svgs {
+    display: flex;
+    gap: 30%;
+    margin-bottom: 5px;
 }
 
-.lehky_name {
-    background: #3EDE44;
-}
-
-.stredni_name {
-    background: #D6DA34;
-}
-
-.tezky_name {
-    background: #f73636;
-}
-
-.obsah {
+#obsah {
     display: flex;
     padding: 15px;
 }
 
 #obrazek_navodu {
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 180px;
     border-radius: 10px;
 }
 
-h2 {
-    text-align: center;
-}
-
-.text {
+#text {
     padding-left: 15px;
+    font-size: calc(.7rem + .2vw);
 }
 
-@media screen and (max-width: 808px) {
-    #container {
-        padding: 20px;
-    }
-
-}
-
-@media screen and (max-width: 991px) {
-    .bunka {
-        min-width: 330px;
+@media screen and (max-width: 1100px) {
+    #sloupce {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #obrazek_navodu {
-        height: 95px;
+        max-width: 100px;
+        max-height: 130px;
     }
 
-    .obsah {
-        padding: 10px;
+    #text {
+        font-size: calc(.7rem + .5vw);
     }
-
-    .text {
-        font-size: .8rem;
-    }
-
 }
 
-@media screen and (max-width: 767px) {
-    .bunka {
-        min-width: 320px;
+@media screen and (max-width: 800px) {
+    #sloupce {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    #obrazek_navodu {
-        height: 80px;
+    #text {
+        font-size: calc(.8rem + .6vw);
     }
-
-    .obsah {
-        padding: 8px;
-    }
-
-    .text {
-        font-size: .75rem;
-    }
-
-    .Nazev_navodu {
-        padding: 2px;
-        font-size: .9rem;
-    }
-
-}
-
-@media screen and (max-width: 479px) {
-    #obrazek_navodu {
-        height: 70px;
-    }
-
 }

@@ -1,21 +1,44 @@
-export type Navod = {
-  title: string,
-  nazev: string,
-  zkratky: string,
-  pocet: number,
-  obtiznost: ObtiznostNavodu
-  popisy: Array<PopisNavodu>,
+export type PremiumInstruction = {
+  id: string,
+  titleCz: string,
+  titleEn: string,
+  difficulty: Difficulty,
+  link?: string | null,
+  premium: boolean,
+  finished?: boolean,
+  date: Date,
+  userId: string,
+  shortcutsCz?: string | null;
+  shortcutsEn?: string | null;
 }
 
-export type PopisNavodu = {
-  obrazek: boolean,
-  nazevCasti: string,
-  titulekCasti: string,
-  popis: Array<string>
+export type Instruction = {
+  id: string,
+  titleCz: string,
+  titleEn: string,
+  difficulty: Difficulty,
+  link?: string | null,
+  premium?: boolean,
+  finished?: boolean,
+  date: Date,
+  userId: string,
+  shortcutsCz?: string | null;
+  shortcutsEn?: string | null;
+  steps: Step[],
 }
 
-export enum ObtiznostNavodu {
-  tezky = 'tezky',
-  stredni = 'stredni',
-  lehky = 'lehky'
+export type Step = {
+  id: string,
+  titleCz: string,
+  titleEn: string,
+  descriptionCz: string[],
+  descriptionEn: string[],
+  link?: string | null,
+  instructionId: string,
+}
+
+export enum Difficulty {
+  easy = 'easy',
+  medium = 'medium',
+  hard = 'hard',
 }

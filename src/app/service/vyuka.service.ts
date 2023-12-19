@@ -698,16 +698,16 @@ export class VyukaService {
   constructor(private translate: TranslateService) {
   }
 
-  public getVyrobekByName(name: string): Vyuka | void {
+  public getVyrobekBynazev(nazev: string): Vyuka | void {
     if (this.translate.currentLang === "EN") {
-      return poleVyrobkuEN.find(element => element.nazev == name);
+      return poleVyrobkuEN.find(element => element.nazev == nazev);
     }
     else {
-      return poleVyrobkuCZ.find(element => element.nazev == name);
+      return poleVyrobkuCZ.find(element => element.nazev == nazev);
     }
   }
 
-  public getVsechnyPomucky(): Array<Vyuka> {
+  public getVsechnyVyrobky(): Array<Vyuka> {
     if (this.translate.currentLang === "EN") {
       return poleVyrobkuEN;
     }
@@ -733,6 +733,15 @@ export class VyukaService {
     }
     else {
       return poleVyrobkuCZ.map((item) => item.title);
+    }
+  }
+
+  public getTitle(nazev: string): string {
+    if (this.translate.currentLang === "EN") {
+      return poleVyrobkuEN.find(element => element.nazev == nazev)?.title!;
+    }
+    else {
+      return poleVyrobkuCZ.find(element => element.nazev == nazev)?.title!;
     }
   }
 

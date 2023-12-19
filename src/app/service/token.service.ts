@@ -1,45 +1,43 @@
 import { Injectable } from '@angular/core';
-
-const TOKEN_KEY = 'auth-token';
-const USER_KEY = 'auth-user';
-const PICTURE_KEY = 'picture';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
-  constructor() { }
+  private readonly TOKEN_KEY = 'fdf845fe-67ae-11ee-8c99-0242ac120002';
+  private readonly TOKEN_KEY_KMS = '05a6a872-67af-11ee-8c99-0242ac120002';
+  private readonly KEK = '7a617e9b-ad2f-4c03-b383-7b750227fa5b';
+
+  constructor(private cookieService: CookieService) { }
 
   signOut(): void {
-    window.sessionStorage.clear();
+    this.cookieService.delete(this.TOKEN_KEY);
+    this.cookieService.delete(this.TOKEN_KEY_KMS);
+    this.cookieService.delete(this.KEK);
   }
 
-  public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+  saveToken(token: string): void {
+    this.cookieService.set(this.TOKEN_KEY, token);
   }
 
-  public getToken(): string | null {
-    return window.sessionStorage.getItem(TOKEN_KEY);
+  getToken(): string | null {
+    return this.cookieService.get(this.TOKEN_KEY) || null;
   }
 
-  public saveUser(user: JSON): void {
-    window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  saveKmsToken(token: string): void {
+    this.cookieService.set(this.TOKEN_KEY_KMS, token);
   }
 
-  public getUser(): JSON | void {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
-      return JSON.parse(user);
-    }
+  getKmsToken(): string | null {
+    return this.cookieService.get(this.TOKEN_KEY_KMS) || null;
   }
 
-  public getPicture(): string | null {
-    return window.sessionStorage.getItem(PICTURE_KEY);
+  saveKEK(KEK: string): void {
+    this.cookieService.set(this.KEK, KEK);
   }
 
-  public savePicture(imageUrl: string): void {
-    window.sessionStorage.setItem(PICTURE_KEY, imageUrl);
+  getKEK(): string | null {
+    return this.cookieService.get(this.KEK) || null;
   }
 }

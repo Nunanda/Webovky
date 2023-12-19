@@ -1,71 +1,151 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, NavodyService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
+import { VyukaService, InstructionService, PomuckyService, SlovnikService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { Pomucka, Styl } from './types';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
 
-  element1: HTMLElement | null;
-  element2: HTMLElement | null;
-  element3: HTMLElement | null;
-  element4: HTMLElement | null;
-  items: Array<string> = new Array<string>;;
+  @ViewChild('menu', { read: ElementRef }) menu: ElementRef | undefined;
+  @ViewChild('menu_pomucky', { read: ElementRef }) menuPomucky: ElementRef | undefined;
+  @ViewChild('img_pomucky', { read: ElementRef }) imgPomucky: ElementRef | undefined;
+  @ViewChild('menu_slovnik', { read: ElementRef }) menuSlovnik: ElementRef | undefined;
+  @ViewChild('img_slovnik', { read: ElementRef }) imgSlovnik: ElementRef | undefined;
+
+  menuVisible: boolean = false;
+  menuPomuckyVisible: boolean = false;
+  menuSlovnikVisible: boolean = false;
+  items: string[] | undefined;
   search: string | undefined;
   imageURL: string = "assets/icon/svg/account.svg";
+  slovnik: Styl[] | undefined;
+  pomucky: Pomucka[] | undefined;
+  darkmode: boolean = false;
+  isFocused: boolean = false;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private navodyService: NavodyService, private router: Router, public translate: TranslateService, private tokenService: TokenService) {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
-    translate.addLangs(['CZ', 'EN']);
-    if (localStorage.getItem("language") === "EN") {
-      this.translate.currentLang = 'EN';
-      this.translate.setDefaultLang('EN');
-      this.translate.use('EN');
-    }
-    else {
-      this.translate.currentLang = 'CZ';
-      this.translate.setDefaultLang('CZ');
-      this.translate.use('CZ');
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
+    this.loadResources();
+    this.initializeLanguage();
+    this.initializeDarkMode();
+    if (window.innerWidth > 1100) {
+      this.menuVisible = true;
     }
   }
 
   ngOnInit(): void {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
-    this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
+    this.loadResources();
   }
 
   ngDoCheck(): void {
-    this.element1 = document.getElementById("mySidenav");
-    this.element2 = document.getElementById("dropdown-content0");
-    this.element3 = document.getElementById("dropdown-content1");
-    this.element4 = document.getElementById("dropdown-content2");
-    this.items = [...this.vyukaService.getTitles(), ...this.slovnikService.getTitles(), ...this.pomuckyService.getTitles(), ...this.navodyService.getTitles()];
+    this.loadResources();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.toggleMenuVisibility();
+  }
+
+  toggleMenuVisibility(): void {
+    if (window.innerWidth > 1100) {
+      if (this.menu) {
+        this.menu.nativeElement.style.display = 'flex';
+        this.menu.nativeElement.style.width = "100%";
+        this.menuVisible = true;
+      }
+      if (this.menuPomucky && this.imgPomucky) {
+        this.menuPomucky.nativeElement.style.position = 'absolute';
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      if (this.menuSlovnik && this.imgSlovnik) {
+        this.menuSlovnik.nativeElement.style.position = 'absolute';
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
+      }
+    } else {
+      if (this.menu) {
+        this.menu.nativeElement.style.width = 0;
+        this.menuVisible = false;
+      }
+      if (this.menuPomucky && this.imgPomucky) {
+        this.menuPomucky.nativeElement.style.position = 'relative';
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      if (this.menuSlovnik && this.imgSlovnik) {
+        this.menuSlovnik.nativeElement.style.position = 'relative';
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
+      }
+    }
+  }
+
+  initializeLanguage(): void {
+    this.translate.addLangs(['CZ', 'EN']);
+    const selectedLanguage = localStorage.getItem("language");
+    const browserLanguage = navigator.language.substr(0, 2).toUpperCase();
+    const defaultLanguage = selectedLanguage === "EN" ? 'EN' : 'CZ';
+    if (selectedLanguage && (selectedLanguage === "EN" || selectedLanguage === "CZ")) {
+      this.translate.currentLang = selectedLanguage;
+    } else {
+      if (browserLanguage == 'CZ') {
+        this.translate.currentLang = 'CZ';
+      } else {
+        this.translate.currentLang = 'EN';
+      }
+    }
+    this.translate.setDefaultLang(this.translate.currentLang);
+    this.translate.use(this.translate.currentLang);
+    localStorage.setItem("language", this.translate.currentLang);
+  }
+
+  initializeDarkMode(): void {
+    const userDarkModePreference = localStorage.getItem("darkMode");
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (userDarkModePreference === "dark" || userDarkModePreference === "light") {
+      document.body.classList.toggle('dark-mode', userDarkModePreference === 'dark');
+      if (userDarkModePreference === "dark") {
+        this.darkmode = !this.darkmode;
+      }
+    } else if (prefersDarkMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem("darkMode", "dark");
+      this.darkmode = !this.darkmode;
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem("darkMode", "light");
+    }
+  }
+
+  loadResources(): void {
+    this.slovnik = this.slovnikService.getVsechnyStyly();
+    this.pomucky = this.pomuckyService.getVsechnyPomucky();
+    this.items = [
+      ...this.vyukaService.getTitles(),
+      ...this.slovnikService.getTitles(),
+      ...this.pomuckyService.getTitles(),
+      ...this.instructionService.getAllTitles()
+    ];
     this.items.sort();
-    this.imageURL = this.tokenService.getPicture() || "assets/icon/svg/account.svg";
+    this.imageURL = "assets/icon/svg/account.svg";
   }
 
   getRoute(item: string): void {
     if (this.vyukaService.getTitles().includes(item)) {
-      localStorage.setItem("nazev", this.vyukaService.getVsechnyPomucky().find(item0 => item0.title == item)?.nazev!);
-      this.router.navigate(["vyukovymod/vyukovymod-detail/"]);
+      this.router.navigate(["vyukovymod/vyukovymod-detail/" + this.vyukaService.getVsechnyVyrobky().find(item0 => item0.title == item)?.nazev!]);
     }
-    else if (this.navodyService.getTitles().includes(item)) {
-      localStorage.setItem("nazev", this.navodyService.getVsechnyNavody().find(item0 => item0.title == item)?.nazev!);
-      this.router.navigate(["navody/navody-detail/"]);
+    else if (this.instructionService.getAllTitles().includes(item)) {
+      this.router.navigate(["navody/navody-detail/" + (this.instructionService.getAllInstructions().find(item0 => item0.titleEn === item) || this.instructionService.getAllInstructions().find(item0 => item0.titleCz === item))?.id]);
     }
     else if (this.slovnikService.getTitles().includes(item)) {
       this.router.navigate(["slovnik/" + this.slovnikService.getVsechnyStyly().find(item0 => item0.title == item)?.nazev!]);
@@ -76,45 +156,89 @@ export class AppComponent {
     this.search = "";
   }
 
+  focus(): void {
+    this.isFocused = true;
+  }
+
+  blur(): void {
+    this.isFocused = false;
+  }
+
   switchLanguage(lang: string): Observable<any> {
     localStorage.setItem("language", lang);
     return this.translate.use(lang);
   }
 
-  opencloseNav(): void {
-    if (this.element1?.getAttribute("style") == "height: 0") {
-      this.element1?.setAttribute("style", "height: 100%");
+  switchDarkmode(): void {
+    const userDarkModePreference = localStorage.getItem("darkMode");
+    if (userDarkModePreference === "dark") {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem("darkMode", "light");
+    } else {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem("darkMode", "dark");
     }
-    else {
-      this.element1?.setAttribute("style", "height: 0");
+    this.darkmode = !this.darkmode;
+  }
+
+  openCloseNav(): void {
+    if (this.menu) {
+      if (this.menuVisible && window.innerWidth < 1100) {
+        this.menu.nativeElement.style.width = 0;
+        this.menuVisible = false;
+      }
+      else if (window.innerWidth < 1100) {
+        this.menu.nativeElement.style.width = "300px";
+        this.menuVisible = true;
+      }
     }
   }
 
   showHidePomucky(): void {
-    if (this.element2?.getAttribute("style") === "display: block") {
-      this.element2?.setAttribute("style", "display: none");
+    if (this.menuPomucky && this.imgPomucky) {
+      if (this.menuPomuckyVisible) {
+        this.menuPomucky.nativeElement.style.display = 'none';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuPomuckyVisible = false;
+      }
+      else {
+        this.menuPomucky.nativeElement.style.display = 'grid';
+        this.imgPomucky.nativeElement.src = "assets/icon/svg/up.svg";
+        this.menuPomuckyVisible = true;
+      }
     }
-    else {
-      this.element2?.setAttribute("style", "display: block");
+  }
+
+  hidePomucky(): void {
+    if (this.menuPomucky && this.imgPomucky) {
+      this.menuPomucky.nativeElement.style.display = 'none';
+      this.imgPomucky.nativeElement.src = "assets/icon/svg/down.svg";
+      this.menuPomuckyVisible = false;
     }
   }
 
   showHideSlovnik(): void {
-    if (this.element3?.getAttribute("style") === "display: block") {
-      this.element3?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element3?.setAttribute("style", "display: block");
-    }
-  }
-
-  showHideNavody(): void {
-    if (this.element4?.getAttribute("style") === "display: block") {
-      this.element4?.setAttribute("style", "display: none");
-    }
-    else {
-      this.element4?.setAttribute("style", "display: block");
+    if (this.menuSlovnik && this.imgSlovnik) {
+      if (this.menuSlovnikVisible) {
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
+      }
+      else {
+        this.menuSlovnik.nativeElement.style.display = 'grid';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/up.svg";
+        this.menuSlovnikVisible = true;
+      }
     }
   }
 
+  hideSlovnik(): void {
+    if (this.menuSlovnik && this.imgSlovnik) {
+      if (this.menuSlovnikVisible) {
+      this.menuSlovnik.nativeElement.style.display = 'none';
+      this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+      this.menuSlovnikVisible = false;
+      }
+    }
+  }
 }

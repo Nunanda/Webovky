@@ -44,3 +44,4 @@ jobs:
       - name: Clean up
         run: |
           rm -r ./dist
+          

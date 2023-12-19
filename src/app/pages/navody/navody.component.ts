@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavodyService } from 'src/app/service';
-import { Navod } from 'src/app/types';
+import { TranslateService } from '@ngx-translate/core';
+import { InstructionService } from 'src/app/service';
+import { Instruction } from 'src/app/types';
 
 @Component({
   selector: 'app-navody',
@@ -10,32 +11,31 @@ import { Navod } from 'src/app/types';
 })
 export class NavodyComponent implements OnInit {
 
-  navod: Array<Navod> = new Array<Navod>;
-  //NavodyService: any;
-  //obtiznost!: String;
+  navod: Instruction[] | undefined;
 
-  constructor(private navodyService: NavodyService, private router: Router) { }
+  constructor(private instructionService: InstructionService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
+    this.loadNavody();
   }
 
   ngDoCheck(): void {
-    this.navod = this.navodyService.getVsechnyNavody();
+    this.loadNavody();
   }
 
-  public getPopisy(nazev: string): void {
-    localStorage.setItem("nazev", nazev);
-    this.router.navigate(["navody/navody-detail/"]);
+  loadNavody(): void {
+    this.navod = this.instructionService.getAllInstructions();
   }
 
-  /*public lehkeNavody() {
-    this.obtiznost.valueOf();
+  goKroky(nazev: string): void {
+    this.router.navigate(["navody/navody-detail/" + nazev]);
   }
 
-  public stredniNavody() {
+  getTitle(navod: Instruction): string {
+    return this.translate.currentLang === 'CZ' ? navod.titleCz : navod.titleEn;
   }
 
-  public tezkeNavody() {
-  }*/
+  getShortcuts(navod: Instruction): string | null | undefined {
+    return this.translate.currentLang === 'CZ' ? navod.shortcutsCz : navod.shortcutsEn;
+  }
 }

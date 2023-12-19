@@ -1,62 +1,25 @@
-#container {
-    padding: 40px;
-}
-
-#sloupce {
+#columns {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 5%;
+    padding-top: 10px;
+    justify-content: center;
 }
 
-#slovnik_popis {
+#first_column {
+    background-color: var(--cell-color-first);
     border-radius: 15px;
-    background: #C8E7F4;
-    padding: 25px;
-    max-width: 600px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    padding: 20px;
+    box-shadow: 0 3px 8px var(--shadow-color);
     font-size: calc(.7rem + .5vw);
+    max-width: 30vw;
 }
 
-h2, h4{
-    text-align: center;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.pole_zkratka {
-    height: 150px;
-    width: 150px;
-    border-radius: 20px;
-    background: #FFFFFF;
+#direction_row {
     display: flex;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
-
-#zkratka {
-    font-weight: 600px;
-    font-size: 72px;
-}
-
-.znacka {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-}
-
-.size {
-    max-width: 445.71px;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    border-radius: 15px;
-    margin-top: 8px;
+    gap: 20%;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 #direction_column {
@@ -65,87 +28,66 @@ h2, h4{
     align-items: center;
 }
 
-#direction_row {
+#pole_zkratka,
+#znacka {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: var(--background-color-invert);
     display: flex;
     justify-content: center;
-    gap: 20%;
-    margin-top: 10px;
+    align-items: center;
+    box-shadow: 0 3px 8px var(--shadow-color);
+    font-size: 72px;
+    filter: invert(var(--invert));
 }
 
-
-#popis_obsah {
-    margin-top: 50px;
-}   
-
-.margin_top {
-    margin-top: 30px;
+#second_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.margin_bottom {
-    margin-bottom: 20px;
+#size_1,
+#size_2 {
+    max-width: 445px;
+    box-shadow: 0 3px 8px var(--shadow-color);
+    border-radius: 15px;
+    margin: 8px 0;
 }
 
-@media screen and (max-width: 808px) {
-    #container {
-        padding: 20px;
+@media screen and (max-width: 1500px) {
+    #first_column {
+        max-width: 40vw;
     }
 }
 
-@media screen and (max-width: 991px) {
-    .pole_zkratka {
-        height: 130px;
-        width: 130px;
+@media screen and (max-width: 1100px) {
+    #columns {
+        flex-direction: column;
+        row-gap: 20px;
     }
 
-    #zkratka {
-        font-size: 65px;
+    #first_column {
+        align-self: center;
+        max-width: 65vw;
     }
-
-    .znacka {
-        height: 130px;
-        width: 130px;
-    }
-
 }
 
-@media screen and (max-width: 767px) {
-    .pole_zkratka {
-        height: 120px;
-        width: 120px;
+@media screen and (max-width: 800px) {
+    #first_column {
+        max-width: 80vw;
     }
 
-    #zkratka {
-        font-size: 58px;
-    }
-
-    .znacka {
-        height: 120px;
-        width: 120px;
-    }
-
-}
-
-@media screen and (max-width: 479px) {
-    .pole_zkratka {
+    #pole_zkratka,
+    #znacka {
         height: 100px;
         width: 100px;
+        font-size: 52px;
     }
 
-    #zkratka {
-        font-size: 50px;
+    #size_1,
+    #size_2 {
+        max-width: 320px;
     }
-
-    .znacka {
-        height: 100px;
-        width: 100px;
-    }
-
-    h4, h5 {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
 }

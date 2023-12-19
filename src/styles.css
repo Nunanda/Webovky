@@ -1,5 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --background-color: #fff;
+    --background-color-invert: #fff;
+    --background-color-third: #DCDCDC;
+    --cell-color-first: #c8e7f4;
+    --shadow-color: #0003;
+    --box-color: #e9e9ed;
+    --border-color-first: #c0a8b0;
+    --border-color-second: #ced4da;
+    --pink-backgroud: #f4B9cd;
+    --text-color: #333;
+    --text-color-black-and-white: #333;
+    --light-background: #f2d4de;
+    --cell-color-second: #f7e4ea;
+    --cell-header: #ea749b;
+    --easy-instruction: #3ede44;
+    --medium-instruction: #d6da34;
+    --hard-instruction: #f73636;
+    --easy-color: #e2fae3;
+    --medium-color: #f9fae1;
+    --hard-color: #fde6e6;
+    --invert: 0%;
+    --darkmode-input: #00c3ff;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.dark-mode {
+    --background-color: #35363a;
+    --background-color-invert: #cac9c5;
+    --text-color-black-and-white: #fff;
+    --shadow-color: #808080;
+    --invert: 100%;
+    --darkmode-input: #28096b;
+    --background-color-third: #68696A;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url("src/assets/icon/jpg/pozadi.jpg") center/cover no-repeat fixed;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color-black-and-white);
+    font-size: calc(1rem + 1vw);
+}
+
+h4 {
+    text-align: center;
+    font-size: calc(1rem + .5vw);
+}
+
+h5 {
+    text-align: center;
+    font-size: calc(1rem + .3vw);
+}
+
+input {
+    width: 300px;
+    color: var(--text-color-black-and-white);
+}
+
+button {
+    width: 100%;
+    opacity: .65;
+}
+
+i {
+    color: var(--background-color-invert);
+}
+
+.form-control {
+    background-color: var(--background-color);
+    color: var(--background-color-invert);
+}
+
+.form-control:focus {
+    background-color: var(--background-color);
+    color: var(--background-color-invert);
+}
+
+#container {
+    padding: 40px;
+}
+
+@media screen and (max-width: 800px) {
+    input {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #container {
+        padding: 15px;
+    }
+}

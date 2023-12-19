@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { TokenService } from 'src/app/service';
-import { AuthService } from 'src/app/service';
-import { UserService } from 'src/app/service';
-import { ValidationService } from 'src/app/service';
+import { switchMap } from 'rxjs';
+import { PublicService, PrivateService, TokenService, ValidationService, KmsService } from 'src/app/service';
 import Swal from 'sweetalert2';
+import * as pbkdf2 from 'pbkdf2';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -15,82 +15,129 @@ import Swal from 'sweetalert2';
 export class PrihlaseniComponent implements OnInit {
 
   showPassword: boolean = false;
-  email: string = "";
   password: string = "";
-  errorMessage: string = "";
+  email: string = "";
   email1: string = "";
-  errorMessage1: string = "";
+  isLoading: boolean = false;
 
-
-  constructor(private router: Router, private tokenService: TokenService, private authService: AuthService, private userService: UserService, private validationService: ValidationService, public translate: TranslateService) { }
+  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService, private tokenService: TokenService, private kmsService: KmsService) { }
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.router.navigate(["profile"]);
-    }
   }
 
   login(): void {
-    if (this.validationService.validateLogin(this.email, this.password)) {
-      this.authService.login(this.email, this.password).subscribe(
-        data => {
-          this.tokenService.saveToken(data.token);
-          this.userService.getProfile(data.token).subscribe(
-            data0 => {
-              this.tokenService.saveUser(data0);
-              if (data0.language === "EN") {
-                this.translate.currentLang = 'EN';
-                this.translate.setDefaultLang('EN');
-                this.translate.use('EN');
-              }
-              else {
-                this.translate.currentLang = 'CZ';
-                this.translate.setDefaultLang('CZ');
-                this.translate.use('CZ');
-              }
-              if (data0.link) {
-                this.userService.getPicture(data.token).subscribe(
-                  data1 => {
-                    this.blobToBase64(data1, (base64String) => {
-                      this.tokenService.savePicture(base64String);
-                    });
-                  },
-                  _err1 => {
-                  }
-                );
-              }
-              this.router.navigate(["home"]);
-            },
-            _err0 => {
+    let userId: string;
+    let kekSalt: string;
+    let wrappedDEK: string;
+    let initializationVector: string;
+    this.isLoading = true;
+    this.publicService.login(this.email, this.password)
+      .pipe(
+        switchMap(response => {
+          this.tokenService.saveToken(response.token);
+          return this.privateService.getUser();
+        }),
+        switchMap(response1 => {
+          userId = response1.id;
+          kekSalt = response1.kekSalt;
+          wrappedDEK = response1.wrappedDEK;
+          initializationVector = response1.initializationVector;
+          return this.kmsService.userpassLogin(response1.id, this.password);
+        }),
+        switchMap(response2 => {
+          const KEK = pbkdf2.pbkdf2Sync(this.password, kekSalt, 10000, 256 / 8, 'sha512');
+          this.tokenService.saveKEK(CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
+          this.tokenService.saveKmsToken(response2.auth.client_token);
+          return this.kmsService.encryptData(userId, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
+        })
+      )
+      .subscribe(response3 => {
+        const wrappedDEKBase64 = wrappedDEK;
+        const wrappedDEKWordArray = CryptoJS.enc.Base64.parse(wrappedDEKBase64);
+        const decryptedDEKWordArray = CryptoJS.AES.decrypt(
+          CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(wrappedDEKWordArray.toString())),
+          response3.data.ciphertext,
+          {
+            mode: CryptoJS.mode.CFB,
+            padding: CryptoJS.pad.Pkcs7,
+            iv: CryptoJS.enc.Hex.parse(initializationVector.toString()),
+          }
+        );
+        const decryptedDEKHex = CryptoJS.enc.Hex.stringify(decryptedDEKWordArray);
+        userId = "";
+        kekSalt = "";
+        wrappedDEK = "";
+        this.password = "";
+        this.isLoading = false;
+        this.router.navigate(['/home']);
+      },
+        error0 => {
+          userId = "";
+          kekSalt = "";
+          wrappedDEK = "";
+          this.password = "";
+          this.isLoading = false;
+          try {
+            if (error0.name === 'TimeoutError') {
+              Swal.fire({
+                title: 'Login Failed',
+                text: 'Request timed out. Please try again later.',
+                icon: 'error',
+              });
+            } else {
+              Swal.fire({
+                title: 'Login Failed',
+                text: error0.error.error.message + '. Please try again later.',
+                icon: 'error',
+              });
             }
-          );
-        },
-        err => {
-          this.errorMessage = err.error.error.message;
+          } catch (_error1) {
+            Swal.fire({
+              title: 'Registration Failed',
+              text: 'An error occurred. Please try again later.',
+              icon: 'error',
+            });
+          }
         }
       );
-    }
   }
 
-  passwordReset(): void {
+  sendPasswordChange(): void {
     if (this.validationService.validateEmail(this.email1)) {
-      this.authService.sendPasswdResetEmail(this.email1).subscribe(
-        _data => {
-          Swal.fire('Hi', 'Check your mailbox', 'success');
-        },
-        err => {
-          this.errorMessage1 = err.error.error.message;
+      this.isLoading = true;
+      this.publicService.sendPasswordChange(this.email1).subscribe(_response4 => {
+        this.isLoading = false;
+        Swal.fire({
+          title: 'Password Reset',
+          text: 'If you are registered, you should check your mailbox.',
+          icon: 'info',
+        });
+      },
+        error2 => {
+          this.isLoading = false;
+          try {
+            if (error2.name === 'TimeoutError') {
+              Swal.fire({
+                title: 'Login Failed',
+                text: 'Request timed out. Please try again later.',
+                icon: 'error',
+              });
+            } else {
+              Swal.fire({
+                title: 'Login Failed',
+                text: error2.error.error.message + '. Please try again later.',
+                icon: 'error',
+              });
+            }
+          } catch (_error3) {
+            Swal.fire({
+              title: 'Registration Failed',
+              text: 'An error occurred. Please try again later.',
+              icon: 'error',
+            });
+          }
         }
       );
     }
-  }
-  
-  blobToBase64(blob: Blob, callback: (base64String: string) => void) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64String = reader.result as string;
-      callback(base64String);
-    };
-    reader.readAsDataURL(blob);
   }
 }

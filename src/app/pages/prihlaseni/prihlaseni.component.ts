@@ -131,7 +131,7 @@ export class PrihlaseniComponent implements OnInit {
             }
           } catch (_error3) {
             Swal.fire({
-              title: 'Registration Failed',
+              title: 'Login Failed',
               text: 'An error occurred. Please try again later.',
               icon: 'error',
             });

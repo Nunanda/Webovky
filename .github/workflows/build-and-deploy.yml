@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: |
           npm i
-          ng build --configuration=${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+          ng build --configuration=${{ github.ref == 'refs/heads/main' ? 'production' : 'development' }}
 
       - name: Set deploy dir
         run: |

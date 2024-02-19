@@ -23,9 +23,16 @@ jobs:
           sudo npm install -g @angular/cli
 
       - name: Build
+        if: github.ref == 'refs/heads/main'
         run: |
           npm i
-          ng build --configuration=${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+          ng build --configuration=production
+
+      - name: Build
+        if: github.ref != 'refs/heads/main'
+        run: |
+          npm i
+          ng build --configuration=development
 
       - name: Set deploy dir
         run: |

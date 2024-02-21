@@ -1,2 +1,13 @@
-<div id="container">
+<div id="container" *ngIf="user">
+    <h2>
+        {{ user.username }}
+    </h2>
+    <img id="account" *ngIf="user?.link" [src]="user.link" [ngStyle]="{'filter':'none','background-color':'var(--background-color)'}">
+    <img id="account" routerLink="/prihlaseni" *ngIf="!user?.link" src="assets/icon/svg/account.svg">
+    {{user.email}}
+    {{user.date}}
+    {{user.nick}}
+    {{user.bio}}
+    {{user.language}}
+    {{user.darkmode}}
 </div>

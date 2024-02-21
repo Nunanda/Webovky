@@ -1,9 +1,10 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { VyukaService, InstructionService, PomuckyService, SlovnikService } from 'src/app/service';
+import { VyukaService, InstructionService, PomuckyService, SlovnikService, TokenService } from 'src/app/service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { Pomucka, Styl } from './types';
+import { Language, Pomucka, Styl, User } from './types';
+import { IndexDbService } from './service/index-db-service.service';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +24,13 @@ export class AppComponent {
   menuSlovnikVisible: boolean = false;
   items: string[] | undefined;
   search: string | undefined;
-  imageURL: string = "assets/icon/svg/account.svg";
   slovnik: Styl[] | undefined;
   pomucky: Pomucka[] | undefined;
   darkmode: boolean = false;
   isFocused: boolean = false;
+  user: User | undefined;
 
-  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService) {
+  constructor(private vyukaService: VyukaService, private slovnikService: SlovnikService, private pomuckyService: PomuckyService, private instructionService: InstructionService, private router: Router, public translate: TranslateService, private indexDbService: IndexDbService, private tokenService: TokenService) {
     this.loadResources();
     this.initializeLanguage();
     this.initializeDarkMode();
@@ -40,15 +41,36 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.loadResources();
+    this.getUserFromDB();
   }
 
   ngDoCheck(): void {
     this.loadResources();
+    this.getUserFromDB();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.toggleMenuVisibility();
+  }
+
+  getUserFromDB(): void {
+    this.indexDbService.dbReady$.subscribe(() => {
+      this.indexDbService.getUserById(String(this.tokenService.getUserId()))
+        .then((user: User | undefined) => {
+          this.user = user;
+          this.switchLanguage(String(this.user?.language));
+          if (this.user?.darkmode) {
+            localStorage.setItem("darkMode", "dark");
+          }
+          else {
+            localStorage.setItem("darkMode", "light");
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching user:', error);
+        });
+    });
   }
 
   toggleMenuVisibility(): void {
@@ -137,7 +159,6 @@ export class AppComponent {
       ...this.instructionService.getAllTitles()
     ];
     this.items.sort();
-    this.imageURL = "assets/icon/svg/account.svg";
   }
 
   getRoute(item: string): void {
@@ -166,12 +187,16 @@ export class AppComponent {
     }, 200);
   }
 
-  onDivClick(event: MouseEvent) {
+  onDivClick(event: PointerEvent) {
     event.stopPropagation();
   }
 
-  switchLanguage(lang: string): Observable<any> {
+  switchLanguage(lang: string): Observable<Language> {
     localStorage.setItem("language", lang);
+    if (this.user) {
+      this.user.language = lang as Language;
+      this.indexDbService.updateUserRecord(this.user);
+    }
     return this.translate.use(lang);
   }
 
@@ -180,9 +205,17 @@ export class AppComponent {
     if (userDarkModePreference === "dark") {
       document.body.classList.remove('dark-mode');
       localStorage.setItem("darkMode", "light");
+      if (this.user) {
+        this.user.darkmode = false;
+        this.indexDbService.updateUserRecord(this.user);
+      }
     } else {
       document.body.classList.add('dark-mode');
       localStorage.setItem("darkMode", "dark");
+      if (this.user) {
+        this.user.darkmode = true;
+        this.indexDbService.updateUserRecord(this.user);
+      }
     }
     this.darkmode = !this.darkmode;
   }
@@ -241,9 +274,9 @@ export class AppComponent {
   hideSlovnik(): void {
     if (this.menuSlovnik && this.imgSlovnik) {
       if (this.menuSlovnikVisible) {
-      this.menuSlovnik.nativeElement.style.display = 'none';
-      this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
-      this.menuSlovnikVisible = false;
+        this.menuSlovnik.nativeElement.style.display = 'none';
+        this.imgSlovnik.nativeElement.src = "assets/icon/svg/down.svg";
+        this.menuSlovnikVisible = false;
       }
     }
   }

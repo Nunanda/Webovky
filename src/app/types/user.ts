@@ -6,21 +6,16 @@ export type UserPublic = {
   link: string,
 }
 
-export type UserPublicDetail = {
-  id: string,
-  username: string,
+export type UserPublicDetail = UserPublic & {
   nick: string,
   bio: string,
-  link: string,
   followerCount: number,
   followeeCount: number,
-  instructions?: Instruction[] | PremiumInstruction[] | null,
+  instructions?: (Instruction | PremiumInstruction)[] | null,
 }
 
-export type User = {
-  id: string,
+export type User = UserPublic & {
   email: string,
-  username: string,
   wrappedDEK: string,
   initializationVector: string,
   kekSalt: string,
@@ -29,7 +24,6 @@ export type User = {
   date: Date,
   nick?: string | null,
   bio?: string | null,
-  link?: string | null,
   favorites?: number[],
 }
 

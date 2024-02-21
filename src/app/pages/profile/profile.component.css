@@ -1,0 +1,9 @@
+#account {
+    order: 6;
+    background-color: var(--background-color-invert);
+    padding: 5px;
+    border-radius: 15px;
+    max-width: 50px;
+    filter: invert(var(--invert));
+    cursor: pointer;
+}

@@ -6,6 +6,8 @@ import { PublicService, PrivateService, TokenService, ValidationService, KmsServ
 import Swal from 'sweetalert2';
 import * as pbkdf2 from 'pbkdf2';
 import * as CryptoJS from 'crypto-js';
+import { IndexDbService } from 'src/app/service/index-db-service.service';
+import { User } from 'src/app/types';
 
 @Component({
   selector: 'app-prihlaseni',
@@ -20,15 +22,13 @@ export class PrihlaseniComponent implements OnInit {
   email1: string = "";
   isLoading: boolean = false;
 
-  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService, private tokenService: TokenService, private kmsService: KmsService) { }
+  constructor(private router: Router, private validationService: ValidationService, public translate: TranslateService, private publicService: PublicService, private privateService: PrivateService, private tokenService: TokenService, private kmsService: KmsService, private indexDbService: IndexDbService) { }
 
   ngOnInit(): void {
   }
 
   login(): void {
-    let userId: string;
-    let kekSalt: string;
-    let wrappedDEK: string;
+    let user: User;
     let initializationVector: string;
     this.isLoading = true;
     this.publicService.login(this.email, this.password)
@@ -38,21 +38,21 @@ export class PrihlaseniComponent implements OnInit {
           return this.privateService.getUser();
         }),
         switchMap(response1 => {
-          userId = response1.id;
-          kekSalt = response1.kekSalt;
-          wrappedDEK = response1.wrappedDEK;
+          user = response1;
+          this.indexDbService.addUserRecord(user);
+          this.tokenService.saveUserId(user.id);
           initializationVector = response1.initializationVector;
           return this.kmsService.userpassLogin(response1.id, this.password);
         }),
         switchMap(response2 => {
-          const KEK = pbkdf2.pbkdf2Sync(this.password, kekSalt, 10000, 256 / 8, 'sha512');
+          const KEK = pbkdf2.pbkdf2Sync(this.password, user.kekSalt, 10000, 256 / 8, 'sha512');
           this.tokenService.saveKEK(CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
           this.tokenService.saveKmsToken(response2.auth.client_token);
-          return this.kmsService.encryptData(userId, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
+          return this.kmsService.encryptData(user.id, CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(KEK.toString())));
         })
       )
       .subscribe(response3 => {
-        const wrappedDEKBase64 = wrappedDEK;
+        const wrappedDEKBase64 = user.wrappedDEK;
         const wrappedDEKWordArray = CryptoJS.enc.Base64.parse(wrappedDEKBase64);
         const decryptedDEKWordArray = CryptoJS.AES.decrypt(
           CryptoJS.enc.Base64.stringify(CryptoJS.enc.Hex.parse(wrappedDEKWordArray.toString())),
@@ -64,17 +64,13 @@ export class PrihlaseniComponent implements OnInit {
           }
         );
         const decryptedDEKHex = CryptoJS.enc.Hex.stringify(decryptedDEKWordArray);
-        userId = "";
-        kekSalt = "";
-        wrappedDEK = "";
+        user = {} as User;
         this.password = "";
         this.isLoading = false;
         this.router.navigate(['/home']);
       },
         error0 => {
-          userId = "";
-          kekSalt = "";
-          wrappedDEK = "";
+          user = {} as User;
           this.password = "";
           this.isLoading = false;
           try {

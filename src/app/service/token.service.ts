@@ -8,6 +8,7 @@ export class TokenService {
   private readonly TOKEN_KEY = 'fdf845fe-67ae-11ee-8c99-0242ac120002';
   private readonly TOKEN_KEY_KMS = '05a6a872-67af-11ee-8c99-0242ac120002';
   private readonly KEK = '7a617e9b-ad2f-4c03-b383-7b750227fa5b';
+  private readonly USERID = '7a617e9b-ad2f-4c03-b383-0242ac120002';
 
   constructor(private cookieService: CookieService) { }
 
@@ -39,5 +40,13 @@ export class TokenService {
 
   getKEK(): string | null {
     return this.cookieService.get(this.KEK) || null;
+  }
+
+  saveUserId(KEK: string): void {
+    this.cookieService.set(this.USERID, KEK);
+  }
+
+  getUserId(): string | null {
+    return this.cookieService.get(this.USERID) || null;
   }
 }

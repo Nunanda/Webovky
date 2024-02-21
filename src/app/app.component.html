@@ -26,7 +26,8 @@
             {{ language }}
           </option>
         </select>
-        <img id="account" routerLink="/prihlaseni" src="{{ imageURL }}">
+        <img id="account" routerLink="/prihlaseni" *ngIf="user?.link" [src]="user?.link" [ngStyle]="{'filter':'none','background-color':'var(--background-color)'}">
+        <img id="account" routerLink="/prihlaseni" *ngIf="!user?.link" src="assets/icon/svg/account.svg">
         <img id="hamburger" (click)="openCloseNav()" src="assets/icon/svg/hamburger-menu.svg">
       </div>
       <div id="menu" #menu>

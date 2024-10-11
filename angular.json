@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Webovky:build:production"
+              "buildTarget": "Webovky:build:production"
             },
             "development": {
-              "browserTarget": "Webovky:build:development"
+              "buildTarget": "Webovky:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Webovky:build"
+            "buildTarget": "Webovky:build"
           }
         },
         "test": {

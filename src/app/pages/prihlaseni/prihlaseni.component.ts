@@ -9,6 +9,7 @@ import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-prihlaseni',
+  standalone: false,
   templateUrl: './prihlaseni.component.html',
   styleUrls: ['./prihlaseni.component.css']
 })

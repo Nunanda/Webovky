@@ -5,6 +5,7 @@ import { InfoVyuky } from 'src/app/types';
 
 @Component({
   selector: 'app-vyukovymod-detail',
+  standalone: false,
   templateUrl: './vyukovymod-detail.component.html',
   styleUrls: ['./vyukovymod-detail.component.css']
 })

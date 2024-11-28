@@ -5,6 +5,7 @@ import { Pomucka, PopisPomucek } from 'src/app/types';
 
 @Component({
   selector: 'app-pomucky',
+  standalone: false,
   templateUrl: './pomucky.component.html',
   styleUrls: ['./pomucky.component.css']
 })

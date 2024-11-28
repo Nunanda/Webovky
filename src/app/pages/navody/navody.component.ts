@@ -6,6 +6,7 @@ import { Instruction } from 'src/app/types';
 
 @Component({
   selector: 'app-navody',
+  standalone: false,
   templateUrl: './navody.component.html',
   styleUrls: ['./navody.component.css']
 })

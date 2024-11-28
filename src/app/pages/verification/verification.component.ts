@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-verification',
+  standalone: false,
   templateUrl: './verification.component.html',
   styleUrls: ['./verification.component.css']
 })

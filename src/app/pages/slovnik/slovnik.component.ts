@@ -5,6 +5,7 @@ import { Styl } from 'src/app/types';
 
 @Component({
   selector: 'app-slovnik',
+  standalone: false,
   templateUrl: './slovnik.component.html',
   styleUrls: ['./slovnik.component.css']
 })

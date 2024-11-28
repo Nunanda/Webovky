@@ -6,6 +6,7 @@ import { Instruction, Step } from 'src/app/types';
 
 @Component({
   selector: 'app-navody-detail',
+  standalone: false,
   templateUrl: './navody-detail.component.html',
   styleUrls: ['./navody-detail.component.css']
 })

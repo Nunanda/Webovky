@@ -11,6 +11,7 @@ import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-registrace',
+  standalone: false,
   templateUrl: './registrace.component.html',
   styleUrls: ['./registrace.component.css']
 })

@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-passwdchange',
+  standalone: false,
   templateUrl: './passwdchange.component.html',
   styleUrls: ['./passwdchange.component.css']
 })

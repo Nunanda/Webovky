@@ -5,6 +5,7 @@ import { Vyuka } from 'src/app/types';
 
 @Component({
   selector: 'app-vyukovymod',
+  standalone: false,
   templateUrl: './vyukovymod.component.html',
   styleUrls: ['./vyukovymod.component.css']
 })

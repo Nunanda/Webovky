@@ -4,6 +4,7 @@ import { VyukaService, InstructionService, PomuckyService, SlovnikService } from
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { Pomucka, Styl } from './types';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -93,7 +94,8 @@ export class AppComponent {
 
   initializeLanguage(): void {
     this.translate.addLangs(['CZ', 'EN']);
-    const selectedLanguage = localStorage.getItem("language");
+    const encryptedLanguage = localStorage.getItem("language");
+    const selectedLanguage = encryptedLanguage ? this.decrypt(encryptedLanguage) : null;
     const browserLanguage = navigator.language.substr(0, 2).toUpperCase();
     const defaultLanguage = selectedLanguage === "EN" ? 'EN' : 'CZ';
     if (selectedLanguage && (selectedLanguage === "EN" || selectedLanguage === "CZ")) {
@@ -107,7 +109,16 @@ export class AppComponent {
     }
     this.translate.setDefaultLang(this.translate.currentLang);
     this.translate.use(this.translate.currentLang);
-    localStorage.setItem("language", this.translate.currentLang);
+    localStorage.setItem("language", this.encrypt(this.translate.currentLang));
+  }
+
+  encrypt(text: string): string {
+    return CryptoJS.AES.encrypt(text, 'secret-key').toString();
+  }
+
+  decrypt(text: string): string {
+    const bytes = CryptoJS.AES.decrypt(text, 'secret-key');
+    return bytes.toString(CryptoJS.enc.Utf8);
   }
 
   initializeDarkMode(): void {

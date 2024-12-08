@@ -17,7 +17,6 @@ export class VerificationComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       const token = params['token'];
       if (token) {
-        this.router.navigate(['/home']);
         this.publicService.verifyEmail(token).subscribe(
           _response => {
             Swal.fire({
